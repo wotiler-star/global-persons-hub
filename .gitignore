@@ -1,0 +1,36 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build outputs
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# env / secrets
+.env
+.env.local
+.env.*.local
+
+# data caches / generated indexes
+apps/api/data/runtime/_cache/
+
+# runtime mutable data (local state, not source) — keep seed at apps/api/data/persons.json
+apps/api/data/runtime/
+apps/api/src/data/runtime/
+
+# temp font source & scratch output
+_fonts_src/
+_ogout/
+
+# local preview / scratch outputs
+outputs/
+_p.html
+
+# project memory (not source)
+.workbuddy/
+
+# OS
+.DS_Store
+Thumbs.db

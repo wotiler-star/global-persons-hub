@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  font-family: system-ui, "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,47 @@
+# 生产级存储一键起：PostgreSQL 16 + pgvector（系统记录 + 全文检索 + 向量检索）+ Neo4j 5（关系图谱）
+# 用法：docker compose up -d
+# 后端通过环境变量连接：
+#   PG_URL=postgresql://gph:gph@localhost:5432/gph
+#   NEO4J_URI=bolt://localhost:7687  NEO4J_USER=neo4j  NEO4J_PASS=gphgphgph
+#   STORE_DRIVER=pg-neo4j
+# 可选（语义检索 / RAG）：
+#   嵌入：GPH_EMBED_API_URL（OpenAI 兼容 /embeddings，生产推荐）或默认本地 @xenova/transformers（384 维）
+#   生成：GPH_LLM_API_URL（OpenAI 兼容 /chat/completions）开启后 RAG 生成带引用的综合回答
+services:
+  postgres:
+    # pgvector 官方镜像，已内置 vector 扩展；普通 postgres 镜像需自行 CREATE EXTENSION
+    image: pgvector/pgvector:pg16
+    container_name: gph-postgres
+    environment:
+      POSTGRES_USER: gph
+      POSTGRES_PASSWORD: gph
+      POSTGRES_DB: gph
+    ports:
+      - "5432:5432"
+    volumes:
+      - gph_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gph -d gph"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  neo4j:
+    image: neo4j:5
+    container_name: gph-neo4j
+    environment:
+      NEO4J_AUTH: neo4j/gphgphgph
+    ports:
+      - "7687:7687"   # Bolt（驱动连接）
+      - "7474:7474"   # HTTP 浏览器
+    volumes:
+      - gph_neo4jdata:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:7474 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+
+volumes:
+  gph_pgdata:
+  gph_neo4jdata:
