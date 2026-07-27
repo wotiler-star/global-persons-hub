@@ -7,9 +7,16 @@ import { DOMAIN_LABELS, type Domain } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
 import SearchBar from '@/components/SearchBar';
 import TodayInHistory from '@/components/TodayInHistory';
+import JsonLd from '@/components/JsonLd';
 
 // 与 Domain 类型单一事实源对齐（sitemap / 领域页同做法），新增领域自动出现
 const DOMAINS = Object.keys(DOMAIN_LABELS) as Domain[];
+
+// —— Stage 34 SSG/ISR：13 语首页构建期预渲染，5 分钟增量再生 ——
+export const revalidate = 300;
+export function generateStaticParams() {
+  return LANGS.map((lang) => ({ lang }));
+}
 
 // —— 首页多语种社交分享卡 + hreflang ——
 export async function generateMetadata({
@@ -54,8 +61,23 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     .sort((a, b) => (b.metrics?.influence || 0) - (a.metrics?.influence || 0))
     .slice(0, 12);
 
+  // —— Stage 34：WebSite + SearchAction 结构化数据（利于搜索引擎站内搜索直达框）——
+  const websiteLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: `/${lang}`,
+    inLanguage: L,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: `/${lang}/search?q={search_term_string}` },
+      'query-input': 'required name=search_term_string'
+    }
+  };
+
   return (
     <div>
+      <JsonLd data={websiteLd} />
       <section className="text-center py-10">
         <h1 className="text-3xl font-bold">{t(L, 'home.heroTitle')}</h1>
         <p className="text-slate-600 mt-2">{t(L, 'home.heroSub')}</p>

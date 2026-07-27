@@ -18,6 +18,22 @@ import PersonHero from '@/components/PersonHero';
 import ReadingProgress from '@/components/ReadingProgress';
 import SectionNav from '@/components/SectionNav';
 
+// —— Stage 34 SSG/ISR：构建期预渲染 13 语 × 全部人物，5 分钟增量再生 ——
+// 新增人物无需重新构建：dynamicParams 允许未预生成的 slug 按需渲染后进入缓存。
+export const revalidate = 300;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  try {
+    const d = await getPersons({ pageSize: 2000 });
+    const slugs: string[] = (d.items || []).map((p: any) => p.slug).filter(Boolean);
+    return LANGS.flatMap((lang) => slugs.map((slug) => ({ lang, slug })));
+  } catch {
+    // 构建期 API 不可达时退化为全按需渲染（ISR 首访生成）
+    return [];
+  }
+}
+
 // —— GEO / SEO：多语种 hreflang 交替链接 + 规范链接 ——
 export async function generateMetadata({
   params
@@ -71,25 +87,46 @@ export default async function PersonPage({
   if (!person) notFound();
 
   const name = pickText(person.names, L);
-  const rel = await getRelations(person.id).catch(() => ({ relations: [] }));
-  const net = await getNetwork(person.id, 2).catch(() => null);
-  const allPersons = await getPersons({ lang: L, pageSize: 200 }).catch(() => ({ items: [] }));
+  // Stage 34：三路取数并行化（原先串行 3 次往返，TTFB 直降约 2/3）
+  const [rel, net, allPersons] = await Promise.all([
+    getRelations(person.id).catch(() => ({ relations: [] })),
+    getNetwork(person.id, 2).catch(() => null),
+    getPersons({ lang: L, pageSize: 200 }).catch(() => ({ items: [] }))
+  ]);
   const graphIds = new Set((net?.nodes || []).map((n: any) => n.id));
   // 成就数据改由 <AchievementTimeline> 内部提取（见下方组件调用）
 
-  // —— SEO / GEO：Schema.org Person 结构化数据 ——
+  // —— SEO / GEO：Schema.org Person 结构化数据（Stage 34 补全 url/image/jobTitle/sameAs）——
+  const pageUrl = `/${lang}/person/${slug}`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: person.names.en || pickText(person.names, L),
     alternateName: Object.values(person.names),
     description: pickText(person.summary, L),
+    url: pageUrl,
+    image: person.imageUrl || `${pageUrl}/opengraph-image`,
+    ...(pickText(person.occupations, L) ? { jobTitle: pickText(person.occupations, L) } : {}),
     birthDate: person.birth,
     deathDate: person.death,
     nationality: person.nationalities,
+    ...(person.sources?.length
+      ? { sameAs: person.sources.map((s: any) => s.url).filter(Boolean).slice(0, 8) }
+      : {}),
     knows: (rel.relations || [])
       .filter((r: any) => r.targetName)
       .map((r: any) => ({ '@type': 'Person', name: pickText(r.targetName, L) }))
+  };
+
+  // —— Stage 34：BreadcrumbList 面包屑结构化数据（利于富摘要）——
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t(L, 'nav.home'), item: `/${lang}` },
+      { '@type': 'ListItem', position: 2, name: t(L, 'nav.persons'), item: `/${lang}/persons` },
+      { '@type': 'ListItem', position: 3, name, item: pageUrl }
+    ]
   };
 
   // —— 粘性目录导航条目（按实际存在的章节动态生成） ——
@@ -106,6 +143,7 @@ export default async function PersonPage({
   return (
     <>
       <JsonLd data={jsonLd} />
+      <JsonLd data={breadcrumbLd} />
       <HistoryTracker slug={slug} />
       <ReadingProgress />
 

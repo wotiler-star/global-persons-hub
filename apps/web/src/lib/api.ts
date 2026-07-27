@@ -5,9 +5,23 @@ const PUBLIC_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://127.0.0.1:8787';
 const SERVER_BASE =
   process.env.GPH_API_BASE || process.env.NEXT_PUBLIC_API_BASE || 'http://127.0.0.1:8787';
 
-// —— 服务端数据获取（Server Components，SSR 利于 SEO/GEO）——
-export async function apiGet<T = any>(path: string): Promise<T> {
-  const res = await fetch(`${SERVER_BASE}${path}`, { cache: 'no-store' });
+// —— 服务端数据获取（Server Components，SSR/ISR 利于 SEO/GEO）——
+// Stage 34：默认走 ISR 增量缓存（5 分钟窗口），替代原先的 cache:'no-store' 全动态。
+// 人物数据低频变更，5 分钟陈旧度可接受；评论/账户等实时数据均走浏览器端 PUBLIC_BASE，不受影响。
+// 可用环境变量 GPH_REVALIDATE 调整窗口；传 { revalidate: false } 可退回逐请求取数。
+const DEFAULT_REVALIDATE = Number(process.env.GPH_REVALIDATE ?? 300);
+
+export async function apiGet<T = any>(
+  path: string,
+  opts: { revalidate?: number | false } = {}
+): Promise<T> {
+  const revalidate = opts.revalidate ?? DEFAULT_REVALIDATE;
+  const res = await fetch(
+    `${SERVER_BASE}${path}`,
+    revalidate === false || !(revalidate > 0)
+      ? { cache: 'no-store' }
+      : { next: { revalidate } }
+  );
   if (!res.ok) throw new Error(`API ${res.status} ${path}`);
   return res.json();
 }

@@ -13,6 +13,12 @@ import JsonLd from '@/components/JsonLd';
 
 const VALID: Domain[] = Object.keys(DOMAIN_LABELS) as Domain[];
 
+// —— Stage 34 SSG/ISR：13 语 × 全部领域构建期预渲染，5 分钟增量再生 ——
+export const revalidate = 300;
+export function generateStaticParams() {
+  return LANGS.flatMap((lang) => VALID.map((domain) => ({ lang, domain })));
+}
+
 // —— SEO：领域榜单页多语种 hreflang + canonical ——
 export async function generateMetadata({
   params

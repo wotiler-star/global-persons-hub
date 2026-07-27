@@ -6,6 +6,12 @@ import { t } from '@/lib/ui';
 import { type Person } from '@gph/types';
 import TimelineExplorer from '@/components/TimelineExplorer';
 
+// —— Stage 34 SSG/ISR：13 语时间轴构建期预渲染，5 分钟增量再生 ——
+export const revalidate = 300;
+export function generateStaticParams() {
+  return LANGS.map((lang) => ({ lang }));
+}
+
 // —— SEO：时间轴多语种 hreflang + canonical ——
 export async function generateMetadata({
   params
