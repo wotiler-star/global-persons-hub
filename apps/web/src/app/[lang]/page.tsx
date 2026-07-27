@@ -6,6 +6,7 @@ import { OG_LOCALE, SITE_NAME } from '@/lib/og';
 import { DOMAIN_LABELS, type Domain } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
 import SearchBar from '@/components/SearchBar';
+import TodayInHistory from '@/components/TodayInHistory';
 
 // 与 Domain 类型单一事实源对齐（sitemap / 领域页同做法），新增领域自动出现
 const DOMAINS = Object.keys(DOMAIN_LABELS) as Domain[];
@@ -43,7 +44,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const L = lang as Lang;
   let items: any[] = [];
   try {
-    const d = await getPersons({ lang });
+    // 全量取回（50 人级），供影响力榜单与「历史上的今天」双用
+    const d = await getPersons({ lang, pageSize: 200 });
     items = d.items;
   } catch {
     // API 不可达时静默降级
@@ -73,6 +75,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </a>
         ))}
       </section>
+
+      <TodayInHistory persons={items} lang={L} />
 
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-semibold">{t(L, 'home.trending')}</h2>

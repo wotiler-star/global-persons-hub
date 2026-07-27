@@ -1,0 +1,131 @@
+'use client';
+
+import { useSyncExternalStore } from 'react';
+
+// —— 纯前端收藏夹 + 浏览历史（localStorage，无需登录）——
+// 跨组件状态通过 window 自定义事件 + storage 事件同步，避免引入全局 Provider。
+
+/** 收藏 slug 列表（响应 localStorage 变更，跨标签页同步） */
+export function useFavorites(): string[] {
+  return useSyncExternalStore(subscribe, getFavorites, () => []);
+}
+
+/** 浏览历史 slug 列表（响应 localStorage 变更，跨标签页同步） */
+export function useHistory(): string[] {
+  return useSyncExternalStore(subscribe, getHistory, () => []);
+}
+
+
+const FAV_KEY = 'gph:favorites';
+const HIST_KEY = 'gph:history';
+const EVT = 'gph:library-change';
+const HIST_MAX = 50;
+
+// —— 缓存快照（useSyncExternalStore 要求 getSnapshot 引用稳定）——
+let _fav: string[] = [];
+let _favRaw = '';
+let _hist: string[] = [];
+let _histRaw = '';
+
+function readFav(): string[] {
+  if (typeof window === 'undefined') return [];
+  const raw = window.localStorage.getItem(FAV_KEY) || '[]';
+  if (raw !== _favRaw) {
+    try {
+      _fav = JSON.parse(raw);
+    } catch {
+      _fav = [];
+    }
+    _favRaw = raw;
+  }
+  return _fav;
+}
+
+function readHist(): string[] {
+  if (typeof window === 'undefined') return [];
+  const raw = window.localStorage.getItem(HIST_KEY) || '[]';
+  if (raw !== _histRaw) {
+    try {
+      _hist = JSON.parse(raw);
+    } catch {
+      _hist = [];
+    }
+    _histRaw = raw;
+  }
+  return _hist;
+}
+
+function emit() {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new Event(EVT));
+  }
+}
+
+// —— 收藏 ——
+export function getFavorites(): string[] {
+  return typeof window === 'undefined' ? [] : readFav();
+}
+
+export function isFavorite(slug: string): boolean {
+  return getFavorites().includes(slug);
+}
+
+/** 切换收藏状态，返回切换后的最新状态 */
+export function toggleFavorite(slug: string): boolean {
+  const cur = getFavorites();
+  let next: string[];
+  let nowFav: boolean;
+  if (cur.includes(slug)) {
+    next = cur.filter((s) => s !== slug);
+    nowFav = false;
+  } else {
+    next = [slug, ...cur];
+    nowFav = true;
+  }
+  if (typeof window !== 'undefined') {
+    window.localStorage.setItem(FAV_KEY, JSON.stringify(next));
+    _fav = next;
+    _favRaw = JSON.stringify(next);
+  }
+  emit();
+  return nowFav;
+}
+
+// —— 浏览历史 ——
+export function getHistory(): string[] {
+  return typeof window === 'undefined' ? [] : readHist();
+}
+
+/** 记录一次浏览（去重 + 置顶 + 截断） */
+export function addHistory(slug: string): void {
+  if (typeof window === 'undefined' || !slug) return;
+  const cur = getHistory().filter((s) => s !== slug);
+  cur.unshift(slug);
+  const next = cur.slice(0, HIST_MAX);
+  window.localStorage.setItem(HIST_KEY, JSON.stringify(next));
+  _hist = next;
+  _histRaw = JSON.stringify(next);
+  emit();
+}
+
+export function clearHistory(): void {
+  if (typeof window === 'undefined') return;
+  window.localStorage.setItem(HIST_KEY, '[]');
+  _hist = [];
+  _histRaw = '[]';
+  emit();
+}
+
+// —— 订阅（同一标签页 + 跨标签页）——
+export function subscribe(cb: () => void): () => void {
+  if (typeof window === 'undefined') return () => {};
+  const onStorage = (e: StorageEvent) => {
+    if (e.key === FAV_KEY || e.key === HIST_KEY) cb();
+  };
+  window.addEventListener(EVT, cb);
+  window.addEventListener('storage', onStorage);
+  return () => {
+    window.removeEventListener(EVT, cb);
+    window.removeEventListener('storage', onStorage);
+  };
+}

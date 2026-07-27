@@ -27,8 +27,13 @@ export default function NavBar() {
     { href: `/${lang}`, label: t(lang, 'nav.home') },
     { href: `/${lang}/search`, label: t(lang, 'nav.search') },
     { href: `/${lang}/persons`, label: t(lang, 'nav.persons') },
+    { href: `/${lang}/timeline`, label: t(lang, 'nav.timeline') },
+    { href: `/${lang}/explore`, label: t(lang, 'nav.explore') },
+    { href: `/${lang}/library`, label: t(lang, 'nav.library') },
+    { href: `/${lang}/gallery`, label: t(lang, 'nav.gallery') },
     { href: `/${lang}/graph`, label: t(lang, 'nav.graph') },
     { href: `/${lang}/ask`, label: t(lang, 'nav.ask') },
+    { href: `/${lang}/compare`, label: t(lang, 'nav.compare') },
     { href: `/${lang}/pricing`, label: t(lang, 'nav.pricing') },
     { href: `/${lang}/admin`, label: t(lang, 'nav.admin') },
     { href: `/${lang}/account`, label: t(lang, 'nav.account') },
@@ -42,13 +47,13 @@ export default function NavBar() {
         <Link href={`/${lang}`} className="font-bold text-brand">
           {t(lang, 'brand')}
         </Link>
-        {links.slice(0, 6).map((l) => (
+        {links.slice(0, 8).map((l) => (
           <Link key={l.href} href={l.href} className="text-sm text-slate-600 hover:text-brand">
             {l.label}
           </Link>
         ))}
         <div className="ml-auto flex items-center gap-3 text-sm">
-          {links.slice(4).map((l) => (
+          {links.slice(7).map((l) => (
             <Link key={l.href} href={l.href} className="text-slate-600 hover:text-brand">
               {l.label}
             </Link>

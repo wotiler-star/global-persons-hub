@@ -34,3 +34,4 @@ _p.html
 # OS
 .DS_Store
 Thumbs.db
+build/

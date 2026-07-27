@@ -1,16 +1,21 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getPerson, getRelations, getNetwork } from '@/lib/api';
+import { getPerson, getRelations, getNetwork, getPersons } from '@/lib/api';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';
 import { DOMAIN_LABELS } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
+import RelatedPersons from '@/components/RelatedPersons';
 import NetworkGraph from '@/components/NetworkGraph';
 import JsonLd from '@/components/JsonLd';
 import Comments from '@/components/Comments';
+import AchievementTimeline from '@/components/AchievementTimeline';
+import AICard from '@/components/AICard';
 import ImageUploader from '@/components/ImageUploader';
+import FavoriteButton from '@/components/FavoriteButton';
+import HistoryTracker from '@/components/HistoryTracker';
 
 // —— GEO / SEO：多语种 hreflang 交替链接 + 规范链接 ——
 export async function generateMetadata({
@@ -67,8 +72,9 @@ export default async function PersonPage({
   const name = pickText(person.names, L);
   const rel = await getRelations(person.id).catch(() => ({ relations: [] }));
   const net = await getNetwork(person.id, 2).catch(() => null);
-  const ach: string[] =
-    (person.achievements && (person.achievements[L] || person.achievements.en)) || [];
+  const allPersons = await getPersons({ lang: L, pageSize: 200 }).catch(() => ({ items: [] }));
+  const graphIds = new Set((net?.nodes || []).map((n: any) => n.id));
+  // 成就数据改由 <AchievementTimeline> 内部提取（见下方组件调用）
 
   // —— SEO / GEO：Schema.org Person 结构化数据 ——
   const jsonLd = {
@@ -88,6 +94,7 @@ export default async function PersonPage({
   return (
     <>
       <JsonLd data={jsonLd} />
+      <HistoryTracker slug={slug} />
       <div className="grid md:grid-cols-3 gap-6">
         <div className="md:col-span-2">
           {person.imageUrl && (
@@ -102,7 +109,10 @@ export default async function PersonPage({
               ))}
             </div>
           )}
-          <h1 className="text-3xl font-bold">{pickText(person.names, L)}</h1>
+          <h1 className="text-3xl font-bold flex items-center gap-3">
+            {pickText(person.names, L)}
+            <FavoriteButton slug={slug} lang={L} className="relative top-0 right-0 w-9 h-9 text-2xl" />
+          </h1>
           <div className="text-slate-500">{pickText(person.occupations, L)}</div>
           <div className="flex flex-wrap gap-1 mt-2">
             {person.domains.map((d: string) => (
@@ -120,16 +130,9 @@ export default async function PersonPage({
             </div>
           )}
 
-          {ach.length > 0 && (
-            <div className="mt-4">
-              <h3 className="font-semibold">{t(L, 'section.achievements')}</h3>
-              <ul className="list-disc pl-5 mt-1 text-sm">
-                {ach.map((a, i) => (
-                  <li key={i}>{a}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <AchievementTimeline person={person} lang={L} />
+
+          <AICard person={person} lang={L} />
 
           <div className="mt-6">
             <h3 className="font-semibold mb-2">{t(L, 'person.network')}</h3>
@@ -290,7 +293,7 @@ export default async function PersonPage({
                     </span>
                     {r.targetSlug && (
                       <Link
-                        href={`/${lang}/compare/${person.slug}-vs-${r.targetSlug}`}
+                        href={`/${lang}/compare?ids=${person.slug},${r.targetSlug}`}
                         className="shrink-0 text-xs px-2 py-0.5 rounded border text-slate-500 hover:bg-indigo-50 hover:text-indigo-700"
                       >
                         {t(L, 'person.compare')}
@@ -304,6 +307,8 @@ export default async function PersonPage({
           <ImageUploader slug={slug} initialImages={person.images || []} lang={lang} />
         </aside>
       </div>
+
+      <RelatedPersons person={person} candidates={allPersons.items} lang={L} graphIds={graphIds} />
 
       <Comments slug={slug} lang={lang} />
     </>

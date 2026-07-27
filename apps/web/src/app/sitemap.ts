@@ -10,6 +10,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const l of LANGS) {
     urls.push({ url: `${base}/${l}`, changeFrequency: 'daily', priority: 0.8 });
     urls.push({ url: `${base}/${l}/persons`, changeFrequency: 'daily', priority: 0.7 });
+    urls.push({ url: `${base}/${l}/timeline`, changeFrequency: 'daily', priority: 0.7 });
+    urls.push({ url: `${base}/${l}/explore`, changeFrequency: 'daily', priority: 0.7 });
+    urls.push({ url: `${base}/${l}/library`, changeFrequency: 'daily', priority: 0.6 });
+    urls.push({ url: `${base}/${l}/gallery`, changeFrequency: 'daily', priority: 0.6 });
     urls.push({ url: `${base}/${l}/graph`, changeFrequency: 'daily', priority: 0.7 });
     urls.push({ url: `${base}/${l}/pricing`, changeFrequency: 'monthly', priority: 0.6 });
   }
@@ -44,8 +48,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     }
     for (const pr of [...pairs].slice(0, 30)) {
+      const [a, b] = pr.split('-vs-');
       for (const l of LANGS) {
-        urls.push({ url: `${base}/${l}/compare/${pr}`, changeFrequency: 'weekly', priority: 0.5 });
+        urls.push({ url: `${base}/${l}/compare?ids=${a},${b}`, changeFrequency: 'weekly', priority: 0.5 });
       }
     }
   } catch {
