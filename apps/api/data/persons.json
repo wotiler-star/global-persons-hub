@@ -750,7 +750,7 @@
           "zh": "受物理学启发",
           "en": "Inspired by physics"
         },
-        "directed": false
+        "directed": true
       }
     ],
     "trustLevel": "pgc",
@@ -774,7 +774,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -994,6 +994,11 @@
         "url": "https://en.wikipedia.org/wiki/Elon_Musk",
         "title": "Elon Musk",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/real-time-billionaires/",
+        "title": "Forbes Real-Time Billionaires (retrieved 2026-07)",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -1005,12 +1010,16 @@
           "en": "Global tech entrepreneurs"
         },
         "directed": false
+      },
+      {
+        "targetId": "p-jeff-bezos",
+        "type": "rival"
       }
     ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 92,
-      "netWorth": 420000000000
+      "netWorth": 797600000000
     },
     "langVersions": [
       "zh",
@@ -1028,7 +1037,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -1283,6 +1292,11 @@
         "url": "https://en.wikipedia.org/wiki/Jack_Ma",
         "title": "Jack Ma",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/real-time-billionaires/",
+        "title": "Forbes Real-Time Billionaires (retrieved 2026-07)",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -1299,7 +1313,7 @@
     "trustLevel": "pgc",
     "metrics": {
       "influence": 88,
-      "netWorth": 30000000000
+      "netWorth": 29600000000
     },
     "langVersions": [
       "zh",
@@ -1317,7 +1331,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -1871,8 +1885,8 @@
       "Kong Qiu",
       "孔丘"
     ],
-    "birth": "-0551-01-01",
-    "death": "-0479-01-01",
+    "birth": "-0551-09-28",
+    "death": "-0479-04-11",
     "nationalities": [
       "Chinese"
     ],
@@ -2003,7 +2017,7 @@
           "zh": "思想史影响",
           "en": "Influence on intellectual history"
         },
-        "directed": false
+        "directed": true
       },
       {
         "type": "influence",
@@ -2044,7 +2058,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -2276,6 +2290,11 @@
         "url": "https://en.wikipedia.org/wiki/Oprah_Winfrey",
         "title": "Oprah Winfrey",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/sites/idonnkanga/2026/03/10/the-worlds-celebrity-billionaires-2026/",
+        "title": "The World’s Celebrity Billionaires 2026",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -2292,7 +2311,7 @@
     "trustLevel": "pgc",
     "metrics": {
       "influence": 85,
-      "netWorth": 3000000000
+      "netWorth": 3200000000
     },
     "langVersions": [
       "zh",
@@ -2310,7 +2329,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -3552,6 +3571,11 @@
         "url": "https://en.wikipedia.org/wiki/Steve_Jobs",
         "title": "Steve Jobs",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/profile/steve-jobs/",
+        "title": "Forbes profile — net worth at death, Oct 2011 (approx. $10B)",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -3586,7 +3610,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:20:14.630Z",
     "kin": [
       {
         "name": {
@@ -3846,6 +3870,11 @@
         "url": "https://en.wikipedia.org/wiki/Bill_Gates",
         "title": "Bill Gates",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/real-time-billionaires/",
+        "title": "Forbes Real-Time Billionaires (retrieved 2026-07)",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -3866,12 +3895,16 @@
           "zh": "云与零售竞争"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-warren-buffett",
+        "type": "collab"
       }
     ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 88,
-      "netWorth": 130000000000
+      "netWorth": 106500000000
     },
     "langVersions": [
       "zh",
@@ -3889,7 +3922,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -4121,6 +4154,11 @@
         "url": "https://en.wikipedia.org/wiki/Jeff_Bezos",
         "title": "Jeff Bezos",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/real-time-billionaires/",
+        "title": "Forbes Real-Time Billionaires (retrieved 2026-07)",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -4146,7 +4184,7 @@
     "trustLevel": "pgc",
     "metrics": {
       "influence": 90,
-      "netWorth": 200000000000
+      "netWorth": 256600000000
     },
     "langVersions": [
       "zh",
@@ -4164,7 +4202,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -4381,6 +4419,11 @@
         "url": "https://en.wikipedia.org/wiki/Mark_Zuckerberg",
         "title": "Mark Zuckerberg",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/real-time-billionaires/",
+        "title": "Forbes Real-Time Billionaires (retrieved 2026-07)",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -4397,7 +4440,7 @@
     "trustLevel": "pgc",
     "metrics": {
       "influence": 88,
-      "netWorth": 180000000000
+      "netWorth": 221600000000
     },
     "langVersions": [
       "zh",
@@ -4415,7 +4458,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -4631,6 +4674,11 @@
         "url": "https://en.wikipedia.org/wiki/Warren_Buffett",
         "title": "Warren Buffett",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/real-time-billionaires/",
+        "title": "Forbes Real-Time Billionaires (retrieved 2026-07)",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -4647,7 +4695,7 @@
     "trustLevel": "pgc",
     "metrics": {
       "influence": 85,
-      "netWorth": 120000000000
+      "netWorth": 139300000000
     },
     "langVersions": [
       "zh",
@@ -4665,7 +4713,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -4895,6 +4943,11 @@
         "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
         "title": "Michael Jordan",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/sites/idonnkanga/2026/03/10/the-worlds-celebrity-billionaires-2026/",
+        "title": "The World’s Celebrity Billionaires 2026",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -4920,7 +4973,7 @@
     "trustLevel": "pgc",
     "metrics": {
       "influence": 91,
-      "netWorth": 3000000000
+      "netWorth": 4300000000
     },
     "langVersions": [
       "zh",
@@ -4938,7 +4991,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -5167,13 +5220,18 @@
         "url": "https://en.wikipedia.org/wiki/Cristiano_Ronaldo",
         "title": "Cristiano Ronaldo",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/real-time-billionaires/",
+        "title": "Forbes Real-Time Billionaires (retrieved 2026-07)",
+        "publisher": "Forbes"
       }
     ],
     "relations": [],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 90,
-      "netWorth": 600000000
+      "netWorth": 1200000000
     },
     "langVersions": [
       "zh",
@@ -5191,7 +5249,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -5909,6 +5967,11 @@
         "url": "https://en.wikipedia.org/wiki/Beyonc%C3%A9",
         "title": "Beyoncé",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/sites/idonnkanga/2026/03/10/the-worlds-celebrity-billionaires-2026/",
+        "title": "The World’s Celebrity Billionaires 2026",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -5920,12 +5983,16 @@
           "en": "Spouses"
         },
         "directed": false
+      },
+      {
+        "targetId": "p-oprah",
+        "type": "collab"
       }
     ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 85,
-      "netWorth": 500000000
+      "netWorth": 1000000000
     },
     "langVersions": [
       "zh",
@@ -5943,7 +6010,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -6425,7 +6492,12 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-leonardo-dicaprio",
+        "type": "collab"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 83
@@ -6446,7 +6518,7 @@
       "id"
     ],
     "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -7696,6 +7768,11 @@
         "url": "https://en.wikipedia.org/wiki/Jay-Z",
         "title": "Jay-Z",
         "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://www.forbes.com/sites/idonnkanga/2026/03/10/the-worlds-celebrity-billionaires-2026/",
+        "title": "The World’s Celebrity Billionaires 2026",
+        "publisher": "Forbes"
       }
     ],
     "relations": [
@@ -7712,7 +7789,7 @@
     "trustLevel": "pgc",
     "metrics": {
       "influence": 85,
-      "netWorth": 2500000000
+      "netWorth": 2800000000
     },
     "langVersions": [
       "zh",
@@ -7730,7 +7807,7 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -7980,7 +8057,7 @@
     ],
     "relations": [
       {
-        "targetId": "p-marie-curie",
+        "targetId": "p-curie",
         "type": "family",
         "label": {
           "zh": "夫妻",
@@ -8018,7 +8095,7 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -8272,7 +8349,7 @@
     ],
     "relations": [
       {
-        "targetId": "p-marie-curie",
+        "targetId": "p-curie",
         "type": "family",
         "label": {
           "zh": "母女",
@@ -8310,7 +8387,7 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z",
+    "updatedAt": "2026-07-27T16:19:29.319Z",
     "kin": [
       {
         "name": {
@@ -9025,13 +9102,13 @@
     ],
     "relations": [
       {
-        "targetId": "p-alan-turing",
+        "targetId": "p-turing",
         "type": "influence",
         "label": {
           "zh": "计算先驱",
           "en": "Computing pioneer"
         },
-        "directed": false
+        "directed": true
       }
     ],
     "trustLevel": "pgc",
@@ -9054,7 +9131,7 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-27T16:19:29.319Z"
   },
   {
     "id": "p-alexander-fleming",
@@ -9436,7 +9513,7 @@
       "hi": "सुंदर पिचाई",
       "id": "Sundar Pichai"
     },
-    "birth": "1972-07-12",
+    "birth": "1972-06-10",
     "nationalities": [
       "Indian",
       "American"
@@ -9599,7 +9676,7 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-27T16:19:29.319Z"
   },
   {
     "id": "p-mahatma-gandhi",
@@ -9767,7 +9844,7 @@
           "zh": "精神导师",
           "en": "Inspiration"
         },
-        "directed": false
+        "directed": true
       }
     ],
     "trustLevel": "pgc",
@@ -9790,7 +9867,7 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-27T16:19:29.319Z"
   },
   {
     "id": "p-abraham-lincoln",

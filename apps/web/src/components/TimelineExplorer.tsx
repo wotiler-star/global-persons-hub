@@ -34,10 +34,20 @@ const ERAS: { key: string; labelKey: string; from: number; to: number }[] = [
   { key: 'contemporary', labelKey: 'timeline.eraContemporary', from: 1900, to: 100000 }
 ];
 
-function birthYear(p: Person): number | null {
-  if (!p.birth) return null;
-  const y = parseInt(p.birth.slice(0, 4), 10);
+function parseYear(iso: string | undefined | null): number | null {
+  if (!iso) return null;
+  const m = /^(-?\d{1,6})/.exec(iso);
+  if (!m) return null;
+  const y = parseInt(m[1], 10);
   return Number.isFinite(y) ? y : null;
+}
+
+function birthYear(p: Person): number | null {
+  return parseYear(p.birth);
+}
+
+function deathYear(p: Person): number | null {
+  return parseYear(p.death);
 }
 
 export default function TimelineExplorer({ items, lang }: Props) {
@@ -46,9 +56,14 @@ export default function TimelineExplorer({ items, lang }: Props) {
     () => items.filter((p) => birthYear(p) != null),
     [items]
   );
-  // 附加解析出的出生年，便于排序与定位
+  // 附加解析出的生卒年，便于排序与定位
   const withYear = useMemo(
-    () => timelinePersons.map((p) => ({ p, y: birthYear(p) as number })),
+    () =>
+      timelinePersons.map((p) => ({
+        p,
+        y: birthYear(p) as number,
+        d: deathYear(p)
+      })),
     [timelinePersons]
   );
 
@@ -119,21 +134,43 @@ export default function TimelineExplorer({ items, lang }: Props) {
     [withYear, domain, from, to]
   );
 
-  // 时间轴几何
-  const span = bounds.max - bounds.min || 1;
-  const pctOf = (y: number) => ((y - bounds.min) / span) * 100;
-  const step =
-    span > 1200 ? 200 : span > 600 ? 100 : span > 250 ? 50 : 25;
-  const tickStart = Math.ceil(bounds.min / step) * step;
-  const ticks: number[] = [];
-  for (let y = tickStart; y <= bounds.max; y += step) ticks.push(y);
+  // ===== 时间轴几何：按当前筛选区间自适应缩放（窗口化视图）=====
+  // 窗口边界取「当前区间 ∩ 实际数据」并留 2% 视觉边距，选中时代时人物铺满轨道
+  const win = useMemo(() => {
+    if (filtered.length === 0) return { lo: from, hi: to };
+    let lo = Infinity;
+    let hi = -Infinity;
+    const nowY = new Date().getFullYear();
+    for (const { y, d } of filtered) {
+      if (y < lo) lo = y;
+      const end = d ?? Math.min(nowY, to);
+      if (end > hi) hi = end;
+      if (y > hi) hi = y;
+    }
+    const pad = Math.max(2, Math.round((hi - lo) * 0.03));
+    return { lo: lo - pad, hi: hi + pad };
+  }, [filtered, from, to]);
 
-  // 车道防重叠（贪心分配）
-  const MIN_GAP = 2.2;
+  const span = win.hi - win.lo || 1;
+  const pctOf = (y: number) => ((y - win.lo) / span) * 100;
+  const step =
+    span > 1200 ? 200 : span > 600 ? 100 : span > 250 ? 50 : span > 100 ? 25 : span > 40 ? 10 : 5;
+  const tickStart = Math.ceil(win.lo / step) * step;
+  const ticks: number[] = [];
+  for (let y = tickStart; y <= win.hi; y += step) ticks.push(y);
+
+  const nowYear = new Date().getFullYear();
+
+  // 车道防重叠（贪心分配，考虑寿命条尾端）
+  const MIN_GAP = 1.5;
   const laneLast: number[] = [];
   const lanes: number[] = [];
-  for (const { y } of filtered) {
+  const barEnds: number[] = [];
+  for (const { y, d } of filtered) {
     const pc = pctOf(y);
+    const endYear = d ?? Math.min(nowYear, win.hi);
+    const endPc = Math.min(100, Math.max(pc + 0.6, pctOf(Math.min(endYear, win.hi))));
+    barEnds.push(endPc);
     let placed = -1;
     for (let i = 0; i < laneLast.length; i++) {
       if (pc >= laneLast[i] + MIN_GAP) {
@@ -143,17 +180,27 @@ export default function TimelineExplorer({ items, lang }: Props) {
     }
     if (placed < 0) {
       placed = laneLast.length;
-      laneLast.push(pc);
+      laneLast.push(endPc);
     } else {
-      laneLast[placed] = pc;
+      laneLast[placed] = Math.max(laneLast[placed], endPc);
     }
     lanes.push(placed);
   }
   const laneCount = Math.max(1, laneLast.length);
   const LANE_H = 24;
-  const railHeight = laneCount * LANE_H + 30;
+  const railHeight = laneCount * LANE_H + 64; // 底部余量容纳悬浮卡与刻度
 
-  const fmtYear = (y: number) => (y < 0 ? `${-y} BCE` : `${y}`);
+  // 13 语年份格式：中文/日文前置「公元前/紀元前 + 年」，其余「数字 + BCE」
+  const bce = t(lang, 'life.bce');
+  const fmtYear = (y: number) => {
+    if (y < 0) {
+      const n = -y;
+      return lang === 'zh' || lang === 'ja' ? `${bce}${n}${lang === 'zh' ? '年' : '年'}` : `${n} ${bce}`;
+    }
+    return lang === 'zh' || lang === 'ja' ? `${y}年` : `${y}`;
+  };
+  const lifespanText = (y: number, d: number | null) =>
+    `${fmtYear(y)} – ${d != null ? fmtYear(d) : t(lang, 'life.alive')}`;
 
   return (
     <div>
@@ -247,7 +294,26 @@ export default function TimelineExplorer({ items, lang }: Props) {
         <span className="ml-auto text-xs text-slate-400">{t(lang, 'timeline.hint')}</span>
       </div>
 
-      {/* 时间轴轨道 */}
+      {/* 领域颜色图例 */}
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3">
+        {domains.map((d) => (
+          <button
+            key={d}
+            onClick={() => setDomain(domain === d ? 'all' : d)}
+            className={`inline-flex items-center gap-1.5 text-xs transition ${
+              domain === 'all' || domain === d ? 'text-slate-600' : 'text-slate-300'
+            }`}
+          >
+            <span
+              className="w-2.5 h-2.5 rounded-full"
+              style={{ backgroundColor: DOMAIN_COLOR[d], opacity: domain === 'all' || domain === d ? 1 : 0.3 }}
+            />
+            {DOMAIN_LABELS[d]}
+          </button>
+        ))}
+      </div>
+
+      {/* 时间轴轨道（生命线视图：出生点 + 寿命条 + 富悬浮卡） */}
       {withYear.length === 0 ? (
         <p className="text-slate-500 mt-6">{t(lang, 'persons.noResult')}</p>
       ) : (
@@ -270,23 +336,49 @@ export default function TimelineExplorer({ items, lang }: Props) {
                 </span>
               </div>
             ))}
-            {/* 人物标记 */}
-            {filtered.map(({ p, y }, i) => {
+            {/* 人物生命线 */}
+            {filtered.map(({ p, y, d }, i) => {
               const primary = p.domains[0];
               const name = pickText(p.names, lang);
               const color = DOMAIN_COLOR[primary] || DOMAIN_COLOR.other;
+              const top = lanes[i] * LANE_H + 4;
+              const leftPc = pctOf(y);
+              const widthPc = Math.max(0.4, barEnds[i] - leftPc);
+              const alive = d == null;
               return (
                 <Link
                   key={p.id}
                   href={`/${lang}/person/${p.slug}`}
-                  title={`${name} · ${t(lang, 'timeline.bornIn')} ${fmtYear(y)} · ${DOMAIN_LABELS[primary]}`}
-                  className="absolute -translate-x-1/2 group"
-                  style={{ left: `${pctOf(y)}%`, top: lanes[i] * LANE_H + 2 }}
+                  className="absolute group"
+                  style={{ left: `${leftPc}%`, top, width: `${widthPc}%`, height: 14 }}
                 >
+                  {/* 寿命条（在世：渐隐尾端） */}
                   <span
-                    className="block w-3 h-3 rounded-full ring-2 ring-white shadow-sm hover:scale-125 transition-transform"
+                    className="absolute left-1 right-0 top-1/2 -translate-y-1/2 h-1 rounded-full"
+                    style={{
+                      backgroundColor: color,
+                      opacity: 0.35,
+                      ...(alive
+                        ? { background: `linear-gradient(to right, ${color} 60%, transparent)`, opacity: 0.3 }
+                        : {})
+                    }}
+                  />
+                  {/* 出生点 */}
+                  <span
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 block w-3 h-3 rounded-full ring-2 ring-white shadow-sm group-hover:scale-125 transition-transform"
                     style={{ backgroundColor: color }}
                   />
+                  {/* 富悬浮卡（纯 CSS，无 JS 状态） */}
+                  <span
+                    className="pointer-events-none absolute left-0 top-full mt-1.5 z-20 hidden group-hover:block bg-slate-900 text-white text-xs rounded-lg px-2.5 py-1.5 shadow-lg whitespace-nowrap"
+                  >
+                    <span className="block font-semibold text-[13px]">{name}</span>
+                    <span className="block text-slate-300 mt-0.5">{lifespanText(y, d)}</span>
+                    <span className="mt-1 inline-flex items-center gap-1 text-slate-300">
+                      <span className="w-2 h-2 rounded-full" style={{ backgroundColor: color }} />
+                      {DOMAIN_LABELS[primary]}
+                    </span>
+                  </span>
                 </Link>
               );
             })}
@@ -304,7 +396,7 @@ export default function TimelineExplorer({ items, lang }: Props) {
         <p className="text-slate-500 mt-2">{t(lang, 'persons.noResult')}</p>
       ) : (
         <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-          {filtered.map(({ p, y }) => {
+          {filtered.map(({ p, y, d }) => {
             const primary = p.domains[0];
             return (
               <li key={p.id}>
@@ -319,7 +411,7 @@ export default function TimelineExplorer({ items, lang }: Props) {
                   <div className="min-w-0 flex-1">
                     <div className="font-semibold truncate">{pickText(p.names, lang)}</div>
                     <div className="text-xs text-slate-500 truncate">
-                      {t(lang, 'timeline.bornIn')} {fmtYear(y)} · {DOMAIN_LABELS[primary]}
+                      {lifespanText(y, d)} · {DOMAIN_LABELS[primary]}
                     </div>
                   </div>
                 </Link>

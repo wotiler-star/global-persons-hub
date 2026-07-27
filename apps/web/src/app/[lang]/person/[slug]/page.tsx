@@ -5,7 +5,6 @@ import { getPerson, getRelations, getNetwork, getPersons } from '@/lib/api';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';
-import { DOMAIN_LABELS } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
 import RelatedPersons from '@/components/RelatedPersons';
 import NetworkGraph from '@/components/NetworkGraph';
@@ -14,8 +13,10 @@ import Comments from '@/components/Comments';
 import AchievementTimeline from '@/components/AchievementTimeline';
 import AICard from '@/components/AICard';
 import ImageUploader from '@/components/ImageUploader';
-import FavoriteButton from '@/components/FavoriteButton';
 import HistoryTracker from '@/components/HistoryTracker';
+import PersonHero from '@/components/PersonHero';
+import ReadingProgress from '@/components/ReadingProgress';
+import SectionNav from '@/components/SectionNav';
 
 // —— GEO / SEO：多语种 hreflang 交替链接 + 规范链接 ——
 export async function generateMetadata({
@@ -91,16 +92,29 @@ export default async function PersonPage({
       .map((r: any) => ({ '@type': 'Person', name: pickText(r.targetName, L) }))
   };
 
+  // —— 粘性目录导航条目（按实际存在的章节动态生成） ——
+  const navItems = [
+    { id: 'sec-about', label: t(L, 'section.about') },
+    { id: 'sec-life', label: t(L, 'life.title') },
+    { id: 'sec-aicard', label: t(L, 'aicard.title') },
+    { id: 'sec-network', label: t(L, 'person.network') },
+    ...(person.kin && person.kin.length > 0 ? [{ id: 'sec-kin', label: t(L, 'person.kinTitle') }] : []),
+    { id: 'sec-related', label: t(L, 'person.relatedTitle') },
+    { id: 'sec-comments', label: t(L, 'comments.title') }
+  ];
+
   return (
     <>
       <JsonLd data={jsonLd} />
       <HistoryTracker slug={slug} />
-      <div className="grid md:grid-cols-3 gap-6">
+      <ReadingProgress />
+
+      <PersonHero person={person} lang={L} />
+
+      <SectionNav items={navItems} />
+
+      <div className="grid md:grid-cols-3 gap-6 mt-6">
         <div className="md:col-span-2">
-          {person.imageUrl && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={person.imageUrl} alt={name} className="w-full max-h-72 object-cover rounded-xl mb-4" />
-          )}
           {person.images && person.images.length > 0 && (
             <div className="grid grid-cols-3 gap-2 mb-4">
               {person.images.map((u: string, i: number) => (
@@ -109,32 +123,27 @@ export default async function PersonPage({
               ))}
             </div>
           )}
-          <h1 className="text-3xl font-bold flex items-center gap-3">
-            {pickText(person.names, L)}
-            <FavoriteButton slug={slug} lang={L} className="relative top-0 right-0 w-9 h-9 text-2xl" />
-          </h1>
-          <div className="text-slate-500">{pickText(person.occupations, L)}</div>
-          <div className="flex flex-wrap gap-1 mt-2">
-            {person.domains.map((d: string) => (
-              <span key={d} className="text-xs px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
-                {DOMAIN_LABELS[d as keyof typeof DOMAIN_LABELS]}
-              </span>
-            ))}
-          </div>
-          <p className="mt-4 leading-relaxed">{pickText(person.summary, L)}</p>
+          <section id="sec-about" className="scroll-mt-24">
+            <h3 className="font-semibold">{t(L, 'section.about')}</h3>
+            <p className="mt-1 leading-relaxed">{pickText(person.summary, L)}</p>
 
-          {person.bio && pickText(person.bio, L) && (
-            <div className="mt-4">
-              <h3 className="font-semibold">{t(L, 'section.bio')}</h3>
-              <p className="mt-1 leading-relaxed text-slate-700">{pickText(person.bio, L)}</p>
-            </div>
-          )}
+            {person.bio && pickText(person.bio, L) && (
+              <div className="mt-4">
+                <h3 className="font-semibold">{t(L, 'section.bio')}</h3>
+                <p className="mt-1 leading-relaxed text-slate-700">{pickText(person.bio, L)}</p>
+              </div>
+            )}
+          </section>
 
-          <AchievementTimeline person={person} lang={L} />
+          <section id="sec-life" className="scroll-mt-24">
+            <AchievementTimeline person={person} lang={L} />
+          </section>
 
-          <AICard person={person} lang={L} />
+          <section id="sec-aicard" className="scroll-mt-24">
+            <AICard person={person} lang={L} />
+          </section>
 
-          <div className="mt-6">
+          <div id="sec-network" className="mt-6 scroll-mt-24">
             <h3 className="font-semibold mb-2">{t(L, 'person.network')}</h3>
             <NetworkGraph
               network={net || { nodes: [], edges: [] }}
@@ -148,7 +157,7 @@ export default async function PersonPage({
             for (const k of person.kin) (groups[k.generation] ||= []).push(k);
             const order = [-2, -1, 0, 1, 2];
             return (
-              <div className="mt-8">
+              <div id="sec-kin" className="mt-8 scroll-mt-24">
                 <h3 className="text-lg font-semibold mb-4">{t(L, 'person.kinTitle')}</h3>
                 <div className="space-y-5">
                   {order
@@ -308,9 +317,13 @@ export default async function PersonPage({
         </aside>
       </div>
 
-      <RelatedPersons person={person} candidates={allPersons.items} lang={L} graphIds={graphIds} />
+      <div id="sec-related" className="scroll-mt-24">
+        <RelatedPersons person={person} candidates={allPersons.items} lang={L} graphIds={graphIds} />
+      </div>
 
-      <Comments slug={slug} lang={lang} />
+      <div id="sec-comments" className="scroll-mt-24">
+        <Comments slug={slug} lang={lang} />
+      </div>
     </>
   );
 }

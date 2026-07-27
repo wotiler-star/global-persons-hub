@@ -19,7 +19,9 @@
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down",
     "db:reindex": "npm -w @gph/api run reindex-graph",
-    "db:reembed": "npm -w @gph/api run reindex-embed"
+    "db:reembed": "npm -w @gph/api run reindex-embed",
+    "data:audit": "node scripts/audit-data.mjs",
+    "data:audit:runtime": "node scripts/audit-data.mjs --runtime"
   },
   "devDependencies": {
     "concurrently": "^9.1.0",

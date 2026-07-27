@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import LangSwitch from './LangSwitch';
+import CommandPalette from './CommandPalette';
 
 // <html lang> 期望的 BCP-47 代码（zh 用 zh-CN）
 const HTML_LANG: Record<Lang, string> = {
@@ -53,7 +54,8 @@ export default function NavBar() {
           </Link>
         ))}
         <div className="ml-auto flex items-center gap-3 text-sm">
-          {links.slice(7).map((l) => (
+          <CommandPalette />
+          {links.slice(8).map((l) => (
             <Link key={l.href} href={l.href} className="text-slate-600 hover:text-brand">
               {l.label}
             </Link>
