@@ -301,6 +301,9 @@ npm run db:reembed
 
 - **智能推荐功能（Stage 36）**：在既有「相关人物（同领域+图谱+亲属+关系+国籍）」之外，新增两套**互补**的个性化推荐——① 人物详情页「**二度人脉**」`components/SecondDegree.tsx`（服务端组件，零客户端 JS，利于 SEO/GEO 引用）：由深度 2 关系网络推导「通过你的一度关系还能认识的人」，列出二度连接人与桥接人（如爱因斯坦页通过 Ada Lovelace 桥接），纯服务端计算、不可点击的未收录亲属虚拟节点自动过滤；② 首页「**为你推荐**」`components/ForYou.tsx`（客户端组件）：基于 `libraryStore` 本地浏览历史（localStorage，跨标签页同步、隐私安全），以最近看过的人物为种子，按 **同领域 +3 / 关系相连 +4 / 同国籍 +2 / 影响力相近** 计算相似度，Top6 并附原因 badge。UI 字典新增 5 个 13 语键：`network.degree2Title`/`network.degree2Sub`/`network.through`、`home.foryou`/`home.foryouSub`（长度断言全绿）。实测：`typecheck` 三包全绿；`next build` 成功（650 人物页 + 13 首页 + GEO 路由全静态）；产物核验——`SecondDegree` 在 **46** 个人物页服务端渲染出二度人脉与桥接人（如 `zh/person/albert-einstein` 显示「二度人脉 … Ada Lovelace 通过你的一度关系…」），`ForYou` 进入客户端 chunk（3596）含「为你推荐」「关系相连」文案，`[ui]` 告警 0，零新增第三方依赖。
 
+## 生产部署（Lighthouse Windows · 零依赖 JSON store）
+将 `global-persons-hub` 部署到腾讯云 Lighthouse（与 ai-tools-nav 同账号）：因 Lighthouse 仅 3389、2GB 内存**禁止服务端构建**，采用「本机 `next build` 产出 `output:'standalone'` → 分片上传 GitHub Release/COS → TAT 下发 PowerShell 拉取解压 → pm2 跑 web+api」路线（详见 `deploy/DEPLOY.md`）。改造点：① `apps/web/next.config.mjs` 加 `output:'standalone'` 与 `rewrites`（`/api/*` → `127.0.0.1:8787`），浏览器端 `NEXT_PUBLIC_API_BASE=/api` 同源相对路径，**只开放一个 Web 端口、API 不对外暴露、同源免 CORS**；② 新建 `deploy/`：`package.ps1`（本机构建+分片）、`lighthouse-deploy.ps1`（TAT 服务端安装 Node/pm2、拼接分片、写 .env、启 gph-web+gph-api、注册开机自启）、`.env.example`、`DEPLOY.md`（含 Google/Bing/百度 sitemap ping 与 GEO 文件提交步骤）。已验证 `next build` 产出 `.next/standalone/apps/web/server.js`（203MB，含 static），可直接打包装载。
+
 ---
 
 ## 路线图（对齐建设说明书三阶段）
