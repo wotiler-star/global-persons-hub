@@ -5,6 +5,7 @@ import { getPerson, getRelations, getNetwork, getPersons } from '@/lib/api';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';
+import { DOMAIN_LABELS, type Domain } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
 import RelatedPersons from '@/components/RelatedPersons';
 import NetworkGraph from '@/components/NetworkGraph';
@@ -17,6 +18,52 @@ import HistoryTracker from '@/components/HistoryTracker';
 import PersonHero from '@/components/PersonHero';
 import ReadingProgress from '@/components/ReadingProgress';
 import SectionNav from '@/components/SectionNav';
+
+// —— GEO：从人物事实生成 FAQPage 结构化数据（答案引擎如 AI Overviews 高频引用）——
+function buildFaqLd(person: any, L: Lang) {
+  const name = pickText(person.names, L) || pickText(person.names, 'en');
+  const qa: { question: string; answer: string }[] = [];
+  const summary = pickText(person.summary, L);
+  if (summary) qa.push({ question: `Who is ${name}?`, answer: summary });
+  if (person.birth) {
+    let a = `${name} was born on ${person.birth}.`;
+    if (person.death) a += ` ${name} died on ${person.death}.`;
+    qa.push({ question: `When was ${name} born?`, answer: a });
+  }
+  const occ = pickText(person.occupations, L);
+  const doms = (person.domains || [])
+    .map((d: Domain) => DOMAIN_LABELS[d])
+    .filter(Boolean)
+    .join(', ');
+  if (occ || doms) {
+    const a = `${name} is known for ${[occ, doms].filter(Boolean).join(' — ')}.`;
+    qa.push({ question: `What is ${name} known for?`, answer: a });
+  }
+  if (person.nationalities?.length) {
+    qa.push({
+      question: `What nationality is ${name}?`,
+      answer: `${name} is ${person.nationalities.join(', ')}.`
+    });
+  }
+  if (person.metrics?.netWorth) {
+    qa.push({
+      question: `What is ${name}'s net worth?`,
+      answer: `As cited, ${name}'s net worth is approximately $${(person.metrics.netWorth / 1e9).toFixed(
+        1
+      )} billion.`
+    });
+  }
+  if (qa.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: qa.map((x) => ({
+      '@type': 'Question',
+      name: x.question,
+      acceptedAnswer: { '@type': 'Answer', text: x.answer }
+    }))
+  };
+}
 
 // —— Stage 34 SSG/ISR：构建期预渲染 13 语 × 全部人物，5 分钟增量再生 ——
 // 新增人物无需重新构建：dynamicParams 允许未预生成的 slug 按需渲染后进入缓存。
@@ -49,7 +96,7 @@ export async function generateMetadata({
   }
   if (!person) return { title: '人物未找到' };
   const L = lang as Lang;
-  const languages: Record<string, string> = {};
+  const languages: Record<string, string> = { 'x-default': `/en/person/${slug}` };
   for (const l of LANGS) languages[l] = `/${l}/person/${slug}`;
   const title = pickText(person.names, L);
   const description = pickText(person.summary, L);
@@ -101,6 +148,7 @@ export default async function PersonPage({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    isAccessibleForFree: true,
     name: person.names.en || pickText(person.names, L),
     alternateName: Object.values(person.names),
     description: pickText(person.summary, L),
@@ -129,6 +177,9 @@ export default async function PersonPage({
     ]
   };
 
+  // —— GEO：FAQPage 结构化数据（答案引擎高频引用，提升被 AI 直接引用的概率）——
+  const faqLd = buildFaqLd(person, L);
+
   // —— 粘性目录导航条目（按实际存在的章节动态生成） ——
   const navItems = [
     { id: 'sec-about', label: t(L, 'section.about') },
@@ -143,6 +194,7 @@ export default async function PersonPage({
   return (
     <>
       <JsonLd data={jsonLd} />
+      {faqLd && <JsonLd data={faqLd} />}
       <JsonLd data={breadcrumbLd} />
       <HistoryTracker slug={slug} />
       <ReadingProgress />

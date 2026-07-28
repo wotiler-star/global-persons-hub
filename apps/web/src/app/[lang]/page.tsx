@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getPersons } from '@/lib/api';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
-import { OG_LOCALE, SITE_NAME } from '@/lib/og';
+import { OG_LOCALE, SITE_NAME, SITE_URL } from '@/lib/og';
 import { DOMAIN_LABELS, type Domain } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
 import SearchBar from '@/components/SearchBar';
@@ -28,12 +28,16 @@ export async function generateMetadata({
   const L = lang as Lang;
   const title = t(L, 'home.heroTitle');
   const description = t(L, 'home.heroSub');
-  const languages: Record<string, string> = {};
+  const languages: Record<string, string> = { 'x-default': `/en` };
   for (const l of LANGS) languages[l] = `/${l}`;
   return {
     title,
     description,
-    alternates: { canonical: `/${lang}`, languages },
+    alternates: {
+      canonical: `/${lang}`,
+      languages,
+      types: { 'application/rss+xml': [{ url: '/feed.xml', title: `${SITE_NAME} — New Profiles` }] }
+    },
     openGraph: {
       type: 'website',
       siteName: SITE_NAME,
@@ -68,6 +72,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     name: SITE_NAME,
     url: `/${lang}`,
     inLanguage: L,
+    isAccessibleForFree: true,
     potentialAction: {
       '@type': 'SearchAction',
       target: { '@type': 'EntryPoint', urlTemplate: `/${lang}/search?q={search_term_string}` },
@@ -75,9 +80,21 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     }
   };
 
+  // —— Stage 35（GEO / E-E-A-T）：Organization 发布者实体，强化站点权威信号 ——
+  const orgLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: SITE_URL,
+    description:
+      'A structured, multilingual knowledge graph of notable people across film, business, academia, sports, music, politics, tech, and art.',
+    sameAs: [`${SITE_URL}/llms.txt`]
+  };
+
   return (
     <div>
       <JsonLd data={websiteLd} />
+      <JsonLd data={orgLd} />
       <section className="text-center py-10">
         <h1 className="text-3xl font-bold">{t(L, 'home.heroTitle')}</h1>
         <p className="text-slate-600 mt-2">{t(L, 'home.heroSub')}</p>
