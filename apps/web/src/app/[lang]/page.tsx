@@ -7,6 +7,7 @@ import { DOMAIN_LABELS, type Domain } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
 import SearchBar from '@/components/SearchBar';
 import TodayInHistory from '@/components/TodayInHistory';
+import ForYou from '@/components/ForYou';
 import JsonLd from '@/components/JsonLd';
 
 // 与 Domain 类型单一事实源对齐（sitemap / 领域页同做法），新增领域自动出现
@@ -131,6 +132,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       {top.length === 0 && (
         <p className="text-slate-500 mt-6">{t(L, 'home.apiDown')}</p>
       )}
+
+      <ForYou items={items} lang={L} />
     </div>
   );
 }

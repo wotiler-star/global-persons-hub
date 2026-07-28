@@ -9,6 +9,7 @@ import { DOMAIN_LABELS, type Domain } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
 import RelatedPersons from '@/components/RelatedPersons';
 import NetworkGraph from '@/components/NetworkGraph';
+import SecondDegree from '@/components/SecondDegree';
 import JsonLd from '@/components/JsonLd';
 import Comments from '@/components/Comments';
 import AchievementTimeline from '@/components/AchievementTimeline';
@@ -239,6 +240,11 @@ export default async function PersonPage({
               network={net || { nodes: [], edges: [] }}
               centerId={person.id}
               lang={lang}
+            />
+            <SecondDegree
+              network={net || { nodes: [], edges: [] }}
+              centerId={person.id}
+              lang={L}
             />
           </div>
 
