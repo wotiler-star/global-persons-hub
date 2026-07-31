@@ -65,8 +65,19 @@ curl -s -o /dev/null -w "person %{http_code}\n" http://<PUBLIC_IP>:<WebPort>/en/
 curl -s -o /dev/null -w "sitemap %{http_code}\n" http://<PUBLIC_IP>:<WebPort>/sitemap.xml
 curl -s -o /dev/null -w "llms %{http_code}\n" http://<PUBLIC_IP>:<WebPort>/llms.txt
 curl -s -o /dev/null -w "api %{http_code}\n" http://<PUBLIC_IP>:<WebPort>/api/persons?pageSize=1
-# 确认 [ui] 告警 0、无 500
+# 健康检查（浏览器侧 /api/health 经 next.config 重写代理到 API 的 /health）
+curl -s http://<PUBLIC_IP>:<WebPort>/api/health
+# 期望返回 {"status":"ok","ts":...} 或 {"ok":true}
+# 确认无 500、健康检查返回 ok
 ```
+
+> **健壮性要点（2026-07-28 审计后增强）**
+> - API 进程现通过 `dotenv` 自动加载 `apps/api/.env`，部署脚本写入的 `JWT_SECRET` / `GPH_ADMIN_PASSWORD` / `STORE_DRIVER` 等**已实际生效**（此前因未加载 .env，生产环境会静默回退到弱默认值，属安全隐患）。
+> - API 仅监听 `127.0.0.1`（`API_BIND`，不对外暴露），由 Web 的 `/api` 重写代理；请勿改为 `0.0.0.0`。
+> - **API 改为 esbuild 编译为 `dist/server.mjs` 后由 `node` 直跑（单进程、无 tsx 子进程）**：避免原先 `npx tsx` 派生子进程、pm2 的 SIGTERM 无法送达导致优雅退出失效的问题；同时生产环境不再依赖运行时 TS 编译。
+> - pm2 已加 `--max-memory-restart 1500M --max-restarts 10 --min-uptime 5000` 与 `pm2-logrotate`（单文件 10M / 保留 7 份），避免 2GB 实例内存/磁盘被拖垮。
+> - API 已加 `setErrorHandler` 全局兜底、未捕获异常兜底、SIGTERM/SIGINT 优雅退出（pm2 stop 不再中断在途请求）。
+> - 开机自启脚本先 `pm2 resurrect` 再兜底重拉，确保重启后自动恢复。
 
 ## 6. 提交搜索引擎 / 生成式引擎
 站点上线且 `sitemap.xml` / `llms.txt` / `llms-full.txt` / `feed.xml` 均可访问后：

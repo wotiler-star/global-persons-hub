@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import jwt from '@fastify/jwt';
@@ -14,8 +15,20 @@ const UPLOAD_DIR = join(__dirname, '..', 'data', 'uploads');
 
 const app = Fastify({ logger: true });
 
+// 全局错误兜底：单条请求异常返回结构化 500，避免异常冒泡导致进程退出（高可用）
+app.setErrorHandler((err, request, reply) => {
+  app.log.error({ err, reqId: request.id }, '未捕获请求异常');
+  const status = err.statusCode && err.statusCode >= 400 && err.statusCode < 500 ? err.statusCode : 500;
+  reply.code(status).send({ error: 'internal_error', message: err.message || 'Internal Server Error' });
+});
+
 await app.register(cors, { origin: true });
-await app.register(jwt, { secret: process.env.JWT_SECRET || 'dev-secret-change-me' });
+// JWT 密钥：生产部署必须注入强随机串；缺省仅作本地开发回退并打印告警
+const jwtSecret = process.env.JWT_SECRET || 'dev-secret-change-me';
+if (jwtSecret === 'dev-secret-change-me') {
+  console.warn('⚠️  警告：未设置 JWT_SECRET，使用弱默认值（仅限本地开发）。生产部署务必通过环境变量注入强随机串。');
+}
+await app.register(jwt, { secret: jwtSecret });
 
 // 存储抽象：默认 JSON（零依赖），生产用 STORE_DRIVER=pg-neo4j 切换
 const store = await createStore();
@@ -48,10 +61,40 @@ app.get('/uploads/:file', async (request, reply) => {
 await registerRoutes(app, store, uploader);
 
 const PORT = Number(process.env.PORT || 8787);
+// API 仅本机取数（Web 经 rewrites 代理），不对外暴露；默认监听 127.0.0.1，可用 API_BIND 覆盖
+const HOST = process.env.API_BIND || '127.0.0.1';
+
+// 优雅退出：pm2 stop 发送 SIGTERM，先关闭 Fastify 再退出，避免中断在途请求
+let shuttingDown = false;
+async function shutdown(signal: string): Promise<void> {
+  if (shuttingDown) return;
+  shuttingDown = true;
+  app.log.warn(`收到 ${signal}，开始优雅退出...`);
+  try {
+    await app.close();
+    app.log.warn('API 已优雅关闭');
+  } catch (e) {
+    app.log.error({ err: e }, '优雅退出时发生错误');
+  } finally {
+    process.exit(0);
+  }
+}
+process.on('SIGTERM', () => void shutdown('SIGTERM'));
+process.on('SIGINT', () => void shutdown('SIGINT'));
+
+// 未捕获异常兜底：记录后退出，交由 pm2 自动重启（避免静默挂死而非自愈）
+process.on('uncaughtException', (err) => {
+  app.log.error({ err }, '未捕获异常 (uncaughtException)');
+  process.exit(1);
+});
+process.on('unhandledRejection', (reason) => {
+  app.log.error({ reason }, '未处理的 Promise 拒绝 (unhandledRejection)');
+  process.exit(1);
+});
 
 try {
-  await app.listen({ port: PORT, host: '0.0.0.0' });
-  console.log(`🚀 API 服务已启动: http://localhost:${PORT}  (OpenAPI: /openapi.json)`);
+  await app.listen({ port: PORT, host: HOST });
+  console.log(`🚀 API 服务已启动: http://${HOST}:${PORT}  (OpenAPI: /openapi.json, Health: /health)`);
 } catch (e) {
   app.log.error(e);
   process.exit(1);

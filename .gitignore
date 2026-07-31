@@ -19,6 +19,8 @@ apps/api/data/runtime/_cache/
 # runtime mutable data (local state, not source) — keep seed at apps/api/data/persons.json
 apps/api/data/runtime/
 apps/api/src/data/runtime/
+# 本地冒烟测试时以 apps/api 为 cwd 之外启动生成的运行时目录
+apps/data/
 
 # temp font source & scratch output
 _fonts_src/
