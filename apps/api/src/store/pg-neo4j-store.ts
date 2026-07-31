@@ -380,7 +380,9 @@ export class PgNeo4jStore implements DataStore {
       const tp = targetMap.get(r.to_id);
       return {
         type: r.type, targetId: r.to_id, label: r.label || undefined, directed: r.directed,
-        targetName: tp?.names, targetSlug: tp?.slug
+        targetName: tp?.names, targetSlug: tp?.slug,
+        // Stage 37+：区分出边/入边（to_id=本人物即为他人指向我的入边）
+        incoming: r.to_id === person.id
       };
     });
     return { person, relations };
@@ -538,6 +540,68 @@ export class PgNeo4jStore implements DataStore {
         }
       }
       frontier = next;
+    }
+    return { nodes, edges };
+  }
+
+  /** Stage 37+：在关系表上做无向 BFS，返回两人最短路径子图（PG 回退：仅人物-人物，不含组织/亲属） */
+  async getPath(fromIdOrSlug: string, toIdOrSlug: string): Promise<Network | null> {
+    const a = await this.resolveId(fromIdOrSlug);
+    const b = await this.resolveId(toIdOrSlug);
+    if (!a || !b) return null;
+    const parent = new Map<string, { from: string; type: string; label?: any; directed: boolean }>();
+    const visited = new Set<string>([a]);
+    let frontier = [a];
+    let found = false;
+    for (let d = 0; d < 6 && !found; d++) {
+      const next: string[] = [];
+      for (const cur of frontier) {
+        const res = await this.pool.query(
+          `SELECT r.to_id AS tid, r.type, r.label, r.directed FROM relations r WHERE r.from_id=$1
+           UNION
+           SELECT r.from_id AS tid, r.type, r.label, r.directed FROM relations r WHERE r.to_id=$1`,
+          [cur]
+        );
+        for (const r of res.rows) {
+          const tid: string = r.tid;
+          if (visited.has(tid)) continue;
+          visited.add(tid);
+          parent.set(tid, { from: cur, type: r.type, label: r.label, directed: !!r.directed });
+          if (tid === b) {
+            found = true;
+            break;
+          }
+          next.push(tid);
+        }
+        if (found) break;
+      }
+      frontier = next;
+    }
+    if (!parent.has(b)) return { nodes: [], edges: [] };
+    const pathIds: string[] = [b];
+    let cur = b;
+    while (cur !== a) {
+      cur = parent.get(cur)!.from;
+      pathIds.push(cur);
+    }
+    pathIds.reverse();
+    const nodes: NetworkNode[] = [];
+    const edges: NetworkEdge[] = [];
+    for (const id of pathIds) {
+      const p = await this.assemblePerson(id);
+      if (p) nodes.push({ id: p.id, slug: p.slug, name: p.names.en || p.names.zh || p.id, trustLevel: p.trustLevel, kind: 'person' });
+    }
+    for (let i = 0; i < pathIds.length - 1; i++) {
+      const from = pathIds[i];
+      const to = pathIds[i + 1];
+      const pe = parent.get(to);
+      edges.push({
+        source: from,
+        target: to,
+        type: pe?.type || 'other',
+        label: pe?.label ? (pe.label.en || pe.label.zh || '') : '',
+        directed: pe?.directed || false
+      });
     }
     return { nodes, edges };
   }

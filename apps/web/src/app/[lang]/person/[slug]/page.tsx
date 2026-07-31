@@ -387,6 +387,7 @@ export default async function PersonPage({
                 .map((r: any, i: number) => (
                   <div key={i} className="text-sm border rounded p-2 flex items-center justify-between gap-2">
                     <span>
+                      {r.incoming && <span className="text-amber-500 mr-1" title="被其关联">←</span>}
                       {r.targetSlug ? (
                         <Link href={`/${lang}/person/${r.targetSlug}`} className="hover:underline">
                           {pickText(r.targetName, L)}

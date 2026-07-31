@@ -45,6 +45,10 @@ export const semanticSearch = (q: string, lang = 'zh', limit = 12) =>
 export const getNetwork = (id: string, depth = 2) =>
   apiGet<{ nodes: any[]; edges: any[] }>(`/graph/network/${id}?depth=${depth}`);
 
+/** Stage 37+：两人之间最短关系路径（BFS 子图） */
+export const getPath = (from: string, to: string) =>
+  apiGet<{ nodes: any[]; edges: any[] }>(`/graph/path/${from}/${to}`);
+
 // RAG 事实问答（语义检索 + 可选 LLM 生成）
 export async function askRag(query: string, lang = 'zh', limit = 5) {
   const r = await fetch(`${PUBLIC_BASE}/rag/ask`, {

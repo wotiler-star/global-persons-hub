@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState, useId } from 'react';
 import { useRouter } from 'next/navigation';
 import { t } from '@/lib/ui';
 
-type Node = { id: string; slug: string; name: string; trustLevel: string };
+type Node = { id: string; slug: string; name: string; trustLevel: string; kind?: 'person' | 'org' | 'kin'; orgType?: string };
 type Edge = {
   source: string; target: string; type: string;
   label?: string; directed: boolean;
@@ -24,6 +24,15 @@ const TRUST_COLOR: Record<string, string> = {
   ugc_pending: '#f59f00',
   ai_draft: '#adb5bd'
 };
+
+/** Stage 37+：组织节点按机构类型着色（company/school/org/government） */
+const ORG_COLOR: Record<string, string> = {
+  company: '#0ea5e9',
+  school: '#8b5cf6',
+  org: '#0ca678',
+  government: '#e8590c'
+};
+const ORG_COLOR_FALLBACK = '#64748b';
 
 const EDGE_COLOR: Record<string, string> = {
   family: '#e64980',
@@ -133,17 +142,58 @@ function layout(nodes: Node[], edges: Edge[], centerId: string) {
   return pos;
 }
 
+/**
+ * 最短路径（无向 BFS）：在已加载的图谱（人物 + 亲属 + 组织）中，
+ * 返回从 fromId 到 toId 的有序节点 id 数组；不可达返回 null。
+ * 用于「路径模式」图内点击两节点即时高亮，无需额外请求。
+ */
+function bfsPath(nodes: Node[], edges: Edge[], fromId: string, toId: string): string[] | null {
+  if (fromId === toId) return [fromId];
+  const adj = new Map<string, string[]>();
+  for (const n of nodes) adj.set(n.id, []);
+  for (const e of edges) {
+    if (!adj.has(e.source) || !adj.has(e.target)) continue;
+    adj.get(e.source)!.push(e.target);
+    adj.get(e.target)!.push(e.source);
+  }
+  const prev = new Map<string, string>();
+  const seen = new Set<string>([fromId]);
+  const queue: string[] = [fromId];
+  while (queue.length) {
+    const cur = queue.shift()!;
+    if (cur === toId) break;
+    for (const nb of adj.get(cur) || []) {
+      if (!seen.has(nb)) {
+        seen.add(nb);
+        prev.set(nb, cur);
+        queue.push(nb);
+      }
+    }
+  }
+  if (!seen.has(toId)) return null;
+  const path: string[] = [];
+  let cur: string | undefined = toId;
+  while (cur !== undefined) {
+    path.unshift(cur);
+    cur = prev.get(cur);
+  }
+  return path[0] === fromId ? path : null;
+}
+
 export default function NetworkGraph({
   network,
   centerId,
   lang,
-  onRecenter
+  onRecenter,
+  enablePathMode = true
 }: {
   network: { nodes: Node[]; edges: Edge[] };
   centerId: string;
   lang: string;
   /** 点击节点操作卡「设为中心」时回调（传 slug） */
   onRecenter?: (slug: string) => void;
+  /** 是否允许「路径模式」（图内点击两节点高亮最短路径），默认开 */
+  enablePathMode?: boolean;
 }) {
   const router = useRouter();
   const uid = useId().replace(/:/g, '');
@@ -156,6 +206,11 @@ export default function NetworkGraph({
   const [override, setOverride] = useState<Map<string, { x: number; y: number }>>(new Map());
   // 边类型筛选（默认全开）
   const [offTypes, setOffTypes] = useState<Set<string>>(new Set());
+  // Stage 37+：路径模式（点击两节点高亮最短路径）
+  const [pathMode, setPathMode] = useState(false);
+  const [pathStart, setPathStart] = useState<string | null>(null);
+  const [pathEnd, setPathEnd] = useState<string | null>(null);
+  const [pathIds, setPathIds] = useState<string[] | null>(null);
   const dragRef = useRef<
     | { mode: 'node'; id: string; startX: number; startY: number; moved: boolean }
     | { mode: 'pan'; startX: number; startY: number; tx0: number; ty0: number; moved: boolean }
@@ -192,6 +247,30 @@ export default function NetworkGraph({
 
   /** 边标签：亲属边用 kin.* 13 语词典翻译，普通边用后端 label 原文 */
   const edgeLabel = (e: Edge) => (e.kinRel ? t(lang, `kin.${e.kinRel}`) : e.label);
+
+  /** 路径高亮集合：路径节点 id + 路径边（无序对）集合，供渲染 dim / 高亮 */
+  const pathSet = useMemo(() => {
+    if (!pathIds || pathIds.length < 2) return null;
+    const ns = new Set(pathIds);
+    const es = new Set<string>();
+    for (let i = 0; i < pathIds.length - 1; i++) {
+      es.add([pathIds[i], pathIds[i + 1]].sort().join('|'));
+    }
+    return { nodes: ns, edges: es };
+  }, [pathIds]);
+
+  /** 路径模式：点击节点拾取起点/终点并计算最短路径（仅当前可见图谱内） */
+  const handlePathPick = (id: string) => {
+    const armed = pathStart !== null && pathEnd === null && pathIds === null;
+    if (!armed) {
+      setPathStart(id);
+      setPathEnd(null);
+      setPathIds(null);
+    } else if (id !== pathStart) {
+      setPathEnd(id);
+      setPathIds(bfsPath(nodes, edges, pathStart, id));
+    }
+  };
 
   const neighbor = useMemo(() => {
     const focus = hover || selected;
@@ -274,8 +353,13 @@ export default function NetworkGraph({
     dragRef.current = null;
     if (!d) return;
     if (d.mode === 'node' && !d.moved) {
-      // 视为点击：切换选中（弹出操作卡）
-      setSelected((s) => (s === d.id ? null : d.id));
+      // 路径模式下：点击节点用于拾取起点 / 终点，不再弹出操作卡
+      if (enablePathMode && pathMode) {
+        handlePathPick(d.id);
+      } else {
+        // 视为点击：切换选中（弹出操作卡）
+        setSelected((s) => (s === d.id ? null : d.id));
+      }
     } else if (d.mode === 'pan' && !d.moved) {
       setSelected(null);
     }
@@ -329,16 +413,19 @@ export default function NetworkGraph({
             const ps = getPos(e.source);
             const pt = getPos(e.target);
             if (!ps || !pt) return null;
-            const dim = neighbor && !(neighbor.has(e.source) && neighbor.has(e.target));
+            const inPath = !!pathSet && pathSet.edges.has([e.source, e.target].sort().join('|'));
+            const dim = pathSet
+              ? !inPath
+              : neighbor && !(neighbor.has(e.source) && neighbor.has(e.target));
             const lbl = edgeLabel(e);
             const virtual = e.source.startsWith('kin:') || e.target.startsWith('kin:');
             return (
-              <g key={i} opacity={dim ? 0.12 : 1}>
+              <g key={i} opacity={dim ? 0.1 : 1}>
                 <line
                   x1={ps.x} y1={ps.y} x2={pt.x} y2={pt.y}
-                  stroke={EDGE_COLOR[e.type] || '#94a3b8'}
-                  strokeWidth={1.6}
-                  strokeDasharray={virtual ? '4 3' : undefined}
+                  stroke={inPath ? '#f59e0b' : (EDGE_COLOR[e.type] || '#94a3b8')}
+                  strokeWidth={inPath ? 3.4 : 1.6}
+                  strokeDasharray={virtual && !inPath ? '4 3' : undefined}
                 />
                 {lbl && (
                   <text
@@ -356,14 +443,19 @@ export default function NetworkGraph({
             const p = getPos(n.id);
             if (!p) return null;
             const isCenter = n.id === centerId;
-            const isVirtual = n.trustLevel === 'kin'; // 未收录亲属（虚拟节点）
+            const isOrg = n.kind === 'org' || n.trustLevel === 'org';
+            const isVirtual = n.kind === 'kin' || n.trustLevel === 'kin'; // 未收录亲属（虚拟节点）
             const isSel = n.id === selected;
-            const dim = neighbor && !neighbor.has(n.id);
+            const inPath = !!pathSet && pathSet.nodes.has(n.id);
+            const dim = pathSet ? !inPath : neighbor && !neighbor.has(n.id);
             const r = isCenter ? 30 : isVirtual ? 18 : 22;
+            const orgColor = isOrg ? ORG_COLOR[n.orgType || 'org'] || ORG_COLOR_FALLBACK : '';
+            const isPathStart = pathSet && n.id === pathStart;
+            const isPathEnd = pathSet && n.id === pathEnd;
             return (
               <g
                 key={n.id}
-                opacity={dim ? 0.22 : 1}
+                opacity={dim ? 0.16 : 1}
                 style={{ cursor: 'pointer' }}
                 onMouseEnter={() => setHover(n.id)}
                 onMouseLeave={() => setHover(null)}
@@ -375,21 +467,36 @@ export default function NetworkGraph({
                 {(isCenter || isSel) && (
                   <circle cx={p.x} cy={p.y} r={r + 5} fill="none" stroke={isSel ? '#f59e0b' : '#6366f1'} strokeWidth={2} opacity={0.55} />
                 )}
-                <circle
-                  cx={p.x} cy={p.y} r={r}
-                  fill={isVirtual ? '#f8fafc' : `url(#ng-${uid}-${i})`}
-                  stroke={isVirtual ? '#cbd5e1' : '#ffffff'}
-                  strokeWidth={isVirtual ? 1.5 : 2}
-                  strokeDasharray={isVirtual ? '4 3' : undefined}
-                />
-                {/* 信任等级小圆点 */}
-                {!isVirtual && (
+                {isPathStart && (
+                  <circle cx={p.x} cy={p.y} r={r + 7} fill="none" stroke="#16a34a" strokeWidth={3} />
+                )}
+                {isPathEnd && (
+                  <circle cx={p.x} cy={p.y} r={r + 7} fill="none" stroke="#dc2626" strokeWidth={3} />
+                )}
+                {isOrg ? (
+                  // 组织节点：圆角方块，按机构类型着色
+                  <rect
+                    x={p.x - r} y={p.y - r} width={r * 2} height={r * 2} rx={5}
+                    fill={orgColor}
+                    stroke="#ffffff" strokeWidth={2}
+                  />
+                ) : (
+                  <circle
+                    cx={p.x} cy={p.y} r={r}
+                    fill={isVirtual ? '#f8fafc' : `url(#ng-${uid}-${i})`}
+                    stroke={isVirtual ? '#cbd5e1' : '#ffffff'}
+                    strokeWidth={isVirtual ? 1.5 : 2}
+                    strokeDasharray={isVirtual ? '4 3' : undefined}
+                  />
+                )}
+                {/* 信任等级小圆点（仅真实人物节点） */}
+                {!isVirtual && !isOrg && (
                   <circle cx={p.x + r * 0.72} cy={p.y - r * 0.72} r={4} fill={TRUST_COLOR[n.trustLevel] || '#94a3b8'} stroke="#fff" strokeWidth={1} />
                 )}
                 <text
                   x={p.x} y={p.y + (isVirtual ? 3 : 4)} textAnchor="middle"
                   fontSize={isCenter ? 16 : isVirtual ? 8.5 : 13}
-                  fill={isVirtual ? '#64748b' : '#ffffff'}
+                  fill={isVirtual ? '#64748b' : isOrg ? '#ffffff' : '#ffffff'}
                   fontWeight={700}
                   style={{ textShadow: isVirtual ? undefined : '0 1px 3px rgba(0,0,0,.35)' }}
                 >
@@ -401,13 +508,113 @@ export default function NetworkGraph({
                   fontSize={isCenter ? 10.5 : 9}
                   fill="#334155" fontWeight={isCenter ? 700 : 500}
                 >
-                  {(n.name || '').slice(0, 12)}
+                  {(n.name || '').slice(0, isOrg ? 16 : 12)}
                 </text>
               </g>
             );
           })}
         </g>
       </svg>
+
+      {/* 路径模式（Stage 37+）：图内点击两节点高亮最短路径 */}
+      {enablePathMode && (
+        <div className="mt-3 rounded-xl border border-indigo-200 bg-indigo-50/50 p-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => {
+                setPathMode((v) => !v);
+                if (pathMode) {
+                  setPathStart(null);
+                  setPathEnd(null);
+                  setPathIds(null);
+                }
+              }}
+              className={`text-xs px-3 py-1.5 rounded-lg font-medium transition ${
+                pathMode
+                  ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                  : 'border border-indigo-300 text-indigo-700 hover:bg-indigo-100'
+              }`}
+            >
+              {pathMode ? `● ${t(lang, 'graph.pathMode')}` : `○ ${t(lang, 'graph.pathMode')}`}
+            </button>
+            {pathMode && (
+              <>
+                <span className="text-xs text-slate-500">
+                  {!pathStart
+                    ? t(lang, 'graph.pickStart')
+                    : !pathEnd
+                    ? t(lang, 'graph.pickEnd')
+                    : ''}
+                </span>
+                {(pathStart || pathEnd) && (
+                  <button
+                    onClick={() => {
+                      setPathStart(null);
+                      setPathEnd(null);
+                      setPathIds(null);
+                    }}
+                    className="text-xs px-2.5 py-1.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-white"
+                  >
+                    {t(lang, 'graph.clear')}
+                  </button>
+                )}
+                <button
+                  onClick={() => {
+                    setPathMode(false);
+                    setPathStart(null);
+                    setPathEnd(null);
+                    setPathIds(null);
+                  }}
+                  className="text-xs px-2.5 py-1.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-white"
+                >
+                  {t(lang, 'graph.exit')}
+                </button>
+              </>
+            )}
+          </div>
+
+          {pathMode && !pathStart && (
+            <p className="mt-2 text-xs text-slate-500">{t(lang, 'graph.pathTip')}</p>
+          )}
+
+          {pathSet && (
+            <div className="mt-2 flex flex-wrap items-center gap-1.5 text-sm">
+              {pathIds!.map((id, i) => {
+                const n = nodes.find((x) => x.id === id);
+                const isS = id === pathStart;
+                const isE = id === pathEnd;
+                return (
+                  <span key={id} className="contents">
+                    <span
+                      className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 font-medium ${
+                        isS
+                          ? 'bg-green-100 text-green-700'
+                          : isE
+                          ? 'bg-red-100 text-red-700'
+                          : 'bg-indigo-100 text-indigo-700'
+                      }`}
+                    >
+                      {isS
+                        ? `${t(lang, 'graph.pathStartTag')} · ${n?.name || id}`
+                        : isE
+                        ? `${t(lang, 'graph.pathEndTag')} · ${n?.name || id}`
+                        : (n?.name || id)}
+                    </span>
+                    {i < pathIds!.length - 1 && <span className="text-slate-400">→</span>}
+                  </span>
+                );
+              })}
+              <span className="ml-1 text-xs text-slate-500">
+                · {pathIds!.length - 1} {t(lang, 'graph.hop')}
+              </span>
+            </div>
+          )}
+
+          {pathMode && pathStart && pathEnd && pathIds === null && (
+            <p className="mt-2 text-xs text-slate-500">{t(lang, 'graph.pathNoView')}</p>
+          )}
+        </div>
+      )}
 
       {/* 视图重置 */}
       {viewChanged && (
@@ -427,7 +634,9 @@ export default function NetworkGraph({
         <div className="absolute top-2 left-2 rounded-xl border bg-white/95 shadow-lg px-3 py-2.5 max-w-[240px]">
           <div className="text-sm font-semibold text-slate-800 truncate">{selNode.name}</div>
           <div className="text-[11px] text-slate-400 mb-2">
-            {selNode.trustLevel === 'kin'
+            {selNode.kind === 'org' || selNode.trustLevel === 'org'
+              ? t(lang, 'graph.nodeOrg')
+              : selNode.kind === 'kin' || selNode.trustLevel === 'kin'
               ? t(lang, 'graph.kinNode')
               : t(lang, `trust.${selNode.trustLevel}`)}
           </div>
@@ -475,6 +684,20 @@ export default function NetworkGraph({
         <span className="inline-flex items-center gap-1">
           <i className="inline-block h-2 w-2 rounded-full border border-dashed" style={{ borderColor: '#94a3b8', background: '#f8fafc' }} />
           {t(lang, 'graph.kinNode')}
+        </span>
+      </div>
+
+      {/* 组织节点图例（Stage 37+） */}
+      <div className="mt-1.5 flex flex-wrap items-center gap-3 text-xs text-slate-500">
+        {(Object.keys(ORG_COLOR) as (keyof typeof ORG_COLOR)[]).map((otype) => (
+          <span key={otype} className="inline-flex items-center gap-1">
+            <i className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: ORG_COLOR[otype] }} />
+            {t(lang, `org.${otype}`)}
+          </span>
+        ))}
+        <span className="inline-flex items-center gap-1">
+          <i className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: ORG_COLOR_FALLBACK }} />
+          {t(lang, 'graph.nodeOrg')}
         </span>
       </div>
 

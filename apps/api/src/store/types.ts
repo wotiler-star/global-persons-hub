@@ -14,6 +14,8 @@ export interface UserRecord extends User {
 export interface RelationView extends Relation {
   targetName?: Partial<Record<Lang, string>>;
   targetSlug?: string;
+  /** Stage 37+：该边是否为「他人指向本人物」的入边（双向关系统一后用于侧栏区分） */
+  incoming?: boolean;
 }
 
 /** 搜索命中（轻量卡片数据，避免一次性回传整份人物档案） */
@@ -39,6 +41,10 @@ export interface NetworkNode {
   slug: string;
   name: string;
   trustLevel: string;
+  /** Stage 37+：节点种类——person(默认) / org(组织·机构·学校·政府) / kin(未收录虚拟亲属) */
+  kind?: 'person' | 'org' | 'kin';
+  /** 当 kind='org' 时：机构类型（company/school/org/government），前端着色用 */
+  orgType?: string;
 }
 export interface NetworkEdge {
   source: string;
@@ -100,6 +106,9 @@ export interface DataStore {
 
   /** Neo4j 支撑的多跳关系网络遍历；JSON 适配器以内存 BFS 提供等价能力 */
   getNetwork(idOrSlug: string, depth?: number): Promise<Network | null>;
+
+  /** Stage 37+：在完整关系图（人物+组织+亲属）上做 BFS，返回两人之间的最短路径子图 */
+  getPath(fromIdOrSlug: string, toIdOrSlug: string): Promise<Network | null>;
 
   /** 向量（语义）检索：基于 pgvector / 本地余弦，返回带相似度的命中（RAG 检索底座） */
   semanticSearch(query: string, opts?: { limit?: number; lang?: string }): Promise<VectorHit[]>;

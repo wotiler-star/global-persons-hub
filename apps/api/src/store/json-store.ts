@@ -10,7 +10,7 @@ import type {
 } from '@gph/types';
 import { slugify } from './util.js';
 import { hashPassword, verifyPassword, toPublic, generateApiKey, QUOTA_BY_PLAN } from './crypto.js';
-import type { DataStore, UserRecord, RelationView, SearchHit, Network, VectorHit, AdminStats, AuditEntry } from './types.js';
+import type { DataStore, UserRecord, RelationView, SearchHit, Network, NetworkNode, VectorHit, AdminStats, AuditEntry } from './types.js';
 import type { ApiKeyView, ApiKeyCreated, Comment } from '@gph/types';
 import { getEmbedder } from '../embedding/index.js';
 import { personCorpus } from './corpus.js';
@@ -176,10 +176,21 @@ export class JsonStore implements DataStore {
   async getRelations(idOrSlug: string): Promise<{ person: Person; relations: RelationView[] } | null> {
     const p = await this.getPerson(idOrSlug);
     if (!p) return null;
-    const relations: RelationView[] = p.relations.map((r) => {
+    const relations: RelationView[] = [];
+    // 出边（本人物指向他人）
+    for (const r of p.relations || []) {
       const target = this.persons.find((x) => x.id === r.targetId);
-      return { ...r, targetName: target?.names, targetSlug: target?.slug };
-    });
+      relations.push({ ...r, targetName: target?.names, targetSlug: target?.slug, incoming: false });
+    }
+    // 入边（他人指向本人物）——Stage 37+ 统一为双向，修正原先 JSON 仅出边的不一致
+    for (const other of this.persons) {
+      if (other.id === p.id) continue;
+      for (const r of other.relations || []) {
+        if (r.targetId === p.id) {
+          relations.push({ ...r, targetName: other.names, targetSlug: other.slug, incoming: true });
+        }
+      }
+    }
     return { person: p, relations };
   }
 
@@ -213,17 +224,24 @@ export class JsonStore implements DataStore {
     return { user: toPublic(u) };
   }
 
-  /** Neo4j 等价能力：JSON 适配器以内存 BFS 遍历关系网络（双向，与 PG/Neo4j 一致）
-   *  Stage 10：亲属（kin）并入图谱——
-   *  · kin.slug 可解析 → 真实人物-人物 family 边（全局、双向）
-   *  · kin 无 slug     → 仅中心人物展开为虚拟节点（trustLevel='kin'，不可点击），避免多跳时图面爆炸
+  /**
+   * 统一构建完整关系图（人物 + 组织 + 亲属）的节点信息与邻接表，供 getNetwork / getPath 复用。
+   * Stage 10：亲属（kin.slug 可解析）作为人物-人物 family 边并入。
+   * Stage 37+：affiliations（company/school/org/government）作为独立 org 节点并入，边类型 affiliated。
    */
-  async getNetwork(idOrSlug: string, depth = 2): Promise<Network | null> {
-    const start = await this.getPerson(idOrSlug);
-    if (!start) return null;
+  private buildGraph(): {
+    nodeInfo: Map<string, NetworkNode>;
+    adj: Map<string, { to: string; type: string; label?: string; directed: boolean; kinRel?: string }[]>;
+  } {
     const byId = new Map(this.persons.map((p) => [p.id, p]));
     const bySlug = new Map(this.persons.map((p) => [p.slug, p]));
-    // 构建无向邻接（出边 + 入边都记录），使「被指向」的人物也能展开关系网
+    const nodeInfo = new Map<string, NetworkNode>();
+    const addNode = (n: NetworkNode) => {
+      if (!nodeInfo.has(n.id)) nodeInfo.set(n.id, n);
+    };
+    for (const p of this.persons) {
+      addNode({ id: p.id, slug: p.slug, name: p.names.en || p.names.zh || p.id, trustLevel: p.trustLevel, kind: 'person' });
+    }
     const adj = new Map<string, { to: string; type: string; label?: string; directed: boolean; kinRel?: string }[]>();
     const addEdge = (from: string, to: string, type: string, label?: any, directed = false, kinRel?: string) => {
       if (!adj.has(from)) adj.set(from, []);
@@ -244,11 +262,27 @@ export class JsonStore implements DataStore {
         addEdge(p.id, target.id, 'family', undefined, false, k.relation);
         addEdge(target.id, p.id, 'family', undefined, false, k.relation);
       }
+      // Stage 37+：组织/机构/学校/政府作为独立节点并入图谱（kind='org'）
+      for (const a of p.affiliations || []) {
+        const oname = (a.name?.en || a.name?.zh || '').trim();
+        if (!oname) continue;
+        const oid = `org:${oname.toLowerCase().replace(/\s+/g, '_')}`;
+        addNode({ id: oid, slug: '', name: oname, trustLevel: 'org', kind: 'org', orgType: a.type || 'org' });
+        addEdge(p.id, oid, 'affiliated', undefined, false);
+        addEdge(oid, p.id, 'affiliated', undefined, false);
+      }
     }
+    return { nodeInfo, adj };
+  }
+
+  /** Neo4j 等价能力：JSON 适配器以内存 BFS 遍历关系网络（双向，与 PG/Neo4j 一致） */
+  async getNetwork(idOrSlug: string, depth = 2): Promise<Network | null> {
+    const start = await this.getPerson(idOrSlug);
+    if (!start) return null;
+    const bySlug = new Map(this.persons.map((p) => [p.slug, p]));
+    const { nodeInfo, adj } = this.buildGraph();
     const visited = new Set<string>([start.id]);
-    const nodes: Network['nodes'] = [
-      { id: start.id, slug: start.slug, name: start.names.en || start.names.zh || start.id, trustLevel: start.trustLevel }
-    ];
+    const nodes: Network['nodes'] = [{ ...nodeInfo.get(start.id)!, id: start.id }];
     const edges: Network['edges'] = [];
     let frontier = [start.id];
     for (let d = 0; d < depth; d++) {
@@ -258,21 +292,67 @@ export class JsonStore implements DataStore {
           if (!visited.has(e.to)) {
             visited.add(e.to);
             next.push(e.to);
-            const tp = byId.get(e.to)!;
-            nodes.push({ id: e.to, slug: tp.slug, name: tp.names.en || tp.names.zh || e.to, trustLevel: tp.trustLevel });
+            nodes.push({ ...nodeInfo.get(e.to)!, id: e.to });
           }
           edges.push({ source: cur, target: e.to, type: e.type, label: e.label, directed: e.directed, kinRel: e.kinRel });
         }
       }
       frontier = next;
     }
-    // 中心人物的未收录亲属 → 虚拟节点（slug 为空，前端不可点击、灰色虚线）
+    // 中心人物的未收录亲属 → 虚拟节点（kind='kin'，前端不可点击、灰色虚线）
     (start.kin || []).forEach((k, i) => {
       if (k.slug && bySlug.has(k.slug)) return; // 已作为真实节点并入
       const vid = `kin:${start.id}:${i}`;
-      nodes.push({ id: vid, slug: '', name: k.name.en || k.name.zh || vid, trustLevel: 'kin' });
+      nodes.push({ id: vid, slug: '', name: k.name.en || k.name.zh || vid, trustLevel: 'kin', kind: 'kin' });
       edges.push({ source: start.id, target: vid, type: 'family', directed: false, kinRel: k.relation });
     });
+    return { nodes, edges };
+  }
+
+  /** Stage 37+：在完整关系图上做无向 BFS，返回两人之间最短路径的子图（含 org 节点） */
+  async getPath(fromIdOrSlug: string, toIdOrSlug: string): Promise<Network | null> {
+    const a = await this.getPerson(fromIdOrSlug);
+    const b = await this.getPerson(toIdOrSlug);
+    if (!a || !b) return null;
+    const { nodeInfo, adj } = this.buildGraph();
+    const parent = new Map<string, { from: string; edge: { to: string; type: string; label?: string; directed: boolean; kinRel?: string } }>();
+    const visited = new Set<string>([a.id]);
+    let frontier = [a.id];
+    let found = false;
+    for (let d = 0; d < 6 && !found; d++) {
+      const next: string[] = [];
+      for (const cur of frontier) {
+        for (const e of adj.get(cur) || []) {
+          if (visited.has(e.to)) continue;
+          visited.add(e.to);
+          parent.set(e.to, { from: cur, edge: e });
+          if (e.to === b.id) {
+            found = true;
+            break;
+          }
+          next.push(e.to);
+        }
+        if (found) break;
+      }
+      frontier = next;
+    }
+    if (!parent.has(b.id)) return { nodes: [], edges: [] }; // 无可达路径
+    const pathIds: string[] = [b.id];
+    let cur = b.id;
+    while (cur !== a.id) {
+      cur = parent.get(cur)!.from;
+      pathIds.push(cur);
+    }
+    pathIds.reverse();
+    const nodes: Network['nodes'] = pathIds.map((id) => ({ ...nodeInfo.get(id)!, id }));
+    const edges: Network['edges'] = [];
+    for (let i = 0; i < pathIds.length - 1; i++) {
+      const from = pathIds[i];
+      const to = pathIds[i + 1];
+      const e =
+        (adj.get(from) || []).find((x) => x.to === to) || (adj.get(to) || []).find((x) => x.to === from);
+      if (e) edges.push({ source: from, target: to, type: e.type, label: e.label, directed: e.directed, kinRel: e.kinRel });
+    }
     return { nodes, edges };
   }
 

@@ -195,6 +195,14 @@ export async function registerRoutes(app: FastifyInstance, store: DataStore, upl
     return net;
   });
 
+  // Stage 37+：两人之间最短关系路径（BFS 于完整关系图）
+  app.get('/graph/path/:from/:to', async (request, reply) => {
+    const { from, to } = request.params as any;
+    const net = await store.getPath(from, to);
+    if (!net) return reply.code(404).send({ error: 'not_found', message: '人物不存在' });
+    return net;
+  });
+
   // 注册
   app.post('/auth/register', async (request, reply) => {
     try {

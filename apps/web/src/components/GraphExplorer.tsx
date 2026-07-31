@@ -72,6 +72,15 @@ export default function GraphExplorer({
   const [loading, setLoading] = useState<boolean>(false);
   const [err, setErr] = useState<string | null>(null);
 
+  // Stage 37+：最短关系路径查询
+  const [toSlug, setToSlug] = useState<string>('');
+  const [toQuery, setToQuery] = useState('');
+  const [toOpen, setToOpen] = useState(false);
+  const [path, setPath] = useState<Network | null>(null);
+  const [pathLoading, setPathLoading] = useState(false);
+  const [pathErr, setPathErr] = useState<string | null>(null);
+  const toBoxRef = useRef<HTMLDivElement | null>(null);
+
   // 可搜索选择器状态
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
@@ -82,6 +91,12 @@ export default function GraphExplorer({
     if (!q) return persons.slice(0, 8);
     return persons.filter((p) => p.name.toLowerCase().includes(q)).slice(0, 8);
   }, [query, persons]);
+
+  const toMatches = useMemo(() => {
+    const q = toQuery.trim().toLowerCase();
+    if (!q) return persons.slice(0, 8);
+    return persons.filter((p) => p.name.toLowerCase().includes(q)).slice(0, 8);
+  }, [toQuery, persons]);
 
   // 点击外部关闭下拉
   useEffect(() => {
@@ -124,7 +139,36 @@ export default function GraphExplorer({
     window.history.replaceState({}, '', url.toString());
   }, [center, depth]);
 
+  // 切换中心/目标时清除旧路径结果
+  useEffect(() => {
+    setPath(null);
+    setPathErr(null);
+  }, [center, toSlug]);
+
   const centerPerson = persons.find((p) => p.slug === center);
+
+  // Stage 37+：查找两人之间最短关系路径
+  const findPath = () => {
+    if (!toSlug || !center) return;
+    setPathLoading(true);
+    setPathErr(null);
+    fetch(`${API_BASE}/graph/path/${encodeURIComponent(center)}/${encodeURIComponent(toSlug)}`)
+      .then((r) => {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then((d: Network) => setPath({ nodes: d.nodes || [], edges: d.edges || [] }))
+      .catch(() => setPathErr(t(lang, 'graph.pathNone')))
+      .finally(() => setPathLoading(false));
+  };
+  const swapPath = () => {
+    if (!toSlug) return;
+    const c = center;
+    setCenter(toSlug);
+    setToSlug(c);
+    setToOpen(false);
+    setToQuery('');
+  };
 
   return (
     <div>
@@ -189,6 +233,79 @@ export default function GraphExplorer({
         </div>
       </div>
 
+      {/* Stage 37+：最短关系路径查询控件 */}
+      <div className="flex flex-col sm:flex-row sm:items-end gap-4 mt-3 p-3 rounded-xl border border-dashed border-indigo-200 bg-indigo-50/40">
+        <p className="sm:w-full text-[11px] leading-relaxed text-slate-500">
+          💡 {t(lang, 'graph.pathTip')}
+        </p>
+        <div className="flex-1 relative" ref={toBoxRef}>
+          <label className="block text-sm font-medium text-slate-600 mb-1">
+            {t(lang, 'graph.from')}：<b className="text-indigo-700">{centerPerson?.name || center}</b>
+          </label>
+          <label className="block text-sm font-medium text-slate-600 mb-1 mt-2">{t(lang, 'graph.to')}</label>
+          <div className="flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2">
+            {toSlug && (() => {
+              const tp = persons.find((p) => p.slug === toSlug);
+              return tp ? <Avatar slug={tp.slug} name={tp.name} size={24} /> : null;
+            })()}
+            <input
+              value={toOpen ? toQuery : (persons.find((p) => p.slug === toSlug)?.name || '')}
+              placeholder={t(lang, 'graph.target')}
+              onFocus={() => {
+                setToOpen(true);
+                setToQuery('');
+              }}
+              onChange={(e) => {
+                setToQuery(e.target.value);
+                setToOpen(true);
+              }}
+              className="w-full text-sm outline-none bg-transparent"
+            />
+            <svg viewBox="0 0 20 20" className="w-4 h-4 text-slate-400 shrink-0" fill="currentColor">
+              <path d="M5.5 7.5 10 12l4.5-4.5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+            </svg>
+          </div>
+          {toOpen && toMatches.length > 0 && (
+            <ul className="absolute z-20 mt-1 w-full rounded-xl border bg-white shadow-lg max-h-72 overflow-auto py-1">
+              {toMatches.map((p) => (
+                <li key={p.slug}>
+                  <button
+                    onClick={() => {
+                      setToSlug(p.slug);
+                      setToOpen(false);
+                      setToQuery('');
+                    }}
+                    className={`w-full flex items-center gap-2.5 px-3 py-2 text-sm text-left hover:bg-indigo-50 ${
+                      p.slug === toSlug ? 'bg-indigo-50/60 text-indigo-700 font-medium' : 'text-slate-700'
+                    }`}
+                  >
+                    <Avatar slug={p.slug} name={p.name} />
+                    <span className="truncate">{p.name}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={findPath}
+            disabled={!toSlug || pathLoading}
+            className="text-sm px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            {pathLoading ? '…' : t(lang, 'graph.findPath')}
+          </button>
+          <button
+            onClick={swapPath}
+            disabled={!toSlug}
+            title={t(lang, 'graph.swap')}
+            className="text-sm px-3 py-2 rounded-lg border text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            ⇄
+          </button>
+        </div>
+      </div>
+
       {loading && (
         <div className="w-full rounded-xl border bg-slate-50 py-14 text-center text-sm text-slate-400">
           …
@@ -206,6 +323,56 @@ export default function GraphExplorer({
             if (persons.some((p) => p.slug === slug)) setCenter(slug);
           }}
         />
+      )}
+
+      {/* Stage 37+：最短关系路径结果 */}
+      {!loading && !err && (
+        <div className="mt-6">
+          <h3 className="font-semibold mb-2">{t(lang, 'graph.pathTitle')}</h3>
+          {pathLoading && (
+            <div className="w-full rounded-xl border bg-slate-50 py-10 text-center text-sm text-slate-400">…</div>
+          )}
+          {!pathLoading && pathErr && (
+            <div className="w-full rounded-xl border bg-slate-50 py-10 text-center text-sm text-slate-400">{pathErr}</div>
+          )}
+          {!pathLoading && !pathErr && path && path.nodes.length === 0 && (
+            <div className="w-full rounded-xl border bg-slate-50 py-10 text-center text-sm text-slate-400">
+              {t(lang, 'graph.pathHint')}
+            </div>
+          )}
+          {!pathLoading && !pathErr && path && path.nodes.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2">
+              {path.nodes.map((n, i) => {
+                const isLast = i === path.nodes.length - 1;
+                const next = isLast ? null : path.nodes[i + 1];
+                const e = next
+                  ? path.edges.find(
+                      (x) =>
+                        [x.source, x.target].sort().join('|') === [n.id, next.id].sort().join('|')
+                    )
+                  : null;
+                const lbl = e ? (e.kinRel ? t(lang, `kin.${e.kinRel}`) : e.label) : '';
+                return (
+                  <span key={n.id} className="contents">
+                    <span className="inline-flex items-center gap-2 rounded-xl border bg-white px-3 py-2 shadow-sm">
+                      <Avatar slug={n.slug || n.id} name={n.name} size={28} />
+                      <span className="text-sm font-medium text-slate-800">{n.name}</span>
+                    </span>
+                    {!isLast && (
+                      <span className="flex flex-col items-center px-0.5 text-slate-400">
+                        <span className="text-base leading-none">→</span>
+                        {lbl && <span className="text-[10px] text-indigo-500">{lbl}</span>}
+                      </span>
+                    )}
+                  </span>
+                );
+              })}
+              <span className="ml-1 text-xs text-slate-500">
+                · {path.nodes.length - 1} {t(lang, 'graph.hop')}
+              </span>
+            </div>
+          )}
+        </div>
       )}
 
       {centerPerson && (
