@@ -1,12 +1,15 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { useMemo, useState } from 'react';
 import { pickText, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
 import PersonCard from '@/components/PersonCard';
+import FilterChips, { type ChipOption } from '@/components/FilterChips';
+import SortToggle from '@/components/SortToggle';
+import EmptyState from '@/components/EmptyState';
+import { useQuerySync } from '@/lib/useQuerySync';
 
 type DomainFilter = Domain | 'all';
 type SortMode = 'influence' | 'netWorth' | 'name';
@@ -20,14 +23,7 @@ interface Props {
   initialSort?: SortMode;
 }
 
-/** 从 ISO 日期解析出生年（支持公元前负数，如 -055 → -55） */
-function birthYear(p: Person): number | null {
-  if (!p.birth) return null;
-  const m = String(p.birth).match(/^(-?\d+)/);
-  return m ? parseInt(m[1], 10) : null;
-}
-
-/** 按出生年归类时代（与 searchIndex ERAS 一致：<500 古代 / 500-1499 中世纪 / 1500-1899 近代 / ≥1900 现代） */
+/** 按出生年归类时代（与 searchIndex ERAS 一致） */
 function eraOf(y: number | null): string {
   if (y === null) return '';
   for (const e of ERAS) if (y >= e.from && y <= e.to) return e.key;
@@ -42,36 +38,37 @@ export default function ExploreExplorer({
   initialNationality = 'all',
   initialSort = 'influence'
 }: Props) {
-  const router = useRouter();
-  const pathname = usePathname();
   const [domain, setDomain] = useState<DomainFilter>(initialDomain as DomainFilter);
   const [era, setEra] = useState<string>(initialEra);
   const [nationality, setNationality] = useState<string>(initialNationality);
   const [sort, setSort] = useState<SortMode>(initialSort);
 
-  // 深链接：筛选/排序变化同步到 URL（replaceState，无整页刷新、可分享）
-  useEffect(() => {
-    const params = new URLSearchParams();
-    if (domain !== 'all') params.set('domain', domain);
-    if (era !== 'all') params.set('era', era);
-    if (nationality !== 'all') params.set('nationality', nationality);
-    if (sort !== 'influence') params.set('sort', sort);
-    const qs = params.toString();
-    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-  }, [domain, era, nationality, sort, pathname, router]);
+  // —— 深链接（统一 useQuerySync）——
+  useQuerySync(
+    () => ({
+      domain: domain === 'all' ? '' : domain,
+      era: era === 'all' ? '' : era,
+      nationality: nationality === 'all' ? '' : nationality,
+      sort
+    }),
+    ['domain', 'era', 'nationality', 'sort'],
+    [domain, era, nationality, sort]
+  );
 
-  // 动态领域集（仅展示库中出现的领域）
-  const domains = useMemo(() => {
+  // 动态领域集
+  const domains = useMemo<ChipOption[]>(() => {
     const set = new Set<Domain>();
     for (const p of items) for (const d of p.domains) set.add(d);
-    return (Object.keys(DOMAIN_LABELS) as Domain[]).filter((d) => set.has(d));
+    return (Object.keys(DOMAIN_LABELS) as Domain[])
+      .filter((d) => set.has(d))
+      .map((d) => ({ value: d, label: DOMAIN_LABELS[d] }));
   }, [items]);
 
-  // 动态国籍集（按出现频次降序，便于常用项靠前）
-  const nationalities = useMemo(() => {
+  // 动态国籍集（按频次降序）
+  const nationalities = useMemo<ChipOption[]>(() => {
     const cnt = new Map<string, number>();
     for (const p of items) for (const n of p.nationalities || []) cnt.set(n, (cnt.get(n) || 0) + 1);
-    return [...cnt.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([n]) => n);
+    return [...cnt.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([n]) => ({ value: n, label: n }));
   }, [items]);
 
   const filtered = useMemo(() => {
@@ -95,48 +92,33 @@ export default function ExploreExplorer({
 
   const hasFilter = domain !== 'all' || era !== 'all' || nationality !== 'all' || sort !== 'influence';
 
-  const sortOptions: { key: SortMode; label: string }[] = [
+  const sortOptions = [
     { key: 'influence', label: t(lang, 'persons.byInfluence') },
     { key: 'netWorth', label: t(lang, 'persons.byWealth') },
     { key: 'name', label: t(lang, 'persons.byName') }
   ];
 
-  const chip = (active: boolean) =>
-    `px-3 py-1 rounded-full border text-sm transition ${
-      active ? 'bg-brand text-white border-brand' : 'bg-white text-slate-700 hover:bg-indigo-50'
-    }`;
-
   return (
     <div>
       {/* 领域筛选 */}
-      <div className="mb-3">
-        <div className="text-sm text-slate-500 mb-2">{t(lang, 'explore.domain')}</div>
-        <div className="flex flex-wrap gap-2">
-          <button onClick={() => setDomain('all')} className={chip(domain === 'all')}>
-            {t(lang, 'persons.filterAll')}
-          </button>
-          {domains.map((d) => (
-            <button key={d} onClick={() => setDomain(d)} className={chip(domain === d)}>
-              {DOMAIN_LABELS[d]}
-            </button>
-          ))}
-        </div>
-      </div>
+      <FilterChips
+        label={t(lang, 'explore.domain')}
+        options={domains}
+        value={domain}
+        onChange={(v) => setDomain((v || 'all') as DomainFilter)}
+        allValue="all"
+        allLabel={t(lang, 'persons.filterAll')}
+      />
 
       {/* 时代筛选 */}
-      <div className="mb-3">
-        <div className="text-sm text-slate-500 mb-2">{t(lang, 'explore.era')}</div>
-        <div className="flex flex-wrap gap-2">
-          <button onClick={() => setEra('all')} className={chip(era === 'all')}>
-            {t(lang, 'timeline.eraAll')}
-          </button>
-          {ERAS.map((e) => (
-            <button key={e.key} onClick={() => setEra(e.key)} className={chip(era === e.key)}>
-              {t(lang, e.uiKey as any)}
-            </button>
-          ))}
-        </div>
-      </div>
+      <FilterChips
+        label={t(lang, 'explore.era')}
+        options={ERAS.map((e) => ({ value: e.key, label: t(lang, e.uiKey) }))}
+        value={era}
+        onChange={(v) => setEra(v || 'all')}
+        allValue="all"
+        allLabel={t(lang, 'timeline.eraAll')}
+      />
 
       {/* 国籍 + 排序 + 重置 */}
       <div className="flex flex-wrap items-center gap-3 mb-5">
@@ -149,31 +131,19 @@ export default function ExploreExplorer({
           >
             <option value="all">{t(lang, 'persons.filterAll')}</option>
             {nationalities.map((n) => (
-              <option key={n} value={n}>
-                {n}
+              <option key={n.value} value={n.value}>
+                {n.label}
               </option>
             ))}
           </select>
         </div>
 
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-slate-500">{t(lang, 'persons.sortBy')}：</span>
-          <div className="flex gap-1">
-            {sortOptions.map((o) => (
-              <button
-                key={o.key}
-                onClick={() => setSort(o.key)}
-                className={`px-3 py-1 rounded-md text-sm border transition ${
-                  sort === o.key
-                    ? 'bg-slate-800 text-white border-slate-800'
-                    : 'bg-white text-slate-700 hover:bg-slate-100'
-                }`}
-              >
-                {o.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <SortToggle
+          label={`${t(lang, 'persons.sortBy')}：`}
+          options={sortOptions}
+          value={sort}
+          onChange={(v) => setSort(v as SortMode)}
+        />
 
         {hasFilter && (
           <button
@@ -197,7 +167,7 @@ export default function ExploreExplorer({
 
       {/* 卡片网格 */}
       {filtered.length === 0 ? (
-        <p className="text-slate-500 mt-6">{t(lang, 'persons.noResult')}</p>
+        <EmptyState title={t(lang, 'persons.noResult')} hint={t(lang, 'common.emptyHint')} />
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {filtered.map((p) => (
@@ -207,4 +177,11 @@ export default function ExploreExplorer({
       )}
     </div>
   );
+}
+
+// 局部工具（解析出生年）
+function birthYear(p: Person): number | null {
+  if (!p.birth) return null;
+  const m = String(p.birth).match(/^(-?\d+)/);
+  return m ? parseInt(m[1], 10) : null;
 }

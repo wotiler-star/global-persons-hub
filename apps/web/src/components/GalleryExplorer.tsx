@@ -2,13 +2,16 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
 import { pickText, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
 import PersonPortrait from '@/components/PersonPortrait';
 import FavoriteButton from '@/components/FavoriteButton';
+import FilterChips from '@/components/FilterChips';
+import SortToggle from '@/components/SortToggle';
+import EmptyState from '@/components/EmptyState';
+import { useQuerySync } from '@/lib/useQuerySync';
 
 type DomainFilter = Domain | 'all';
 type SortMode = 'influence' | 'name';
@@ -19,13 +22,6 @@ interface Props {
   initialDomain?: string;
   initialEra?: string;
   initialSort?: string;
-}
-
-/** 从 ISO 日期解析出生年（支持公元前负数，如 -055 → -55） */
-function birthYear(p: Person): number | null {
-  if (!p.birth) return null;
-  const m = String(p.birth).match(/^(-?\d+)/);
-  return m ? parseInt(m[1], 10) : null;
 }
 
 /** 按出生年归类时代（与 searchIndex ERAS 一致） */
@@ -42,23 +38,22 @@ export default function GalleryExplorer({
   initialEra = 'all',
   initialSort = 'influence'
 }: Props) {
-  const router = useRouter();
-  const pathname = usePathname();
   const [domain, setDomain] = useState<DomainFilter>(initialDomain as DomainFilter);
   const [era, setEra] = useState<string>(initialEra);
   const [sort, setSort] = useState<SortMode>(initialSort === 'name' ? 'name' : 'influence');
   const [density, setDensity] = useState<'cozy' | 'compact'>('cozy');
   const [active, setActive] = useState<Person | null>(null);
 
-  // 深链接：筛选/排序同步到 URL（可分享）
-  useEffect(() => {
-    const params = new URLSearchParams();
-    if (domain !== 'all') params.set('domain', domain);
-    if (era !== 'all') params.set('era', era);
-    if (sort !== 'influence') params.set('sort', sort);
-    const qs = params.toString();
-    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-  }, [domain, era, sort, pathname, router]);
+  // —— 深链接（统一 useQuerySync）——
+  useQuerySync(
+    () => ({
+      domain: domain === 'all' ? '' : domain,
+      era: era === 'all' ? '' : era,
+      sort
+    }),
+    ['domain', 'era', 'sort'],
+    [domain, era, sort]
+  );
 
   // 灯箱：Esc 关闭 + 锁定背景滚动
   useEffect(() => {
@@ -76,12 +71,15 @@ export default function GalleryExplorer({
     };
   }, [active]);
 
-  // 动态领域集（仅展示库中出现的领域）
-  const domains = useMemo(() => {
-    const set = new Set<Domain>();
-    for (const p of items) for (const d of p.domains) set.add(d);
-    return (Object.keys(DOMAIN_LABELS) as Domain[]).filter((d) => set.has(d));
-  }, [items]);
+  // 动态领域集
+  const domains = useMemo(
+    () => {
+      const set = new Set<Domain>();
+      for (const p of items) for (const d of p.domains) set.add(d);
+      return (Object.keys(DOMAIN_LABELS) as Domain[]).filter((d) => set.has(d));
+    },
+    [items]
+  );
 
   const filtered = useMemo(() => {
     const arr = items.filter((p) => {
@@ -101,16 +99,6 @@ export default function GalleryExplorer({
 
   const hasFilter = domain !== 'all' || era !== 'all' || sort !== 'influence';
 
-  const chip = (on: boolean) =>
-    `px-3 py-1 rounded-full border text-sm transition ${
-      on ? 'bg-brand text-white border-brand' : 'bg-white text-slate-700 hover:bg-indigo-50'
-    }`;
-
-  const toggle = (on: boolean) =>
-    `px-3 py-1 rounded-md text-sm border transition ${
-      on ? 'bg-slate-800 text-white border-slate-800' : 'bg-white text-slate-700 hover:bg-slate-100'
-    }`;
-
   const gridCols =
     density === 'compact'
       ? 'grid-cols-3 sm:grid-cols-4 lg:grid-cols-6'
@@ -119,56 +107,54 @@ export default function GalleryExplorer({
   return (
     <div>
       {/* 领域筛选 */}
-      <div className="mb-3">
-        <div className="text-sm text-slate-500 mb-2">{t(lang, 'explore.domain')}</div>
-        <div className="flex flex-wrap gap-2">
-          <button onClick={() => setDomain('all')} className={chip(domain === 'all')}>
-            {t(lang, 'persons.filterAll')}
-          </button>
-          {domains.map((d) => (
-            <button key={d} onClick={() => setDomain(d)} className={chip(domain === d)}>
-              {DOMAIN_LABELS[d]}
-            </button>
-          ))}
-        </div>
-      </div>
+      <FilterChips
+        label={t(lang, 'explore.domain')}
+        options={domains.map((d) => ({ value: d, label: DOMAIN_LABELS[d] }))}
+        value={domain}
+        onChange={(v) => setDomain((v || 'all') as DomainFilter)}
+        allValue="all"
+        allLabel={t(lang, 'persons.filterAll')}
+      />
 
       {/* 时代筛选 */}
-      <div className="mb-3">
-        <div className="text-sm text-slate-500 mb-2">{t(lang, 'explore.era')}</div>
-        <div className="flex flex-wrap gap-2">
-          <button onClick={() => setEra('all')} className={chip(era === 'all')}>
-            {t(lang, 'timeline.eraAll')}
-          </button>
-          {ERAS.map((e) => (
-            <button key={e.key} onClick={() => setEra(e.key)} className={chip(era === e.key)}>
-              {t(lang, e.uiKey as any)}
-            </button>
-          ))}
-        </div>
-      </div>
+      <FilterChips
+        label={t(lang, 'explore.era')}
+        options={ERAS.map((e) => ({ value: e.key, label: t(lang, e.uiKey) }))}
+        value={era}
+        onChange={(v) => setEra(v || 'all')}
+        allValue="all"
+        allLabel={t(lang, 'timeline.eraAll')}
+      />
 
       {/* 排序 + 布局密度 + 重置 */}
       <div className="flex flex-wrap items-center gap-3 mb-5">
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-slate-500">{t(lang, 'persons.sortBy')}：</span>
-          <div className="flex gap-1">
-            <button onClick={() => setSort('influence')} className={toggle(sort === 'influence')}>
-              {t(lang, 'persons.byInfluence')}
-            </button>
-            <button onClick={() => setSort('name')} className={toggle(sort === 'name')}>
-              {t(lang, 'persons.byName')}
-            </button>
-          </div>
-        </div>
+        <SortToggle
+          label={`${t(lang, 'persons.sortBy')}：`}
+          options={[
+            { key: 'influence', label: t(lang, 'persons.byInfluence') },
+            { key: 'name', label: t(lang, 'persons.byName') }
+          ]}
+          value={sort}
+          onChange={(v) => setSort(v as SortMode)}
+        />
 
         <div className="flex items-center gap-2">
           <span className="text-sm text-slate-500">{t(lang, 'gallery.density')}：</span>
           <div className="flex gap-1">
-            <button onClick={() => setDensity('cozy')} className={toggle(density === 'cozy')}>
+            <button
+              onClick={() => setDensity('cozy')}
+              className={`px-3 py-1 rounded-md text-sm border transition ${
+                density === 'cozy' ? 'bg-slate-800 text-white border-slate-800' : 'bg-white text-slate-700 hover:bg-slate-100'
+              }`}
+            >
               {t(lang, 'gallery.cozy')}
             </button>
-            <button onClick={() => setDensity('compact')} className={toggle(density === 'compact')}>
+            <button
+              onClick={() => setDensity('compact')}
+              className={`px-3 py-1 rounded-md text-sm border transition ${
+                density === 'compact' ? 'bg-slate-800 text-white border-slate-800' : 'bg-white text-slate-700 hover:bg-slate-100'
+              }`}
+            >
               {t(lang, 'gallery.compact')}
             </button>
           </div>
@@ -195,7 +181,7 @@ export default function GalleryExplorer({
 
       {/* 画廊网格 */}
       {filtered.length === 0 ? (
-        <p className="text-slate-500 mt-6">{t(lang, 'gallery.empty')}</p>
+        <EmptyState title={t(lang, 'gallery.empty')} hint={t(lang, 'common.emptyHint')} />
       ) : (
         <div className={`grid ${gridCols} gap-3`}>
           {filtered.map((p) => {
@@ -217,7 +203,6 @@ export default function GalleryExplorer({
               >
                 <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-slate-100 ring-1 ring-black/5 transition group-hover:ring-2 group-hover:ring-brand group-focus-visible:ring-2 group-focus-visible:ring-brand">
                   <PersonPortrait person={p} lang={lang} className="absolute inset-0 w-full h-full" />
-                  {/* 左上：直接跳转档案（阻止冒泡避免触发灯箱） */}
                   <Link
                     href={`/${lang}/person/${p.slug}`}
                     onClick={(e) => e.stopPropagation()}
@@ -227,17 +212,11 @@ export default function GalleryExplorer({
                   >
                     ↗
                   </Link>
-                  {/* 右上：收藏 */}
                   <FavoriteButton slug={p.slug} lang={lang} />
-                  {/* 底部：姓名 + 职业 浮层 */}
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent p-3 pt-8">
-                    <div className="text-white font-semibold text-sm leading-tight drop-shadow">
-                      {name}
-                    </div>
+                    <div className="text-white font-semibold text-sm leading-tight drop-shadow">{name}</div>
                     {occ && (
-                      <div className="text-white/80 text-[11px] leading-tight mt-0.5 drop-shadow line-clamp-1">
-                        {occ}
-                      </div>
+                      <div className="text-white/80 text-[11px] leading-tight mt-0.5 drop-shadow line-clamp-1">{occ}</div>
                     )}
                   </div>
                 </div>
@@ -257,7 +236,6 @@ export default function GalleryExplorer({
             className="relative bg-white rounded-2xl overflow-hidden max-w-md w-full max-h-[90vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* 关闭（左上） */}
             <button
               onClick={() => setActive(null)}
               aria-label="close"
@@ -265,13 +243,10 @@ export default function GalleryExplorer({
             >
               ✕
             </button>
-            {/* 大图 */}
             <div className="relative aspect-[3/4] bg-slate-100">
               <PersonPortrait person={active} lang={lang} className="absolute inset-0 w-full h-full" />
-              {/* 收藏（右上） */}
               <FavoriteButton slug={active.slug} lang={lang} />
             </div>
-            {/* 信息 */}
             <div className="p-4 overflow-y-auto">
               <div className="text-lg font-bold pr-8">{pickText(active.names, lang)}</div>
               <div className="text-xs text-slate-500">{pickText(active.occupations, lang)}</div>
@@ -297,4 +272,11 @@ export default function GalleryExplorer({
       )}
     </div>
   );
+}
+
+// 局部工具（解析出生年）
+function birthYear(p: Person): number | null {
+  if (!p.birth) return null;
+  const m = String(p.birth).match(/^(-?\d+)/);
+  return m ? parseInt(m[1], 10) : null;
 }

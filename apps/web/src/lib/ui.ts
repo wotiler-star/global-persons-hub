@@ -430,7 +430,48 @@ const RAW: Record<string, string[]> = {
   'kin.gen-1': ['父母', 'Parents', 'Padres', 'Parents', '父母', 'Родители', 'الوالدان', 'Pais', 'Eltern', '부모', 'Genitori', 'माता-पिता', 'Orang tua'],
   'kin.gen0': ['配偶与兄弟姐妹', 'Spouse & siblings', 'Cónyuge y hermanos', 'Conjoint et fratrie', '配偶・兄弟姉妹', 'Супруг и братья/сёстры', 'الزوج والإخوة', 'Cônjuge e irmãos', 'Ehepartner & Geschwister', '배우자 및 형제자매', 'Coniuge e fratelli', 'जीवनसाथी और भाई-बहन', 'Pasangan & saudara'],
   'kin.gen1': ['子女', 'Children', 'Hijos', 'Enfants', '子供', 'Дети', 'الأبناء', 'Filhos', 'Kinder', '자녀', 'Figli', 'बच्चे', 'Anak'],
-  'kin.gen2': ['孙辈', 'Grandchildren', 'Nietos', 'Petits-enfants', '孫', 'Внуки', 'الأحفاد', 'Netos', 'Enkel', '손자녀', 'Nipoti', 'पोते-पोतियाँ', 'Cucu']
+  'kin.gen2': ['孙辈', 'Grandchildren', 'Nietos', 'Petits-enfants', '孫', 'Внуки', 'الأحفاد', 'Netos', 'Enkel', '손자녀', 'Nipoti', 'पोते-पोतियाँ', 'Cucu'],
+
+  // —— Stage 39: 子板块优化统一交互层（筛选/排序/分页/导出/对比/批量/空态）——
+  'common.inPageSearch': ['在结果中搜索', 'Search within results', 'Buscar en resultados', 'Rechercher dans les résultats', '結果内検索', 'Поиск в результатах', 'ابحث ضمن النتائج', 'Buscar nos resultados', 'In Ergebnissen suchen', '결과 내 검색', 'Cerca nei risultati', 'परिणामों में खोजें', 'Cari dalam hasil'],
+  'common.asc': ['升序', 'Ascending', 'Ascendente', 'Croissant', '昇順', 'По возрастанию', 'تصاعدي', 'Crescente', 'Aufsteigend', '오름차순', 'Crescente', 'आरोही', 'Naik'],
+  'common.desc': ['降序', 'Descending', 'Descendente', 'Décroissant', '降順', 'По убыванию', 'تنازلي', 'Decrescente', 'Absteigend', '내림차순', 'Decrescente', 'अवरोही', 'Turun'],
+  'common.loadMore': ['加载更多', 'Load more', 'Cargar más', 'Charger plus', 'もっと読み込む', 'Загрузить ещё', 'تحميل المزيد', 'Carregar mais', 'Mehr laden', '더 보기', 'Carica altro', 'और लोड', 'Muat lebih banyak'],
+  'common.noMore': ['没有更多了', 'No more', 'No hay más', 'Plus rien', 'これ以上なし', 'Больше нет', 'لا مزيد', 'Nada mais', 'Nichts mehr', '더 없음', 'Niente altro', 'अब और नहीं', 'Tidak ada lagi'],
+  'common.export': ['导出', 'Export', 'Exportar', 'Exporter', 'エクスポート', 'Экспорт', 'تصدير', 'Exportar', 'Export', '내보내기', 'Esporta', 'निर्यात', 'Ekspor'],
+  'common.exportCsv': ['导出 CSV', 'Export CSV', 'Exportar CSV', 'Exporter CSV', 'CSV 出力', 'Экспорт CSV', 'تصدير CSV', 'Exportar CSV', 'CSV exportieren', 'CSV 내보내기', 'Esporta CSV', 'CSV निर्यात', 'Ekspor CSV'],
+  'common.exportJson': ['导出 JSON', 'Export JSON', 'Exportar JSON', 'Exporter JSON', 'JSON 出力', 'Экспорт JSON', 'تصدير JSON', 'Exportar JSON', 'JSON exportieren', 'JSON 내보내기', 'Esporta JSON', 'JSON निर्यात', 'Ekspor JSON'],
+  'common.compareSelected': ['对比选中', 'Compare selected', 'Comparar seleccionados', 'Comparer la sélection', '選択を比較', 'Сравнить выбранные', 'مقارنة المحدد', 'Comparar selecionados', 'Ausgewählte vergleichen', '선택 비교', 'Confronta selezionati', 'चयनित तुलना', 'Bandingkan terpilih'],
+  'common.selectAll': ['全选', 'Select all', 'Seleccionar todo', 'Tout sélectionner', 'すべて選択', 'Выбрать всё', 'تحديد الكل', 'Selecionar tudo', 'Alle auswählen', '전체 선택', 'Seleziona tutto', 'सभी चुनें', 'Pilih semua'],
+  'common.clearSelection': ['清除选择', 'Clear selection', 'Limpiar selección', 'Effacer la sélection', '選択をクリア', 'Очистить выбор', 'مسح التحديد', 'Limpar seleção', 'Auswahl löschen', '선택 지우기', 'Cancella selezione', 'चयन साफ़', 'Hapus pilihan'],
+  'common.selectedCount': ['已选 {n} 项', '{n} selected', '{n} seleccionados', '{n} sélectionnés', '{n} 件選択', 'Выбрано: {n}', '{n} محدد', '{n} selecionados', '{n} ausgewählt', '{n}개 선택됨', '{n} selezionati', '{n} चयनित', '{n} terpilih'],
+  'common.removeSelected': ['移除选中', 'Remove selected', 'Quitar seleccionados', 'Retirer la sélection', '選択を削除', 'Удалить выбранные', 'إزالة المحدد', 'Remover selecionados', 'Ausgewählte entfernen', '선택 제거', 'Rimuovi selezionati', 'चयनित हटाएं', 'Hapus terpilih'],
+  'common.emptyTitle': ['暂无内容', 'Nothing here yet', 'Nada aquí todavía', 'Rien ici pour l’instant', 'まだ何もありません', 'Здесь пока ничего нет', 'لا يوجد شيء بعد', 'Nada aqui ainda', 'Hier ist nichts', '아직 없음', 'Ancora nulla', 'अभी कुछ नहीं', 'Belum ada apa-apa'],
+  'common.emptyHint': ['试着调整筛选条件或搜索其他关键词', 'Try adjusting filters or searching other keywords', 'Prueba a ajustar los filtros o buscar otras palabras', 'Essayez d’ajuster les filtres ou d’autres mots-clés', 'フィルターを調整するか別のキーワードで検索', 'Попробуйте изменить фильтры или поискать другие слова', 'جرّب تعديل عوامل التصفية أو البحث بكلمات أخرى', 'Tente ajustar os filtros ou buscar outras palavras', 'Passen Sie Filter an oder suchen Sie andere Wörter', '필터를 조정하거나 다른 키워드를 검색해 보세요', 'Prova a regolare i filtri o cercare altre parole', 'फ़िल्टर बदलें या अन्य शब्द खोजें', 'Coba sesuaikan filter atau cari kata kunci lain'],
+  'common.statsOverview': ['统计概览', 'Overview', 'Resumen', 'Aperçu', '概要', 'Обзор', 'نظرة عامة', 'Resumo', 'Übersicht', '개요', 'Panoramica', 'अवलोकन', 'Ikhtisar'],
+  'common.prevPage': ['上一页', 'Previous', 'Anterior', 'Précédent', '前へ', 'Назад', 'السابق', 'Anterior', 'Zurück', '이전', 'Precedente', 'पिछला', 'Sebelumnya'],
+  'common.nextPage': ['下一页', 'Next', 'Siguiente', 'Suivant', '次へ', 'Вперёд', 'التالي', 'Próximo', 'Weiter', '다음', 'Successivo', 'अगला', 'Berikutnya'],
+  'common.pageOf': ['第 {cur} / {total} 页', 'Page {cur} of {total}', 'Página {cur} de {total}', 'Page {cur} sur {total}', '{cur} / {total} ページ', 'Страница {cur} из {total}', 'الصفحة {cur} من {total}', 'Página {cur} de {total}', 'Seite {cur} von {total}', '{cur} / {total} 페이지', 'Pagina {cur} di {total}', 'पृष्ठ {cur} / {total}', 'Halaman {cur} dari {total}'],
+
+  'persons.statTotal': ['收录总数', 'Total persons', 'Total de personas', 'Total de personnages', '登録総数', 'Всего персон', 'إجمالي الأشخاص', 'Total de pessoas', 'Personen gesamt', '전체 인물', 'Totale persone', 'कुल व्यक्ति', 'Total tokoh'],
+  'persons.statDomains': ['覆盖领域', 'Domains covered', 'Dominios cubiertos', 'Domaines couverts', 'カバー分野', 'Охваченные сферы', 'المجالات المغطاة', 'Domínios cobertos', 'Abgedeckte Bereiche', '커버 분야', 'Domini coperti', 'कवर क्षेत्र', 'Domain tercover'],
+  'persons.statCountries': ['覆盖国籍', 'Nationalities covered', 'Nacionalidades cubiertas', 'Nationalités couvertes', 'カバー国籍', 'Охваченные национальности', 'الجنسيات المغطاة', 'Nacionalidades cobertas', 'Abgedeckte Staatsangehörigkeiten', '커버 국적', 'Nazionalità coperte', 'कवर राष्ट्रीयता', 'Kewarganegaraan tercover'],
+
+  'search.facetNationality': ['按国籍', 'By nationality', 'Por nacionalidad', 'Par nationalité', '国籍別', 'По национальности', 'حسب الجنسية', 'Por nacionalidade', 'Nach Staatsangehörigkeit', '국적별', 'Per nazionalità', 'राष्ट्रीयता अनुसार', 'Berdasarkan kewarganegaraan'],
+  'search.activeFilters': ['已选筛选', 'Active filters', 'Filtros activos', 'Filtres actifs', '選択中のフィルター', 'Активные фильтры', 'عوامل التصفية النشطة', 'Filtros ativos', 'Aktive Filter', '활성 필터', 'Filtri attivi', 'सक्रिय फ़िल्टर', 'Filter aktif'],
+  'search.removeFilter': ['移除', 'Remove', 'Quitar', 'Retirer', '削除', 'Удалить', 'إزالة', 'Remover', 'Entfernen', '제거', 'Rimuovi', 'हटाएं', 'Hapus'],
+  'search.suggestions': ['你可能感兴趣', 'You may also like', 'También te puede gustar', 'Vous aimerez peut-être', 'おすすめ', 'Вам может понравиться', 'قد يعجبك', 'Você também pode gostar', 'Das könnte Ihnen gefallen', '추천', 'Potrebbe piacerti', 'यह भी पसंद आ सकता है', 'Mungkin Anda suka'],
+  'search.sortNewest': ['最新收录', 'Newest', 'Más recientes', 'Plus récents', '新着', 'Новейшие', 'الأحدث', 'Mais recentes', 'Neueste', '최신', 'Più recenti', 'नवीनतम', 'Terbaru'],
+
+  'library.sortRecent': ['最近收藏', 'Recently favorited', 'Favoritos recientes', 'Récemment ajoutés', '最近のお気に入り', 'Недавно добавленные', 'المضافة مؤخرًا', 'Favoritos recentes', 'Kürzlich hinzugefügt', '최근 즐겨찾기', 'Aggiunti di recente', 'हाल ही में जोड़े', 'Favorit terbaru'],
+  'library.filterDomain': ['领域筛选', 'Filter by domain', 'Filtrar por dominio', 'Filtrer par domaine', '分野でフィルター', 'Фильтр по сфере', 'تصفية حسب المجال', 'Filtrar por domínio', 'Nach Bereich filtern', '분야별 필터', 'Filtra per dominio', 'क्षेत्र अनुसार फ़िल्टर', 'Filter berdasarkan domain'],
+  'library.stats': ['概览', 'Overview', 'Resumen', 'Aperçu', '概要', 'Обзор', 'نظرة عامة', 'Resumo', 'Übersicht', '개요', 'Panoramica', 'अवलोकन', 'Ikhtisar'],
+  'library.statFav': ['收藏数', 'Favorites', 'Favoritos', 'Favoris', 'お気に入り数', 'Избранное', 'المفضلة', 'Favoritos', 'Favoriten', '즐겨찾기', 'Preferiti', 'पसंदीदा', 'Favorit'],
+  'library.statHist': ['浏览数', 'Viewed', 'Vistos', 'Consultés', '閲覧数', 'Просмотрено', 'تمت المشاهدة', 'Vistos', 'Angesehen', '본 항목', 'Visti', 'देखे गए', 'Dilihat'],
+  'library.viewTime': ['浏览于 {t}', 'Viewed {t}', 'Visto {t}', 'Consulté {t}', '閲覧 {t}', 'Просмотрено {t}', 'تمت المشاهدة {t}', 'Visto {t}', 'Angesehen {t}', '본 시간 {t}', 'Visto {t}', 'देखा गया {t}', 'Dilihat {t}'],
+  'library.bulkManage': ['批量管理', 'Bulk manage', 'Gestión masiva', 'Gestion en masse', '一括管理', 'Массовое управление', 'إدارة جماعية', 'Gerenciar em massa', 'Massenverwaltung', '대량 관리', 'Gestione in massa', 'बल्क प्रबंधन', 'Kelola massal'],
+  'library.emptyHint': ['去人物库发现感兴趣的人物', 'Discover interesting persons in the catalog', 'Descubre personas interesantes en el catálogo', 'Découvrez des personnages dans le catalogue', '人物ライブラリで興味のある人物を発見', 'Откройте интересных персон в каталоге', 'اكتشف شخصيات مثيرة للاهتمام في الكتالوج', 'Descubra pessoas interessantes no catálogo', 'Entdecken Sie interessante Personen im Katalog', '인물 도서관에서 흥미로운 인물을 발견하세요', 'Scopri persone interessanti nel catalogo', 'कैटलॉग में रुचिकर व्यक्ति खोजें', 'Temukan tokoh menarik di katalog'],
+  'library.goExplore': ['去人物库', 'Go to catalog', 'Ir al catálogo', 'Aller au catalogue', '人物ライブラリへ', 'В каталог', 'اذهب إلى الكتالوج', 'Ir para o catálogo', 'Zum Katalog', '인물 도서관으로', 'Vai al catalogo', 'कैटलॉग पर जाएं', 'Ke katalog']
 };
 
 type UIDict = Record<Lang, Record<string, string>>;

@@ -15,9 +15,20 @@ export function useHistory(): string[] {
   return useSyncExternalStore(subscribe, getHistory, () => []);
 }
 
+export interface HistoryEntry {
+  slug: string;
+  at: string; // ISO 时间戳
+}
+
+/** 浏览历史（含浏览时间，用于收藏库按时间展示） */
+export function useHistoryEntries(): HistoryEntry[] {
+  return useSyncExternalStore(subscribe, getHistoryEntries, () => []);
+}
+
 
 const FAV_KEY = 'gph:favorites';
 const HIST_KEY = 'gph:history';
+const HIST_TS_KEY = 'gph:history:ts';
 const EVT = 'gph:library-change';
 const HIST_MAX = 50;
 
@@ -96,7 +107,20 @@ export function getHistory(): string[] {
   return typeof window === 'undefined' ? [] : readHist();
 }
 
-/** 记录一次浏览（去重 + 置顶 + 截断） */
+/** 浏览历史（含浏览时间，按浏览顺序返回） */
+export function getHistoryEntries(): HistoryEntry[] {
+  if (typeof window === 'undefined') return [];
+  const slugs = readHist();
+  let tsMap: Record<string, string> = {};
+  try {
+    tsMap = JSON.parse(window.localStorage.getItem(HIST_TS_KEY) || '{}');
+  } catch {
+    tsMap = {};
+  }
+  return slugs.map((slug) => ({ slug, at: tsMap[slug] || '' }));
+}
+
+/** 记录一次浏览（去重 + 置顶 + 截断 + 记录时间） */
 export function addHistory(slug: string): void {
   if (typeof window === 'undefined' || !slug) return;
   const cur = getHistory().filter((s) => s !== slug);
@@ -105,6 +129,15 @@ export function addHistory(slug: string): void {
   window.localStorage.setItem(HIST_KEY, JSON.stringify(next));
   _hist = next;
   _histRaw = JSON.stringify(next);
+  // 时间戳映射
+  let tsMap: Record<string, string> = {};
+  try {
+    tsMap = JSON.parse(window.localStorage.getItem(HIST_TS_KEY) || '{}');
+  } catch {
+    tsMap = {};
+  }
+  tsMap[slug] = new Date().toISOString();
+  window.localStorage.setItem(HIST_TS_KEY, JSON.stringify(tsMap));
   emit();
 }
 

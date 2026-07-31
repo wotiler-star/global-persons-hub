@@ -31,7 +31,7 @@ export default async function PersonsPage({
   searchParams
 }: {
   params: Promise<{ lang: string }>;
-  searchParams: Promise<{ domain?: string; sort?: string }>;
+  searchParams: Promise<{ domain?: string; sort?: string; dir?: string; nationality?: string; q?: string }>;
 }) {
   const { lang } = await params;
   const sp = await searchParams;
@@ -43,6 +43,9 @@ export default async function PersonsPage({
       ? (sp.domain as DomainFilter)
       : 'all';
   const initialSort: SortMode = sp.sort && SORT_KEYS.includes(sp.sort as SortMode) ? (sp.sort as SortMode) : 'influence';
+  const initialDir: 'asc' | 'desc' = sp.dir === 'asc' ? 'asc' : 'desc';
+  const initialNationality: string = typeof sp.nationality === 'string' && sp.nationality ? sp.nationality : 'all';
+  const initialQ: string = typeof sp.q === 'string' ? sp.q : '';
 
   let items: Person[] = [];
   try {
@@ -66,7 +69,15 @@ export default async function PersonsPage({
       <h1 className="text-2xl font-bold">{t(L, 'persons.title')}</h1>
       <p className="text-slate-500 mt-1 mb-6 text-sm">{t(L, 'persons.desc')}</p>
 
-      <PersonsExplorer items={items} lang={L} initialDomain={initialDomain} initialSort={initialSort} />
+      <PersonsExplorer
+        items={items}
+        lang={L}
+        initialDomain={initialDomain}
+        initialSort={initialSort}
+        initialDir={initialDir}
+        initialNationality={initialNationality}
+        initialQ={initialQ}
+      />
     </div>
   );
 }

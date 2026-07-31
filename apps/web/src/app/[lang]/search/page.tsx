@@ -11,7 +11,7 @@ export default async function Search({
   searchParams
 }: {
   params: Promise<{ lang: string }>;
-  searchParams: Promise<{ q?: string; domain?: string; mode?: string }>;
+  searchParams: Promise<{ q?: string; domain?: string; era?: string; nationality?: string; mode?: string }>;
 }) {
   const { lang } = await params;
   const sp = await searchParams;
@@ -98,6 +98,8 @@ export default async function Search({
         allPersons={all.items}
         initialQ={sp.q || ''}
         initialDomain={sp.domain || ''}
+        initialEra={sp.era || ''}
+        initialNationality={sp.nationality || ''}
       />
     </div>
   );

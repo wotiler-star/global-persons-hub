@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
+import FilterChips from '@/components/FilterChips';
 
 export type DomainFilter = Domain | 'all';
 
@@ -205,27 +206,13 @@ export default function TimelineExplorer({ items, lang }: Props) {
   return (
     <div>
       {/* 领域筛选 */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        <button
-          onClick={() => setDomain('all')}
-          className={`px-3 py-1 rounded-full border text-sm transition ${
-            domain === 'all' ? 'bg-brand text-white border-brand' : 'bg-white text-slate-700 hover:bg-indigo-50'
-          }`}
-        >
-          {t(lang, 'persons.filterAll')}
-        </button>
-        {domains.map((d) => (
-          <button
-            key={d}
-            onClick={() => setDomain(d)}
-            className={`px-3 py-1 rounded-full border text-sm transition ${
-              domain === d ? 'bg-brand text-white border-brand' : 'bg-white text-slate-700 hover:bg-indigo-50'
-            }`}
-          >
-            {DOMAIN_LABELS[d]}
-          </button>
-        ))}
-      </div>
+      <FilterChips
+        options={domains.map((d) => ({ value: d, label: DOMAIN_LABELS[d] }))}
+        value={domain}
+        onChange={(v) => setDomain((v || 'all') as DomainFilter)}
+        allValue="all"
+        allLabel={t(lang, 'persons.filterAll')}
+      />
 
       {/* 时代预设 + 起止年滑块 */}
       <div className="flex flex-wrap items-center gap-2 mb-3">
