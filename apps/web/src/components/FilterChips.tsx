@@ -37,9 +37,14 @@ export default function FilterChips({
   return (
     <div className="mb-3">
       {label && <div className="text-sm text-slate-500 mb-2">{label}</div>}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2" role="group" aria-label={label ?? 'filter'}>
         {allLabel && (
-          <button type="button" onClick={() => onChange(allValue)} className={chip(value === allValue)}>
+          <button
+            type="button"
+            onClick={() => onChange(allValue)}
+            className={chip(value === allValue)}
+            aria-pressed={value === allValue}
+          >
             {allLabel}
           </button>
         )}

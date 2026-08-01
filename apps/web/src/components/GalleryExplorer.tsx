@@ -11,6 +11,7 @@ import FavoriteButton from '@/components/FavoriteButton';
 import FilterChips from '@/components/FilterChips';
 import SortToggle from '@/components/SortToggle';
 import EmptyState from '@/components/EmptyState';
+import ActiveFilters from '@/components/ActiveFilters';
 import { useQuerySync } from '@/lib/useQuerySync';
 
 type DomainFilter = Domain | 'all';
@@ -52,7 +53,15 @@ export default function GalleryExplorer({
       sort
     }),
     ['domain', 'era', 'sort'],
-    [domain, era, sort]
+    [domain, era, sort],
+    (params) => {
+      const d = params.get('domain');
+      setDomain(d && d !== 'all' ? (d as DomainFilter) : 'all');
+      const e = params.get('era');
+      setEra(e && e !== 'all' ? e : 'all');
+      const s = params.get('sort');
+      setSort(s === 'name' ? 'name' : 'influence');
+    }
   );
 
   // 灯箱：Esc 关闭 + 锁定背景滚动
@@ -96,8 +105,6 @@ export default function GalleryExplorer({
     }
     return out;
   }, [items, domain, era, sort, lang]);
-
-  const hasFilter = domain !== 'all' || era !== 'all' || sort !== 'influence';
 
   const gridCols =
     density === 'compact'
@@ -160,18 +167,22 @@ export default function GalleryExplorer({
           </div>
         </div>
 
-        {hasFilter && (
-          <button
-            onClick={() => {
-              setDomain('all');
-              setEra('all');
-              setSort('influence');
-            }}
-            className="ml-auto text-sm text-brand hover:underline"
-          >
-            {t(lang, 'explore.reset')}
-          </button>
-        )}
+        <ActiveFilters
+          lang={lang}
+          filters={[
+            ...(domain !== 'all'
+              ? [{ key: 'domain', label: DOMAIN_LABELS[domain as Domain], onRemove: () => setDomain('all') }]
+              : []),
+            ...(era !== 'all'
+              ? [{ key: 'era', label: t(lang, ERAS.find((e) => e.key === era)!.uiKey), onRemove: () => setEra('all') }]
+              : [])
+          ]}
+          onClear={() => {
+            setDomain('all');
+            setEra('all');
+            setSort('influence');
+          }}
+        />
       </div>
 
       {/* 计数 */}
@@ -233,12 +244,16 @@ export default function GalleryExplorer({
           onClick={() => setActive(null)}
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={t(lang, 'gallery.lightboxProfile')}
             className="relative bg-white rounded-2xl overflow-hidden max-w-md w-full max-h-[90vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setActive(null)}
-              aria-label="close"
+              aria-label={t(lang, 'gallery.lightboxClose')}
+              autoFocus
               className="absolute top-2 left-2 z-20 w-8 h-8 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center"
             >
               ✕

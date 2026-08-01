@@ -11,6 +11,7 @@ import PersonCard from '@/components/PersonCard';
 import FilterChips, { type ChipOption } from '@/components/FilterChips';
 import SortToggle from '@/components/SortToggle';
 import EmptyState from '@/components/EmptyState';
+import ActiveFilters from '@/components/ActiveFilters';
 import { downloadText, toCsv } from '@/lib/download';
 
 type FavSort = 'recent' | 'name' | 'influence';
@@ -26,6 +27,7 @@ export default function PersonLibraryClient({
   const histEntries = useHistoryEntries();
   const [all, setAll] = useState<Person[]>([]);
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState<boolean>(!Array.isArray(sharedPersons));
   const [domain, setDomain] = useState<string>('all');
   const [sort, setSort] = useState<FavSort>('recent');
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -38,7 +40,10 @@ export default function PersonLibraryClient({
     let alive = true;
     (async () => {
       const d = await getPersons({ lang, pageSize: 300 }).catch(() => ({ items: [] as Person[] }));
-      if (alive) setAll(d.items || []);
+      if (alive) {
+        setAll(d.items || []);
+        setLoading(false);
+      }
     })();
     return () => {
       alive = false;
@@ -207,14 +212,18 @@ export default function PersonLibraryClient({
         <h2 className="text-lg font-semibold mb-3">{t(lang, 'library.favorites')}</h2>
 
         {favPersons.length === 0 ? (
-          <EmptyState title={t(lang, 'library.emptyFav')} hint={t(lang, 'library.emptyHint')}>
-            <Link
-              href={`/${lang}/persons`}
-              className="px-4 py-2 rounded-lg bg-brand text-white text-sm hover:opacity-90"
-            >
-              {t(lang, 'library.goExplore')}
-            </Link>
-          </EmptyState>
+          loading ? (
+            <EmptyState skeleton />
+          ) : (
+            <EmptyState title={t(lang, 'library.emptyFav')} hint={t(lang, 'library.emptyHint')}>
+              <Link
+                href={`/${lang}/persons`}
+                className="px-4 py-2 rounded-lg bg-brand text-white text-sm hover:opacity-90"
+              >
+                {t(lang, 'library.goExplore')}
+              </Link>
+            </EmptyState>
+          )
         ) : (
           <>
             {/* 筛选 + 排序 + 全选 + 导出 */}
@@ -225,6 +234,11 @@ export default function PersonLibraryClient({
                 onChange={setDomain}
                 allValue="all"
                 allLabel={t(lang, 'persons.filterAll')}
+              />
+              <ActiveFilters
+                lang={lang}
+                filters={domain !== 'all' ? [{ key: 'domain', label: DOMAIN_LABELS[domain as Domain], onRemove: () => setDomain('all') }] : []}
+                onClear={() => setDomain('all')}
               />
               <div className="flex items-center gap-3">
                 <SortToggle

@@ -8,6 +8,7 @@ import PersonCard from '@/components/PersonCard';
 import FilterChips, { type ChipOption } from '@/components/FilterChips';
 import SortToggle from '@/components/SortToggle';
 import EmptyState from '@/components/EmptyState';
+import ActiveFilters from '@/components/ActiveFilters';
 import { useQuerySync } from '@/lib/useQuerySync';
 import { filterPersons, matchScore, birthYear, ERAS } from '@/lib/searchIndex';
 
@@ -19,7 +20,8 @@ export default function SearchExplorer({
   initialQ = '',
   initialDomain = '',
   initialEra = '',
-  initialNationality = ''
+  initialNationality = '',
+  initialSort = ''
 }: {
   lang: Lang;
   allPersons: Person[];
@@ -27,19 +29,35 @@ export default function SearchExplorer({
   initialDomain?: string;
   initialEra?: string;
   initialNationality?: string;
+  initialSort?: string;
 }) {
   const [q, setQ] = useState(initialQ);
   const [domain, setDomain] = useState(initialDomain);
   const [era, setEra] = useState(initialEra);
   const [nationality, setNationality] = useState(initialNationality);
-  const [sort, setSort] = useState<SortMode>(initialQ ? 'relevance' : 'influence');
+  const [sort, setSort] = useState<SortMode>((initialSort as SortMode) || (initialQ ? 'relevance' : 'influence'));
   const [page, setPage] = useState(1);
 
   // —— 深链接 ——
   useQuerySync(
     () => ({ q: q.trim(), domain, era, nationality, sort }),
     ['q', 'domain', 'era', 'nationality', 'sort'],
-    [q, domain, era, nationality, sort]
+    [q, domain, era, nationality, sort],
+    (params) => {
+      const qv = params.get('q') ?? '';
+      setQ(qv);
+      setDomain(params.get('domain') ?? '');
+      setEra(params.get('era') ?? '');
+      setNationality(params.get('nationality') ?? '');
+      const s = params.get('sort');
+      setSort(
+        s === 'relevance' || s === 'influence' || s === 'name' || s === 'newest'
+          ? (s as SortMode)
+          : qv
+            ? 'relevance'
+            : 'influence'
+      );
+    }
   );
 
   const PAGE_SIZE = 36;
@@ -131,8 +149,6 @@ export default function SearchExplorer({
     resetPage();
   };
 
-  const hasFilter = !!(domain || era || nationality);
-
   // 无结果推荐：取全库影响力 Top 人物
   const suggestions = useMemo(
     () =>
@@ -183,50 +199,26 @@ export default function SearchExplorer({
         />
       )}
 
-      {/* 已选筛选（可单独移除）*/}
-      {hasFilter && (
-        <div className="flex flex-wrap items-center gap-2 mb-4 text-sm">
-          <span className="text-slate-500">{t(lang, 'search.activeFilters')}：</span>
-          {domain && (
-            <button
-              onClick={() => onDomain('')}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-brand/10 text-brand"
-            >
-              {DOMAIN_LABELS[domain as Domain]}
-              <span className="opacity-60">×</span>
-            </button>
-          )}
-          {era && (
-            <button
-              onClick={() => onEra('')}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-brand/10 text-brand"
-            >
-              {t(lang, ERAS.find((e) => e.key === era)!.uiKey)}
-              <span className="opacity-60">×</span>
-            </button>
-          )}
-          {nationality && (
-            <button
-              onClick={() => onNationality('')}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-brand/10 text-brand"
-            >
-              {nationality}
-              <span className="opacity-60">×</span>
-            </button>
-          )}
-          <button
-            onClick={() => {
-              setDomain('');
-              setEra('');
-              setNationality('');
-              resetPage();
-            }}
-            className="text-xs text-slate-500 hover:underline"
-          >
-            {t(lang, 'search.clearFilter')}
-          </button>
-        </div>
-      )}
+      <ActiveFilters
+        lang={lang}
+        filters={[
+          ...(domain
+            ? [{ key: 'domain', label: DOMAIN_LABELS[domain as Domain], onRemove: () => onDomain('') }]
+            : []),
+          ...(era
+            ? [{ key: 'era', label: t(lang, ERAS.find((e) => e.key === era)!.uiKey), onRemove: () => onEra('') }]
+            : []),
+          ...(nationality
+            ? [{ key: 'nationality', label: nationality, onRemove: () => onNationality('') }]
+            : [])
+        ]}
+        onClear={() => {
+          setDomain('');
+          setEra('');
+          setNationality('');
+          resetPage();
+        }}
+      />
 
       {/* 排序 */}
       <div className="flex flex-wrap items-center gap-3 mb-4">

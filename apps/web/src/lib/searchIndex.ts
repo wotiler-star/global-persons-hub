@@ -29,8 +29,12 @@ function eraRange(era: string): { from: number; to: number } | null {
   return e ? { from: e.from, to: e.to } : null;
 }
 
-/** 拼接人物全部可搜索文本（跨所有语种），小写化 */
+/** 拼接人物全部可搜索文本（跨所有语种），小写化。
+ * WeakMap 缓存：避免每次重算时重复拼接 300 人 × 13 语 × 6 字段（qMatched 与 filterPersons 各调一次）。 */
+const searchCache = new WeakMap<Person, string>();
 function searchable(p: Person): string {
+  const cached = searchCache.get(p);
+  if (cached !== undefined) return cached;
   const parts: string[] = [];
   const pushRec = (rec: Record<string, string | undefined> | undefined) => {
     if (!rec) return;
@@ -43,7 +47,9 @@ function searchable(p: Person): string {
   if (p.aliases) parts.push(p.aliases.join(' '));
   if (p.domains) parts.push(p.domains.join(' '));
   if (p.nationalities) parts.push(p.nationalities.join(' '));
-  return parts.join(' ').toLowerCase();
+  const s = parts.join(' ').toLowerCase();
+  searchCache.set(p, s);
+  return s;
 }
 
 /** 命中评分：姓名 +3 / 职业 +2 / 其它字段 +1；0 表示未命中 */

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
+import { ERAS } from '@/lib/searchIndex';
 import FilterChips from '@/components/FilterChips';
 
 export type DomainFilter = Domain | 'all';
@@ -27,13 +28,7 @@ const DOMAIN_COLOR: Record<Domain, string> = {
   other: '#64748b'
 };
 
-// 时代预设（出生年区间，含公元前负数）
-const ERAS: { key: string; labelKey: string; from: number; to: number }[] = [
-  { key: 'ancient', labelKey: 'timeline.eraAncient', from: -100000, to: 499 },
-  { key: 'medieval', labelKey: 'timeline.eraMedieval', from: 500, to: 1499 },
-  { key: 'modern', labelKey: 'timeline.eraModern', from: 1500, to: 1899 },
-  { key: 'contemporary', labelKey: 'timeline.eraContemporary', from: 1900, to: 100000 }
-];
+// 时代预设统一复用 searchIndex.ERAS（与 Explore/Gallery 共享同一套 key，确保 ?era= 跨板块一致）
 
 function parseYear(iso: string | undefined | null): number | null {
   if (!iso) return null;
@@ -112,6 +107,22 @@ export default function TimelineExplorer({ items, lang }: Props) {
     const qs = p.toString();
     window.history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
   }, [domain, cFrom, cTo]);
+
+  // 浏览器前进/后退：把 URL 中的 domain/from/to 读回状态，使深链接可导航
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handler = () => {
+      const p = new URLSearchParams(window.location.search);
+      const d = p.get('domain');
+      setDomain(d && (d === 'all' || d in DOMAIN_LABELS) ? (d as DomainFilter) : 'all');
+      const rf = Number(p.get('from'));
+      const rt = Number(p.get('to'));
+      if (Number.isFinite(rf)) setCFrom(rf);
+      if (Number.isFinite(rt)) setCTo(rt);
+    };
+    window.addEventListener('popstate', handler);
+    return () => window.removeEventListener('popstate', handler);
+  }, []);
 
   // 动态领域集（仅展示库中出现的领域）
   const domains = useMemo(() => {
@@ -240,7 +251,7 @@ export default function TimelineExplorer({ items, lang }: Props) {
               activeEra === e.key ? 'bg-slate-800 text-white border-slate-800' : 'bg-white text-slate-700 hover:bg-slate-100'
             }`}
           >
-            {t(lang, e.labelKey)}
+            {t(lang, e.uiKey)}
           </button>
         ))}
       </div>

@@ -20,7 +20,8 @@ export type QueryValue = string | number | boolean | null | undefined;
 export function useQuerySync(
   build: () => Record<string, QueryValue>,
   controlledKeys: string[],
-  deps: ReadonlyArray<unknown>
+  deps: ReadonlyArray<unknown>,
+  onRestore?: (params: URLSearchParams) => void
 ): void {
   const first = useRef(true);
   useEffect(() => {
@@ -55,4 +56,12 @@ export function useQuerySync(
       window.history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
     }
   }, deps); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // 浏览器前进/后退：把 URL 中的受控键读回组件状态，使深链接真正可导航
+  useEffect(() => {
+    if (typeof window === 'undefined' || !onRestore) return;
+    const handler = () => onRestore(new URLSearchParams(window.location.search));
+    window.addEventListener('popstate', handler);
+    return () => window.removeEventListener('popstate', handler);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 }

@@ -40,7 +40,7 @@ export default function SortToggle({
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       {label && <span className="text-sm text-slate-500">{label}</span>}
-      <div className="flex gap-1">
+      <div className="flex gap-1" role="group" aria-label={label ?? 'sort'}>
         {options.map((o) => (
           <button
             key={o.key}

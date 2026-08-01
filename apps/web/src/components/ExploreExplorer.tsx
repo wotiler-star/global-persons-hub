@@ -9,6 +9,7 @@ import PersonCard from '@/components/PersonCard';
 import FilterChips, { type ChipOption } from '@/components/FilterChips';
 import SortToggle from '@/components/SortToggle';
 import EmptyState from '@/components/EmptyState';
+import ActiveFilters from '@/components/ActiveFilters';
 import { useQuerySync } from '@/lib/useQuerySync';
 
 type DomainFilter = Domain | 'all';
@@ -52,7 +53,17 @@ export default function ExploreExplorer({
       sort
     }),
     ['domain', 'era', 'nationality', 'sort'],
-    [domain, era, nationality, sort]
+    [domain, era, nationality, sort],
+    (params) => {
+      const d = params.get('domain');
+      setDomain(d && d !== 'all' ? (d as DomainFilter) : 'all');
+      const e = params.get('era');
+      setEra(e && e !== 'all' ? e : 'all');
+      const n = params.get('nationality');
+      setNationality(n && n !== 'all' ? n : 'all');
+      const s = params.get('sort');
+      setSort(s === 'influence' || s === 'netWorth' || s === 'name' ? (s as SortMode) : 'influence');
+    }
   );
 
   // 动态领域集
@@ -89,8 +100,6 @@ export default function ExploreExplorer({
     }
     return out;
   }, [items, domain, era, nationality, sort, lang]);
-
-  const hasFilter = domain !== 'all' || era !== 'all' || nationality !== 'all' || sort !== 'influence';
 
   const sortOptions = [
     { key: 'influence', label: t(lang, 'persons.byInfluence') },
@@ -145,19 +154,26 @@ export default function ExploreExplorer({
           onChange={(v) => setSort(v as SortMode)}
         />
 
-        {hasFilter && (
-          <button
-            onClick={() => {
-              setDomain('all');
-              setEra('all');
-              setNationality('all');
-              setSort('influence');
-            }}
-            className="ml-auto text-sm text-brand hover:underline"
-          >
-            {t(lang, 'explore.reset')}
-          </button>
-        )}
+        <ActiveFilters
+          lang={lang}
+          filters={[
+            ...(domain !== 'all'
+              ? [{ key: 'domain', label: DOMAIN_LABELS[domain as Domain], onRemove: () => setDomain('all') }]
+              : []),
+            ...(era !== 'all'
+              ? [{ key: 'era', label: t(lang, ERAS.find((e) => e.key === era)!.uiKey), onRemove: () => setEra('all') }]
+              : []),
+            ...(nationality !== 'all'
+              ? [{ key: 'nationality', label: nationality, onRemove: () => setNationality('all') }]
+              : [])
+          ]}
+          onClear={() => {
+            setDomain('all');
+            setEra('all');
+            setNationality('all');
+            setSort('influence');
+          }}
+        />
       </div>
 
       {/* 结果计数 */}

@@ -10,6 +10,7 @@ import FilterChips, { type ChipOption } from '@/components/FilterChips';
 import SortToggle from '@/components/SortToggle';
 import EmptyState from '@/components/EmptyState';
 import FavoriteButton from '@/components/FavoriteButton';
+import ActiveFilters from '@/components/ActiveFilters';
 import { useQuerySync } from '@/lib/useQuerySync';
 import { downloadText, toCsv } from '@/lib/download';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
@@ -58,7 +59,18 @@ export default function PersonsExplorer({
       q: q.trim()
     }),
     ['domain', 'nationality', 'sort', 'dir', 'q'],
-    [domain, nationality, sort, dir, q]
+    [domain, nationality, sort, dir, q],
+    (params) => {
+      const d = params.get('domain');
+      setDomain(d && d !== 'all' ? (d as DomainFilter) : 'all');
+      const n = params.get('nationality');
+      setNationality(n && n !== 'all' ? n : 'all');
+      const s = params.get('sort');
+      setSort(s === 'influence' || s === 'netWorth' || s === 'name' ? (s as SortMode) : 'influence');
+      const dr = params.get('dir');
+      setDir(dr === 'asc' || dr === 'desc' ? dr : 'desc');
+      setQ(params.get('q') ?? '');
+    }
   );
 
   // 动态领域集（仅展示库中出现的领域）
@@ -210,6 +222,23 @@ export default function PersonsExplorer({
           allLabel={t(lang, 'persons.filterAll')}
         />
       )}
+
+      <ActiveFilters
+        lang={lang}
+        filters={[
+          ...(domain !== 'all'
+            ? [{ key: 'domain', label: DOMAIN_LABELS[domain as Domain], onRemove: () => setDomain('all') }]
+            : []),
+          ...(nationality !== 'all'
+            ? [{ key: 'nationality', label: nationality, onRemove: () => setNationality('all') }]
+            : [])
+        ]}
+        onClear={() => {
+          setDomain('all');
+          setNationality('all');
+          setSort('influence');
+        }}
+      />
 
       {/* 排序 + 升降序 + 全选 */}
       <div className="flex flex-wrap items-center gap-3 mb-4">

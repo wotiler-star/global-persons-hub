@@ -66,6 +66,7 @@ const RAW: Record<string, string[]> = {
   'gallery.lightboxProfile': ['查看人物档案', 'View profile', 'Ver perfil', 'Voir le profil', 'プロフィールを見る', 'Открыть профиль', 'عرض الملف', 'Ver perfil', 'Profil ansehen', '프로필 보기', 'Vedi profilo', 'प्रोफ़ाइल देखें', 'Lihat profil'],
   'gallery.empty': ['暂无图片', 'No images', 'Sin imágenes', 'Aucune image', '画像がありません', 'Нет изображений', 'لا توجد صور', 'Sem imagens', 'Keine Bilder', '이미지 없음', 'Nessuna immagine', 'कोई छवि नहीं', 'Tidak ada gambar'],
   'gallery.count': ['共 {n} 幅画像', '{n} portraits', '{n} retratos', '{n} portraits', '{n} 点の画像', '{n} портретов', '{n} صورة', '{n} retratos', '{n} Porträts', '초상화 {n}점', '{n} ritratti', '{n} चित्र', '{n} gambar'],
+  'gallery.lightboxClose': ['关闭', 'Close', 'Cerrar', 'Fermer', '閉じる', 'Закрыть', 'إغلاق', 'Fechar', 'Schließen', '닫기', 'Chiudi', 'बंद करें', 'Tutup'],
   'section.achievements': ['主要成就', 'Achievements', 'Logros', 'Réalisations', '主な業績', 'Достижения', 'الإنجازات', 'Conquistas', 'Errungenschaften', '주요 성과', 'Risultati', 'उपलब्धियाँ', 'Pencapaian'],
   'life.title': ['生平时间线', 'Life Timeline', 'Línea de vida', 'Chronologie de vie', '生涯タイムライン', 'Хронология жизни', 'الخط الزمني للحياة', 'Linha do tempo da vida', 'Lebenszeitleiste', '생애 타임라인', 'Cronologia della vita', 'जीवन कालानुक्रम', 'Garis waktu hidup'],
   'life.born': ['出生', 'Born', 'Nacimiento', 'Naissance', '誕生', 'Рождение', 'الولادة', 'Nascimento', 'Geburt', '출생', 'Nascita', 'जन्म', 'Lahir'],
