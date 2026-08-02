@@ -61,6 +61,9 @@ if (Test-Path $npm) {
 
 # —— 1. 下载分片（直连，不走代理；每片小、可靠；支持断点续传）——
 if (-not $ReleaseBase -or $ShardCount -le 0) { throw 'ReleaseBase / ShardCount 未提供' }
+# 强制刷新分片缓存：删除旧分片，确保所有分片来自同一版本 Release，
+# 避免新旧分片混拼导致拼接出的 app.zip 内部不一致、解压报“本地文件头已损坏”。
+if (Test-Path $SHARDS) { Remove-Item "$SHARDS\*" -Recurse -Force -ErrorAction SilentlyContinue }
 function Pad2($n) { if ($n -lt 10) { return '0' + [string]$n } return [string]$n }
 # 每片标准大小（与 package.ps1 的 ShardMB=3 对应）；最后一片 = ExpectedSize - 前 (N-1) 片
 $part_std = 3 * 1024 * 1024
