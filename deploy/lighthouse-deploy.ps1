@@ -83,7 +83,17 @@ for ($i = 0; $i -lt $ShardCount; $i = $i + 1) {
     }
   }
   Write-Output "download $url"
-  Invoke-WebRequest -Uri $url -OutFile $dst -UseBasicParsing
+  $ok = $false
+  for ($attempt = 1; $attempt -le 5; $attempt++) {
+    try {
+      Invoke-WebRequest -Uri $url -OutFile $dst -UseBasicParsing -TimeoutSec 180
+      if ((Test-Path $dst) -and ((Get-Item $dst).Length -gt 0)) { $ok = $true; break }
+    } catch {
+      Write-Output "  download attempt $attempt failed: $_"
+      Start-Sleep -Seconds 5
+    }
+  }
+  if (-not $ok) { throw "分片 $name 下载失败（已重试 5 次）" }
 }
 
 # —— 2. 拼接分片（WinPS 5.1 无 AppendAllBytes，用 cmd /c copy /b）——
