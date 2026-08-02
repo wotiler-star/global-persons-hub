@@ -16,8 +16,17 @@ import { getEmbedder } from '../embedding/index.js';
 import { personCorpus } from './corpus.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-// 注意：本文件位于 apps/api/src/store/，故需向上两级到 apps/api/data
-const DATA = join(__dirname, '..', '..', 'data');
+// 数据目录定位需兼容两种运行形态：
+//  - 开发态（tsx）：__dirname = apps/api/src/store → 需 ../../data = apps/api/data
+//  - 生产态（esbuild 打包后）：__dirname = apps/api/dist → 需 ../data = apps/api/data
+// 原硬编码 ../../data 在生产态会解析到 apps/data（不存在 / 陈旧空库），导致 loadPersons 静默回退空数组。
+// 故运行时探测 persons.json 实际所在目录，优先取含 persons.json 的 data 目录。
+const DATA_CANDIDATES = [
+  join(__dirname, '..', 'data'),
+  join(__dirname, '..', '..', 'data'),
+  join(__dirname, '..', '..', '..', 'data'),
+];
+const DATA = DATA_CANDIDATES.find((d) => existsSync(join(d, 'persons.json'))) ?? DATA_CANDIDATES[1];
 const RT = join(DATA, 'runtime');
 const UPLOAD_DIR = join(DATA, 'uploads');
 mkdirSync(RT, { recursive: true });
