@@ -213,17 +213,23 @@ $bootScript = @"
 if (`$env:PATH -notlike "*`$nodeDir*") { `$env:PATH = "`$env:PATH;`$nodeDir" }
 `$npmPrefix = & "$nodeDir\npm.cmd" config get prefix 2>`$null
 if (`$npmPrefix -and `$env:PATH -notlike "*`$npmPrefix*") { `$env:PATH = "`$env:PATH;`$npmPrefix" }
-`$env:PORT = '$WebPort'
-# 与 TAT 部署时一致：绑定到 SYSTEM 持久守护目录，确保进程归入同一处 pm2 实例（5516）
+# 与 TAT 部署时一致：绑定到 SYSTEM 持久守护目录，确保进程归入同一处 pm2 实例
 `$env:PM2_HOME = 'C:\Windows\system32\config\systemprofile\.pm2'
 pm2 ping 2>`$null
 # 清理可能残留的 gph 进程（含 dump 中失效条目），随后按完整配置重新拉起
 pm2 delete gph-api 2>`$null
 pm2 delete gph-web 2>`$null
+# ⚠️ gph-api 必须监听 8787（与 Web 的 GPH_API_BASE / next.config 重写目标一致）。
+# 此处绝不能用 `$WebPort`：否则 API 与 Web 抢 3000，且 Web 代理目标 127.0.0.1:8787
+# 无进程监听，导致所有 /api/* 请求 500（ECONNREFUSED 127.0.0.1:8787）。
+`$env:PORT = '8787'
+`$env:API_BIND = '127.0.0.1'
 # 注意：pm2 会把引号内的 "node dist/server.mjs" 整体当作脚本路径（含空格），
 # 导致 "Script not found: ...\node dist\server.mjs"。正确写法：脚本用 dist/server.mjs，
 # 通过 --interpreter node 指定解释器，pm2 会执行 node dist/server.mjs。
 pm2 start dist/server.mjs --name gph-api --interpreter node --cwd "$TARGET\apps\api" --max-memory-restart 1500M --max-restarts 10
+# gph-web 监听公网 WebPort（与 gph-api 的 8787 分离，避免端口冲突）
+`$env:PORT = '$WebPort'
 pm2 start server.js --name gph-web --cwd "$TARGET\apps\web" --max-memory-restart 1500M --max-restarts 10
 pm2 save
 "@
