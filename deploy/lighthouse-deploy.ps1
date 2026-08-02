@@ -104,8 +104,11 @@ Write-Output "assembled $out size=$real"
 # 最后用 .NET ZipFile 解压（避免 PowerShell Expand-Archive -Force 在目标已存在时对
 # "不存在的路径"抛 Remove-Item 异常这一 Windows PowerShell 5.1 已知 bug）。
 $env:PM2_HOME = 'C:\Windows\system32\config\systemprofile\.pm2'
+$eap = $ErrorActionPreference
+$ErrorActionPreference = 'SilentlyContinue'
 pm2 delete gph-api 2>&1 | Out-Null
 pm2 delete gph-web 2>&1 | Out-Null
+$ErrorActionPreference = $eap
 Start-Sleep -Seconds 3
 if (Test-Path $TARGET) {
   for ($r = 0; $r -lt 6; $r++) {
