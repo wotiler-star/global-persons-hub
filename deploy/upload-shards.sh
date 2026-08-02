@@ -26,6 +26,20 @@ if [[ ! -f "$RELEASE_ID_FILE" ]]; then
 fi
 RELEASE_ID="$(cat "$RELEASE_ID_FILE")"
 
+# Git Bash 下原生 curl 不识别 Unix 风格路径，需转 Windows 路径；cygpath 可能缺失，故自带回退转换
+winpath() {
+  local p="$1"
+  if command -v cygpath >/dev/null 2>&1; then
+    cygpath -w "$p"
+    return
+  fi
+  # /f/foo/bar -> F:\foo\bar
+  p="${p#/}"
+  local drive="${p%%/*}"
+  p="${p#*/}"
+  printf '%s:\\%s' "$(echo "$drive" | tr '[:lower:]' '[:upper:]')" "${p//\//\\}"
+}
+
 # 已上传资源清单（用于去重，避免重复上传）
 EXISTING=$(curl -s "${CURL_OPT[@]}" -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.github.com/repos/$OWNER_REPO/releases/$RELEASE_ID/assets" \
@@ -44,8 +58,8 @@ for f in "${shards[@]}"; do
     echo "skip (already uploaded): $name"
   else
     echo "uploading: $name"
-    # Windows Git Bash 下 curl 是原生二进制，@ 无法读 Unix 路径，需用 cygpath -w 转换
-    winf="$(cygpath -w "$f")"
+    # Windows Git Bash 下 curl 是原生二进制，@ 无法读 Unix 路径，需转 Windows 路径
+    winf="$(winpath "$f")"
     curl -s "${CURL_OPT[@]}" -X POST \
       -H "Authorization: Bearer $GITHUB_TOKEN" \
       -H "Content-Type: application/octet-stream" \

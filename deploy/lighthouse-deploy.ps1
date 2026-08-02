@@ -100,8 +100,23 @@ if ($ExpectedSize -gt 0 -and $real -ne $ExpectedSize) {
 Write-Output "assembled $out size=$real"
 
 # —— 4. 解压 ——
-if (Test-Path $TARGET) { Remove-Item $TARGET -Recurse -Force }
-Expand-Archive -Path $out -DestinationPath $TARGET -Force
+# 重部署时 $TARGET 已存在且可能被旧 gph 进程锁定：先停进程释放句柄，再彻底移除目录，
+# 最后用 .NET ZipFile 解压（避免 PowerShell Expand-Archive -Force 在目标已存在时对
+# "不存在的路径"抛 Remove-Item 异常这一 Windows PowerShell 5.1 已知 bug）。
+$env:PM2_HOME = 'C:\Windows\system32\config\systemprofile\.pm2'
+pm2 delete gph-api 2>&1 | Out-Null
+pm2 delete gph-web 2>&1 | Out-Null
+Start-Sleep -Seconds 3
+if (Test-Path $TARGET) {
+  for ($r = 0; $r -lt 6; $r++) {
+    Remove-Item $TARGET -Recurse -Force -ErrorAction SilentlyContinue
+    Start-Sleep -Seconds 2
+    if (-not (Test-Path $TARGET)) { break }
+  }
+  if (Test-Path $TARGET) { Remove-Item $TARGET -Recurse -Force -ErrorAction Stop }
+}
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+[System.IO.Compression.ZipFile]::ExtractToDirectory($out, $TARGET)
 Write-Output "extracted to $TARGET"
 
 # —— 5. 写环境变量 ——
