@@ -1,6 +1,6 @@
 import { pickText, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
-import { DOMAIN_LABELS, type Person } from '@gph/types';
+import type { Person } from '@gph/types';
 import PersonCard from './PersonCard';
 
 // 推荐信号来源（按强度排序，决定展示在主标签上的「为什么相关」）

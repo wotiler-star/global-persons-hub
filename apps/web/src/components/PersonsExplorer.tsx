@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 import { formatMoney } from '@/lib/format';
 import RankMedal from '@/components/RankMedal';
 import FilterChips, { type ChipOption } from '@/components/FilterChips';
@@ -11,6 +11,7 @@ import SortToggle from '@/components/SortToggle';
 import EmptyState from '@/components/EmptyState';
 import FavoriteButton from '@/components/FavoriteButton';
 import ActiveFilters from '@/components/ActiveFilters';
+import ShareLinkButton from '@/components/ShareLinkButton';
 import { useQuerySync } from '@/lib/useQuerySync';
 import { downloadText, toCsv } from '@/lib/download';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
@@ -79,7 +80,7 @@ export default function PersonsExplorer({
     for (const p of items) for (const d of p.domains) set.add(d);
     return (Object.keys(DOMAIN_LABELS) as Domain[])
       .filter((d) => set.has(d))
-      .map((d) => ({ value: d, label: DOMAIN_LABELS[d] }));
+      .map((d) => ({ value: d, label: domainLabel(lang, d) }));
   }, [items]);
 
   // 动态国籍集（按出现频次降序）
@@ -183,12 +184,15 @@ export default function PersonsExplorer({
         <span className="text-slate-500">
           {t(lang, 'persons.statCountries')}：<b className="text-slate-800">{stats.nationalities}</b>
         </span>
-        <button
-          onClick={exportCsv}
-          className="ml-auto px-3 py-1.5 rounded-lg border text-slate-600 text-sm hover:bg-slate-50"
-        >
-          {t(lang, 'common.exportCsv')}
-        </button>
+        <div className="ml-auto flex items-center gap-2">
+          <ShareLinkButton lang={lang} />
+          <button
+            onClick={exportCsv}
+            className="px-3 py-1.5 rounded-lg border text-slate-600 text-sm hover:bg-slate-50"
+          >
+            {t(lang, 'common.exportCsv')}
+          </button>
+        </div>
       </div>
 
       {/* 站内搜索 */}
@@ -225,9 +229,10 @@ export default function PersonsExplorer({
 
       <ActiveFilters
         lang={lang}
+        share={false} /* 顶部工具条已有独立的「复制链接」按钮，避免重复 */
         filters={[
           ...(domain !== 'all'
-            ? [{ key: 'domain', label: DOMAIN_LABELS[domain as Domain], onRemove: () => setDomain('all') }]
+            ? [{ key: 'domain', label: domainLabel(lang, domain), onRemove: () => setDomain('all') }]
             : []),
           ...(nationality !== 'all'
             ? [{ key: 'nationality', label: nationality, onRemove: () => setNationality('all') }]
@@ -294,7 +299,7 @@ export default function PersonsExplorer({
                   <div className="flex flex-wrap gap-1 mt-1">
                     {p.domains.map((d) => (
                       <span key={d} className="text-[11px] px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
-                        {DOMAIN_LABELS[d]}
+                        {domainLabel(lang, d)}
                       </span>
                     ))}
                     {(p.nationalities || []).slice(0, 3).map((n) => (

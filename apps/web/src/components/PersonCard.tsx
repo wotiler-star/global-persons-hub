@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
-import { DOMAIN_LABELS, type Person } from '@gph/types';
+import { t, domainLabel } from '@/lib/ui';
+import type { Person } from '@gph/types';
 import { highlightSegments } from '@/lib/searchIndex';
 import FavoriteButton from '@/components/FavoriteButton';
 
@@ -44,7 +44,7 @@ export default function PersonCard({
       <div className="flex flex-wrap gap-1 mt-2">
         {person.domains.map((d) => (
           <span key={d} className="text-[11px] px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
-            {DOMAIN_LABELS[d]}
+            {domainLabel(lang, d)}
           </span>
         ))}
       </div>

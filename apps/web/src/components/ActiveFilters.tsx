@@ -2,6 +2,7 @@
 
 import { type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
+import ShareLinkButton from '@/components/ShareLinkButton';
 
 export interface ActiveFilter {
   /** 稳定键，如 'domain' / 'era' / 'nationality' */
@@ -13,18 +14,22 @@ export interface ActiveFilter {
 }
 
 /**
- * 统一的「已选筛选」展示 + 清空全部。
- * 各子板块（人物库 / 搜索 / 探索 / 画廊 / 收藏夹）共用，避免散落实现。
+ * 统一的「已选筛选」展示 + 清空全部 + 复制深链接。
+ * 各子板块（人物库 / 搜索 / 探索 / 画廊 / 时间轴 / 收藏夹）共用，避免散落实现。
  * 无选中筛选时整体不渲染（自我隐藏），调用方无需判断。
+ * 由于筛选状态已由 useQuerySync 写入 URL，此处内置「复制链接」即可分享当前视图。
  */
 export default function ActiveFilters({
   lang,
   filters,
-  onClear
+  onClear,
+  share = true
 }: {
   lang: Lang;
   filters: ActiveFilter[];
   onClear: () => void;
+  /** 是否显示「复制链接」（默认显示；URL 不含筛选状态的场景可关闭） */
+  share?: boolean;
 }) {
   if (filters.length === 0) return null;
   return (
@@ -47,6 +52,12 @@ export default function ActiveFilters({
       <button type="button" onClick={onClear} className="text-xs text-slate-500 hover:underline">
         {t(lang, 'search.clearFilter')}
       </button>
+      {share && (
+        <ShareLinkButton
+          lang={lang}
+          className="text-xs text-slate-500 hover:underline hover:text-brand"
+        />
+      )}
     </div>
   );
 }

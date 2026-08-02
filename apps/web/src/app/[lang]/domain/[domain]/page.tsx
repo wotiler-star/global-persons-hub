@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getPersons } from '@/lib/api';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';
 import { buildPersonItemList } from '@/lib/format';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
@@ -27,7 +27,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, domain } = await params;
   if (!VALID.includes(domain as Domain)) return { title: '领域不存在' };
-  const label = DOMAIN_LABELS[domain as Domain];
+  const label = domainLabel(lang, domain);
   const languages: Record<string, string> = {};
   for (const l of LANGS) languages[l] = `/${l}/domain/${domain}`;
   const title = `${label}领域知名人物榜单`;
@@ -57,7 +57,7 @@ export default async function DomainPage({
   const { lang, domain } = await params;
   if (!VALID.includes(domain as Domain)) notFound();
   const L = lang as Lang;
-  const label = DOMAIN_LABELS[domain as Domain];
+  const label = domainLabel(L, domain);
 
   let items: Person[] = [];
   try {
@@ -121,7 +121,7 @@ export default async function DomainPage({
               href={`/${lang}/domain/${d}`}
               className="px-3 py-1 rounded-full bg-white border text-sm text-slate-700 hover:bg-indigo-50"
             >
-              {DOMAIN_LABELS[d]}
+              {domainLabel(L, d)}
             </Link>
           ))}
         </div>

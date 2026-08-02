@@ -33,6 +33,14 @@ _p.html
 # project memory (not source)
 .workbuddy/
 
+# deployment transient / secrets — NEVER commit
+deploy/.secrets
+deploy/.secrets.env
+deploy/.release_id
+deploy/.deploy_state
+deploy/.tat_state.json
+deploy/dist/
+
 # OS
 .DS_Store
 Thumbs.db

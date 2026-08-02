@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
-import { DOMAIN_LABELS } from '@gph/types';
+import { t, domainLabel } from '@/lib/ui';
 import PersonPortrait from '@/components/PersonPortrait';
 import FavoriteButton from '@/components/FavoriteButton';
 
@@ -53,7 +52,7 @@ export default function PersonHero({ person, lang }: { person: any; lang: Lang }
                 href={`/${lang}/persons?domain=${d}`}
                 className="text-xs px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur border border-white/10 transition-colors"
               >
-                {DOMAIN_LABELS[d as keyof typeof DOMAIN_LABELS] || d}
+                {domainLabel(lang, d)}
               </Link>
             ))}
           </div>

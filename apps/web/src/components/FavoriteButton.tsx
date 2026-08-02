@@ -1,14 +1,18 @@
 'use client';
 
-import { useFavorites, toggleFavorite } from '@/lib/libraryStore';
+import { memo } from 'react';
+import { useIsFavorite, toggleFavorite } from '@/lib/libraryStore';
 import { t } from '@/lib/ui';
 import type { Lang } from '@/lib/i18n';
 
 /**
  * 收藏切换按钮。可置于人物卡（客户端）或详情页（服务端）。
  * 在 PersonCard 内嵌于 <Link> 时，点击阻止冒泡以避免触发跳转。
+ *
+ * 性能：订阅 useIsFavorite(slug) 而非整个收藏数组，配合 memo，
+ * 使列表页中点击某一项时只重渲染该按钮，而不是全部数百个按钮。
  */
-export default function FavoriteButton({
+function FavoriteButton({
   slug,
   lang,
   className
@@ -17,8 +21,7 @@ export default function FavoriteButton({
   lang: Lang;
   className?: string;
 }) {
-  const favs = useFavorites();
-  const active = favs.includes(slug);
+  const active = useIsFavorite(slug);
 
   return (
     <button
@@ -40,3 +43,5 @@ export default function FavoriteButton({
     </button>
   );
 }
+
+export default memo(FavoriteButton);

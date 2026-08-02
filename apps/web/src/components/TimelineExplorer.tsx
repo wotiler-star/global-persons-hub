@@ -3,10 +3,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
 import FilterChips from '@/components/FilterChips';
+import ActiveFilters from '@/components/ActiveFilters';
 
 export type DomainFilter = Domain | 'all';
 
@@ -218,7 +219,7 @@ export default function TimelineExplorer({ items, lang }: Props) {
     <div>
       {/* 领域筛选 */}
       <FilterChips
-        options={domains.map((d) => ({ value: d, label: DOMAIN_LABELS[d] }))}
+        options={domains.map((d) => ({ value: d, label: domainLabel(lang, d) }))}
         value={domain}
         onChange={(v) => setDomain((v || 'all') as DomainFilter)}
         allValue="all"
@@ -292,6 +293,38 @@ export default function TimelineExplorer({ items, lang }: Props) {
         <span className="ml-auto text-xs text-slate-400">{t(lang, 'timeline.hint')}</span>
       </div>
 
+      {/* 已选筛选（领域 / 年代区间）+ 清空 + 复制深链接，与其他子板块统一 */}
+      <ActiveFilters
+        lang={lang}
+        filters={[
+          ...(domain !== 'all'
+            ? [{ key: 'domain', label: domainLabel(lang, domain), onRemove: () => setDomain('all') }]
+            : []),
+          ...(activeEra !== 'all'
+            ? [
+                {
+                  key: 'era',
+                  label:
+                    activeEra === 'custom'
+                      ? `${fmtYear(from)} – ${fmtYear(to)}`
+                      : t(lang, ERAS.find((e) => e.key === activeEra)?.uiKey || 'timeline.eraAll'),
+                  onRemove: () => {
+                    setCFrom(bounds.min);
+                    setCTo(bounds.max);
+                    setActiveEra('all');
+                  }
+                }
+              ]
+            : [])
+        ]}
+        onClear={() => {
+          setDomain('all');
+          setCFrom(bounds.min);
+          setCTo(bounds.max);
+          setActiveEra('all');
+        }}
+      />
+
       {/* 领域颜色图例 */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3">
         {domains.map((d) => (
@@ -306,7 +339,7 @@ export default function TimelineExplorer({ items, lang }: Props) {
               className="w-2.5 h-2.5 rounded-full"
               style={{ backgroundColor: DOMAIN_COLOR[d], opacity: domain === 'all' || domain === d ? 1 : 0.3 }}
             />
-            {DOMAIN_LABELS[d]}
+            {domainLabel(lang, d)}
           </button>
         ))}
       </div>
@@ -374,7 +407,7 @@ export default function TimelineExplorer({ items, lang }: Props) {
                     <span className="block text-slate-300 mt-0.5">{lifespanText(y, d)}</span>
                     <span className="mt-1 inline-flex items-center gap-1 text-slate-300">
                       <span className="w-2 h-2 rounded-full" style={{ backgroundColor: color }} />
-                      {DOMAIN_LABELS[primary]}
+                      {domainLabel(lang, primary)}
                     </span>
                   </span>
                 </Link>
@@ -409,7 +442,7 @@ export default function TimelineExplorer({ items, lang }: Props) {
                   <div className="min-w-0 flex-1">
                     <div className="font-semibold truncate">{pickText(p.names, lang)}</div>
                     <div className="text-xs text-slate-500 truncate">
-                      {lifespanText(y, d)} · {DOMAIN_LABELS[primary]}
+                      {lifespanText(y, d)} · {domainLabel(lang, primary)}
                     </div>
                   </div>
                 </Link>

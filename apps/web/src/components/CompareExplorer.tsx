@@ -4,8 +4,8 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { pickText, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
-import { DOMAIN_LABELS, type Person, type Relation, type Domain } from '@gph/types';
+import { t, domainLabel } from '@/lib/ui';
+import type { Person, Relation, Domain } from '@gph/types';
 
 const MAX = 3;
 
@@ -372,7 +372,7 @@ export default function CompareExplorer({
                           : 'bg-indigo-50 text-indigo-700'
                       }`}
                     >
-                      {DOMAIN_LABELS[d]}
+                      {domainLabel(lang, d)}
                     </span>
                   ))}
                 </span>
@@ -443,7 +443,7 @@ export default function CompareExplorer({
               <div className="mt-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-sm">
                 <b className="text-emerald-800">{t(lang, 'compare.sharedDomains')}：</b>
                 <span className="text-emerald-700">
-                  {sharedDomains.map((d) => DOMAIN_LABELS[d]).join('、')}
+                  {sharedDomains.map((d) => domainLabel(lang, d)).join(lang === 'zh' || lang === 'ja' ? '、' : ', ')}
                 </span>
               </div>
             )}

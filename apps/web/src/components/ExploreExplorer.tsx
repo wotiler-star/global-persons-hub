@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { pickText, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
 import PersonCard from '@/components/PersonCard';
@@ -72,7 +72,7 @@ export default function ExploreExplorer({
     for (const p of items) for (const d of p.domains) set.add(d);
     return (Object.keys(DOMAIN_LABELS) as Domain[])
       .filter((d) => set.has(d))
-      .map((d) => ({ value: d, label: DOMAIN_LABELS[d] }));
+      .map((d) => ({ value: d, label: domainLabel(lang, d) }));
   }, [items]);
 
   // 动态国籍集（按频次降序）
@@ -158,7 +158,7 @@ export default function ExploreExplorer({
           lang={lang}
           filters={[
             ...(domain !== 'all'
-              ? [{ key: 'domain', label: DOMAIN_LABELS[domain as Domain], onRemove: () => setDomain('all') }]
+              ? [{ key: 'domain', label: domainLabel(lang, domain), onRemove: () => setDomain('all') }]
               : []),
             ...(era !== 'all'
               ? [{ key: 'era', label: t(lang, ERAS.find((e) => e.key === era)!.uiKey), onRemove: () => setEra('all') }]

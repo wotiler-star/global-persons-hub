@@ -5,8 +5,7 @@
 import { use, useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getToken } from '@/lib/api';
-import { DOMAIN_LABELS } from '@gph/types';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 
 const BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://127.0.0.1:8787';
 
@@ -239,7 +238,7 @@ export default function Admin({ params }: { params: Promise<{ lang: string }> })
                       <div className="mt-1 flex flex-wrap gap-1">
                         {(p.domains || []).map((d: string) => (
                           <span key={d} className="text-xs px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
-                            {DOMAIN_LABELS[d as keyof typeof DOMAIN_LABELS] || d}
+                            {domainLabel(lang, d)}
                           </span>
                         ))}
                       </div>

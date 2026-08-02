@@ -4,9 +4,10 @@ import { use, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getToken, createPerson } from '@/lib/api';
 import { DOMAIN_LABELS, type Domain } from '@gph/types';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 
-const DOMAINS = ['film', 'business', 'academic', 'sports', 'music', 'politics', 'tech'] as Domain[];
+// 从 DOMAIN_LABELS 动态取全部赛道，避免投稿表单漏掉 art / other（此前硬编码 7 个）
+const DOMAINS = Object.keys(DOMAIN_LABELS) as Domain[];
 const BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://127.0.0.1:8787';
 
 export default function Me({ params }: { params: Promise<{ lang: string }> }) {
@@ -104,7 +105,7 @@ export default function Me({ params }: { params: Promise<{ lang: string }> }) {
             {DOMAINS.map((d) => (
               <label key={d} className="text-sm flex items-center gap-1">
                 <input type="checkbox" checked={form.domains.includes(d)} onChange={() => toggleDomain(d)} />
-                {DOMAIN_LABELS[d]}
+                {domainLabel(lang, d)}
               </label>
             ))}
           </div>

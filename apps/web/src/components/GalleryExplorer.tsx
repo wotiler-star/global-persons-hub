@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
 import PersonPortrait from '@/components/PersonPortrait';
@@ -116,7 +116,7 @@ export default function GalleryExplorer({
       {/* 领域筛选 */}
       <FilterChips
         label={t(lang, 'explore.domain')}
-        options={domains.map((d) => ({ value: d, label: DOMAIN_LABELS[d] }))}
+        options={domains.map((d) => ({ value: d, label: domainLabel(lang, d) }))}
         value={domain}
         onChange={(v) => setDomain((v || 'all') as DomainFilter)}
         allValue="all"
@@ -171,7 +171,7 @@ export default function GalleryExplorer({
           lang={lang}
           filters={[
             ...(domain !== 'all'
-              ? [{ key: 'domain', label: DOMAIN_LABELS[domain as Domain], onRemove: () => setDomain('all') }]
+              ? [{ key: 'domain', label: domainLabel(lang, domain), onRemove: () => setDomain('all') }]
               : []),
             ...(era !== 'all'
               ? [{ key: 'era', label: t(lang, ERAS.find((e) => e.key === era)!.uiKey), onRemove: () => setEra('all') }]
@@ -269,7 +269,7 @@ export default function GalleryExplorer({
                 <div className="flex flex-wrap gap-1 mt-2">
                   {active.domains.map((d) => (
                     <span key={d} className="text-[11px] px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
-                      {DOMAIN_LABELS[d]}
+                      {domainLabel(lang, d)}
                     </span>
                   ))}
                 </div>

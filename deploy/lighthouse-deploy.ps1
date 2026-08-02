@@ -12,17 +12,18 @@
 #   $SiteUrl      公开站点 URL（含协议与端口），如 http://<IP>:3000
 #   $JwtSecret    API JWT 密钥（随机强串）
 #   $AdminEmail / $AdminPass 管理后台账号
+#
+# ⚠️ 本脚本经 TAT 下发时，由 deploy/tat-deploy.py 做 {{占位符}} 字符串替换后再 base64。
+#    占位符在本地不可直接运行（PowerShell 不识别 {{}}），仅用于部署管线注入。
 # ============================================================
-param(
-  [string]$ReleaseBase = '',
-  [int]$ShardCount = 0,
-  [long]$ExpectedSize = 0,
-  [int]$WebPort = 3000,
-  [string]$SiteUrl = 'http://127.0.0.1:3000',
-  [string]$JwtSecret = 'change-me',
-  [string]$AdminEmail = 'admin@gph.local',
-  [string]$AdminPass = 'change-me'
-)
+$ReleaseBase   = '{{ReleaseBase}}'
+$ShardCount    = {{ShardCount}}
+$ExpectedSize  = {{ExpectedSize}}
+$WebPort       = {{WebPort}}
+$SiteUrl       = '{{SiteUrl}}'
+$JwtSecret     = '{{JwtSecret}}'
+$AdminEmail    = '{{AdminEmail}}'
+$AdminPass     = '{{AdminPass}}'
 
 $ErrorActionPreference = 'Stop'
 $ROOT = 'C:\www\gph'
@@ -30,13 +31,54 @@ $SHARDS = "$ROOT\shards"
 $TARGET = "$ROOT\app"
 New-Item -ItemType Directory -Force -Path $ROOT, $SHARDS, $TARGET | Out-Null
 
-# —— 1. 下载分片（直连，不走代理；每片小、可靠）——
+# 关键：TAT 以 Administrator 下发命令，pm2 默认守护落在 $env:USERPROFILE\.pm2（Administrator 临时守护），
+# 会话结束即被回收，导致 gph-api/gph-web 进程随会话死亡、公网连接拒绝（curl exit 7）。
+# 显式将 PM2_HOME 指向 SYSTEM 持久守护目录（与实例既有 ainav 应用一致），保证进程常驻、开机自启。
+$env:PM2_HOME = 'C:\Windows\system32\config\systemprofile\.pm2'
+if (-not (Test-Path $env:PM2_HOME)) { New-Item -ItemType Directory -Force -Path $env:PM2_HOME | Out-Null }
+
+# 提前补齐 Node / npm 全局 bin 到 PATH（重部署时 node 通常已装），用于下方停掉旧进程以释放目录锁。
+# 否则后续 Remove-Item $TARGET 会因文件被占用（gph-web-test 等遗留进程）而失败。
+$nodeDir = 'C:\Program Files\nodejs'
+if ($env:PATH -notlike "*$nodeDir*") { $env:PATH = "$env:PATH;$nodeDir" }
+$npm = "$nodeDir\npm.cmd"
+if (Test-Path $npm) {
+  try {
+    $npmPrefix = & $npm config get prefix 2>$null
+    if ($npmPrefix -and $env:PATH -notlike "*$npmPrefix*") { $env:PATH = "$env:PATH;$npmPrefix" }
+  } catch { }
+  # 停掉旧 gph 进程，释放被锁定的 $TARGET 目录（含早前 PM2_HOME 验证遗留的 gph-web-test）
+  # 注意：被删进程可能不存在，pm2 会返回非 0 并写 stderr；此处用 SilentlyContinue 避免
+  # WinPS 在 $ErrorActionPreference='Stop' 下把"not found"当 NativeCommandError 终止整段脚本
+  $eap = $ErrorActionPreference
+  $ErrorActionPreference = 'SilentlyContinue'
+  pm2 delete gph-web-test 2>&1 | Out-Null
+  pm2 delete gph-api 2>&1 | Out-Null
+  pm2 delete gph-web 2>&1 | Out-Null
+  $ErrorActionPreference = $eap
+  Start-Sleep -Seconds 2
+}
+
+# —— 1. 下载分片（直连，不走代理；每片小、可靠；支持断点续传）——
 if (-not $ReleaseBase -or $ShardCount -le 0) { throw 'ReleaseBase / ShardCount 未提供' }
 function Pad2($n) { if ($n -lt 10) { return '0' + [string]$n } return [string]$n }
+# 每片标准大小（与 package.ps1 的 ShardMB=3 对应）；最后一片 = ExpectedSize - 前 (N-1) 片
+$part_std = 3 * 1024 * 1024
 for ($i = 0; $i -lt $ShardCount; $i = $i + 1) {
   $name = 'part' + (Pad2 $i) + '.zip'
   $url = $ReleaseBase + '/' + $name
   $dst = "$SHARDS\$name"
+  # 续传：若已存在且大小正确则跳过
+  if (Test-Path $dst) {
+    $existing = (Get-Item $dst).Length
+    if ($i -lt $ShardCount - 1) {
+      if ($existing -eq $part_std) { Write-Output "skip (exists) $name"; continue }
+    } else {
+      # 最后一片期望大小
+      $last_expect = $ExpectedSize - $part_std * ($ShardCount - 1)
+      if ($existing -eq $last_expect) { Write-Output "skip (exists) $name"; continue }
+    }
+  }
   Write-Output "download $url"
   Invoke-WebRequest -Uri $url -OutFile $dst -UseBasicParsing
 }
@@ -100,10 +142,27 @@ if (-not $haveNode) {
 } else { Write-Output 'node already present' }
 
 # —— 7. 安装 pm2 + 日志轮转（2GB 实例必须限制日志体积，防止撑爆磁盘）——
-npm config set registry https://registry.npmmirror.com
-$present = npm ls -g pm2 --depth=0 2>$null
-if ($present -notmatch 'pm2@') { npm install -g pm2 --no-audit --no-fund | Out-Null }
-# 安装并配置 pm2-logrotate：单文件上限 10M、保留 7 份、每日/每分钟检查
+# TAT shell 默认 PATH 不含 Node 安装目录；npm/pm2 全局命令必须经此补齐，否则 ENOENT
+if ($env:PATH -notlike "*$nodeDir*") { $env:PATH = "$env:PATH;$nodeDir" }
+$npm = "$nodeDir\npm.cmd"
+& $npm config set registry https://registry.npmmirror.com
+# 关键：确保 npm 全局 prefix 目录存在，否则 npm ls/install -g 会 ENOENT（lstat 缺失目录）
+$npmPrefix = & $npm config get prefix
+if ($npmPrefix) {
+  if (-not (Test-Path $npmPrefix)) { New-Item -ItemType Directory -Force -Path $npmPrefix | Out-Null }
+  if (-not (Test-Path "$npmPrefix\node_modules")) { New-Item -ItemType Directory -Force -Path "$npmPrefix\node_modules" | Out-Null }
+  if ($env:PATH -notlike "*$npmPrefix*") { $env:PATH = "$env:PATH;$npmPrefix" }
+}
+# 用目录是否存在判断 pm2 是否已装（避免 npm ls -g 在 prefix 缺失时 ENOENT）
+$pm2Pkg = if ($npmPrefix) { Join-Path $npmPrefix 'node_modules\pm2' } else { $null }
+if (-not $pm2Pkg -or -not (Test-Path $pm2Pkg)) { & $npm install -g pm2 --no-audit --no-fund | Out-Null }
+# 将 npm 全局 bin 目录写入 Machine PATH，使开机自启的 SYSTEM 任务也能找到 pm2 / node
+if ($npmPrefix) {
+  $mPath = [Environment]::GetEnvironmentVariable('PATH', 'Machine')
+  if ($mPath -and $mPath -notlike "*$npmPrefix*") { [Environment]::SetEnvironmentVariable('PATH', "$mPath;$npmPrefix", 'Machine') }
+  if ($mPath -and $mPath -notlike "*$nodeDir*") { [Environment]::SetEnvironmentVariable('PATH', "$mPath;$nodeDir", 'Machine') }
+}
+# 安装并配置 pm2-logrotate：单文件上限 10M、保留 7 份、每分钟检查
 pm2 install pm2-logrotate 2>$null
 pm2 set pm2-logrotate:max_size 10M 2>$null
 pm2 set pm2-logrotate:retain 7 2>$null
@@ -113,52 +172,70 @@ New-Item -ItemType Directory -Force -Path "$ROOT\logs" | Out-Null
 Write-Output 'pm2 ready'
 
 # —— 8. 启动 API（Fastify；esbuild 编译为单文件后由 node 直跑，避免 tsx 派生子进程导致 pm2 信号无法送达）——
+# 原生命令（npm/pm2）会把摘要/进度写到 stderr，WinPS 在 $ErrorActionPreference='Stop' 下会误报
+# NativeCommandError；此处放宽到 SilentlyContinue，改用显式 $LASTEXITCODE 判断真实失败
+$ErrorActionPreference = 'SilentlyContinue'
+# 清理历史诊断/孤儿进程（如早前 PM2_HOME 验证留下的 gph-web-test），避免占用端口与堆积
+pm2 delete gph-web-test 2>&1 | Out-Null
+pm2 delete gph-api 2>&1 | Out-Null
+pm2 delete gph-web 2>&1 | Out-Null
 Set-Location "$TARGET\apps\api"
-if (-not (Test-Path node_modules)) { npm install --no-audit --no-fund | Out-Null }
+if (-not (Test-Path node_modules)) {
+  & $npm install --no-audit --no-fund 2>&1 | Out-Null
+  if ($LASTEXITCODE -ne 0) { throw "API npm install 失败（exit $LASTEXITCODE）" }
+}
 # @gph/types 是工作区私有包，npm install 无法从 registry 解析，需从随包附带的 packages/types 拷入
 # （仅供 tsx 开发路径使用；生产已通过 esbuild 打包进 dist/server.mjs，此处拷贝不影响生产）
 if (-not (Test-Path node_modules/@gph/types)) { New-Item -ItemType Directory -Force -Path node_modules/@gph/types | Out-Null }
 Copy-Item -Recurse -Force ..\..\packages\types\* node_modules/@gph/types
 # 编译 API 为 dist/server.mjs（@gph/types 已内联，fastify 等保持外部依赖）
-npm run build --no-audit --no-fund 2>$null
+# 注意：esbuild 把构建摘要写到 stderr；用 2>&1 合并后丢弃，避免 PowerShell 把 stderr 当作终止错误误判失败
+& $npm run build --no-audit --no-fund 2>&1 | Out-Null
+if ($LASTEXITCODE -ne 0) { throw "API 构建失败（esbuild exit $LASTEXITCODE）" }
 if (-not (Test-Path dist/server.mjs)) { throw 'API 构建失败：dist/server.mjs 未生成' }
-pm2 delete gph-api 2>$null
-pm2 start "node dist/server.mjs" --name gph-api --cwd "$TARGET\apps\api" `
-  --max-memory-restart 1500M --max-restarts 10 --min-uptime 5000 `
-  --error-file "$ROOT\logs\gph-api-error.log" --out-file "$ROOT\logs\gph-api-out.log"
+$ErrorActionPreference = 'Stop'
+Write-Output "API 构建完成（dist/server.mjs）"
 
-# —— 9. 启动 Web（Next standalone server.js）——
+# —— 9. 校验 Web 产物（standalone server.js）——
 Set-Location "$TARGET\apps\web"
-$env:PORT = [string]$WebPort
-pm2 delete gph-web 2>$null
-pm2 start server.js --name gph-web --cwd "$TARGET\apps\web" `
-  --max-memory-restart 1500M --max-restarts 10 --min-uptime 5000 `
-  --error-file "$ROOT\logs\gph-web-error.log" --out-file "$ROOT\logs\gph-web-out.log"
-pm2 save
-Write-Output "pm2 started gph-api + gph-web on port $WebPort"
+if (-not (Test-Path server.js)) { throw 'Web server.js 未找到' }
+Write-Output "Web server.js 就绪"
+# 注意：gph-api / gph-web 的 pm2 启动交由第 10 段以 SYSTEM 账户的计划任务完成，
+# 以确保进程归入 SYSTEM 持久守护（PM2_HOME=systemprofile），TAT 会话结束后不会随会话回收。
+# （TAT 以 Administrator 下发时，pm2 无法挂载到 SYSTEM 守护，会另起一个随会话消亡的临时守护。）
 
 # —— 10. 开机自启（SYSTEM 账户 AtStartup）——
 $script = "$ROOT\start-gph.ps1"
 $bootScript = @"
 `$env:PATH = [Environment]::GetEnvironmentVariable('PATH','Machine')
+# 开机自启以 SYSTEM 运行：显式补齐 node 与 npm 全局 bin（pm2 落点），避免 PATH 缺失
+`$nodeDir = 'C:\Program Files\nodejs'
+if (`$env:PATH -notlike "*`$nodeDir*") { `$env:PATH = "`$env:PATH;`$nodeDir" }
+`$npmPrefix = & "$nodeDir\npm.cmd" config get prefix 2>`$null
+if (`$npmPrefix -and `$env:PATH -notlike "*`$npmPrefix*") { `$env:PATH = "`$env:PATH;`$npmPrefix" }
 `$env:PORT = '$WebPort'
-# 确保 pm2 守护存活并恢复上次保存的进程（含 max-memory/restart 策略与日志配置）
+# 与 TAT 部署时一致：绑定到 SYSTEM 持久守护目录，确保进程归入同一处 pm2 实例（5516）
+`$env:PM2_HOME = 'C:\Windows\system32\config\systemprofile\.pm2'
 pm2 ping 2>`$null
-pm2 resurrect 2>`$null
-# 兜底：若 dump 缺失导致进程未拉起，则显式按完整配置重启
-`$list = pm2 jlist 2>`$null
-if (`$list -notmatch 'gph-api') {
-  pm2 start "node dist/server.mjs" --name gph-api --cwd "$TARGET\apps\api" --max-memory-restart 1500M --max-restarts 10 --min-uptime 5000 --error-file "$ROOT\logs\gph-api-error.log" --out-file "$ROOT\logs\gph-api-out.log"
-}
-if (`$list -notmatch 'gph-web') {
-  pm2 start server.js --name gph-web --cwd "$TARGET\apps\web" --max-memory-restart 1500M --max-restarts 10 --min-uptime 5000 --error-file "$ROOT\logs\gph-web-error.log" --out-file "$ROOT\logs\gph-web-out.log"
-}
-pm2 restart gph-api 2>`$null
-pm2 restart gph-web 2>`$null
+# 清理可能残留的 gph 进程（含 dump 中失效条目），随后按完整配置重新拉起
+pm2 delete gph-api 2>`$null
+pm2 delete gph-web 2>`$null
+# 注意：pm2 会把引号内的 "node dist/server.mjs" 整体当作脚本路径（含空格），
+# 导致 "Script not found: ...\node dist\server.mjs"。正确写法：脚本用 dist/server.mjs，
+# 通过 --interpreter node 指定解释器，pm2 会执行 node dist/server.mjs。
+pm2 start dist/server.mjs --name gph-api --interpreter node --cwd "$TARGET\apps\api" --max-memory-restart 1500M --max-restarts 10
+pm2 start server.js --name gph-web --cwd "$TARGET\apps\web" --max-memory-restart 1500M --max-restarts 10
 pm2 save
 "@
 $bootScript | Set-Content -Path $script -Encoding utf8
 $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File $script"
 $trigger = New-ScheduledTaskTrigger -AtStartup
 Register-ScheduledTask -TaskName 'StartGlobalPersonsHub' -Action $action -Trigger $trigger -User 'SYSTEM' -Force
+# 立即以 SYSTEM 身份触发一次，使 gph 在当前会话就归入 SYSTEM 持久守护（不依赖重启）
+schtasks /Run /TN StartGlobalPersonsHub 2>&1 | Out-Null
+Start-Sleep -Seconds 15
+# 校验：以 SYSTEM 守护视角确认 gph 已拉起
+$env:PM2_HOME = 'C:\Windows\system32\config\systemprofile\.pm2'
+$jlist = pm2 jlist 2>$null
+if ($jlist -notmatch 'gph-api' -or $jlist -notmatch 'gph-web') { throw 'SYSTEM 任务未成功拉起 gph-api / gph-web' }
 Write-Output 'DONE'

@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getPerson, getRelations, getNetwork, getPersons } from '@/lib/api';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';
-import { DOMAIN_LABELS, type Domain } from '@gph/types';
+import type { Domain } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
 import RelatedPersons from '@/components/RelatedPersons';
 import NetworkGraph from '@/components/NetworkGraph';
@@ -33,7 +33,7 @@ function buildFaqLd(person: any, L: Lang) {
   }
   const occ = pickText(person.occupations, L);
   const doms = (person.domains || [])
-    .map((d: Domain) => DOMAIN_LABELS[d])
+    .map((d: Domain) => domainLabel('en', d))
     .filter(Boolean)
     .join(', ');
   if (occ || doms) {

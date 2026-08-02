@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
-import { DOMAIN_LABELS, type Person } from '@gph/types';
+import { t, domainLabel } from '@/lib/ui';
+import type { Person } from '@gph/types';
 
 /**
  * AI 人物名片（服务端纯渲染，零客户端 JS、零 LLM 调用）：
@@ -47,7 +47,7 @@ export default function AICard({ person, lang }: { person: Person; lang: Lang })
           <div className="flex flex-wrap gap-1 mt-3">
             {person.domains.map((d) => (
               <span key={d} className="text-[11px] px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
-                {DOMAIN_LABELS[d]}
+                {domainLabel(lang, d)}
               </span>
             ))}
           </div>

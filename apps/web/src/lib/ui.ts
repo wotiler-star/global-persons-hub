@@ -332,6 +332,17 @@ const RAW: Record<string, string[]> = {
   'persons.noResult': ['暂无符合条件的人物', 'No matching persons', 'Sin personas coincidentes', 'Aucun personnage correspondant', '条件に合う人物なし', 'Нет подходящих персон', 'لا يوجد أشخاص مطابقون', 'Nenhuma pessoa correspondente', 'Keine passenden Personen', '조건에 맞는 인물 없음', 'Nessuna persona corrispondente', 'कोई मेल खाता व्यक्ति नहीं', 'Tidak ada tokoh yang cocok'],
   'explore.title': ['人物探索', 'Explore Persons', 'Explorar Personas', 'Explorer les personnages', '人物を探索', 'Исследовать личностей', 'استكشف الشخصيات', 'Explorar Pessoas', 'Personen erkunden', '인물 탐색', 'Esplora Persone', 'व्यक्तित्व खोजें', 'Jelajahi Tokoh'],
   'explore.domain': ['领域', 'Domain', 'Dominio', 'Domaine', '分野', 'Сфера', 'المجال', 'Domínio', 'Bereich', '분야', 'Dominio', 'क्षेत्र', 'Domain'],
+
+  // 领域名（9 个赛道 × 13 语）——此前全站硬编码中文 DOMAIN_LABELS，非中文用户看到的也是中文
+  'domain.film': ['影视', 'Film & TV', 'Cine y TV', 'Cinéma et TV', '映画・テレビ', 'Кино и ТВ', 'السينما والتلفزيون', 'Cinema e TV', 'Film & TV', '영화·TV', 'Cinema e TV', 'फ़िल्म और टीवी', 'Film & TV'],
+  'domain.business': ['商业', 'Business', 'Negocios', 'Affaires', 'ビジネス', 'Бизнес', 'الأعمال', 'Negócios', 'Wirtschaft', '비즈니스', 'Business', 'व्यवसाय', 'Bisnis'],
+  'domain.academic': ['学术', 'Academia', 'Academia', 'Académique', '学術', 'Наука', 'الأوساط الأكاديمية', 'Academia', 'Wissenschaft', '학술', 'Accademia', 'शिक्षा जगत', 'Akademik'],
+  'domain.sports': ['体育', 'Sports', 'Deportes', 'Sport', 'スポーツ', 'Спорт', 'الرياضة', 'Esportes', 'Sport', '스포츠', 'Sport', 'खेल', 'Olahraga'],
+  'domain.music': ['音乐', 'Music', 'Música', 'Musique', '音楽', 'Музыка', 'الموسيقى', 'Música', 'Musik', '음악', 'Musica', 'संगीत', 'Musik'],
+  'domain.politics': ['政治', 'Politics', 'Política', 'Politique', '政治', 'Политика', 'السياسة', 'Política', 'Politik', '정치', 'Politica', 'राजनीति', 'Politik'],
+  'domain.tech': ['科技', 'Technology', 'Tecnología', 'Technologie', 'テクノロジー', 'Технологии', 'التكنولوجيا', 'Tecnologia', 'Technologie', '기술', 'Tecnologia', 'प्रौद्योगिकी', 'Teknologi'],
+  'domain.art': ['艺术', 'Art', 'Arte', 'Art', '芸術', 'Искусство', 'الفن', 'Arte', 'Kunst', '예술', 'Arte', 'कला', 'Seni'],
+  'domain.other': ['其他', 'Other', 'Otros', 'Autre', 'その他', 'Другое', 'أخرى', 'Outros', 'Sonstige', '기타', 'Altro', 'अन्य', 'Lainnya'],
   'explore.era': ['时代', 'Era', 'Época', 'Époque', '時代', 'Эпоха', 'العصر', 'Época', 'Epoche', '시대', 'Epoca', 'युग', 'Era'],
   'explore.nationality': ['国籍', 'Nationality', 'Nacionalidad', 'Nationalité', '国籍', 'Национальность', 'الجنسية', 'Nacionalidade', 'Staatsangehörigkeit', '국적', 'Nazionalità', 'राष्ट्रीयता', 'Kewarganegaraan'],
   'explore.reset': ['重置筛选', 'Reset filters', 'Restablecer', 'Réinitialiser', 'リセット', 'Сбросить', 'إعادة تعيين', 'Redefinir', 'Zurücksetzen', '초기화', 'Reimposta', 'रीसेट', 'Atur ulang'],
@@ -459,6 +470,10 @@ const RAW: Record<string, string[]> = {
   'persons.statCountries': ['覆盖国籍', 'Nationalities covered', 'Nacionalidades cubiertas', 'Nationalités couvertes', 'カバー国籍', 'Охваченные национальности', 'الجنسيات المغطاة', 'Nacionalidades cobertas', 'Abgedeckte Staatsangehörigkeiten', '커버 국적', 'Nazionalità coperte', 'कवर राष्ट्रीयता', 'Kewarganegaraan tercover'],
 
   'search.facetNationality': ['按国籍', 'By nationality', 'Por nacionalidad', 'Par nationalité', '国籍別', 'По национальности', 'حسب الجنسية', 'Por nacionalidade', 'Nach Staatsangehörigkeit', '국적별', 'Per nazionalità', 'राष्ट्रीयता अनुसार', 'Berdasarkan kewarganegaraan'],
+  'share.copyLink': ['复制链接', 'Copy link', 'Copiar enlace', 'Copier le lien', 'リンクをコピー', 'Копировать ссылку', 'نسخ الرابط', 'Copiar link', 'Link kopieren', '링크 복사', 'Copia link', 'लिंक कॉपी करें', 'Salin tautan'],
+  'share.copied': ['已复制', 'Copied', 'Copiado', 'Copié', 'コピーしました', 'Скопировано', 'تم النسخ', 'Copiado', 'Kopiert', '복사됨', 'Copiato', 'कॉपी हो गया', 'Tersalin'],
+  'share.copyHint': ['复制当前筛选条件的链接', 'Copy a link to the current filters', 'Copiar un enlace a los filtros actuales', 'Copier un lien vers les filtres actuels', '現在の絞り込み条件のリンクをコピー', 'Скопировать ссылку на текущие фильтры', 'انسخ رابطًا لعوامل التصفية الحالية', 'Copiar um link para os filtros atuais', 'Link zu den aktuellen Filtern kopieren', '현재 필터 링크 복사', 'Copia un link ai filtri attuali', 'वर्तमान फ़िल्टर का लिंक कॉपी करें', 'Salin tautan filter saat ini'],
+
   'search.activeFilters': ['已选筛选', 'Active filters', 'Filtros activos', 'Filtres actifs', '選択中のフィルター', 'Активные фильтры', 'عوامل التصفية النشطة', 'Filtros ativos', 'Aktive Filter', '활성 필터', 'Filtri attivi', 'सक्रिय फ़िल्टर', 'Filter aktif'],
   'search.removeFilter': ['移除', 'Remove', 'Quitar', 'Retirer', '削除', 'Удалить', 'إزالة', 'Remover', 'Entfernen', '제거', 'Rimuovi', 'हटाएं', 'Hapus'],
   'search.suggestions': ['你可能感兴趣', 'You may also like', 'También te puede gustar', 'Vous aimerez peut-être', 'おすすめ', 'Вам может понравиться', 'قد يعجبك', 'Você também pode gostar', 'Das könnte Ihnen gefallen', '추천', 'Potrebbe piacerti', 'यह भी पसंद आ सकता है', 'Mungkin Anda suka'],
@@ -500,6 +515,15 @@ export function t(lang: Lang | string, key: string): string {
   if (UI.en[key]) return UI.en[key];
   if (UI.zh[key]) return UI.zh[key];
   return key;
+}
+
+/** 取领域显示名（13 语）。传入 Domain（如 'film'），未知值原样返回。
+ * 全站应使用本函数而非 @gph/types 的 DOMAIN_LABELS（后者仅为中文常量，用于校验/枚举）。 */
+export function domainLabel(lang: Lang | string, domain: string): string {
+  if (!domain) return '';
+  const key = `domain.${domain}`;
+  const label = t(lang, key);
+  return label === key ? domain : label;
 }
 
 // 开发期断言：任一 key 的翻译数量不对齐 13 种时打印告警

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { pickText, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
 import FilterChips, { type ChipOption } from '@/components/FilterChips';
@@ -170,7 +170,7 @@ export default function SearchExplorer({
       {/* 分面：领域 */}
       <FilterChips
         label={t(lang, 'search.facetDomain')}
-        options={presentDomains.map((d) => ({ value: d, label: DOMAIN_LABELS[d], count: domainCounts.get(d) || 0 }))}
+        options={presentDomains.map((d) => ({ value: d, label: domainLabel(lang, d), count: domainCounts.get(d) || 0 }))}
         value={domain}
         onChange={onDomain}
         allValue=""
@@ -203,7 +203,7 @@ export default function SearchExplorer({
         lang={lang}
         filters={[
           ...(domain
-            ? [{ key: 'domain', label: DOMAIN_LABELS[domain as Domain], onRemove: () => onDomain('') }]
+            ? [{ key: 'domain', label: domainLabel(lang, domain), onRemove: () => onDomain('') }]
             : []),
           ...(era
             ? [{ key: 'era', label: t(lang, ERAS.find((e) => e.key === era)!.uiKey), onRemove: () => onEra('') }]

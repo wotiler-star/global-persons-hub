@@ -23,32 +23,31 @@ pwsh deploy/package.ps1 -SiteUrl http://<PUBLIC_IP>:3000 -OutDir deploy/dist
 ```
 产物：`deploy/dist/shards/part00.zip … partNN.zip`。
 
-## 2. 上传分片到文件源
-**GitHub Release（无 gh，用 curl + Token）：**
+## 2. 上传分片到文件源（GitHub Release）
+> 仓库为 **public**，Release 资源任何人可直链下载，故 Lighthouse 拉取分片无需鉴权。
+> 已用 PAT 建好 `deploy` release（release id 见 `deploy/.release_id`）。
+
+一行上传（自动去重 + 写 `dist/shard_info.json` 供 TAT 步骤使用）：
 ```bash
-# 建 release（若未建）
-curl -s -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
-  -d '{"tag_name":"deploy","name":"deploy"}' \
-  https://api.github.com/repos/wotiler-star/global-persons-hub/releases
-# 逐个上传分片（直连，勿走代理）
-for f in deploy/dist/shards/part*.zip; do
-  curl -s -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
-    -H "Content-Type: application/octet-stream" \
-    --data-binary @$f \
-    "https://uploads.github.com/repos/wotiler-star/global-persons-hub/releases/<RELEASE_ID>/assets?name=$(basename $f)"
-done
+GITHUB_TOKEN=ghp_xxx bash deploy/upload-shards.sh
 ```
 Release 基础 URL 形如 `https://github.com/wotiler-star/global-persons-hub/releases/download/deploy`。
+脚本会把 `release_base / shard_count / expected_size` 写入 `deploy/dist/shard_info.json`。
 
-## 3. TAT 下发部署脚本（需腾讯云凭证，Python SDK）
-```python
-# 用 tencentcloud-sdk-python-tat / lighthouse / cvm（见技能 SKILL.md）
-# 1) 用 SecretId/Key 定位实例（IP 反查 lhins-xxx）
-# 2) 读取 deploy/lighthouse-deploy.ps1 原文 -> base64(UTF-8) -> RunCommand(Content=该base64, Username='Administrator')
-#    参数通过脚本 param 注入：ReleaseBase / ShardCount / ExpectedSize / WebPort / SiteUrl / JwtSecret / AdminEmail / AdminPass
-# 3) DescribeInvocationTasks(filters invocation-id, HideOutput=False) 取回 base64 输出并解码查看日志
+## 3. TAT 下发部署脚本（需腾讯云凭证）
+部署驱动器 `deploy/tat-deploy.py` 已封装完整流程：读取 `lighthouse-deploy.ps1` → 注入 `{{占位符}}` → base64(UTF-8) → 按公网 IP 反查实例 → TAT RunCommand(POWERSHELL) → 轮询 `DescribeInvocationTasks`(HideOutput=False) 取回并解码输出 → `CreateFirewallRules` 放行 Web 端口。
+
+前置（环境变量，不要硬编码）：
+```bash
+export TENCENT_SECRET_ID=AKID...
+export TENCENT_SECRET_KEY=....
+export GPH_PUBLIC_IP=175.178.23.30      # 实例公网 IP
+export TENCENT_REGION=ap-guangzhou      # 须与实例地域一致
+export GPH_WEB_PORT=3000
+pip install tencentcloud-sdk-python
+python deploy/tat-deploy.py
 ```
-⚠️ TAT `Content` 必须是 **base64(UTF-8)** 的脚本原文，不要 `powershell -EncodedCommand` 包装，也不要明文。
+⚠️ `lighthouse-deploy.ps1` 现以 `{{占位符}}` 接收参数（不再用 `param()`），由 `tat-deploy.py` 做字符串替换后下发。TAT `Content` 必须是 **base64(UTF-8)** 的脚本原文，不要 `powershell -EncodedCommand` 包装，也不要明文。
 
 ## 4. 放行防火墙（Lighthouse API，需凭证）
 ```python

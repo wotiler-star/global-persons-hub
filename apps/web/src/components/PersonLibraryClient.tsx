@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { getPersons } from '@/lib/api';
 import { useFavorites, useHistoryEntries, clearHistory, toggleFavorite } from '@/lib/libraryStore';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 import { pickText, type Lang } from '@/lib/i18n';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
@@ -13,6 +13,8 @@ import SortToggle from '@/components/SortToggle';
 import EmptyState from '@/components/EmptyState';
 import ActiveFilters from '@/components/ActiveFilters';
 import { downloadText, toCsv } from '@/lib/download';
+import { copyText } from '@/lib/clipboard';
+import { useQuerySync } from '@/lib/useQuerySync';
 
 type FavSort = 'recent' | 'name' | 'influence';
 
@@ -50,6 +52,35 @@ export default function PersonLibraryClient({
     };
   }, [lang, isShared]);
 
+  // —— 深链接：收藏夹的领域/排序同步到 URL ——
+  // 本组件纯客户端渲染（无 SSR 初值），故先在挂载后从 URL 读回，再开启同步；
+  // restored 之前把受控键置空，避免 useQuerySync 用默认值抹掉 URL 里的初始参数。
+  const [restored, setRestored] = useState(false);
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const p = new URLSearchParams(window.location.search);
+    const d = p.get('domain');
+    if (d && d in DOMAIN_LABELS) setDomain(d);
+    const s = p.get('sort');
+    if (s === 'recent' || s === 'name' || s === 'influence') setSort(s);
+    setRestored(true);
+  }, []);
+
+  useQuerySync(
+    () =>
+      restored
+        ? { domain: domain === 'all' ? '' : domain, sort: sort === 'recent' ? '' : sort }
+        : {},
+    restored ? ['domain', 'sort'] : [],
+    [restored, domain, sort],
+    (params) => {
+      const d = params.get('domain');
+      setDomain(d && d in DOMAIN_LABELS ? d : 'all');
+      const s = params.get('sort');
+      setSort(s === 'name' || s === 'influence' ? s : 'recent');
+    }
+  );
+
   const bySlug = useMemo(() => new Map(all.map((p) => [p.slug, p])), [all]);
   const favPersons = useMemo(
     () => favs.map((s) => bySlug.get(s)).filter((p): p is Person => Boolean(p)),
@@ -66,7 +97,7 @@ export default function PersonLibraryClient({
     favPersons.forEach((p) => p.domains.forEach((d) => set.add(d)));
     return (Object.keys(DOMAIN_LABELS) as Domain[])
       .filter((d) => set.has(d))
-      .map((d) => ({ value: d, label: DOMAIN_LABELS[d] }));
+      .map((d) => ({ value: d, label: domainLabel(lang, d) }));
   }, [favPersons]);
 
   // 排序（recent 即收藏顺序，toggleFavorite 已置顶最新）
@@ -128,11 +159,9 @@ export default function PersonLibraryClient({
 
   const onShare = async () => {
     const url = `${window.location.origin}/${lang}/library?ids=${favs.join(',')}`;
-    try {
-      await navigator.clipboard.writeText(url);
-    } catch {
-      /* 剪贴板不可用时静默 */
-    }
+    // 此前无论剪贴板是否可用都提示「已复制」，会误导用户；改为按实际结果反馈
+    const ok = await copyText(url);
+    if (!ok) return;
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -237,7 +266,7 @@ export default function PersonLibraryClient({
               />
               <ActiveFilters
                 lang={lang}
-                filters={domain !== 'all' ? [{ key: 'domain', label: DOMAIN_LABELS[domain as Domain], onRemove: () => setDomain('all') }] : []}
+                filters={domain !== 'all' ? [{ key: 'domain', label: domainLabel(lang, domain), onRemove: () => setDomain('all') }] : []}
                 onClear={() => setDomain('all')}
               />
               <div className="flex items-center gap-3">

@@ -3,9 +3,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getPerson } from '@/lib/api';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';
-import { DOMAIN_LABELS } from '@gph/types';
 import JsonLd from '@/components/JsonLd';
 
 // 人物对比页（SEO 着陆页）：/zh/compare/albert-einstein-vs-elon-musk
@@ -104,7 +103,7 @@ export default async function ComparePage({
         <div className="flex flex-wrap gap-1">
           {(p.domains || []).map((d: string) => (
             <span key={d} className="text-xs px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
-              {DOMAIN_LABELS[d as keyof typeof DOMAIN_LABELS] || d}
+              {domainLabel(L, d)}
             </span>
           ))}
         </div>

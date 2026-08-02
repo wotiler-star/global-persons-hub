@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getPersons } from '@/lib/api';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
-import { t } from '@/lib/ui';
+import { t, domainLabel } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME, SITE_URL } from '@/lib/og';
 import { DOMAIN_LABELS, type Domain } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
@@ -111,7 +111,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             href={`/${L}/domain/${d}`}
             className="px-3 py-1 rounded-full bg-white border text-sm text-slate-700 hover:bg-indigo-50"
           >
-            {DOMAIN_LABELS[d]}
+            {domainLabel(L, d)}
           </a>
         ))}
       </section>

@@ -10,6 +10,19 @@ export function useFavorites(): string[] {
   return useSyncExternalStore(subscribe, getFavorites, () => []);
 }
 
+/**
+ * 单个 slug 的收藏态。
+ * 相比 useFavorites()：快照是布尔原始值而非数组引用，因此某一项收藏状态变化时，
+ * 只有对应的那个按钮重渲染，列表页（数百张卡）不会整体重渲染。
+ */
+export function useIsFavorite(slug: string): boolean {
+  return useSyncExternalStore(
+    subscribe,
+    () => isFavorite(slug),
+    () => false
+  );
+}
+
 /** 浏览历史 slug 列表（响应 localStorage 变更，跨标签页同步） */
 export function useHistory(): string[] {
   return useSyncExternalStore(subscribe, getHistory, () => []);
