@@ -12359,7 +12359,41 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "格雷戈尔·孟德尔是奥地利修道士与博物学家，被誉为遗传学之父。他通过豌豆杂交实验揭示了遗传的分离定律与自由组合定律，奠定了现代遗传学的基础。",
+      "en": "Gregor Mendel was an Austrian monk and naturalist, revered as the father of genetics. Through his pea-plant hybridization experiments he discovered the laws of segregation and independent assortment, founding modern genetics."
+    },
+    "achievements": [
+      {
+        "zh": "提出孟德尔遗传定律（分离定律与自由组合定律）",
+        "en": "Formulated Mendel's laws of inheritance (law of segregation and law of independent assortment)"
+      },
+      {
+        "zh": "通过豌豆实验建立遗传因子（基因）概念",
+        "en": "Established the concept of hereditary factors (genes) via pea-plant experiments"
+      },
+      {
+        "zh": "奠基现代遗传学",
+        "en": "Founded modern genetics"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "布吕恩圣托马斯修道院",
+          "en": "St. Thomas's Abbey, Brno"
+        },
+        "type": "org"
+      },
+      {
+        "name": {
+          "zh": "维也纳大学",
+          "en": "University of Vienna"
+        },
+        "type": "school"
+      }
+    ]
   },
   {
     "id": "p-pasteur",
@@ -12457,7 +12491,41 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "路易·巴斯德是法国微生物学家与化学家，证实了微生物致病理论（胚种说），发明了巴氏杀菌法与多种疫苗。他的工作奠定了现代医学与微生物学的基础。",
+      "en": "Louis Pasteur was a French microbiologist and chemist who proved the germ theory of disease and invented pasteurization and several vaccines. His work laid the foundations of modern medicine and microbiology."
+    },
+    "achievements": [
+      {
+        "zh": "提出微生物致病理论（胚种说）",
+        "en": "Established the germ theory of disease"
+      },
+      {
+        "zh": "发明巴氏杀菌法",
+        "en": "Invented pasteurization"
+      },
+      {
+        "zh": "研制狂犬病与炭疽疫苗",
+        "en": "Developed vaccines against rabies and anthrax"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "巴斯德研究所",
+          "en": "Pasteur Institute"
+        },
+        "type": "org"
+      },
+      {
+        "name": {
+          "zh": "斯特拉斯堡大学",
+          "en": "University of Strasbourg"
+        },
+        "type": "school"
+      }
+    ]
   },
   {
     "id": "p-goodall",
@@ -12555,7 +12623,48 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "珍·古道尔是英国灵长类动物学家，以在坦桑尼亚贡贝溪国家公园对黑猩猩的长期野外研究闻名。她发现了黑猩猩会制造并使用工具，彻底改变了人类对动物行为与智能的认知。",
+      "en": "Jane Goodall is a British primatologist renowned for her long-term field study of chimpanzees at Gombe Stream National Park in Tanzania. Her discovery that chimps make and use tools transformed our understanding of animal behavior and intelligence."
+    },
+    "achievements": [
+      {
+        "zh": "发现黑猩猩制造并使用工具",
+        "en": "Discovered that chimpanzees manufacture and use tools"
+      },
+      {
+        "zh": "建立贡贝黑猩猩长期野外研究",
+        "en": "Pioneered long-term wild chimpanzee field research at Gombe"
+      },
+      {
+        "zh": "推动野生动物保护与动物福利",
+        "en": "Advanced wildlife conservation and animal welfare"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "珍·古道尔研究会",
+          "en": "Jane Goodall Institute"
+        },
+        "type": "org"
+      },
+      {
+        "name": {
+          "zh": "剑桥大学",
+          "en": "University of Cambridge"
+        },
+        "type": "school"
+      },
+      {
+        "name": {
+          "zh": "联合国和平使者",
+          "en": "UN Messenger of Peace"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-franklin",
@@ -12653,7 +12762,41 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "罗莎琳德·富兰克林是英国物理化学家与晶体学家，以其 DNA 的 X 射线衍射图像（51 号照片）为揭示 DNA 双螺旋结构起到关键作用。她的贡献长期被低估。",
+      "en": "Rosalind Franklin was a British physical chemist and crystallographer whose X-ray diffraction images of DNA (notably Photo 51) were crucial to deciphering the double-helix structure. Her contribution was long underappreciated."
+    },
+    "achievements": [
+      {
+        "zh": "拍摄 DNA 的 X 射线衍射图像（51 号照片）",
+        "en": "Captured X-ray diffraction images of DNA (Photo 51)"
+      },
+      {
+        "zh": "为 DNA 双螺旋结构解析提供关键证据",
+        "en": "Provided key evidence for the DNA double-helix model"
+      },
+      {
+        "zh": "烟草花叶病毒与煤炭结构研究",
+        "en": "Research on tobacco mosaic virus and coal structure"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "伦敦国王学院",
+          "en": "King's College London"
+        },
+        "type": "school"
+      },
+      {
+        "name": {
+          "zh": "伯贝克学院",
+          "en": "Birkbeck, University of London"
+        },
+        "type": "school"
+      }
+    ]
   },
   {
     "id": "p-tuyouyou",
@@ -12751,7 +12894,34 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "屠呦呦是中国药学家，因发现抗疟药物青蒿素及其衍生物双氢青蒿素而获得 2015 年诺贝尔生理学或医学奖。她是首位获诺贝尔科学奖项的中国本土科学家。",
+      "en": "Tu Youyou is a Chinese pharmaceutical chemist who discovered artemisinin and its derivative dihydroartemisinin for malaria treatment, earning the 2015 Nobel Prize in Physiology or Medicine. She is the first Chinese scientist to receive a Nobel Prize in the sciences."
+    },
+    "achievements": [
+      {
+        "zh": "发现抗疟药物青蒿素",
+        "en": "Discovered artemisinin, a malaria treatment"
+      },
+      {
+        "zh": "获 2015 年诺贝尔生理学或医学奖",
+        "en": "Awarded the 2015 Nobel Prize in Physiology or Medicine"
+      },
+      {
+        "zh": "从传统中医药中发掘现代药物",
+        "en": "Derived a modern drug from traditional Chinese medicine"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "中国中医科学院",
+          "en": "China Academy of Chinese Medical Sciences"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-sagan",
@@ -12849,7 +13019,41 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "卡尔·萨根是美国天文学家、天体物理学家与科学传播者，在行星科学、地外生命探索（SETI）领域贡献卓著。他主持的电视系列片《宇宙》深刻影响了公众科学素养。",
+      "en": "Carl Sagan was an American astronomer, astrophysicist, and science communicator who made major contributions to planetary science and the search for extraterrestrial life (SETI). His television series Cosmos profoundly shaped public scientific literacy."
+    },
+    "achievements": [
+      {
+        "zh": "主持科普巨制《宇宙》（Cosmos）",
+        "en": "Hosted the landmark science series Cosmos"
+      },
+      {
+        "zh": "推动行星科学与 SETI 研究",
+        "en": "Advanced planetary science and SETI research"
+      },
+      {
+        "zh": "科普化德雷克方程并提出核冬天理论",
+        "en": "Popularized the Drake equation and co-developed nuclear winter theory"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "康奈尔大学",
+          "en": "Cornell University"
+        },
+        "type": "school"
+      },
+      {
+        "name": {
+          "zh": "美国国家航空航天局",
+          "en": "NASA"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-lpage",
@@ -12954,7 +13158,48 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "拉里·佩奇是谷歌联合创始人，与谢尔盖·布林共同开发了 PageRank 排序算法，并联合创办了谷歌（现 Alphabet）。他曾任 Alphabet 首席执行官。",
+      "en": "Larry Page is the co-founder of Google, who with Sergey Brin developed the PageRank ranking algorithm and co-founded Google (now Alphabet). He served as CEO of Alphabet."
+    },
+    "achievements": [
+      {
+        "zh": "联合创办谷歌并发明 PageRank 算法",
+        "en": "Co-founded Google and invented the PageRank algorithm"
+      },
+      {
+        "zh": "领导 Alphabet 作为 CEO",
+        "en": "Led Alphabet as CEO"
+      },
+      {
+        "zh": "推动自动驾驶与生命科学等前沿投资",
+        "en": "Championed frontier investments in self-driving cars and life sciences"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "谷歌 / Alphabet",
+          "en": "Google / Alphabet"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "密歇根大学",
+          "en": "University of Michigan"
+        },
+        "type": "school"
+      },
+      {
+        "name": {
+          "zh": "斯坦福大学",
+          "en": "Stanford University"
+        },
+        "type": "school"
+      }
+    ]
   },
   {
     "id": "p-brin",
@@ -13059,7 +13304,44 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "谢尔盖·布林是谷歌联合创始人，与拉里·佩奇共同开发了 PageRank 并联合创办谷歌。他长期主导公司的前沿技术与研发项目。",
+      "en": "Sergey Brin is the co-founder of Google, who with Larry Page developed PageRank and co-founded the company. He long led Google's frontier technology and R&D efforts."
+    },
+    "achievements": [
+      {
+        "zh": "联合创办谷歌并开发 PageRank",
+        "en": "Co-founded Google and developed PageRank"
+      },
+      {
+        "zh": "推动谷歌 X 实验室与前沿项目",
+        "en": "Drove Google X lab and frontier projects"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "谷歌 / Alphabet",
+          "en": "Google / Alphabet"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "斯坦福大学",
+          "en": "Stanford University"
+        },
+        "type": "school"
+      },
+      {
+        "name": {
+          "zh": "马里兰大学",
+          "en": "University of Maryland"
+        },
+        "type": "school"
+      }
+    ]
   },
   {
     "id": "p-cook",
@@ -13159,7 +13441,48 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "蒂姆·库克是苹果公司现任首席执行官，2011 年接替史蒂夫·乔布斯。他强化了苹果的供应链管理与服务业务，并推动公司在环保与隐私方面的承诺。",
+      "en": "Tim Cook is the current CEO of Apple, succeeding Steve Jobs in 2011. He strengthened Apple's supply-chain management and services business, and advanced the company's commitments to environmental sustainability and privacy."
+    },
+    "achievements": [
+      {
+        "zh": "担任苹果公司首席执行官",
+        "en": "Serves as CEO of Apple"
+      },
+      {
+        "zh": "将苹果服务与可穿戴业务规模化",
+        "en": "Scaled Apple's services and wearables business"
+      },
+      {
+        "zh": "推动供应链与制造透明化",
+        "en": "Advanced supply-chain and manufacturing transparency"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "苹果公司",
+          "en": "Apple Inc."
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "杜克大学",
+          "en": "Duke University"
+        },
+        "type": "school"
+      },
+      {
+        "name": {
+          "zh": "IBM",
+          "en": "IBM"
+        },
+        "type": "company"
+      }
+    ]
   },
   {
     "id": "p-nadella",
@@ -13259,7 +13582,44 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "萨提亚·纳德拉是微软董事长兼首席执行官，自 2014 年起执掌微软。他推动公司全面转向云计算与人工智能，重塑了微软的增长曲线。",
+      "en": "Satya Nadella is the chairman and CEO of Microsoft, leading the company since 2014. He steered Microsoft decisively toward cloud computing and artificial intelligence, reshaping its growth trajectory."
+    },
+    "achievements": [
+      {
+        "zh": "担任微软首席执行官并推动云与 AI 转型",
+        "en": "Serves as Microsoft CEO and drove its cloud and AI transformation"
+      },
+      {
+        "zh": "将 Azure 打造成核心增长引擎",
+        "en": "Built Azure into a core growth engine"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "微软",
+          "en": "Microsoft"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "威斯康星大学密尔沃基分校",
+          "en": "University of Wisconsin–Milwaukee"
+        },
+        "type": "school"
+      },
+      {
+        "name": {
+          "zh": "印度理工学院",
+          "en": "Indian Institute of Technology"
+        },
+        "type": "school"
+      }
+    ]
   },
   {
     "id": "p-huang",
@@ -13365,7 +13725,37 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "黄仁勋是英伟达（NVIDIA）联合创始人、总裁兼首席执行官。他将公司从显卡芯片厂商发展为全球人工智能计算平台的核心，引领了深度学习与生成式 AI 的算力革命。",
+      "en": "Jensen Huang is the co-founder, president, and CEO of NVIDIA. He transformed the company from a graphics-chip maker into the core of the global AI computing platform, spearheading the compute revolution behind deep learning and generative AI."
+    },
+    "achievements": [
+      {
+        "zh": "联合创办英伟达（NVIDIA）",
+        "en": "Co-founded NVIDIA"
+      },
+      {
+        "zh": "推动 GPU 成为 AI 计算核心",
+        "en": "Made the GPU the engine of AI computing"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "英伟达（NVIDIA）",
+          "en": "NVIDIA"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "斯坦福大学",
+          "en": "Stanford University"
+        },
+        "type": "school"
+      }
+    ]
   },
   {
     "id": "p-altman",
@@ -13470,7 +13860,41 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "萨姆·奥尔特曼是 OpenAI 联合创始人兼首席执行官，主导了 ChatGPT 与生成式人工智能的爆发。他曾担任创业加速器 Y Combinator 的总裁。",
+      "en": "Sam Altman is the co-founder and CEO of OpenAI, driving the explosion of ChatGPT and generative AI. He previously served as president of the startup accelerator Y Combinator."
+    },
+    "achievements": [
+      {
+        "zh": "领导 OpenAI 发布 ChatGPT",
+        "en": "Led OpenAI to launch ChatGPT"
+      },
+      {
+        "zh": "推动生成式人工智能进入大众视野",
+        "en": "Brought generative AI to the mainstream"
+      },
+      {
+        "zh": "曾任 Y Combinator 总裁",
+        "en": "Former president of Y Combinator"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "OpenAI",
+          "en": "OpenAI"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "Y Combinator",
+          "en": "Y Combinator"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-bach",
@@ -13573,7 +13997,34 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "约翰·塞巴斯蒂安·巴赫是巴洛克时期德国作曲家与管风琴家，被公认为西方音乐史上最伟大的作曲家之一。他精通对位法，作品涵盖协奏曲、受难曲与键盘音乐。",
+      "en": "Johann Sebastian Bach was a German Baroque composer and organist, widely regarded as one of the greatest composers in Western music history. A master of counterpoint, his output spans concertos, passions, and keyboard music."
+    },
+    "achievements": [
+      {
+        "zh": "创作《勃兰登堡协奏曲》",
+        "en": "Composed the Brandenburg Concertos"
+      },
+      {
+        "zh": "完成《平均律钢琴曲集》",
+        "en": "Completed The Well-Tempered Clavier"
+      },
+      {
+        "zh": "创作《b 小调弥撒》与《马太受难曲》",
+        "en": "Wrote the Mass in B minor and St Matthew Passion"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "莱比锡圣托马斯教堂",
+          "en": "St. Thomas Church, Leipzig"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-mercury",
@@ -13671,7 +14122,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "弗雷迪·默丘里是英国摇滚乐队皇后乐队（Queen）的主唱与词曲作者，以极具戏剧性的舞台表现力和宽广音域著称。他是 20 世纪最具影响力的摇滚歌手之一。",
+      "en": "Freddie Mercury was the British rock band Queen's lead singer and songwriter, renowned for his theatrical stage presence and soaring vocal range. He remains one of the most influential rock vocalists of the 20th century."
+    },
+    "achievements": [
+      {
+        "zh": "担任皇后乐队（Queen）主唱",
+        "en": "Lead vocalist of the band Queen"
+      },
+      {
+        "zh": "创作《波西米亚狂想曲》等经典",
+        "en": "Wrote classics such as Bohemian Rhapsody"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "皇后乐队（Queen）",
+          "en": "Queen (band)"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-mjackson",
@@ -13775,7 +14249,41 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "迈克尔·杰克逊是美国歌手、词曲作者与舞蹈家，被誉为「流行音乐之王」。其专辑《颤栗》（Thriller）是史上最畅销的录音室专辑，他革新了音乐录影与流行舞步。",
+      "en": "Michael Jackson was an American singer, songwriter, and dancer hailed as the 'King of Pop.' His album Thriller is the best-selling studio album of all time, and he revolutionized the music video and pop dance."
+    },
+    "achievements": [
+      {
+        "zh": "发行史上最畅销专辑《颤栗》（Thriller）",
+        "en": "Released Thriller, the best-selling album of all time"
+      },
+      {
+        "zh": "开创现代音乐录影与太空步",
+        "en": "Pioneered the modern music video and the moonwalk"
+      },
+      {
+        "zh": "获 13 项格莱美奖",
+        "en": "Won 13 Grammy Awards"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "摩城唱片",
+          "en": "Motown Records"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "史诗唱片",
+          "en": "Epic Records"
+        },
+        "type": "company"
+      }
+    ]
   },
   {
     "id": "p-tswift",
@@ -13874,7 +14382,34 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "泰勒·斯威夫特是美国创作歌手，以叙事性歌曲与乡村、流行、独立风格的跨界著称。她是当代全球最具商业与艺术影响力的音乐人之一。",
+      "en": "Taylor Swift is an American singer-songwriter known for narrative songwriting and her crossover between country, pop, and indie styles. She is among the most commercially and artistically influential musicians of her generation."
+    },
+    "achievements": [
+      {
+        "zh": "获 14 项格莱美奖（含 4 次年度专辑）",
+        "en": "Won 14 Grammy Awards (including 4 Album of the Year)"
+      },
+      {
+        "zh": "开创「时代巡回演唱会」（Eras Tour）",
+        "en": "Launched the record-breaking Eras Tour"
+      },
+      {
+        "zh": "重新录制早期专辑以重获版权",
+        "en": "Re-recorded early albums to regain her masters"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "共和国唱片",
+          "en": "Republic Records"
+        },
+        "type": "company"
+      }
+    ]
   },
   {
     "id": "p-shankar",
@@ -13972,7 +14507,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "拉维·香卡是印度西塔琴演奏家与作曲家，将印度古典音乐推向西方世界。他与披头士乐队等的合作深刻影响了 1960 年代的世界音乐。",
+      "en": "Ravi Shankar was an Indian sitar virtuoso and composer who brought Indian classical music to the Western world. His collaborations, including with The Beatles, profoundly influenced 1960s world music."
+    },
+    "achievements": [
+      {
+        "zh": "将西塔琴与印度古典音乐引入西方",
+        "en": "Introduced the sitar and Indian classical music to the West"
+      },
+      {
+        "zh": "影响世界音乐与迷幻摇滚",
+        "en": "Influenced world music and psychedelic rock"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "印度古典音乐界",
+          "en": "Indian classical music"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-spielberg",
@@ -14076,7 +14634,37 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "史蒂文·斯皮尔伯格是美国电影导演、编剧与制片人，现代好莱坞最具影响力的电影人之一。他执导的《大白鲨》《E.T.》《侏罗纪公园》《辛德勒的名单》定义了当代商业与作者电影。",
+      "en": "Steven Spielberg is an American film director, screenwriter, and producer, among the most influential filmmakers in modern Hollywood. Films like Jaws, E.T., Jurassic Park, and Schindler's List defined contemporary blockbuster and auteur cinema."
+    },
+    "achievements": [
+      {
+        "zh": "执导《辛德勒的名单》并获奥斯卡最佳导演",
+        "en": "Directed Schindler's List, winning the Academy Award for Best Director"
+      },
+      {
+        "zh": "开创现代暑期大片（《大白鲨》《侏罗纪公园》）",
+        "en": "Pioneered the modern summer blockbuster (Jaws, Jurassic Park)"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "安培林娱乐",
+          "en": "Amblin Entertainment"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "梦工厂影业",
+          "en": "DreamWorks Pictures"
+        },
+        "type": "company"
+      }
+    ]
   },
   {
     "id": "p-miyazaki",
@@ -14174,7 +14762,34 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "宫崎骏是日本动画导演、编剧与漫画家，吉卜力工作室联合创始人。他以《千与千寻》《龙猫》等作品将手绘动画提升到艺术与人文高度，获奥斯卡终身成就奖与最佳动画长片。",
+      "en": "Hayao Miyazaki is a Japanese animation director, screenwriter, and manga artist, co-founder of Studio Ghibli. With works like Spirited Away and My Neighbor Totoro, he elevated hand-drawn animation to new artistic and humanistic heights, earning an Academy Honorary Award and Best Animated Feature."
+    },
+    "achievements": [
+      {
+        "zh": "联合创办吉卜力工作室",
+        "en": "Co-founded Studio Ghibli"
+      },
+      {
+        "zh": "《千与千寻》获奥斯卡最佳动画长片",
+        "en": "Spirited Away won the Academy Award for Best Animated Feature"
+      },
+      {
+        "zh": "获奥斯卡终身成就奖",
+        "en": "Received an Academy Honorary Award"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "吉卜力工作室",
+          "en": "Studio Ghibli"
+        },
+        "type": "company"
+      }
+    ]
   },
   {
     "id": "p-chaplin",
@@ -14272,7 +14887,41 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "查理·卓别林是英国喜剧演员、导演与制片人，以默片时代的「流浪汉」形象闻名于世。他是早期电影工业最具创造力与人文关怀的艺术家之一。",
+      "en": "Charlie Chaplin was a British comic actor, director, and producer, world-famous for his silent-era 'Tramp' character. He was among the most inventive and humane artists of early cinema."
+    },
+    "achievements": [
+      {
+        "zh": "塑造默片经典「流浪汉」形象",
+        "en": "Created the iconic silent-era 'Tramp' character"
+      },
+      {
+        "zh": "执导《城市之光》《摩登时代》",
+        "en": "Directed City Lights and Modern Times"
+      },
+      {
+        "zh": "联合创办联美公司（United Artists）",
+        "en": "Co-founded United Artists"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "联美公司",
+          "en": "United Artists"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "基斯通制片厂",
+          "en": "Keystone Studios"
+        },
+        "type": "company"
+      }
+    ]
   },
   {
     "id": "p-hepburn",
@@ -14365,7 +15014,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "奥黛丽·赫本是英籍比利时裔演员与慈善家，以《罗马假日》《蒂凡尼的早餐》等经典影片闻名。晚年她担任联合国儿童基金会亲善大使，投身人道主义工作。",
+      "en": "Audrey Hepburn was a Belgian-born British actress and humanitarian, celebrated for classics such as Roman Holiday and Breakfast at Tiffany's. In her later years she served as a UNICEF Goodwill Ambassador, devoted to humanitarian work."
+    },
+    "achievements": [
+      {
+        "zh": "凭《罗马假日》获奥斯卡最佳女主角",
+        "en": "Won the Academy Award for Best Actress for Roman Holiday"
+      },
+      {
+        "zh": "担任联合国儿童基金会亲善大使",
+        "en": "Served as a UNICEF Goodwill Ambassador"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "联合国儿童基金会",
+          "en": "UNICEF"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-pele",
@@ -14469,7 +15141,44 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "贝利是巴西足球运动员，公认史上最伟大的球员之一。他三夺世界杯冠军，并以惊人的进球数与创造力定义了现代足球的攻击艺术。",
+      "en": "Pelé was a Brazilian footballer, widely regarded as one of the greatest players of all time. He won three FIFA World Cup titles and, with his prodigious goal-scoring and creativity, defined the attacking art of modern football."
+    },
+    "achievements": [
+      {
+        "zh": "三夺世界杯冠军（1958、1962、1970）",
+        "en": "Won three FIFA World Cup titles (1958, 1962, 1970)"
+      },
+      {
+        "zh": "职业生涯进球超 1000 个",
+        "en": "Scored over 1,000 career goals"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "桑托斯足球俱乐部",
+          "en": "Santos FC"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "纽约宇宙队",
+          "en": "New York Cosmos"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "巴西国家足球队",
+          "en": "Brazil national football team"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-maradona",
@@ -14568,7 +15277,44 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "迭戈·马拉多纳是阿根廷足球运动员，被视为足球史上最具天赋的球员之一。他在 1986 年世界杯上的表现（包括「上帝之手」与「世纪进球」）成为传奇。",
+      "en": "Diego Maradona was an Argentine footballer considered one of the most gifted players in the history of the game. His 1986 World Cup — featuring the 'Hand of God' and the 'Goal of the Century' — became legend."
+    },
+    "achievements": [
+      {
+        "zh": "率阿根廷夺得 1986 年世界杯冠军",
+        "en": "Led Argentina to the 1986 World Cup title"
+      },
+      {
+        "zh": "助那不勒斯夺得队史首座意甲冠军",
+        "en": "Won Napoli's first Serie A titles"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "那不勒斯足球俱乐部",
+          "en": "SSC Napoli"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "博卡青年",
+          "en": "Boca Juniors"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "阿根廷国家足球队",
+          "en": "Argentina national football team"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-bolt",
@@ -14667,7 +15413,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "尤塞恩·博尔特是牙买加短跑运动员，被公认为史上最快的人。他在奥运会与世锦赛上统治 100 米、200 米与 4×100 米接力，并保有相关世界纪录。",
+      "en": "Usain Bolt is a Jamaican sprinter widely regarded as the fastest person ever. He dominated the 100 m, 200 m, and 4×100 m relay at the Olympics and World Championships, holding the world records in those events."
+    },
+    "achievements": [
+      {
+        "zh": "8 枚奥运会金牌",
+        "en": "Won 8 Olympic gold medals"
+      },
+      {
+        "zh": "保持 100 米（9.58 秒）与 200 米（19.19 秒）世界纪录",
+        "en": "Holds the 100 m (9.58 s) and 200 m (19.19 s) world records"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "牙买加田径队",
+          "en": "Jamaica national athletics team"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-yao",
@@ -14766,7 +15535,37 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "姚明是中国篮球运动员，曾效力于 NBA 休斯顿火箭队，是首位以状元身份入选 NBA 的国际球员。他极大推动了篮球在中国与世界的普及，并入选篮球名人堂。",
+      "en": "Yao Ming is a Chinese basketball player who starred for the NBA's Houston Rockets and was the first international player selected first overall in the NBA draft. He greatly advanced the popularity of basketball in China and worldwide, and was inducted into the Basketball Hall of Fame."
+    },
+    "achievements": [
+      {
+        "zh": "NBA 全明星（8 次）",
+        "en": "8-time NBA All-Star"
+      },
+      {
+        "zh": "入选奈史密斯篮球名人堂",
+        "en": "Inducted into the Naismith Memorial Basketball Hall of Fame"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "休斯顿火箭队",
+          "en": "Houston Rockets"
+        },
+        "type": "company"
+      },
+      {
+        "name": {
+          "zh": "中国篮球协会",
+          "en": "Chinese Basketball Association"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-caesar",
@@ -14869,7 +15668,34 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "盖乌斯·尤利乌斯·凯撒是罗马共和国末期的军事统帅与政治家，征服高卢并跨过卢比孔河，成为终身独裁官，深刻塑造了罗马从共和国向帝国的转折。",
+      "en": "Gaius Julius Caesar was a Roman general and statesman at the end of the Republic who conquered Gaul, crossed the Rubicon, and became dictator for life, profoundly shaping Rome's transition from republic to empire."
+    },
+    "achievements": [
+      {
+        "zh": "征服高卢",
+        "en": "Conquered Gaul"
+      },
+      {
+        "zh": "跨过卢比孔河，引发内战",
+        "en": "Crossed the Rubicon, triggering civil war"
+      },
+      {
+        "zh": "成为罗马终身独裁官",
+        "en": "Became dictator perpetuo of Rome"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "罗马共和国",
+          "en": "Roman Republic"
+        },
+        "type": "government"
+      }
+    ]
   },
   {
     "id": "p-cleopatra",
@@ -14967,7 +15793,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "克利奥帕特拉七世是托勒密王朝的末代法老，以政治智慧与外交手腕维系埃及的独立，并与尤利乌斯·凯撒、马克·安东尼结盟。她是古埃及最后一位真正统治的君主。",
+      "en": "Cleopatra VII was the last active pharaoh of Ptolemaic Egypt, who used political acumen and diplomacy to preserve Egypt's independence, allying with Julius Caesar and Mark Antony. She was the last sovereign ruler of ancient Egypt."
+    },
+    "achievements": [
+      {
+        "zh": "作为托勒密王朝末代法老统治埃及",
+        "en": "Ruled Egypt as the last pharaoh of the Ptolemaic dynasty"
+      },
+      {
+        "zh": "与罗马领袖结盟维系埃及独立",
+        "en": "Allied with Roman leaders to preserve Egyptian independence"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "托勒密王朝",
+          "en": "Ptolemaic dynasty"
+        },
+        "type": "government"
+      }
+    ]
   },
   {
     "id": "p-napoleon",
@@ -15065,7 +15914,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "拿破仑·波拿巴是法国军事领袖与皇帝，在法国大革命后的动荡中崛起，建立了法兰西第一帝国，并以其军事天才与《拿破仑法典》深刻影响欧洲。",
+      "en": "Napoleon Bonaparte was a French military leader and emperor who rose during the upheaval after the French Revolution, founded the First French Empire, and left a lasting mark on Europe through his military genius and the Napoleonic Code."
+    },
+    "achievements": [
+      {
+        "zh": "建立法兰西第一帝国并称帝",
+        "en": "Founded the First French Empire and crowned himself emperor"
+      },
+      {
+        "zh": "颁布影响深远的《拿破仑法典》",
+        "en": "Promulgated the far-reaching Napoleonic Code"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "法兰西第一帝国",
+          "en": "First French Empire"
+        },
+        "type": "government"
+      }
+    ]
   },
   {
     "id": "p-mlking",
@@ -15168,7 +16040,34 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "马丁·路德·金是美国牧师与民权运动领袖，以非暴力抗争推动种族平等，其「我有一个梦想」演说成为历史地标。他获 1964 年诺贝尔和平奖。",
+      "en": "Martin Luther King Jr. was an American minister and civil rights leader who advanced racial equality through nonviolent resistance; his 'I Have a Dream' speech became a historic landmark. He received the 1964 Nobel Peace Prize."
+    },
+    "achievements": [
+      {
+        "zh": "领导美国非暴力民权运动",
+        "en": "Led the nonviolent civil rights movement in the United States"
+      },
+      {
+        "zh": "获 1964 年诺贝尔和平奖",
+        "en": "Received the 1964 Nobel Peace Prize"
+      },
+      {
+        "zh": "推动《民权法案》通过",
+        "en": "Helped pass the Civil Rights Act"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "南方基督教领袖会议",
+          "en": "Southern Christian Leadership Conference (SCLC)"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-annan",
@@ -15266,7 +16165,34 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "科菲·安南是加纳外交官，第 7 任联合国秘书长，致力于维和、发展与全球治理改革，并获 2001 年诺贝尔和平奖。",
+      "en": "Kofi Annan was a Ghanaian diplomat, the 7th Secretary-General of the United Nations, who championed peacekeeping, development, and reform of global governance, and received the 2001 Nobel Peace Prize."
+    },
+    "achievements": [
+      {
+        "zh": "担任第 7 任联合国秘书长",
+        "en": "Served as the 7th Secretary-General of the United Nations"
+      },
+      {
+        "zh": "获 2001 年诺贝尔和平奖",
+        "en": "Received the 2001 Nobel Peace Prize"
+      },
+      {
+        "zh": "推动联合国改革与千年发展目标",
+        "en": "Advanced UN reform and the Millennium Development Goals"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "联合国",
+          "en": "United Nations"
+        },
+        "type": "government"
+      }
+    ]
   },
   {
     "id": "p-lky",
@@ -15358,7 +16284,37 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "李光耀是新加坡建国总理，执政逾三十年，将一座小渔港建设为繁荣、廉洁的全球金融与航运中心，是「亚洲四小龙」奇迹的关键缔造者。",
+      "en": "Lee Kuan Yew was the founding Prime Minister of Singapore, governing for over three decades and transforming a small fishing port into a prosperous, incorruptible global financial and shipping hub — a key architect of the Asian Tiger miracle."
+    },
+    "achievements": [
+      {
+        "zh": "领导新加坡独立并奠定发展基石",
+        "en": "Led Singapore's independence and laid its development foundations"
+      },
+      {
+        "zh": "缔造廉洁高效的国家治理",
+        "en": "Built a clean and efficient system of governance"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "人民行动党",
+          "en": "People's Action Party (PAP)"
+        },
+        "type": "government"
+      },
+      {
+        "name": {
+          "zh": "新加坡政府",
+          "en": "Government of Singapore"
+        },
+        "type": "government"
+      }
+    ]
   },
   {
     "id": "p-vangogh",
@@ -15466,7 +16422,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "文森特·梵高是荷兰后印象派画家，生前几乎未被认可，死后其激烈的情感表达与鲜明色彩深刻影响了现代艺术。代表作有《星月夜》《向日葵》。",
+      "en": "Vincent van Gogh was a Dutch Post-Impressionist painter, unrecognized in his lifetime, whose intense emotional expression and vivid color profoundly influenced modern art. Masterpieces include The Starry Night and Sunflowers."
+    },
+    "achievements": [
+      {
+        "zh": "创作《星月夜》《向日葵》等杰作",
+        "en": "Created masterpieces such as The Starry Night and Sunflowers"
+      },
+      {
+        "zh": "奠定后印象派与现代艺术基石",
+        "en": "Helped lay the foundations of Post-Impressionism and modern art"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "后印象派",
+          "en": "Post-Impressionism"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-monet",
@@ -15564,7 +16543,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "克劳德·莫奈是法国画家，印象派运动的命名者与代表人物。他通过对光线与色彩的敏锐捕捉（如《日出·印象》《睡莲》）开创了现代绘画。",
+      "en": "Claude Monet was a French painter, the namesake and leading figure of the Impressionist movement. Through his sensitive capture of light and color (Impression, Sunrise; Water Lilies) he opened the path to modern painting."
+    },
+    "achievements": [
+      {
+        "zh": "开创印象派（《日出·印象》）",
+        "en": "Originated Impressionism (Impression, Sunrise)"
+      },
+      {
+        "zh": "创作《睡莲》系列",
+        "en": "Created the Water Lilies series"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "印象派",
+          "en": "Impressionism"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-michelangelo",
@@ -15662,7 +16664,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "米开朗基罗是意大利文艺复兴时期的雕塑家、画家、建筑师与诗人，与达·芬奇、拉斐尔并称文艺复兴三杰。其《大卫》、西斯廷礼拜堂天顶画与《圣母怜子》是艺术史上的巅峰。",
+      "en": "Michelangelo was an Italian Renaissance sculptor, painter, architect, and poet, alongside Leonardo da Vinci and Raphael among the trio of great High Renaissance masters. His David, the Sistine Chapel ceiling, and the Pietà stand as pinnacles of art history."
+    },
+    "achievements": [
+      {
+        "zh": "雕塑《大卫》与《圣母怜子》",
+        "en": "Sculpted David and the Pietà"
+      },
+      {
+        "zh": "绘制西斯廷礼拜堂天顶画",
+        "en": "Painted the Sistine Chapel ceiling"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "佛罗伦萨与罗马艺术圈",
+          "en": "Florentine and Roman art circles"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-austen",
@@ -15760,7 +16785,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "简·奥斯汀是英国小说家，以《傲慢与偏见》《理智与情感》等作品以讽刺与细腻的笔触刻画 19 世纪英国乡绅社会，奠定了现代小说的基础。",
+      "en": "Jane Austen was an English novelist whose works — Pride and Prejudice, Sense and Sensibility — depict early-19th-century English gentry society with irony and keen insight, helping lay the foundations of the modern novel."
+    },
+    "achievements": [
+      {
+        "zh": "创作《傲慢与偏见》等经典小说",
+        "en": "Wrote classics such as Pride and Prejudice"
+      },
+      {
+        "zh": "以讽刺与社会洞察革新小说艺术",
+        "en": "Revolutionized the novel with irony and social insight"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "英国文学",
+          "en": "English literature"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-luxun",
@@ -15858,7 +16906,30 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "鲁迅是中国现代文学的奠基人，以《狂人日记》《阿 Q 正传》等作品猛烈批判封建礼教与国民性，是中国现代思想与文学的旗手。",
+      "en": "Lu Xun was the founder of modern Chinese literature. Through works such as Diary of a Madman and The True Story of Ah Q he fiercely critiqued feudal ethics and the national character, becoming a standard-bearer of modern Chinese thought and letters."
+    },
+    "achievements": [
+      {
+        "zh": "发表中国第一篇现代白话小说《狂人日记》",
+        "en": "Published 'Diary of a Madman,' China's first modern vernacular short story"
+      },
+      {
+        "zh": "以《阿 Q 正传》批判国民性",
+        "en": "Critiqued the national character in 'The True Story of Ah Q'"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "中国现代文学",
+          "en": "Modern Chinese literature"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-ggm",
@@ -15956,7 +17027,34 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "加西亚·马尔克斯是哥伦比亚作家，魔幻现实主义文学的代表人物，其《百年孤独》被誉为 20 世纪最伟大的小说之一，并获 1982 年诺贝尔文学奖。",
+      "en": "Gabriel García Márquez was a Colombian writer, the foremost figure of magical realism. His One Hundred Years of Solitude is hailed as one of the greatest novels of the 20th century, and he won the 1982 Nobel Prize in Literature."
+    },
+    "achievements": [
+      {
+        "zh": "创作《百年孤独》",
+        "en": "Wrote One Hundred Years of Solitude"
+      },
+      {
+        "zh": "获 1982 年诺贝尔文学奖",
+        "en": "Won the 1982 Nobel Prize in Literature"
+      },
+      {
+        "zh": "开创魔幻现实主义文学",
+        "en": "Pioneered the literary style of magic realism"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "魔幻现实主义",
+          "en": "Magical realism"
+        },
+        "type": "org"
+      }
+    ]
   },
   {
     "id": "p-tagore",
@@ -16059,6 +17157,29 @@
     ],
     "trustLevel": "pgc",
     "createdAt": "2026-08-04",
-    "updatedAt": "2026-08-04"
+    "updatedAt": "2026-08-04",
+    "bio": {
+      "zh": "拉宾德拉纳特·泰戈尔是印度诗人、哲学家与艺术家，以孟加拉语与英语写作，1913 年凭《吉檀迦利》成为首位获得诺贝尔文学奖的非欧洲人。",
+      "en": "Rabindranath Tagore was an Indian poet, philosopher, and artist who wrote in Bengali and English. In 1913 he became the first non-European to win the Nobel Prize in Literature, for Gitanjali."
+    },
+    "achievements": [
+      {
+        "zh": "凭《吉檀迦利》获 1913 年诺贝尔文学奖",
+        "en": "Won the 1913 Nobel Prize in Literature for Gitanjali"
+      },
+      {
+        "zh": "首位获诺贝尔文学奖的非欧洲人",
+        "en": "First non-European Nobel laureate in Literature"
+      }
+    ],
+    "affiliations": [
+      {
+        "name": {
+          "zh": "印度文艺复兴",
+          "en": "Bengal Renaissance"
+        },
+        "type": "org"
+      }
+    ]
   }
 ]
