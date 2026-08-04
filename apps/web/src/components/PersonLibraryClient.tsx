@@ -6,6 +6,7 @@ import { getPersons } from '@/lib/api';
 import { useFavorites, useHistoryEntries, clearHistory, toggleFavorite } from '@/lib/libraryStore';
 import { t, domainLabel } from '@/lib/ui';
 import { pickText, type Lang } from '@/lib/i18n';
+import { computeFacets } from '@/lib/facets';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import PersonCard from '@/components/PersonCard';
 import FilterChips, { type ChipOption } from '@/components/FilterChips';
@@ -91,13 +92,14 @@ export default function PersonLibraryClient({
     [histEntries, bySlug]
   );
 
-  // 领域选项（来自收藏）
+  // 领域选项（来自收藏，带分面计数）
   const domainOpts = useMemo<ChipOption[]>(() => {
+    const facets = computeFacets(favPersons, {});
     const set = new Set<Domain>();
     favPersons.forEach((p) => p.domains.forEach((d) => set.add(d)));
     return (Object.keys(DOMAIN_LABELS) as Domain[])
       .filter((d) => set.has(d))
-      .map((d) => ({ value: d, label: domainLabel(lang, d) }));
+      .map((d) => ({ value: d, label: domainLabel(lang, d), count: facets.domain.get(d) || 0 }));
   }, [favPersons]);
 
   // 排序（recent 即收藏顺序，toggleFavorite 已置顶最新）

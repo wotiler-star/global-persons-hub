@@ -5,6 +5,7 @@ import { pickText, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { type Person } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
+import { computeFacets, eraKeyOf } from '@/lib/facets';
 import PersonCard from '@/components/PersonCard';
 import FilterChips, { type ChipOption } from '@/components/FilterChips';
 import SortToggle from '@/components/SortToggle';
@@ -25,19 +26,6 @@ interface Props {
   initialQ?: string;
   initialSort?: SortMode;
   initialDir?: 'asc' | 'desc';
-}
-
-/** 解析出生年（与 Explore/Gallery 共用同一逻辑，保持时代归类一致） */
-function birthYear(p: Person): number | null {
-  if (!p.birth) return null;
-  const m = String(p.birth).match(/^(-?\d+)/);
-  return m ? parseInt(m[1], 10) : null;
-}
-
-function eraOf(y: number | null): string {
-  if (y === null) return '';
-  for (const e of ERAS) if (y >= e.from && y <= e.to) return e.key;
-  return '';
 }
 
 /**
@@ -85,30 +73,23 @@ export default function DomainExplorer({
     }
   );
 
-  // 动态国籍集（按频次降序，带分面计数）
-  const nationalities = useMemo<ChipOption[]>(() => {
-    const cnt = new Map<string, number>();
-    for (const p of items) for (const n of p.nationalities || []) cnt.set(n, (cnt.get(n) || 0) + 1);
-    return [...cnt.entries()]
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-      .map(([n, c]) => ({ value: n, label: n, count: c }));
-  }, [items]);
+  // 通用分面计数：时代计数尊重国籍、国籍计数尊重时代（互不计数自身）
+  const facets = useMemo(() => computeFacets(items, { era, nationality }), [items, era, nationality]);
 
-  // 时代分面计数（忽略国籍/搜索，仅按出生年归类）
-  const eraCounts = useMemo(() => {
-    const m = new Map<string, number>();
-    for (const p of items) {
-      const k = eraOf(birthYear(p)) || 'unknown';
-      m.set(k, (m.get(k) || 0) + 1);
-    }
-    return m;
-  }, [items]);
+  // 动态国籍集（按频次降序，带分面计数）
+  const nationalities = useMemo<ChipOption[]>(
+    () =>
+      [...facets.nationality.entries()]
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+        .map(([n, c]) => ({ value: n, label: n, count: c })),
+    [facets.nationality]
+  );
 
   // 过滤 + 站内搜索 + 排序
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
     const arr = items.filter((p) => {
-      if (era !== 'all' && eraOf(birthYear(p)) !== era) return false;
+      if (era !== 'all' && eraKeyOf(p) !== era) return false;
       if (nationality !== 'all' && !(p.nationalities || []).includes(nationality)) return false;
       if (query) {
         const hay = [pickText(p.names, lang), pickText(p.occupations, lang), pickText(p.summary, lang)]
@@ -178,7 +159,7 @@ export default function DomainExplorer({
       {/* 时代筛选（带分面计数） */}
       <FilterChips
         label={t(lang, 'explore.era')}
-        options={ERAS.map((e) => ({ value: e.key, label: t(lang, e.uiKey), count: eraCounts.get(e.key) || 0 }))}
+        options={ERAS.map((e) => ({ value: e.key, label: t(lang, e.uiKey), count: facets.era.get(e.key) || 0 }))}
         value={era}
         onChange={(v) => setEra(v || 'all')}
         allValue="all"

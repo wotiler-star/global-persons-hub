@@ -6,7 +6,8 @@ import { pickText, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
-import FilterChips from '@/components/FilterChips';
+import { computeFacets } from '@/lib/facets';
+import FilterChips, { type ChipOption } from '@/components/FilterChips';
 import ActiveFilters from '@/components/ActiveFilters';
 
 export type DomainFilter = Domain | 'all';
@@ -132,6 +133,13 @@ export default function TimelineExplorer({ items, lang }: Props) {
     return (Object.keys(DOMAIN_LABELS) as Domain[]).filter((d) => set.has(d));
   }, [items]);
 
+  // 当前年份窗口内的人物（用于领域分面计数，使计数随滑块缩放）
+  const windowPersons = useMemo(() => withYear.map((x) => x.p), [withYear]);
+  const domainFacets = useMemo<Map<Domain, number>>(
+    () => computeFacets(windowPersons, {}).domain,
+    [windowPersons]
+  );
+
   // 当前筛选区间
   const from = cFrom;
   const to = cTo;
@@ -219,7 +227,7 @@ export default function TimelineExplorer({ items, lang }: Props) {
     <div>
       {/* 领域筛选 */}
       <FilterChips
-        options={domains.map((d) => ({ value: d, label: domainLabel(lang, d) }))}
+        options={domains.map((d) => ({ value: d, label: domainLabel(lang, d), count: domainFacets.get(d) || 0 }))}
         value={domain}
         onChange={(v) => setDomain((v || 'all') as DomainFilter)}
         allValue="all"
