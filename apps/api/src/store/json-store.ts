@@ -1,6 +1,6 @@
 // JSON 文件适配器（开发默认）：零原生依赖，开箱即跑。
 // 行为与原实现一致；仅改为全异步以适配统一 DataStore 契约。
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, renameSync, unlinkSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -39,6 +39,27 @@ const COMMENTS_FILE = join(RT, 'comments.json');
 const AUDIT_FILE = join(RT, 'audit.json');
 const REVOKED_FILE = join(RT, 'revoked.json');
 
+/**
+ * 原子落盘：先写同目录临时文件再 rename 覆盖。
+ * 直接 writeFileSync 覆盖时，若进程在写入中途被 kill（pm2 重启 / 断电），
+ * 目标文件会留下被截断的半截 JSON，下次 JSON.parse 直接抛错导致整库不可读。
+ * rename 在同一文件系统内是原子操作，读侧看到的永远是"旧的完整"或"新的完整"。
+ */
+function writeJsonAtomic(file: string, data: unknown): void {
+  const tmp = `${file}.${process.pid}.tmp`;
+  try {
+    writeFileSync(tmp, JSON.stringify(data, null, 2));
+    renameSync(tmp, file);
+  } catch (e) {
+    try {
+      if (existsSync(tmp)) unlinkSync(tmp);
+    } catch {
+      /* 清理失败不影响主流程 */
+    }
+    throw e;
+  }
+}
+
 function loadComments(): any[] {
   return existsSync(COMMENTS_FILE) ? JSON.parse(readFileSync(COMMENTS_FILE, 'utf-8')) : [];
 }
@@ -53,7 +74,7 @@ function loadPersons(): Person[] {
   if (existsSync(PERSONS_FILE)) return JSON.parse(readFileSync(PERSONS_FILE, 'utf-8'));
   const seed = join(DATA, 'persons.json');
   const seedData: Person[] = existsSync(seed) ? JSON.parse(readFileSync(seed, 'utf-8')) : [];
-  writeFileSync(PERSONS_FILE, JSON.stringify(seedData, null, 2));
+  writeJsonAtomic(PERSONS_FILE, seedData);
   return seedData;
 }
 function loadUsers(): UserRecord[] {
@@ -87,22 +108,22 @@ export class JsonStore implements DataStore {
   async seedIfEmpty() {}
 
   private savePersons() {
-    writeFileSync(PERSONS_FILE, JSON.stringify(this.persons, null, 2));
+    writeJsonAtomic(PERSONS_FILE, this.persons);
   }
   private saveUsers() {
-    writeFileSync(USERS_FILE, JSON.stringify(this.users, null, 2));
+    writeJsonAtomic(USERS_FILE, this.users);
   }
   private saveApiKeys() {
-    writeFileSync(APIKEYS_FILE, JSON.stringify(this.apiKeys, null, 2));
+    writeJsonAtomic(APIKEYS_FILE, this.apiKeys);
   }
   private saveComments() {
-    writeFileSync(COMMENTS_FILE, JSON.stringify(this.comments, null, 2));
+    writeJsonAtomic(COMMENTS_FILE, this.comments);
   }
   private saveAudit() {
-    writeFileSync(AUDIT_FILE, JSON.stringify(this.audit, null, 2));
+    writeJsonAtomic(AUDIT_FILE, this.audit);
   }
   private saveRevoked() {
-    writeFileSync(REVOKED_FILE, JSON.stringify([...this.revoked]));
+    writeJsonAtomic(REVOKED_FILE, [...this.revoked]);
   }
 
   async listPersons(opts: ListPersonsQuery): Promise<ListPersonsResult> {

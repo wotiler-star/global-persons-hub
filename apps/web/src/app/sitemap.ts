@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { apiGet } from '@/lib/api';
+import { getAllPersons } from '@/lib/api';
 import { LANGS } from '@/lib/i18n';
 import { DOMAIN_LABELS } from '@gph/types';
 
@@ -79,7 +79,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
   try {
-    const d = await apiGet('/persons?pageSize=2000');
+    const d = await getAllPersons();
     for (const p of d.items) {
       for (const l of LANGS) {
         urls.push({

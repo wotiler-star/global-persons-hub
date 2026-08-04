@@ -8,10 +8,15 @@ import { readFileSync, existsSync } from 'node:fs';
 import { registerRoutes } from './routes.js';
 import { createStore } from './store/index.js';
 import { createUploader } from './uploader/index.js';
+import { enforceSecrets } from './security.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SEED = join(__dirname, '..', 'data', 'persons.json');
 const UPLOAD_DIR = join(__dirname, '..', 'data', 'uploads');
+
+// 弱密钥/弱口令自检：生产环境（NODE_ENV=production 或 GPH_STRICT_SECRETS=1）直接拒绝启动，
+// 开发环境仅打印告警。必须在建实例、连存储之前执行，避免半启动状态。
+enforceSecrets();
 
 const app = Fastify({ logger: true });
 
@@ -22,13 +27,21 @@ app.setErrorHandler((err, request, reply) => {
   reply.code(status).send({ error: 'internal_error', message: err.message || 'Internal Server Error' });
 });
 
-await app.register(cors, { origin: true });
-// JWT 密钥：生产部署必须注入强随机串；缺省仅作本地开发回退并打印告警
-const jwtSecret = process.env.JWT_SECRET || 'dev-secret-change-me';
-if (jwtSecret === 'dev-secret-change-me') {
-  console.warn('⚠️  警告：未设置 JWT_SECRET，使用弱默认值（仅限本地开发）。生产部署务必通过环境变量注入强随机串。');
-}
-await app.register(jwt, { secret: jwtSecret });
+// CORS 策略：
+// - 显式白名单 CORS_ORIGINS（逗号分隔）优先；'*' 表示全放行。
+// - 未配置时：生产收紧为同源（Web 经 next rewrites /api 代理，本就无需跨域），
+//   开发放行（dev 下前端 :3000 直连 API :8787 属跨域）。
+const corsEnv = (process.env.CORS_ORIGINS || '').trim();
+const corsOrigin: any =
+  corsEnv === '*'
+    ? true
+    : corsEnv
+      ? corsEnv.split(',').map((s) => s.trim()).filter(Boolean)
+      : process.env.NODE_ENV !== 'production';
+await app.register(cors, { origin: corsOrigin });
+
+// JWT 密钥：强度已在 enforceSecrets() 中校验，此处仅保留开发回退值
+await app.register(jwt, { secret: process.env.JWT_SECRET || 'dev-secret-change-me' });
 
 // 存储抽象：默认 JSON（零依赖），生产用 STORE_DRIVER=pg-neo4j 切换
 const store = await createStore();

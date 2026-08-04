@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getPerson, getRelations, getNetwork, getPersons } from '@/lib/api';
+import { getPerson, getRelations, getNetwork, getPersons, getAllPersons } from '@/lib/api';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';
@@ -78,7 +78,7 @@ export const dynamicParams = true;
 
 export async function generateStaticParams() {
   try {
-    const d = await getPersons({ pageSize: 2000 });
+    const d = await getAllPersons();
     const slugs: string[] = (d.items || []).map((p: any) => p.slug).filter(Boolean);
     return LANGS.flatMap((lang) => slugs.map((slug) => ({ lang, slug })));
   } catch {
@@ -100,7 +100,9 @@ export async function generateMetadata({
   } catch {
     /* ignore */
   }
-  if (!person) return { title: '人物未找到' };
+  // 未命中人物 → 页面随后 notFound()。ISR 预渲染会把 404 页以 200 缓存下发（软 404），
+  // 因此必须显式 noindex，避免搜索引擎把"页面不存在"当作正常内容收录。
+  if (!person) return { title: '人物未找到', robots: { index: false, follow: false } };
   const L = lang as Lang;
   const languages: Record<string, string> = { 'x-default': `/en/person/${slug}` };
   for (const l of LANGS) languages[l] = `/${l}/person/${slug}`;

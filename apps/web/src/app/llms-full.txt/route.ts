@@ -1,5 +1,5 @@
 import { SITE_URL, SITE_NAME } from '@/lib/og';
-import { apiGet } from '@/lib/api';
+import { getAllPersons } from '@/lib/api';
 import { LANGS, pickText } from '@/lib/i18n';
 
 // —— GEO 全量索引：llms-full.txt ——
@@ -40,7 +40,7 @@ ${people}
 export async function GET() {
   let body: string;
   try {
-    const d = await apiGet('/persons?pageSize=2000');
+    const d = await getAllPersons();
     body = buildIndex(d.items || []);
   } catch {
     body = `# ${SITE_NAME} — Full Index\n\nPerson data is temporarily unavailable. See ${SITE_URL}/llms.txt for guidance.\n`;

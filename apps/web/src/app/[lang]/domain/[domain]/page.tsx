@@ -26,7 +26,10 @@ export async function generateMetadata({
   params: Promise<{ lang: string; domain: string }>;
 }): Promise<Metadata> {
   const { lang, domain } = await params;
-  if (!VALID.includes(domain as Domain)) return { title: '领域不存在' };
+  // 非法领域 → 页面随后 notFound()；ISR 会以 200 缓存 404 页（软 404），故显式 noindex
+  if (!VALID.includes(domain as Domain)) {
+    return { title: '领域不存在', robots: { index: false, follow: false } };
+  }
   const label = domainLabel(lang, domain);
   const languages: Record<string, string> = {};
   for (const l of LANGS) languages[l] = `/${l}/domain/${domain}`;

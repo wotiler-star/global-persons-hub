@@ -8,6 +8,31 @@ import { getProvider } from './payments/index.js';
 import type { PaymentProvider } from './payments/index.js';
 import { askRag } from './rag/rag.js';
 import { sha256Hex } from './store/crypto.js';
+import { createRateLimiter, rateLimitPreHandler } from './security.js';
+
+/** 单页最大条数：防止 `?pageSize=999999` 拖垮内存/带宽（前端全量取数改用分页聚合） */
+const MAX_PAGE_SIZE = 500;
+const DEFAULT_PAGE_SIZE = 20;
+
+/** 解析并夹取分页参数（NaN / 负数 / 超限统一收敛到合法区间） */
+function clampPageSize(raw: unknown): number {
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n <= 0) return DEFAULT_PAGE_SIZE;
+  return Math.min(Math.floor(n), MAX_PAGE_SIZE);
+}
+function clampPage(raw: unknown): number {
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n <= 0) return 1;
+  return Math.floor(n);
+}
+
+// —— 限流规则（进程内滑动窗口；pm2 单实例足够，横向扩容时换 Redis 实现即可）——
+// 登录/注册：抗撞库与批量注册
+const authLimiter = createRateLimiter({ windowMs: 5 * 60_000, max: 20 });
+// 评论：抗刷屏（按登录用户维度，比 IP 更准）
+const commentLimiter = createRateLimiter({ windowMs: 60_000, max: 5 });
+// RAG 问答：单次调用成本高（向量检索 + LLM），按 IP 限速
+const ragLimiter = createRateLimiter({ windowMs: 60_000, max: 20 });
 
 declare module '@fastify/jwt' {
   interface FastifyJWT {
@@ -119,8 +144,8 @@ export async function registerRoutes(app: FastifyInstance, store: DataStore, upl
       q: q.q,
       domain: q.domain,
       lang: q.lang,
-      page: q.page ? Number(q.page) : 1,
-      pageSize: q.pageSize ? Number(q.pageSize) : 20
+      page: clampPage(q.page),
+      pageSize: clampPageSize(q.pageSize)
     });
   });
 
@@ -168,8 +193,8 @@ export async function registerRoutes(app: FastifyInstance, store: DataStore, upl
     return { q, results: hits };
   });
 
-  // RAG 事实问答（GET 便捷入口）——支持 X-API-Key
-  app.get('/rag/ask', { preHandler: apiKeyPreHandler }, async (request, reply) => {
+  // RAG 事实问答（GET 便捷入口）——支持 X-API-Key，并按 IP 限速（单次成本高）
+  app.get('/rag/ask', { preHandler: [apiKeyPreHandler, rateLimitPreHandler(ragLimiter, 'rag')] }, async (request, reply) => {
     const q = (request.query as any).q || '';
     if (!q) return reply.code(400).send({ error: 'bad_request', message: '缺少 q 参数' });
     const lang = ((request.query as any).lang as Lang) || 'zh';
@@ -177,8 +202,8 @@ export async function registerRoutes(app: FastifyInstance, store: DataStore, upl
     return askRag(store, q, lang, limit);
   });
 
-  // RAG 事实问答（POST，主要入口）——支持 X-API-Key
-  app.post('/rag/ask', { preHandler: apiKeyPreHandler }, async (request, reply) => {
+  // RAG 事实问答（POST，主要入口）——支持 X-API-Key，并按 IP 限速
+  app.post('/rag/ask', { preHandler: [apiKeyPreHandler, rateLimitPreHandler(ragLimiter, 'rag')] }, async (request, reply) => {
     const body = (request.body || {}) as any;
     const q = body.query || '';
     if (!q) return reply.code(400).send({ error: 'bad_request', message: 'query 不能为空' });
@@ -212,8 +237,8 @@ export async function registerRoutes(app: FastifyInstance, store: DataStore, upl
     return net;
   });
 
-  // 注册
-  app.post('/auth/register', async (request, reply) => {
+  // 注册（限流：抗批量注册）
+  app.post('/auth/register', { preHandler: rateLimitPreHandler(authLimiter, 'register') }, async (request, reply) => {
     try {
       const { user } = await store.registerUser(request.body as RegisterInput);
       return reply.code(201).send({ user });
@@ -222,8 +247,8 @@ export async function registerRoutes(app: FastifyInstance, store: DataStore, upl
     }
   });
 
-  // 登录（签发 JWT，带 jti 与过期时间，支撑登出吊销）
-  app.post('/auth/login', async (request, reply) => {
+  // 登录（签发 JWT，带 jti 与过期时间，支撑登出吊销）——限流：抗撞库
+  app.post('/auth/login', { preHandler: rateLimitPreHandler(authLimiter, 'login') }, async (request, reply) => {
     try {
       const { user } = await store.loginUser(request.body as LoginInput);
       const token = app.jwt.sign(
@@ -440,15 +465,28 @@ export async function registerRoutes(app: FastifyInstance, store: DataStore, upl
     return { items: await store.listComments(p.id) };
   });
 
-  // 发表评论（需登录）
-  app.post('/persons/:slug/comments', { preHandler: authPreHandler }, async (request, reply) => {
-    const { slug } = request.params as any;
-    const p = await store.getPerson(slug);
-    if (!p) return reply.code(404).send({ error: 'not_found', message: '人物不存在' });
-    const u = request.user as any;
-    const { body } = (request.body || {}) as { body?: string };
-    if (!body || !body.trim()) return reply.code(400).send({ error: 'bad_request', message: '评论内容不能为空' });
-    const c = await store.addComment(p.id, p.slug, u.id, u.name, body.trim().slice(0, 2000));
-    return reply.code(201).send(c);
-  });
+  // 发表评论（需登录）——鉴权后再按用户维度限流（每分钟 5 条），抗刷屏
+  app.post(
+    '/persons/:slug/comments',
+    {
+      preHandler: [
+        authPreHandler,
+        rateLimitPreHandler(commentLimiter, 'comment', (req) => (req.user as any)?.id)
+      ]
+    },
+    async (request, reply) => {
+      const { slug } = request.params as any;
+      const p = await store.getPerson(slug);
+      if (!p) return reply.code(404).send({ error: 'not_found', message: '人物不存在' });
+      const u = request.user as any;
+      const { body } = (request.body || {}) as { body?: string };
+      const text = (body || '').trim();
+      if (!text) return reply.code(400).send({ error: 'bad_request', message: '评论内容不能为空' });
+      if (text.length < 2) {
+        return reply.code(400).send({ error: 'too_short', message: '评论内容太短' });
+      }
+      const c = await store.addComment(p.id, p.slug, u.id, u.name, text.slice(0, 2000));
+      return reply.code(201).send(c);
+    }
+  );
 }

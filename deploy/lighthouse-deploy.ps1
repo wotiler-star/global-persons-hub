@@ -146,6 +146,7 @@ GPH_REVALIDATE=300
 "@
 $webEnvText | Set-Content -Path $WEBENV -Encoding utf8
 $apiEnvText = @"
+NODE_ENV=production
 PORT=8787
 API_BIND=127.0.0.1
 STORE_DRIVER=json

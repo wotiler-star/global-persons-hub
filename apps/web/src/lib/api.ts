@@ -35,6 +35,34 @@ export const getPersons = (opts: { q?: string; domain?: string; lang?: string; p
   return apiGet<{ items: any[]; total: number }>(`/persons?${p.toString()}`);
 };
 
+/**
+ * 全量取数（分页聚合）。
+ * 后端已将单页上限收敛到 500（防 `?pageSize=999999` 打爆内存），因此
+ * sitemap / RSS / llms-full / generateStaticParams 这类"必须拿全库"的场景
+ * 不能再靠 `pageSize=2000` 一把梭，改为按页循环直到取满 total。
+ */
+export async function getAllPersons(
+  opts: { lang?: string; domain?: string; pageSize?: number; maxPages?: number } = {}
+): Promise<{ items: any[]; total: number }> {
+  const pageSize = Math.min(opts.pageSize ?? 500, 500);
+  const maxPages = opts.maxPages ?? 20; // 兜底：最多 10k 条，防后端 total 异常导致死循环
+  const items: any[] = [];
+  let total = 0;
+
+  for (let page = 1; page <= maxPages; page++) {
+    const p = new URLSearchParams();
+    if (opts.lang) p.set('lang', opts.lang);
+    if (opts.domain) p.set('domain', opts.domain);
+    p.set('page', String(page));
+    p.set('pageSize', String(pageSize));
+    const d = await apiGet<{ items: any[]; total: number }>(`/persons?${p.toString()}`);
+    items.push(...(d.items || []));
+    total = d.total ?? items.length;
+    if (items.length >= total || !d.items?.length) break;
+  }
+  return { items, total: total || items.length };
+}
+
 export const getPerson = (slug: string) => apiGet<any>(`/persons/${slug}`);
 export const getRelations = (id: string) => apiGet<any>(`/relations/${id}`);
 export const searchPersons = (q: string) => apiGet<{ results: any[] }>(`/search?q=${encodeURIComponent(q)}`);

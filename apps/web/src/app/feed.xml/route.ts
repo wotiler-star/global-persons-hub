@@ -1,5 +1,5 @@
 import { SITE_URL, SITE_NAME } from '@/lib/og';
-import { apiGet } from '@/lib/api';
+import { getAllPersons } from '@/lib/api';
 import { pickText } from '@/lib/i18n';
 
 // —— GEO / SEO 新鲜度信号：RSS 2.0 订阅源（新收录人物）——
@@ -19,7 +19,7 @@ export async function GET() {
   const base = SITE_URL;
   let items: any[] = [];
   try {
-    const d = await apiGet('/persons?pageSize=2000');
+    const d = await getAllPersons();
     items = (d.items || []).sort(
       (a: any, b: any) => (b.metrics?.influence ?? 0) - (a.metrics?.influence ?? 0)
     );
