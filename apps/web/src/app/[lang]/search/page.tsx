@@ -1,10 +1,26 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { getPersons, semanticSearch } from '@/lib/api';
-import { type Lang } from '@/lib/i18n';
+import { LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import SearchBar from '@/components/SearchBar';
 import SearchExplorer from '@/components/SearchExplorer';
 import PersonCard from '@/components/PersonCard';
+
+// —— SEO：搜索页多语种 hreflang + 规范链接 ——
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const languages: Record<string, string> = {};
+  for (const l of LANGS) languages[l] = `/${l}/search`;
+  return {
+    title: t(lang as Lang, 'search.title'),
+    alternates: { canonical: `/${lang}/search`, languages }
+  };
+}
 
 export default async function Search({
   params,

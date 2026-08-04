@@ -1,5 +1,23 @@
+import type { Metadata } from 'next';
 import AskClient from '@/components/AskClient';
-import type { Lang } from '@/lib/i18n';
+import { LANGS, type Lang } from '@/lib/i18n';
+import { t } from '@/lib/ui';
+
+// —— SEO：AI 问答页多语种 hreflang + 规范链接 ——
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const languages: Record<string, string> = {};
+  for (const l of LANGS) languages[l] = `/${l}/ask`;
+  return {
+    title: t(lang as Lang, 'ask.title'),
+    description: t(lang as Lang, 'ask.subtitle'),
+    alternates: { canonical: `/${lang}/ask`, languages }
+  };
+}
 
 export default async function AskPage({
   params,

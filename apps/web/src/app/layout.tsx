@@ -15,6 +15,12 @@ export const metadata: Metadata = {
   },
   description: SITE_DESC,
   robots: { index: true, follow: true },
+  // —— GEO/SEO：站点级 RSS 2.0 订阅源（供聚合器与 AI 爬虫发现近期更新）——
+  alternates: {
+    types: {
+      'application/rss+xml': '/feed.xml'
+    }
+  },
   // —— 站点级默认社交分享卡（子页可覆盖）——
   openGraph: {
     type: 'website',

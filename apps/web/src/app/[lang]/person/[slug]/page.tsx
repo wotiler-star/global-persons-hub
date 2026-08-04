@@ -20,8 +20,8 @@ import PersonHero from '@/components/PersonHero';
 import ReadingProgress from '@/components/ReadingProgress';
 import SectionNav from '@/components/SectionNav';
 
-// —— GEO：从人物事实生成 FAQPage 结构化数据（答案引擎如 AI Overviews 高频引用）——
-function buildFaqLd(person: any, L: Lang) {
+// —— GEO：从人物事实生成 FAQ（同一份数据既渲染可见区块，又序列化为 FAQPage JSON-LD）——
+function buildFaqItems(person: any, L: Lang): { question: string; answer: string }[] {
   const name = pickText(person.names, L) || pickText(person.names, 'en');
   const qa: { question: string; answer: string }[] = [];
   const summary = pickText(person.summary, L);
@@ -54,6 +54,11 @@ function buildFaqLd(person: any, L: Lang) {
       )} billion.`
     });
   }
+  return qa;
+}
+
+function buildFaqLd(person: any, L: Lang) {
+  const qa = buildFaqItems(person, L);
   if (qa.length === 0) return null;
   return {
     '@context': 'https://schema.org',
@@ -178,7 +183,8 @@ export default async function PersonPage({
     ]
   };
 
-  // —— GEO：FAQPage 结构化数据（答案引擎高频引用，提升被 AI 直接引用的概率）——
+  // —— GEO：FAQ（同一份数据：可见区块 + FAQPage JSON-LD）——
+  const faqItems = buildFaqItems(person, L);
   const faqLd = buildFaqLd(person, L);
 
   // —— 粘性目录导航条目（按实际存在的章节动态生成） ——
@@ -188,6 +194,7 @@ export default async function PersonPage({
     { id: 'sec-aicard', label: t(L, 'aicard.title') },
     { id: 'sec-network', label: t(L, 'person.network') },
     ...(person.kin && person.kin.length > 0 ? [{ id: 'sec-kin', label: t(L, 'person.kinTitle') }] : []),
+    ...(faqItems.length > 0 ? [{ id: 'sec-faq', label: t(L, 'section.faq') }] : []),
     { id: 'sec-related', label: t(L, 'person.relatedTitle') },
     { id: 'sec-comments', label: t(L, 'comments.title') }
   ];
@@ -413,6 +420,20 @@ export default async function PersonPage({
           <ImageUploader slug={slug} initialImages={person.images || []} lang={lang} />
         </aside>
       </div>
+
+      {faqItems.length > 0 && (
+        <div id="sec-faq" className="scroll-mt-24">
+          <h2 className="text-xl font-bold mb-3">{t(L, 'section.faq')}</h2>
+          <div className="space-y-2">
+            {faqItems.map((f, i) => (
+              <details key={i} className="border rounded-lg bg-white px-4 py-3">
+                <summary className="cursor-pointer font-medium text-slate-800">{f.question}</summary>
+                <p className="mt-2 text-sm text-slate-600">{f.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div id="sec-related" className="scroll-mt-24">
         <RelatedPersons person={person} candidates={allPersons.items} lang={L} graphIds={graphIds} />
