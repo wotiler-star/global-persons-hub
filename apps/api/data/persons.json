@@ -172,6 +172,43 @@
           "en": "Influenced modern computing & physics"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-confucius",
+        "type": "influence",
+        "label": {
+          "zh": "思想史影响",
+          "en": "Influence on intellectual history"
+        }
+      },
+      {
+        "targetId": "p-isaac-newton",
+        "type": "influence",
+        "label": {
+          "en": "经典力学奠基现代物理",
+          "zh": "经典力学奠基现代物理"
+        }
+      },
+      {
+        "targetId": "p-charles-darwin",
+        "type": "influence",
+        "label": {
+          "en": "科学革命精神传承",
+          "zh": "科学革命精神传承"
+        }
+      },
+      {
+        "targetId": "p-stephen-hawking",
+        "type": "influence",
+        "label": {
+          "en": "宇宙学思想继承",
+          "zh": "宇宙学思想继承"
+        }
+      },
+      {
+        "targetId": "p-sagan",
+        "type": "influence",
+        "label": "理论物理启蒙"
       }
     ],
     "trustLevel": "pgc",
@@ -480,6 +517,16 @@
           "en": "Mother–daughter"
         },
         "directed": false
+      },
+      {
+        "targetId": "p-franklin",
+        "type": "other",
+        "label": "女性科学先驱"
+      },
+      {
+        "targetId": "p-tuyouyou",
+        "type": "other",
+        "label": "女性诺奖科学者"
       }
     ],
     "trustLevel": "pgc",
@@ -751,6 +798,30 @@
           "en": "Inspired by physics"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-isaac-newton",
+        "type": "influence",
+        "label": {
+          "en": "数学与计算奠基",
+          "zh": "数学与计算奠基"
+        }
+      },
+      {
+        "targetId": "p-bill-gates",
+        "type": "influence",
+        "label": {
+          "zh": "受图灵启发",
+          "en": "Inspired by Turing"
+        }
+      },
+      {
+        "targetId": "p-ada-lovelace",
+        "type": "influence",
+        "label": {
+          "zh": "计算先驱",
+          "en": "Computing pioneer"
+        }
       }
     ],
     "trustLevel": "pgc",
@@ -1014,6 +1085,24 @@
       {
         "targetId": "p-jeff-bezos",
         "type": "rival"
+      },
+      {
+        "targetId": "p-mark-zuckerberg",
+        "type": "rival",
+        "label": {
+          "en": "社交与太空/AI 竞争",
+          "zh": "社交与太空/AI 竞争"
+        }
+      },
+      {
+        "targetId": "p-huang",
+        "type": "rival",
+        "label": "AI 算力竞赛"
+      },
+      {
+        "targetId": "p-altman",
+        "type": "rival",
+        "label": "AI 路线之争"
       }
     ],
     "trustLevel": "pgc",
@@ -1540,6 +1629,24 @@
           "zh": "球王之争"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-michael-jordan",
+        "type": "influence",
+        "label": {
+          "en": "体育偶像标杆",
+          "zh": "体育偶像标杆"
+        }
+      },
+      {
+        "targetId": "p-pele",
+        "type": "influence",
+        "label": "足球标杆"
+      },
+      {
+        "targetId": "p-maradona",
+        "type": "influence",
+        "label": "阿根廷足球传承"
       }
     ],
     "trustLevel": "pgc",
@@ -1795,7 +1902,21 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-wolfgang-mozart",
+        "type": "influence",
+        "label": {
+          "en": "古典乐传承",
+          "zh": "古典乐传承"
+        }
+      },
+      {
+        "targetId": "p-bach",
+        "type": "influence",
+        "label": "启蒙贝多芬"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 89
@@ -2553,6 +2674,26 @@
           "zh": "表演艺术源头"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-chaplin",
+        "type": "influence",
+        "label": "叙事与人物塑造"
+      },
+      {
+        "targetId": "p-caesar",
+        "type": "other",
+        "label": "莎翁悲剧主角"
+      },
+      {
+        "targetId": "p-austen",
+        "type": "influence",
+        "label": "英语文学传承"
+      },
+      {
+        "targetId": "p-tagore",
+        "type": "influence",
+        "label": "世界文学影响"
       }
     ],
     "trustLevel": "pgc",
@@ -2760,6 +2901,14 @@
           "zh": "数学与计算奠基"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-confucius",
+        "type": "influence",
+        "label": {
+          "en": "东方理性影响世界",
+          "zh": "东方理性影响世界"
+        }
       }
     ],
     "trustLevel": "pgc",
@@ -3010,6 +3159,16 @@
           "zh": "科学革命精神传承"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-mendel",
+        "type": "influence",
+        "label": "遗传理论支撑进化论"
+      },
+      {
+        "targetId": "p-goodall",
+        "type": "influence",
+        "label": "延续演化与动物行为研究"
       }
     ],
     "trustLevel": "pgc",
@@ -3587,6 +3746,19 @@
           "zh": "PC 时代竞争"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-jeff-bezos",
+        "type": "rival",
+        "label": {
+          "en": "零售与硬件角力",
+          "zh": "零售与硬件角力"
+        }
+      },
+      {
+        "targetId": "p-cook",
+        "type": "mentor",
+        "label": "接任乔布斯"
       }
     ],
     "trustLevel": "pgc",
@@ -3899,6 +4071,39 @@
       {
         "targetId": "p-warren-buffett",
         "type": "collab"
+      },
+      {
+        "targetId": "p-steve-jobs",
+        "type": "rival",
+        "label": {
+          "en": "PC 时代竞争",
+          "zh": "PC 时代竞争"
+        }
+      },
+      {
+        "targetId": "p-lpage",
+        "type": "influence",
+        "label": "硅谷前辈"
+      },
+      {
+        "targetId": "p-brin",
+        "type": "influence",
+        "label": "硅谷前辈"
+      },
+      {
+        "targetId": "p-nadella",
+        "type": "influence",
+        "label": "微软传承"
+      },
+      {
+        "targetId": "p-huang",
+        "type": "influence",
+        "label": "计算产业前辈"
+      },
+      {
+        "targetId": "p-altman",
+        "type": "influence",
+        "label": "科技慈善前辈"
       }
     ],
     "trustLevel": "pgc",
@@ -4179,6 +4384,14 @@
           "zh": "零售与硬件角力"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-bill-gates",
+        "type": "rival",
+        "label": {
+          "en": "云与零售竞争",
+          "zh": "云与零售竞争"
+        }
       }
     ],
     "trustLevel": "pgc",
@@ -4968,6 +5181,16 @@
           "zh": "跨项目体育标杆"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-bolt",
+        "type": "influence",
+        "label": "体坛标杆"
+      },
+      {
+        "targetId": "p-yao",
+        "type": "influence",
+        "label": "篮球标杆"
       }
     ],
     "trustLevel": "pgc",
@@ -5227,7 +5450,29 @@
         "publisher": "Forbes"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-messi",
+        "type": "rival",
+        "label": {
+          "en": "球王之争",
+          "zh": "球王之争"
+        }
+      },
+      {
+        "targetId": "p-michael-jordan",
+        "type": "influence",
+        "label": {
+          "en": "跨项目体育标杆",
+          "zh": "跨项目体育标杆"
+        }
+      },
+      {
+        "targetId": "p-pele",
+        "type": "influence",
+        "label": "足球标杆"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 90,
@@ -5714,6 +5959,11 @@
           "zh": "古典乐传承"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-bach",
+        "type": "influence",
+        "label": "启蒙莫扎特"
       }
     ],
     "trustLevel": "pgc",
@@ -5987,6 +6237,16 @@
       {
         "targetId": "p-oprah",
         "type": "collab"
+      },
+      {
+        "targetId": "p-mjackson",
+        "type": "influence",
+        "label": "影响后辈"
+      },
+      {
+        "targetId": "p-tswift",
+        "type": "influence",
+        "label": "流行标杆"
       }
     ],
     "trustLevel": "pgc",
@@ -6281,6 +6541,19 @@
           "zh": "好莱坞同台"
         },
         "directed": false
+      },
+      {
+        "targetId": "p-shakespeare",
+        "type": "influence",
+        "label": {
+          "en": "戏剧文本来源",
+          "zh": "戏剧文本来源"
+        }
+      },
+      {
+        "targetId": "p-spielberg",
+        "type": "collab",
+        "label": "多次合作"
       }
     ],
     "trustLevel": "pgc",
@@ -6496,6 +6769,19 @@
       {
         "targetId": "p-leonardo-dicaprio",
         "type": "collab"
+      },
+      {
+        "targetId": "p-shakespeare",
+        "type": "influence",
+        "label": {
+          "en": "表演艺术源头",
+          "zh": "表演艺术源头"
+        }
+      },
+      {
+        "targetId": "p-spielberg",
+        "type": "collab",
+        "label": "多次合作"
       }
     ],
     "trustLevel": "pgc",
@@ -6773,6 +7059,40 @@
           "zh": "自由价值共鸣"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-confucius",
+        "type": "influence",
+        "label": {
+          "en": "仁政思想",
+          "zh": "仁政思想"
+        }
+      },
+      {
+        "targetId": "p-angela-merkel",
+        "type": "influence",
+        "label": {
+          "en": "和解精神传承",
+          "zh": "和解精神传承"
+        }
+      },
+      {
+        "targetId": "p-mahatma-gandhi",
+        "type": "influence",
+        "label": {
+          "zh": "精神导师",
+          "en": "Inspiration"
+        }
+      },
+      {
+        "targetId": "p-mlking",
+        "type": "influence",
+        "label": "平权抗争传承"
+      },
+      {
+        "targetId": "p-annan",
+        "type": "other",
+        "label": "非洲领袖同侪"
       }
     ],
     "trustLevel": "pgc",
@@ -7043,7 +7363,16 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-nelson-mandela",
+        "type": "influence",
+        "label": {
+          "en": "自由价值共鸣",
+          "zh": "自由价值共鸣"
+        }
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 90
@@ -9291,7 +9620,13 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-pasteur",
+        "type": "influence",
+        "label": "感染控制先于抗生素"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 93
@@ -9845,6 +10180,16 @@
           "en": "Inspiration"
         },
         "directed": true
+      },
+      {
+        "targetId": "p-mlking",
+        "type": "influence",
+        "label": "非暴力抗争之源"
+      },
+      {
+        "targetId": "p-tagore",
+        "type": "other",
+        "label": "同期印度领袖"
       }
     ],
     "trustLevel": "pgc",
@@ -10027,7 +10372,13 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-napoleon",
+        "type": "other",
+        "label": "近代国家建构"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 95
@@ -10389,7 +10740,18 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-vangogh",
+        "type": "influence",
+        "label": "艺术传承"
+      },
+      {
+        "targetId": "p-michelangelo",
+        "type": "influence",
+        "label": "文艺复兴双星"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 96
@@ -10570,7 +10932,13 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-vangogh",
+        "type": "influence",
+        "label": "现代艺术先声"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 94
@@ -10932,7 +11300,18 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-luxun",
+        "type": "influence",
+        "label": "现实主义文学影响"
+      },
+      {
+        "targetId": "p-ggm",
+        "type": "influence",
+        "label": "文学巨匠影响"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 95
@@ -11113,7 +11492,13 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-shankar",
+        "type": "other",
+        "label": "世界音乐交流"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 92
@@ -11294,7 +11679,18 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-mercury",
+        "type": "influence",
+        "label": "摇滚先辈"
+      },
+      {
+        "targetId": "p-mjackson",
+        "type": "influence",
+        "label": "流行先辈"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 97
@@ -11475,7 +11871,13 @@
         "publisher": "Wikipedia"
       }
     ],
-    "relations": [],
+    "relations": [
+      {
+        "targetId": "p-miyazaki",
+        "type": "influence",
+        "label": "日本电影传承"
+      }
+    ],
     "trustLevel": "pgc",
     "metrics": {
       "influence": 90
@@ -11860,5 +12262,3803 @@
     ],
     "createdAt": "2026-07-26T00:00:00Z",
     "updatedAt": "2026-07-26T00:00:00Z"
+  },
+  {
+    "id": "p-mendel",
+    "slug": "gregor-mendel",
+    "names": {
+      "zh": "格雷戈尔·孟德尔",
+      "en": "Gregor Mendel",
+      "es": "Gregor Mendel",
+      "fr": "Gregor Mendel",
+      "ja": "グレゴール・メンデル",
+      "ru": "Грегор Мендель",
+      "ar": "غريغور مندل",
+      "pt": "Gregor Mendel",
+      "de": "Gregor Mendel",
+      "ko": "그레고어 멘델",
+      "it": "Gregor Mendel",
+      "hi": "ग्रेगर मेंडल",
+      "id": "Gregor Mendel"
+    },
+    "birth": "1822-07-20",
+    "death": "1884-01-06",
+    "nationalities": [
+      "Austrian"
+    ],
+    "domains": [
+      "academic"
+    ],
+    "occupations": {
+      "zh": "遗传学家",
+      "en": "Geneticist",
+      "es": "Geneticist",
+      "fr": "Généticien",
+      "ja": "遺伝学者",
+      "ru": "Генетик",
+      "ar": "عالم وراثة",
+      "pt": "Geneticist",
+      "de": "Genetiker",
+      "ko": "유전학자",
+      "it": "Geneticist",
+      "hi": "आनुवंशिकीविद्",
+      "id": "Geneticist"
+    },
+    "summary": {
+      "zh": "奥地利修道士、遗传学家，通过豌豆实验奠定遗传定律，被尊为「遗传学之父」。",
+      "en": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "es": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "fr": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "ja": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "ru": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "ar": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "pt": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "de": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "ko": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "it": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "hi": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics.",
+      "id": "Austrian monk and geneticist whose pea-plant experiments established the laws of inheritance; revered as the father of genetics."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Gregor_Mendel",
+        "title": "Gregor_Mendel",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/孟德尔",
+        "title": "孟德尔",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-charles-darwin",
+        "type": "influence",
+        "label": "遗传理论支撑进化论"
+      }
+    ],
+    "metrics": {
+      "influence": 88,
+      "citations": 250000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-pasteur",
+    "slug": "louis-pasteur",
+    "names": {
+      "zh": "路易·巴斯德",
+      "en": "Louis Pasteur",
+      "es": "Louis Pasteur",
+      "fr": "Louis Pasteur",
+      "ja": "ルイ・パスツール",
+      "ru": "Луи Пастер",
+      "ar": "لويس باستور",
+      "pt": "Louis Pasteur",
+      "de": "Louis Pasteur",
+      "ko": "루이 파스퇴르",
+      "it": "Louis Pasteur",
+      "hi": "लुई पाश्चर",
+      "id": "Louis Pasteur"
+    },
+    "birth": "1822-12-27",
+    "death": "1895-09-28",
+    "nationalities": [
+      "French"
+    ],
+    "domains": [
+      "academic"
+    ],
+    "occupations": {
+      "zh": "微生物学家",
+      "en": "Microbiologist",
+      "es": "Microbiologist",
+      "fr": "Microbiologiste",
+      "ja": "微生物学者",
+      "ru": "Микробиолог",
+      "ar": "عالم أحياء دقيقة",
+      "pt": "Microbiologist",
+      "de": "Mikrobiologe",
+      "ko": "미생물학자",
+      "it": "Microbiologist",
+      "hi": "सूक्ष्मजीवविज्ञानी",
+      "id": "Microbiologist"
+    },
+    "summary": {
+      "zh": "法国微生物学家与化学家，发明巴氏杀菌法，开创疫苗与微生物学。",
+      "en": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "es": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "fr": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "ja": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "ru": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "ar": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "pt": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "de": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "ko": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "it": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "hi": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology.",
+      "id": "French microbiologist and chemist who invented pasteurization and pioneered vaccination and microbiology."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Louis_Pasteur",
+        "title": "Louis_Pasteur",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/路易·巴斯德",
+        "title": "路易·巴斯德",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-alexander-fleming",
+        "type": "influence",
+        "label": "感染控制先于抗生素"
+      }
+    ],
+    "metrics": {
+      "influence": 90,
+      "citations": 300000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-goodall",
+    "slug": "jane-goodall",
+    "names": {
+      "zh": "珍·古道尔",
+      "en": "Jane Goodall",
+      "es": "Jane Goodall",
+      "fr": "Jane Goodall",
+      "ja": "ジェーン・グッドール",
+      "ru": "Джейн Гудолл",
+      "ar": "جين غودال",
+      "pt": "Jane Goodall",
+      "de": "Jane Goodall",
+      "ko": "제인 구달",
+      "it": "Jane Goodall",
+      "hi": "जेन गुडल",
+      "id": "Jane Goodall"
+    },
+    "birth": "1934-04-03",
+    "death": null,
+    "nationalities": [
+      "British"
+    ],
+    "domains": [
+      "academic"
+    ],
+    "occupations": {
+      "zh": "灵长类动物学家",
+      "en": "Primatologist",
+      "es": "Primatologist",
+      "fr": "Primatologue",
+      "ja": "霊長類学者",
+      "ru": "Приматолог",
+      "ar": "عالمة رئيسيات",
+      "pt": "Primatologist",
+      "de": "Primatologin",
+      "ko": "영장류학자",
+      "it": "Primatologist",
+      "hi": "प्राइमेटोलॉजिस्ट",
+      "id": "Primatologist"
+    },
+    "summary": {
+      "zh": "英国灵长类动物学家，长期研究黑猩猩社会行为，是野生动物保护的标志性人物。",
+      "en": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "es": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "fr": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "ja": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "ru": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "ar": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "pt": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "de": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "ko": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "it": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "hi": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation.",
+      "id": "British primatologist whose long-term study of wild chimpanzees transformed our understanding of animal behaviour and conservation."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Jane_Goodall",
+        "title": "Jane_Goodall",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/珍·古道尔",
+        "title": "珍·古道尔",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-charles-darwin",
+        "type": "influence",
+        "label": "延续演化与动物行为研究"
+      }
+    ],
+    "metrics": {
+      "influence": 85,
+      "citations": 120000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-franklin",
+    "slug": "rosalind-franklin",
+    "names": {
+      "zh": "罗莎琳德·富兰克林",
+      "en": "Rosalind Franklin",
+      "es": "Rosalind Franklin",
+      "fr": "Rosalind Franklin",
+      "ja": "ロザリンド・フランクリン",
+      "ru": "Розалинд Франклин",
+      "ar": "روزاليند فرانكلين",
+      "pt": "Rosalind Franklin",
+      "de": "Rosalind Franklin",
+      "ko": "로절린드 프랭클린",
+      "it": "Rosalind Franklin",
+      "hi": "रोज़लिंड फ्रैंकलिन",
+      "id": "Rosalind Franklin"
+    },
+    "birth": "1920-07-25",
+    "death": "1958-04-16",
+    "nationalities": [
+      "British"
+    ],
+    "domains": [
+      "academic"
+    ],
+    "occupations": {
+      "zh": "物理化学家",
+      "en": "Physical chemist",
+      "es": "Physical chemist",
+      "fr": "Chimiste",
+      "ja": "物理化学者",
+      "ru": "Химик",
+      "ar": "كيميائية",
+      "pt": "Physical chemist",
+      "de": "Chemikerin",
+      "ko": "물리화학자",
+      "it": "Physical chemist",
+      "hi": "भौतिक रसायनज्ञ",
+      "id": "Physical chemist"
+    },
+    "summary": {
+      "zh": "英国物理化学家，其 DNA X 射线衍射照片为揭示双螺旋结构起到关键作用。",
+      "en": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "es": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "fr": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "ja": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "ru": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "ar": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "pt": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "de": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "ko": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "it": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "hi": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure.",
+      "id": "British physical chemist whose X-ray diffraction images of DNA were central to uncovering its double-helix structure."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Rosalind_Franklin",
+        "title": "Rosalind_Franklin",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/罗莎琳德·富兰克林",
+        "title": "罗莎琳德·富兰克林",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-curie",
+        "type": "other",
+        "label": "女性科学先驱"
+      }
+    ],
+    "metrics": {
+      "influence": 82,
+      "citations": 90000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-tuyouyou",
+    "slug": "tu-youyou",
+    "names": {
+      "zh": "屠呦呦",
+      "en": "Tu Youyou",
+      "es": "Tu Youyou",
+      "fr": "Tu Youyou",
+      "ja": "トゥ・ヨウヨウ",
+      "ru": "Ту Ююй",
+      "ar": "تو يويو",
+      "pt": "Tu Youyou",
+      "de": "Tu Youyou",
+      "ko": "투유유",
+      "it": "Tu Youyou",
+      "hi": "तू यूयू",
+      "id": "Tu Youyou"
+    },
+    "birth": "1930-12-30",
+    "death": null,
+    "nationalities": [
+      "Chinese"
+    ],
+    "domains": [
+      "academic"
+    ],
+    "occupations": {
+      "zh": "药学家",
+      "en": "Pharmaceutical scientist",
+      "es": "Pharmaceutical scientist",
+      "fr": "Pharmacologue",
+      "ja": "薬学者",
+      "ru": "Фармаколог",
+      "ar": "عالمة صيدلة",
+      "pt": "Pharmaceutical scientist",
+      "de": "Pharmakologin",
+      "ko": "약학자",
+      "it": "Pharmaceutical scientist",
+      "hi": "फार्मास्यूटिकल वैज्ञानिक",
+      "id": "Pharmaceutical scientist"
+    },
+    "summary": {
+      "zh": "中国药学家，发现抗疟药物青蒿素，2015 年诺贝尔生理学或医学奖得主。",
+      "en": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "es": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "fr": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "ja": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "ru": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "ar": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "pt": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "de": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "ko": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "it": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "hi": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine.",
+      "id": "Chinese pharmaceutical scientist who discovered artemisinin for malaria treatment and won the 2015 Nobel Prize in Physiology or Medicine."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Tu_Youyou",
+        "title": "Tu_Youyou",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/屠呦呦",
+        "title": "屠呦呦",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-curie",
+        "type": "other",
+        "label": "女性诺奖科学者"
+      }
+    ],
+    "metrics": {
+      "influence": 84,
+      "citations": 80000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-sagan",
+    "slug": "carl-sagan",
+    "names": {
+      "zh": "卡尔·萨根",
+      "en": "Carl Sagan",
+      "es": "Carl Sagan",
+      "fr": "Carl Sagan",
+      "ja": "カール・セーガン",
+      "ru": "Карл Саган",
+      "ar": "كارل ساغان",
+      "pt": "Carl Sagan",
+      "de": "Carl Sagan",
+      "ko": "칼 세이건",
+      "it": "Carl Sagan",
+      "hi": "कार्ल सागन",
+      "id": "Carl Sagan"
+    },
+    "birth": "1934-11-09",
+    "death": "1996-12-20",
+    "nationalities": [
+      "American"
+    ],
+    "domains": [
+      "academic"
+    ],
+    "occupations": {
+      "zh": "天文学家",
+      "en": "Astronomer",
+      "es": "Astronomer",
+      "fr": "Astronome",
+      "ja": "天文学者",
+      "ru": "Астроном",
+      "ar": "عالم فلك",
+      "pt": "Astronomer",
+      "de": "Astronom",
+      "ko": "천문학자",
+      "it": "Astronomer",
+      "hi": "खगोलशास्त्री",
+      "id": "Astronomer"
+    },
+    "summary": {
+      "zh": "美国天文学家与科普作家，主持《宇宙》系列，将科学传播给大众。",
+      "en": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "es": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "fr": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "ja": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "ru": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "ar": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "pt": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "de": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "ko": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "it": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "hi": "American astronomer and science communicator whose Cosmos series brought the universe to the public.",
+      "id": "American astronomer and science communicator whose Cosmos series brought the universe to the public."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Carl_Sagan",
+        "title": "Carl_Sagan",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/卡尔·萨根",
+        "title": "卡尔·萨根",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-einstein",
+        "type": "influence",
+        "label": "理论物理启蒙"
+      }
+    ],
+    "metrics": {
+      "influence": 87,
+      "citations": 150000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-lpage",
+    "slug": "larry-page",
+    "names": {
+      "zh": "拉里·佩奇",
+      "en": "Larry Page",
+      "es": "Larry Page",
+      "fr": "Larry Page",
+      "ja": "ラリー・ペイジ",
+      "ru": "Ларри Пейдж",
+      "ar": "لاري بايج",
+      "pt": "Larry Page",
+      "de": "Larry Page",
+      "ko": "래리 페이지",
+      "it": "Larry Page",
+      "hi": "लैरी पेज",
+      "id": "Larry Page"
+    },
+    "birth": "1973-03-28",
+    "death": null,
+    "nationalities": [
+      "American"
+    ],
+    "domains": [
+      "tech",
+      "business"
+    ],
+    "occupations": {
+      "zh": "企业家",
+      "en": "Entrepreneur",
+      "es": "Entrepreneur",
+      "fr": "Entrepreneur",
+      "ja": "実業家",
+      "ru": "Предприниматель",
+      "ar": "رائد أعمال",
+      "pt": "Entrepreneur",
+      "de": "Unternehmer",
+      "ko": "기업인",
+      "it": "Entrepreneur",
+      "hi": "उद्यमी",
+      "id": "Entrepreneur"
+    },
+    "summary": {
+      "zh": "Google 联合创始人，与谢尔盖·布林共同打造全球最大搜索引擎。",
+      "en": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "es": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "fr": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "ja": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "ru": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "ar": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "pt": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "de": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "ko": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "it": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "hi": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine.",
+      "id": "Co-founder of Google who, with Sergey Brin, built the world's dominant search engine."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Larry_Page",
+        "title": "Larry_Page",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/拉里·佩奇",
+        "title": "拉里·佩奇",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-brin",
+        "type": "collab",
+        "label": "Google 联合创始人"
+      },
+      {
+        "targetId": "p-bill-gates",
+        "type": "influence",
+        "label": "硅谷前辈"
+      }
+    ],
+    "metrics": {
+      "influence": 92,
+      "citations": 50000,
+      "netWorth": 120000000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-brin",
+    "slug": "sergey-brin",
+    "names": {
+      "zh": "谢尔盖·布林",
+      "en": "Sergey Brin",
+      "es": "Sergey Brin",
+      "fr": "Sergueï Brin",
+      "ja": "セルゲイ・ブリン",
+      "ru": "Сергей Брин",
+      "ar": "سيرجي برين",
+      "pt": "Sergey Brin",
+      "de": "Sergey Brin",
+      "ko": "세르게이 브린",
+      "it": "Sergey Brin",
+      "hi": "सर्गेई ब्रिन",
+      "id": "Sergey Brin"
+    },
+    "birth": "1973-08-21",
+    "death": null,
+    "nationalities": [
+      "American"
+    ],
+    "domains": [
+      "tech",
+      "business"
+    ],
+    "occupations": {
+      "zh": "企业家",
+      "en": "Entrepreneur",
+      "es": "Entrepreneur",
+      "fr": "Entrepreneur",
+      "ja": "実業家",
+      "ru": "Предприниматель",
+      "ar": "رائد أعمال",
+      "pt": "Entrepreneur",
+      "de": "Unternehmer",
+      "ko": "기업인",
+      "it": "Entrepreneur",
+      "hi": "उद्यमी",
+      "id": "Entrepreneur"
+    },
+    "summary": {
+      "zh": "Google 联合创始人，与拉里·佩奇共同创立搜索引擎巨头。",
+      "en": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "es": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "fr": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "ja": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "ru": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "ar": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "pt": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "de": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "ko": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "it": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "hi": "Co-founder of Google who, with Larry Page, created the search-engine giant.",
+      "id": "Co-founder of Google who, with Larry Page, created the search-engine giant."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Sergey_Brin",
+        "title": "Sergey_Brin",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/谢尔盖·布林",
+        "title": "谢尔盖·布林",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-lpage",
+        "type": "collab",
+        "label": "Google 联合创始人"
+      },
+      {
+        "targetId": "p-bill-gates",
+        "type": "influence",
+        "label": "硅谷前辈"
+      }
+    ],
+    "metrics": {
+      "influence": 90,
+      "citations": 45000,
+      "netWorth": 115000000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-cook",
+    "slug": "tim-cook",
+    "names": {
+      "zh": "蒂姆·库克",
+      "en": "Tim Cook",
+      "es": "Tim Cook",
+      "fr": "Tim Cook",
+      "ja": "ティム・クック",
+      "ru": "Тим Кук",
+      "ar": "تيم كوك",
+      "pt": "Tim Cook",
+      "de": "Tim Cook",
+      "ko": "팀 쿡",
+      "it": "Tim Cook",
+      "hi": "टिम कुक",
+      "id": "Tim Cook"
+    },
+    "birth": "1960-11-01",
+    "death": null,
+    "nationalities": [
+      "American"
+    ],
+    "domains": [
+      "tech",
+      "business"
+    ],
+    "occupations": {
+      "zh": "企业家",
+      "en": "Executive",
+      "es": "Executive",
+      "fr": "Dirigeant",
+      "ja": "実業家",
+      "ru": "Топ-менеджер",
+      "ar": "مدير تنفيذي",
+      "pt": "Executive",
+      "de": "Manager",
+      "ko": "경영인",
+      "it": "Executive",
+      "hi": "कार्यकारी",
+      "id": "Executive"
+    },
+    "summary": {
+      "zh": "苹果公司 CEO，接替史蒂夫·乔布斯，将苹果推向服务与可持续制造。",
+      "en": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "es": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "fr": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "ja": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "ru": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "ar": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "pt": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "de": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "ko": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "it": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "hi": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing.",
+      "id": "CEO of Apple who succeeded Steve Jobs and steered the company toward services and sustainable manufacturing."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Tim_Cook",
+        "title": "Tim_Cook",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/蒂姆·库克",
+        "title": "蒂姆·库克",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-steve-jobs",
+        "type": "mentor",
+        "label": "接任乔布斯"
+      }
+    ],
+    "metrics": {
+      "influence": 86,
+      "citations": 20000,
+      "netWorth": 2000000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-nadella",
+    "slug": "satya-nadella",
+    "names": {
+      "zh": "萨提亚·纳德拉",
+      "en": "Satya Nadella",
+      "es": "Satya Nadella",
+      "fr": "Satya Nadella",
+      "ja": "サティア・ナデラ",
+      "ru": "Сатья Наделла",
+      "ar": "ساتيا ناديلا",
+      "pt": "Satya Nadella",
+      "de": "Satya Nadella",
+      "ko": "사티아 나델라",
+      "it": "Satya Nadella",
+      "hi": "सत्या नडेला",
+      "id": "Satya Nadella"
+    },
+    "birth": "1967-08-19",
+    "death": null,
+    "nationalities": [
+      "Indian"
+    ],
+    "domains": [
+      "tech",
+      "business"
+    ],
+    "occupations": {
+      "zh": "企业家",
+      "en": "Executive",
+      "es": "Executive",
+      "fr": "Dirigeant",
+      "ja": "実業家",
+      "ru": "Топ-менеджер",
+      "ar": "مدير تنفيذي",
+      "pt": "Executive",
+      "de": "Manager",
+      "ko": "경영인",
+      "it": "Executive",
+      "hi": "कार्यकारी",
+      "id": "Executive"
+    },
+    "summary": {
+      "zh": "微软 CEO，推动微软向云计算与人工智能转型。",
+      "en": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "es": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "fr": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "ja": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "ru": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "ar": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "pt": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "de": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "ko": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "it": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "hi": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence.",
+      "id": "CEO of Microsoft who shifted the company toward cloud computing and artificial intelligence."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Satya_Nadella",
+        "title": "Satya_Nadella",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/萨提亚·纳德拉",
+        "title": "萨提亚·纳德拉",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-bill-gates",
+        "type": "influence",
+        "label": "微软传承"
+      }
+    ],
+    "metrics": {
+      "influence": 85,
+      "citations": 15000,
+      "netWorth": 800000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-huang",
+    "slug": "jensen-huang",
+    "names": {
+      "zh": "黄仁勋",
+      "en": "Jensen Huang",
+      "es": "Jensen Huang",
+      "fr": "Jensen Huang",
+      "ja": "ジェンスン・フアン",
+      "ru": "Дженсен Хуан",
+      "ar": "جنسن هوانغ",
+      "pt": "Jensen Huang",
+      "de": "Jensen Huang",
+      "ko": "젠슨 황",
+      "it": "Jensen Huang",
+      "hi": "जेनसन हुआंग",
+      "id": "Jensen Huang"
+    },
+    "birth": "1963-02-17",
+    "death": null,
+    "nationalities": [
+      "Taiwanese",
+      "American"
+    ],
+    "domains": [
+      "tech",
+      "business"
+    ],
+    "occupations": {
+      "zh": "企业家",
+      "en": "Entrepreneur",
+      "es": "Entrepreneur",
+      "fr": "Entrepreneur",
+      "ja": "実業家",
+      "ru": "Предприниматель",
+      "ar": "رائد أعمال",
+      "pt": "Entrepreneur",
+      "de": "Unternehmer",
+      "ko": "기업인",
+      "it": "Entrepreneur",
+      "hi": "उद्यमी",
+      "id": "Entrepreneur"
+    },
+    "summary": {
+      "zh": "英伟达（NVIDIA）联合创始人兼 CEO，引领 GPU 与人工智能计算浪潮。",
+      "en": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "es": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "fr": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "ja": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "ru": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "ar": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "pt": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "de": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "ko": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "it": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "hi": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom.",
+      "id": "Co-founder and CEO of NVIDIA whose GPUs power the modern AI computing boom."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Jensen_Huang",
+        "title": "Jensen_Huang",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/黄仁勋",
+        "title": "黄仁勋",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-bill-gates",
+        "type": "influence",
+        "label": "计算产业前辈"
+      },
+      {
+        "targetId": "p-musk",
+        "type": "rival",
+        "label": "AI 算力竞赛"
+      }
+    ],
+    "metrics": {
+      "influence": 91,
+      "citations": 18000,
+      "netWorth": 90000000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-altman",
+    "slug": "sam-altman",
+    "names": {
+      "zh": "萨姆·奥尔特曼",
+      "en": "Sam Altman",
+      "es": "Sam Altman",
+      "fr": "Sam Altman",
+      "ja": "サム・オルトマン",
+      "ru": "Сэм Олтман",
+      "ar": "سام ألتمان",
+      "pt": "Sam Altman",
+      "de": "Sam Altman",
+      "ko": "샘 올트먼",
+      "it": "Sam Altman",
+      "hi": "सैम ऑल्टमैन",
+      "id": "Sam Altman"
+    },
+    "birth": "1985-04-22",
+    "death": null,
+    "nationalities": [
+      "American"
+    ],
+    "domains": [
+      "tech",
+      "business"
+    ],
+    "occupations": {
+      "zh": "企业家",
+      "en": "Entrepreneur",
+      "es": "Entrepreneur",
+      "fr": "Entrepreneur",
+      "ja": "実業家",
+      "ru": "Предприниматель",
+      "ar": "رائد أعمال",
+      "pt": "Entrepreneur",
+      "de": "Unternehmer",
+      "ko": "기업인",
+      "it": "Entrepreneur",
+      "hi": "उद्यमी",
+      "id": "Entrepreneur"
+    },
+    "summary": {
+      "zh": "OpenAI 联合创始人兼 CEO，推动生成式人工智能走向大众。",
+      "en": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "es": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "fr": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "ja": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "ru": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "ar": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "pt": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "de": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "ko": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "it": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "hi": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream.",
+      "id": "Co-founder and CEO of OpenAI who brought generative AI into the mainstream."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Sam_Altman",
+        "title": "Sam_Altman",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/萨姆·奥尔特曼",
+        "title": "萨姆·奥尔特曼",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-musk",
+        "type": "rival",
+        "label": "AI 路线之争"
+      },
+      {
+        "targetId": "p-bill-gates",
+        "type": "influence",
+        "label": "科技慈善前辈"
+      }
+    ],
+    "metrics": {
+      "influence": 84,
+      "citations": 10000,
+      "netWorth": 2000000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-bach",
+    "slug": "johann-sebastian-bach",
+    "names": {
+      "zh": "约翰·塞巴斯蒂安·巴赫",
+      "en": "Johann Sebastian Bach",
+      "es": "Johann Sebastian Bach",
+      "fr": "Johann Sebastian Bach",
+      "ja": "ヨハン・セバスティアン・バッハ",
+      "ru": "Иоганн Себастьян Бах",
+      "ar": "يوهان سباستيان باخ",
+      "pt": "Johann Sebastian Bach",
+      "de": "Johann Sebastian Bach",
+      "ko": "요한 세바스티안 바흐",
+      "it": "Johann Sebastian Bach",
+      "hi": "जोहान सेबास्टियन बाख",
+      "id": "Johann Sebastian Bach"
+    },
+    "birth": "1685-03-31",
+    "death": "1750-07-28",
+    "nationalities": [
+      "German"
+    ],
+    "domains": [
+      "music"
+    ],
+    "occupations": {
+      "zh": "作曲家",
+      "en": "Composer",
+      "es": "Composer",
+      "fr": "Compositeur",
+      "ja": "作曲家",
+      "ru": "Композитор",
+      "ar": "ملحن",
+      "pt": "Composer",
+      "de": "Komponist",
+      "ko": "작곡가",
+      "it": "Composer",
+      "hi": "संगीतकार",
+      "id": "Composer"
+    },
+    "summary": {
+      "zh": "巴洛克时期德国作曲家，西方古典音乐奠基人之一。",
+      "en": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "es": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "fr": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "ja": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "ru": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "ar": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "pt": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "de": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "ko": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "it": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "hi": "German Baroque composer whose work became a cornerstone of Western classical music.",
+      "id": "German Baroque composer whose work became a cornerstone of Western classical music."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Johann_Sebastian_Bach",
+        "title": "Johann_Sebastian_Bach",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/约翰·塞巴斯蒂安·巴赫",
+        "title": "约翰·塞巴斯蒂安·巴赫",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-wolfgang-mozart",
+        "type": "influence",
+        "label": "启蒙莫扎特"
+      },
+      {
+        "targetId": "p-beethoven",
+        "type": "influence",
+        "label": "启蒙贝多芬"
+      }
+    ],
+    "metrics": {
+      "influence": 93,
+      "citations": 60000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-mercury",
+    "slug": "freddie-mercury",
+    "names": {
+      "zh": "弗雷迪·默丘里",
+      "en": "Freddie Mercury",
+      "es": "Freddie Mercury",
+      "fr": "Freddie Mercury",
+      "ja": "フレディ・マーキュリー",
+      "ru": "Фредди Меркьюри",
+      "ar": "فريدي ميركوري",
+      "pt": "Freddie Mercury",
+      "de": "Freddie Mercury",
+      "ko": "프레디 머큐리",
+      "it": "Freddie Mercury",
+      "hi": "फ्रेडी मर्करी",
+      "id": "Freddie Mercury"
+    },
+    "birth": "1946-09-05",
+    "death": "1991-11-24",
+    "nationalities": [
+      "British"
+    ],
+    "domains": [
+      "music"
+    ],
+    "occupations": {
+      "zh": "歌手",
+      "en": "Singer",
+      "es": "Singer",
+      "fr": "Chanteur",
+      "ja": "歌手",
+      "ru": "Певец",
+      "ar": "مغني",
+      "pt": "Singer",
+      "de": "Sänger",
+      "ko": "가수",
+      "it": "Singer",
+      "hi": "गायक",
+      "id": "Singer"
+    },
+    "summary": {
+      "zh": "英国摇滚乐队皇后（Queen）主唱，以华丽舞台表现与广域音域著称。",
+      "en": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "es": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "fr": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "ja": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "ru": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "ar": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "pt": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "de": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "ko": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "it": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "hi": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range.",
+      "id": "British singer and Queen frontman celebrated for flamboyant stage presence and a vast vocal range."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Freddie_Mercury",
+        "title": "Freddie_Mercury",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/弗雷迪·默丘里",
+        "title": "弗雷迪·默丘里",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-elvis-presley",
+        "type": "influence",
+        "label": "摇滚先辈"
+      }
+    ],
+    "metrics": {
+      "influence": 88,
+      "citations": 30000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-mjackson",
+    "slug": "michael-jackson",
+    "names": {
+      "zh": "迈克尔·杰克逊",
+      "en": "Michael Jackson",
+      "es": "Michael Jackson",
+      "fr": "Michael Jackson",
+      "ja": "マイケル・ジャクソン",
+      "ru": "Майкл Джексон",
+      "ar": "مايكل جاكسون",
+      "pt": "Michael Jackson",
+      "de": "Michael Jackson",
+      "ko": "마이클 잭슨",
+      "it": "Michael Jackson",
+      "hi": "माइकल जैक्सन",
+      "id": "Michael Jackson"
+    },
+    "birth": "1958-08-29",
+    "death": "2009-06-25",
+    "nationalities": [
+      "American"
+    ],
+    "domains": [
+      "music"
+    ],
+    "occupations": {
+      "zh": "歌手",
+      "en": "Singer",
+      "es": "Singer",
+      "fr": "Chanteur",
+      "ja": "歌手",
+      "ru": "Певец",
+      "ar": "مغني",
+      "pt": "Singer",
+      "de": "Sänger",
+      "ko": "가수",
+      "it": "Singer",
+      "hi": "गायक",
+      "id": "Singer"
+    },
+    "summary": {
+      "zh": "美国流行天王，专辑《颤栗》史上最畅销，以太空步与音乐录影带革新流行文化。",
+      "en": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "es": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "fr": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "ja": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "ru": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "ar": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "pt": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "de": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "ko": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "it": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "hi": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos.",
+      "id": "American pop icon whose Thriller is the best-selling album of all time; he reinvented pop with the moonwalk and music videos."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Michael_Jackson",
+        "title": "Michael_Jackson",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/迈克尔·杰克逊",
+        "title": "迈克尔·杰克逊",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-elvis-presley",
+        "type": "influence",
+        "label": "流行先辈"
+      },
+      {
+        "targetId": "p-beyonce",
+        "type": "influence",
+        "label": "影响后辈"
+      }
+    ],
+    "metrics": {
+      "influence": 92,
+      "citations": 40000,
+      "netWorth": 500000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-tswift",
+    "slug": "taylor-swift",
+    "names": {
+      "zh": "泰勒·斯威夫特",
+      "en": "Taylor Swift",
+      "es": "Taylor Swift",
+      "fr": "Taylor Swift",
+      "ja": "テイラー・スウィフト",
+      "ru": "Тейлор Свифт",
+      "ar": "تايلور سويفت",
+      "pt": "Taylor Swift",
+      "de": "Taylor Swift",
+      "ko": "테일러 스위프트",
+      "it": "Taylor Swift",
+      "hi": "टेलर स्विफ्ट",
+      "id": "Taylor Swift"
+    },
+    "birth": "1989-12-13",
+    "death": null,
+    "nationalities": [
+      "American"
+    ],
+    "domains": [
+      "music"
+    ],
+    "occupations": {
+      "zh": "歌手",
+      "en": "Singer-songwriter",
+      "es": "Singer-songwriter",
+      "fr": "Auteure-compositrice",
+      "ja": "シンガーソングライター",
+      "ru": "Певица",
+      "ar": "مغنية",
+      "pt": "Singer-songwriter",
+      "de": "Singer-Songwriterin",
+      "ko": "싱어송라이터",
+      "it": "Singer-songwriter",
+      "hi": "गायिका",
+      "id": "Singer-songwriter"
+    },
+    "summary": {
+      "zh": "美国创作歌手，从乡村到流行全面成功，多次成为全球收入最高音乐人。",
+      "en": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "es": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "fr": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "ja": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "ru": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "ar": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "pt": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "de": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "ko": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "it": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "hi": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world.",
+      "id": "American singer-songwriter who moved from country to pop and became one of the highest-earning musicians in the world."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Taylor_Swift",
+        "title": "Taylor_Swift",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/泰勒·斯威夫特",
+        "title": "泰勒·斯威夫特",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-beyonce",
+        "type": "influence",
+        "label": "流行标杆"
+      }
+    ],
+    "metrics": {
+      "influence": 91,
+      "citations": 25000,
+      "netWorth": 1100000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-shankar",
+    "slug": "ravi-shankar",
+    "names": {
+      "zh": "拉维·香卡",
+      "en": "Ravi Shankar",
+      "es": "Ravi Shankar",
+      "fr": "Ravi Shankar",
+      "ja": "ラヴィ・シャンカル",
+      "ru": "Рави Шанкар",
+      "ar": "رافي شانكار",
+      "pt": "Ravi Shankar",
+      "de": "Ravi Shankar",
+      "ko": "라비 샹카르",
+      "it": "Ravi Shankar",
+      "hi": "रविशंकर",
+      "id": "Ravi Shankar"
+    },
+    "birth": "1920-04-07",
+    "death": "2012-12-11",
+    "nationalities": [
+      "Indian"
+    ],
+    "domains": [
+      "music"
+    ],
+    "occupations": {
+      "zh": "音乐家",
+      "en": "Musician",
+      "es": "Musician",
+      "fr": "Musicien",
+      "ja": "音乐家",
+      "ru": "Музыкант",
+      "ar": "موسيقي",
+      "pt": "Musician",
+      "de": "Musiker",
+      "ko": "음악가",
+      "it": "Musician",
+      "hi": "संगीतकार",
+      "id": "Musician"
+    },
+    "summary": {
+      "zh": "印度西塔琴大师，将印度古典音乐介绍给西方，影响众多世界音乐人。",
+      "en": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "es": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "fr": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "ja": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "ru": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "ar": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "pt": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "de": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "ko": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "it": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "hi": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians.",
+      "id": "Indian sitar maestro who introduced Indian classical music to the West and influenced countless world musicians."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Ravi_Shankar",
+        "title": "Ravi_Shankar",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/拉维·香卡",
+        "title": "拉维·香卡",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-bob-marley",
+        "type": "other",
+        "label": "世界音乐交流"
+      }
+    ],
+    "metrics": {
+      "influence": 80,
+      "citations": 15000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-spielberg",
+    "slug": "steven-spielberg",
+    "names": {
+      "zh": "史蒂文·斯皮尔伯格",
+      "en": "Steven Spielberg",
+      "es": "Steven Spielberg",
+      "fr": "Steven Spielberg",
+      "ja": "スティーヴン・スピルバーグ",
+      "ru": "Стивен Спилберг",
+      "ar": "ستيفن سبيلبرغ",
+      "pt": "Steven Spielberg",
+      "de": "Steven Spielberg",
+      "ko": "스티븐 스필버그",
+      "it": "Steven Spielberg",
+      "hi": "स्टीवन स्पिलबर्ग",
+      "id": "Steven Spielberg"
+    },
+    "birth": "1946-12-18",
+    "death": null,
+    "nationalities": [
+      "American"
+    ],
+    "domains": [
+      "film"
+    ],
+    "occupations": {
+      "zh": "电影导演",
+      "en": "Film director",
+      "es": "Film director",
+      "fr": "Réalisateur",
+      "ja": "映画監督",
+      "ru": "Кинорежиссёр",
+      "ar": "مخرج",
+      "pt": "Film director",
+      "de": "Regisseur",
+      "ko": "영화 감독",
+      "it": "Film director",
+      "hi": "फिल्म निर्देशक",
+      "id": "Film director"
+    },
+    "summary": {
+      "zh": "美国导演与制片人，《侏罗纪公园》《辛德勒的名单》等代表作定义现代好莱坞。",
+      "en": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "es": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "fr": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "ja": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "ru": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "ar": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "pt": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "de": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "ko": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "it": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "hi": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood.",
+      "id": "American director and producer whose Jurassic Park and Schindler's List helped define modern Hollywood."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Steven_Spielberg",
+        "title": "Steven_Spielberg",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/史蒂文·斯皮尔伯格",
+        "title": "史蒂文·斯皮尔伯格",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-leonardo-dicaprio",
+        "type": "collab",
+        "label": "多次合作"
+      },
+      {
+        "targetId": "p-meryl-streep",
+        "type": "collab",
+        "label": "多次合作"
+      }
+    ],
+    "metrics": {
+      "influence": 91,
+      "citations": 30000,
+      "netWorth": 5000000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-miyazaki",
+    "slug": "hayao-miyazaki",
+    "names": {
+      "zh": "宫崎骏",
+      "en": "Hayao Miyazaki",
+      "es": "Hayao Miyazaki",
+      "fr": "Hayao Miyazaki",
+      "ja": "宮崎駿",
+      "ru": "Хаяо Миядзаки",
+      "ar": "هاياو ميازاكي",
+      "pt": "Hayao Miyazaki",
+      "de": "Hayao Miyazaki",
+      "ko": "미야자키 하야오",
+      "it": "Hayao Miyazaki",
+      "hi": "हायाओ मियाजाकी",
+      "id": "Hayao Miyazaki"
+    },
+    "birth": "1941-01-05",
+    "death": null,
+    "nationalities": [
+      "Japanese"
+    ],
+    "domains": [
+      "film"
+    ],
+    "occupations": {
+      "zh": "动画导演",
+      "en": "Animator",
+      "es": "Animator",
+      "fr": "Réalisateur",
+      "ja": "アニメーション監督",
+      "ru": "Мультипликатор",
+      "ar": "مخرج أنمي",
+      "pt": "Animator",
+      "de": "Animator",
+      "ko": "애니메이션 감독",
+      "it": "Animator",
+      "hi": "एनिमेटर",
+      "id": "Animator"
+    },
+    "summary": {
+      "zh": "日本动画大师，吉卜力工作室核心，作品如《千与千寻》享誉全球。",
+      "en": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "es": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "fr": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "ja": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "ru": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "ar": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "pt": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "de": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "ko": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "it": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "hi": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim.",
+      "id": "Japanese animation master and co-founder of Studio Ghibli, whose Spirited Away won global acclaim."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Hayao_Miyazaki",
+        "title": "Hayao_Miyazaki",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/宫崎骏",
+        "title": "宫崎骏",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-akira-kurosawa",
+        "type": "influence",
+        "label": "日本电影传承"
+      }
+    ],
+    "metrics": {
+      "influence": 89,
+      "citations": 20000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-chaplin",
+    "slug": "charlie-chaplin",
+    "names": {
+      "zh": "查理·卓别林",
+      "en": "Charlie Chaplin",
+      "es": "Charlie Chaplin",
+      "fr": "Charlie Chaplin",
+      "ja": "チャーリー・チャップリン",
+      "ru": "Чарли Чаплин",
+      "ar": "تشارلي تشابلن",
+      "pt": "Charlie Chaplin",
+      "de": "Charlie Chaplin",
+      "ko": "찰리 채플린",
+      "it": "Charlie Chaplin",
+      "hi": "चार्ली चैप्लिन",
+      "id": "Charlie Chaplin"
+    },
+    "birth": "1889-04-16",
+    "death": "1977-12-25",
+    "nationalities": [
+      "British"
+    ],
+    "domains": [
+      "film"
+    ],
+    "occupations": {
+      "zh": "喜剧演员",
+      "en": "Comedian",
+      "es": "Comedian",
+      "fr": "Comédien",
+      "ja": "喜劇俳優",
+      "ru": "Комик",
+      "ar": "ممثل كوميدي",
+      "pt": "Comedian",
+      "de": "Komiker",
+      "ko": "코미디언",
+      "it": "Comedian",
+      "hi": "हास्य अभिनेता",
+      "id": "Comedian"
+    },
+    "summary": {
+      "zh": "英国喜剧大师，「流浪汉」形象成为默片时代最具标志性的符号。",
+      "en": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "es": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "fr": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "ja": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "ru": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "ar": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "pt": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "de": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "ko": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "it": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "hi": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era.",
+      "id": "British comedy legend whose 'Tramp' became the most iconic figure of the silent-film era."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Charlie_Chaplin",
+        "title": "Charlie_Chaplin",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/查理·卓别林",
+        "title": "查理·卓别林",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-shakespeare",
+        "type": "influence",
+        "label": "叙事与人物塑造"
+      }
+    ],
+    "metrics": {
+      "influence": 90,
+      "citations": 25000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-hepburn",
+    "slug": "audrey-hepburn",
+    "names": {
+      "zh": "奥黛丽·赫本",
+      "en": "Audrey Hepburn",
+      "es": "Audrey Hepburn",
+      "fr": "Audrey Hepburn",
+      "ja": "オードリー・ヘプバーン",
+      "ru": "Одри Хепбёрн",
+      "ar": "أودري هيبورن",
+      "pt": "Audrey Hepburn",
+      "de": "Audrey Hepburn",
+      "ko": "오드리 헵번",
+      "it": "Audrey Hepburn",
+      "hi": "ऑड्री हेपबर्न",
+      "id": "Audrey Hepburn"
+    },
+    "birth": "1929-05-04",
+    "death": "1993-01-20",
+    "nationalities": [
+      "Belgian",
+      "British"
+    ],
+    "domains": [
+      "film"
+    ],
+    "occupations": {
+      "zh": "演员",
+      "en": "Actress",
+      "es": "Actress",
+      "fr": "Actrice",
+      "ja": "女優",
+      "ru": "Актриса",
+      "ar": "ممثلة",
+      "pt": "Actress",
+      "de": "Schauspielerin",
+      "ko": "배우",
+      "it": "Actress",
+      "hi": "अभिनेत्री",
+      "id": "Actress"
+    },
+    "summary": {
+      "zh": "比利时裔英国演员，《罗马假日》主演，晚年致力联合国儿童基金会人道主义工作。",
+      "en": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "es": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "fr": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "ja": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "ru": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "ar": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "pt": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "de": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "ko": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "it": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "hi": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work.",
+      "id": "Belgian-British actress of Roman Holiday fame who later devoted herself to UNICEF humanitarian work."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Audrey_Hepburn",
+        "title": "Audrey_Hepburn",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/奥黛丽·赫本",
+        "title": "奥黛丽·赫本",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [],
+    "metrics": {
+      "influence": 86,
+      "citations": 18000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-pele",
+    "slug": "pele",
+    "names": {
+      "zh": "贝利",
+      "en": "Pelé",
+      "es": "Pelé",
+      "fr": "Pelé",
+      "ja": "ペレ",
+      "ru": "Пеле",
+      "ar": "بيلي",
+      "pt": "Pelé",
+      "de": "Pelé",
+      "ko": "펠레",
+      "it": "Pelé",
+      "hi": "पेले",
+      "id": "Pelé"
+    },
+    "birth": "1940-10-23",
+    "death": "2022-12-29",
+    "nationalities": [
+      "Brazilian"
+    ],
+    "domains": [
+      "sports"
+    ],
+    "occupations": {
+      "zh": "足球运动员",
+      "en": "Footballer",
+      "es": "Footballer",
+      "fr": "Footballeur",
+      "ja": "サッカー選手",
+      "ru": "Футболист",
+      "ar": "لاعب كرة قدم",
+      "pt": "Footballer",
+      "de": "Fußballer",
+      "ko": "축구 선수",
+      "it": "Footballer",
+      "hi": "फुटबॉलर",
+      "id": "Footballer"
+    },
+    "summary": {
+      "zh": "巴西足球传奇，三夺世界杯，被公认为史上最伟大球员之一。",
+      "en": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "es": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "fr": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "ja": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "ru": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "ar": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "pt": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "de": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "ko": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "it": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "hi": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever.",
+      "id": "Brazilian football legend who won three World Cups and is widely regarded among the greatest players ever."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Pelé",
+        "title": "Pelé",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/贝利",
+        "title": "贝利",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-messi",
+        "type": "influence",
+        "label": "足球标杆"
+      },
+      {
+        "targetId": "p-cristiano-ronaldo",
+        "type": "influence",
+        "label": "足球标杆"
+      }
+    ],
+    "metrics": {
+      "influence": 93,
+      "citations": 30000,
+      "netWorth": 100000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-maradona",
+    "slug": "diego-maradona",
+    "names": {
+      "zh": "迭戈·马拉多纳",
+      "en": "Diego Maradona",
+      "es": "Diego Maradona",
+      "fr": "Diego Maradona",
+      "ja": "ディエゴ・マラドーナ",
+      "ru": "Диего Марадона",
+      "ar": "دييغو مارادونا",
+      "pt": "Diego Maradona",
+      "de": "Diego Maradona",
+      "ko": "디에고 마라도나",
+      "it": "Diego Maradona",
+      "hi": "डिएगो माराडोना",
+      "id": "Diego Maradona"
+    },
+    "birth": "1960-10-30",
+    "death": "2020-11-25",
+    "nationalities": [
+      "Argentine"
+    ],
+    "domains": [
+      "sports"
+    ],
+    "occupations": {
+      "zh": "足球运动员",
+      "en": "Footballer",
+      "es": "Footballer",
+      "fr": "Footballeur",
+      "ja": "サッカー選手",
+      "ru": "Футболист",
+      "ar": "لاعب كرة قدم",
+      "pt": "Footballer",
+      "de": "Fußballer",
+      "ko": "축구 선수",
+      "it": "Footballer",
+      "hi": "फुटबॉलर",
+      "id": "Footballer"
+    },
+    "summary": {
+      "zh": "阿根廷足球天才，1986 年世界杯「上帝之手」与世纪进球缔造者。",
+      "en": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "es": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "fr": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "ja": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "ru": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "ar": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "pt": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "de": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "ko": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "it": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "hi": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup.",
+      "id": "Argentine football genius famed for the 'Hand of God' and the 'Goal of the Century' at the 1986 World Cup."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Diego_Maradona",
+        "title": "Diego_Maradona",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/迭戈·马拉多纳",
+        "title": "迭戈·马拉多纳",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-messi",
+        "type": "influence",
+        "label": "阿根廷足球传承"
+      }
+    ],
+    "metrics": {
+      "influence": 92,
+      "citations": 25000,
+      "netWorth": 50000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-bolt",
+    "slug": "usain-bolt",
+    "names": {
+      "zh": "尤塞恩·博尔特",
+      "en": "Usain Bolt",
+      "es": "Usain Bolt",
+      "fr": "Usain Bolt",
+      "ja": "ウサイン・ボルト",
+      "ru": "Усэйн Болт",
+      "ar": "يوسين بولت",
+      "pt": "Usain Bolt",
+      "de": "Usain Bolt",
+      "ko": "우사인 볼트",
+      "it": "Usain Bolt",
+      "hi": "उसेन बोल्ट",
+      "id": "Usain Bolt"
+    },
+    "birth": "1986-08-21",
+    "death": null,
+    "nationalities": [
+      "Jamaican"
+    ],
+    "domains": [
+      "sports"
+    ],
+    "occupations": {
+      "zh": "短跑运动员",
+      "en": "Sprinter",
+      "es": "Sprinter",
+      "fr": "Sprinteur",
+      "ja": "短距離走者",
+      "ru": "Спринтер",
+      "ar": "عداء سرعة",
+      "pt": "Sprinter",
+      "de": "Sprinter",
+      "ko": "단거리 선수",
+      "it": "Sprinter",
+      "hi": "स्प्रिंटर",
+      "id": "Sprinter"
+    },
+    "summary": {
+      "zh": "牙买加短跑名将，100 米与 200 米世界纪录保持者，奥运八金得主。",
+      "en": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "es": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "fr": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "ja": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "ru": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "ar": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "pt": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "de": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "ko": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "it": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "hi": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist.",
+      "id": "Jamaican sprinter, world-record holder in the 100m and 200m, and an eight-time Olympic gold medalist."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Usain_Bolt",
+        "title": "Usain_Bolt",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/尤塞恩·博尔特",
+        "title": "尤塞恩·博尔特",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-michael-jordan",
+        "type": "influence",
+        "label": "体坛标杆"
+      }
+    ],
+    "metrics": {
+      "influence": 90,
+      "citations": 20000,
+      "netWorth": 90000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-yao",
+    "slug": "yao-ming",
+    "names": {
+      "zh": "姚明",
+      "en": "Yao Ming",
+      "es": "Yao Ming",
+      "fr": "Yao Ming",
+      "ja": "ヤオ・ミン",
+      "ru": "Яо Мин",
+      "ar": "ياو مينغ",
+      "pt": "Yao Ming",
+      "de": "Yao Ming",
+      "ko": "야오밍",
+      "it": "Yao Ming",
+      "hi": "याओ मिंग",
+      "id": "Yao Ming"
+    },
+    "birth": "1980-09-12",
+    "death": null,
+    "nationalities": [
+      "Chinese"
+    ],
+    "domains": [
+      "sports"
+    ],
+    "occupations": {
+      "zh": "篮球运动员",
+      "en": "Basketball player",
+      "es": "Basketball player",
+      "fr": "Basketteur",
+      "ja": "バスケットボール選手",
+      "ru": "Баскетболист",
+      "ar": "لاعب كرة سلة",
+      "pt": "Basketball player",
+      "de": "Basketballspieler",
+      "ko": "농구 선수",
+      "it": "Basketball player",
+      "hi": "बास्केटबॉल खिलाड़ी",
+      "id": "Basketball player"
+    },
+    "summary": {
+      "zh": "中国篮球巨星，NBA 休斯顿火箭队中锋，推动篮球在中国普及。",
+      "en": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "es": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "fr": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "ja": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "ru": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "ar": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "pt": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "de": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "ko": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "it": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "hi": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China.",
+      "id": "Chinese basketball giant and Houston Rockets center who helped popularize the NBA in China."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Yao_Ming",
+        "title": "Yao_Ming",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/姚明",
+        "title": "姚明",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-michael-jordan",
+        "type": "influence",
+        "label": "篮球标杆"
+      }
+    ],
+    "metrics": {
+      "influence": 82,
+      "citations": 12000,
+      "netWorth": 180000000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-caesar",
+    "slug": "julius-caesar",
+    "names": {
+      "zh": "尤利乌斯·恺撒",
+      "en": "Julius Caesar",
+      "es": "Julius Caesar",
+      "fr": "Jules César",
+      "ja": "ユリウス・カエサル",
+      "ru": "Гай Юлий Цезарь",
+      "ar": "يوليوس قيصر",
+      "pt": "Julius Caesar",
+      "de": "Julius Caesar",
+      "ko": "율리우스 카이사르",
+      "it": "Julius Caesar",
+      "hi": "जूलियस सीज़र",
+      "id": "Julius Caesar"
+    },
+    "birth": "-0100-07-13",
+    "death": "-0044-03-15",
+    "nationalities": [
+      "Roman"
+    ],
+    "domains": [
+      "politics"
+    ],
+    "occupations": {
+      "zh": "政治家",
+      "en": "Statesman",
+      "es": "Statesman",
+      "fr": "Homme d'État",
+      "ja": "政治家",
+      "ru": "Политик",
+      "ar": "سياسي",
+      "pt": "Statesman",
+      "de": "Staatsmann",
+      "ko": "정치가",
+      "it": "Statesman",
+      "hi": "राजनेता",
+      "id": "Statesman"
+    },
+    "summary": {
+      "zh": "古罗马将军与独裁官，征服高卢，终结罗马共和国、开启帝国时代。",
+      "en": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "es": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "fr": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "ja": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "ru": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "ar": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "pt": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "de": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "ko": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "it": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "hi": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire.",
+      "id": "Roman general and dictator whose conquest of Gaul and rise to power ended the Republic and paved the way for the Empire."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Julius_Caesar",
+        "title": "Julius_Caesar",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/尤利乌斯·恺撒",
+        "title": "尤利乌斯·恺撒",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-shakespeare",
+        "type": "other",
+        "label": "莎翁悲剧主角"
+      },
+      {
+        "targetId": "p-cleopatra",
+        "type": "other",
+        "label": "政治与情感盟友"
+      }
+    ],
+    "metrics": {
+      "influence": 95,
+      "citations": 200000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-cleopatra",
+    "slug": "cleopatra",
+    "names": {
+      "zh": "克利奥帕特拉七世",
+      "en": "Cleopatra",
+      "es": "Cleopatra",
+      "fr": "Cléopâtre",
+      "ja": "クレオパトラ",
+      "ru": "Клеопатра",
+      "ar": "كليوباترا",
+      "pt": "Cleopatra",
+      "de": "Kleopatra",
+      "ko": "클레오파트라",
+      "it": "Cleopatra",
+      "hi": "क्लियोपाट्रा",
+      "id": "Cleopatra"
+    },
+    "birth": "-0069-01-01",
+    "death": "-0030-01-01",
+    "nationalities": [
+      "Egyptian"
+    ],
+    "domains": [
+      "politics"
+    ],
+    "occupations": {
+      "zh": "法老",
+      "en": "Pharaoh",
+      "es": "Pharaoh",
+      "fr": "Pharaon",
+      "ja": "ファラオ",
+      "ru": "Фараон",
+      "ar": "فرعون",
+      "pt": "Pharaoh",
+      "de": "Pharao",
+      "ko": "파라오",
+      "it": "Pharaoh",
+      "hi": "फ़िरऔन",
+      "id": "Pharaoh"
+    },
+    "summary": {
+      "zh": "古埃及托勒密王朝末代女王，与恺撒、安东尼结盟，是地中海权力博弈的核心。",
+      "en": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "es": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "fr": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "ja": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "ru": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "ar": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "pt": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "de": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "ko": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "it": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "hi": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles.",
+      "id": "Last active ruler of Ptolemaic Egypt, allied with Caesar and Mark Antony at the center of Mediterranean power struggles."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Cleopatra",
+        "title": "Cleopatra",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/克利奥帕特拉七世",
+        "title": "克利奥帕特拉七世",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-caesar",
+        "type": "other",
+        "label": "政治与情感盟友"
+      }
+    ],
+    "metrics": {
+      "influence": 90,
+      "citations": 150000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-napoleon",
+    "slug": "napoleon-bonaparte",
+    "names": {
+      "zh": "拿破仑·波拿巴",
+      "en": "Napoleon Bonaparte",
+      "es": "Napoleon Bonaparte",
+      "fr": "Napoléon Bonaparte",
+      "ja": "ナポレオン・ボナパルト",
+      "ru": "Наполеон Бонапарт",
+      "ar": "نابليون بونابرت",
+      "pt": "Napoleon Bonaparte",
+      "de": "Napoleon Bonaparte",
+      "ko": "나폴레옹 보나파르트",
+      "it": "Napoleon Bonaparte",
+      "hi": "नेपोलियन बोनापार्ट",
+      "id": "Napoleon Bonaparte"
+    },
+    "birth": "1769-08-15",
+    "death": "1821-05-05",
+    "nationalities": [
+      "French"
+    ],
+    "domains": [
+      "politics"
+    ],
+    "occupations": {
+      "zh": "皇帝",
+      "en": "Emperor",
+      "es": "Emperor",
+      "fr": "Empereur",
+      "ja": "皇帝",
+      "ru": "Император",
+      "ar": "إمبراطور",
+      "pt": "Emperor",
+      "de": "Kaiser",
+      "ko": "황제",
+      "it": "Emperor",
+      "hi": "सम्राट",
+      "id": "Emperor"
+    },
+    "summary": {
+      "zh": "法国军事天才与皇帝，颁布《拿破仑法典》，重塑近代欧洲版图。",
+      "en": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "es": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "fr": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "ja": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "ru": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "ar": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "pt": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "de": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "ko": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "it": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "hi": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders.",
+      "id": "French military genius and emperor whose Napoleonic Code reshaped modern European law and borders."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Napoleon",
+        "title": "Napoleon",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/拿破仑·波拿巴",
+        "title": "拿破仑·波拿巴",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-abraham-lincoln",
+        "type": "other",
+        "label": "近代国家建构"
+      }
+    ],
+    "metrics": {
+      "influence": 92,
+      "citations": 180000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-mlking",
+    "slug": "martin-luther-king",
+    "names": {
+      "zh": "马丁·路德·金",
+      "en": "Martin Luther King Jr.",
+      "es": "Martin Luther King Jr.",
+      "fr": "Martin Luther King",
+      "ja": "マーティン・ルーサー・キング",
+      "ru": "Мартин Лютер Кинг",
+      "ar": "مارتن لوثر كينغ",
+      "pt": "Martin Luther King Jr.",
+      "de": "Martin Luther King",
+      "ko": "마틴 루터 킹",
+      "it": "Martin Luther King Jr.",
+      "hi": "मार्टिन लूथर किंग",
+      "id": "Martin Luther King Jr."
+    },
+    "birth": "1929-01-15",
+    "death": "1968-04-04",
+    "nationalities": [
+      "American"
+    ],
+    "domains": [
+      "politics"
+    ],
+    "occupations": {
+      "zh": "民权领袖",
+      "en": "Civil rights leader",
+      "es": "Civil rights leader",
+      "fr": "Leader des droits civiques",
+      "ja": "公民権運動家",
+      "ru": "Борец за права",
+      "ar": "زعيم حقوق مدنية",
+      "pt": "Civil rights leader",
+      "de": "Bürgerrechtler",
+      "ko": "민권 운동가",
+      "it": "Civil rights leader",
+      "hi": "नागरिक अधिकार नेता",
+      "id": "Civil rights leader"
+    },
+    "summary": {
+      "zh": "美国民权运动领袖，以非暴力抗争推动种族平等，《我有一个梦想》传遍世界。",
+      "en": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "es": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "fr": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "ja": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "ru": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "ar": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "pt": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "de": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "ko": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "it": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "hi": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide.",
+      "id": "American civil-rights leader who advanced racial equality through nonviolence; his 'I Have a Dream' speech echoed worldwide."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
+        "title": "Martin_Luther_King_Jr.",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/马丁·路德·金",
+        "title": "马丁·路德·金",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-mahatma-gandhi",
+        "type": "influence",
+        "label": "非暴力抗争之源"
+      },
+      {
+        "targetId": "p-nelson-mandela",
+        "type": "influence",
+        "label": "平权抗争传承"
+      }
+    ],
+    "metrics": {
+      "influence": 91,
+      "citations": 120000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-annan",
+    "slug": "kofi-annan",
+    "names": {
+      "zh": "科菲·安南",
+      "en": "Kofi Annan",
+      "es": "Kofi Annan",
+      "fr": "Kofi Annan",
+      "ja": "コフィー・アナン",
+      "ru": "Кофи Аннан",
+      "ar": "كوفي عنان",
+      "pt": "Kofi Annan",
+      "de": "Kofi Annan",
+      "ko": "코피 아난",
+      "it": "Kofi Annan",
+      "hi": "कोफी अन्नान",
+      "id": "Kofi Annan"
+    },
+    "birth": "1938-04-08",
+    "death": "2018-08-18",
+    "nationalities": [
+      "Ghanaian"
+    ],
+    "domains": [
+      "politics"
+    ],
+    "occupations": {
+      "zh": "外交官",
+      "en": "Diplomat",
+      "es": "Diplomat",
+      "fr": "Diplomate",
+      "ja": "外交官",
+      "ru": "Дипломат",
+      "ar": "دبلوماسي",
+      "pt": "Diplomat",
+      "de": "Diplomat",
+      "ko": "외교관",
+      "it": "Diplomat",
+      "hi": "राजनयिक",
+      "id": "Diplomat"
+    },
+    "summary": {
+      "zh": "加纳外交官，第七任联合国秘书长，2001 年诺贝尔和平奖得主。",
+      "en": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "es": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "fr": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "ja": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "ru": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "ar": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "pt": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "de": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "ko": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "it": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "hi": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize.",
+      "id": "Ghanaian diplomat, the seventh UN Secretary-General, and co-recipient of the 2001 Nobel Peace Prize."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Kofi_Annan",
+        "title": "Kofi_Annan",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/科菲·安南",
+        "title": "科菲·安南",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-nelson-mandela",
+        "type": "other",
+        "label": "非洲领袖同侪"
+      }
+    ],
+    "metrics": {
+      "influence": 82,
+      "citations": 40000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-lky",
+    "slug": "lee-kuan-yew",
+    "names": {
+      "zh": "李光耀",
+      "en": "Lee Kuan Yew",
+      "es": "Lee Kuan Yew",
+      "fr": "Lee Kuan Yew",
+      "ja": "リー・クアンユー",
+      "ru": "Ли Куан Ю",
+      "ar": "لي كوان يو",
+      "pt": "Lee Kuan Yew",
+      "de": "Lee Kuan Yew",
+      "ko": "리콴유",
+      "it": "Lee Kuan Yew",
+      "hi": "ली कुआन यू",
+      "id": "Lee Kuan Yew"
+    },
+    "birth": "1923-09-16",
+    "death": "2015-03-23",
+    "nationalities": [
+      "Singaporean"
+    ],
+    "domains": [
+      "politics"
+    ],
+    "occupations": {
+      "zh": "政治家",
+      "en": "Statesman",
+      "es": "Statesman",
+      "fr": "Homme d'État",
+      "ja": "政治家",
+      "ru": "Политик",
+      "ar": "سياسي",
+      "pt": "Statesman",
+      "de": "Staatsmann",
+      "ko": "정치가",
+      "it": "Statesman",
+      "hi": "राजनेता",
+      "id": "Statesman"
+    },
+    "summary": {
+      "zh": "新加坡首任总理，以务实治理将弹丸小国建设成为发达城市国家。",
+      "en": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "es": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "fr": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "ja": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "ru": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "ar": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "pt": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "de": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "ko": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "it": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "hi": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance.",
+      "id": "First Prime Minister of Singapore who transformed the small city-state into a developed nation through pragmatic governance."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Lee_Kuan_Yew",
+        "title": "Lee_Kuan_Yew",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/李光耀",
+        "title": "李光耀",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [],
+    "metrics": {
+      "influence": 85,
+      "citations": 30000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-vangogh",
+    "slug": "vincent-van-gogh",
+    "names": {
+      "zh": "文森特·梵高",
+      "en": "Vincent van Gogh",
+      "es": "Vincent van Gogh",
+      "fr": "Vincent van Gogh",
+      "ja": "フィンセント・ファン・ゴッホ",
+      "ru": "Винсент ван Гог",
+      "ar": "فنسنت فان غوخ",
+      "pt": "Vincent van Gogh",
+      "de": "Vincent van Gogh",
+      "ko": "빈센트 반 고흐",
+      "it": "Vincent van Gogh",
+      "hi": "विंसेंट वान गॉग",
+      "id": "Vincent van Gogh"
+    },
+    "birth": "1853-03-30",
+    "death": "1890-07-29",
+    "nationalities": [
+      "Dutch"
+    ],
+    "domains": [
+      "art"
+    ],
+    "occupations": {
+      "zh": "画家",
+      "en": "Painter",
+      "es": "Painter",
+      "fr": "Peintre",
+      "ja": "画家",
+      "ru": "Художник",
+      "ar": "رسام",
+      "pt": "Painter",
+      "de": "Maler",
+      "ko": "화가",
+      "it": "Painter",
+      "hi": "चित्रकार",
+      "id": "Painter"
+    },
+    "summary": {
+      "zh": "荷兰后印象派画家，《星月夜》作者，生前潦倒、身后影响现代艺术。",
+      "en": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "es": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "fr": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "ja": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "ru": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "ar": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "pt": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "de": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "ko": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "it": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "hi": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death.",
+      "id": "Dutch Post-Impressionist painter of The Starry Night whose work shaped modern art after his death."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Vincent_van_Gogh",
+        "title": "Vincent_van_Gogh",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/文森特·梵高",
+        "title": "文森特·梵高",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-pablo-picasso",
+        "type": "influence",
+        "label": "现代艺术先声"
+      },
+      {
+        "targetId": "p-leonardo-da-vinci",
+        "type": "influence",
+        "label": "艺术传承"
+      },
+      {
+        "targetId": "p-monet",
+        "type": "influence",
+        "label": "印象派同侪"
+      }
+    ],
+    "metrics": {
+      "influence": 92,
+      "citations": 70000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-monet",
+    "slug": "claude-monet",
+    "names": {
+      "zh": "克劳德·莫奈",
+      "en": "Claude Monet",
+      "es": "Claude Monet",
+      "fr": "Claude Monet",
+      "ja": "クロード・モネ",
+      "ru": "Клод Моне",
+      "ar": "كلود مونيه",
+      "pt": "Claude Monet",
+      "de": "Claude Monet",
+      "ko": "클로드 모네",
+      "it": "Claude Monet",
+      "hi": "क्लोद मोने",
+      "id": "Claude Monet"
+    },
+    "birth": "1840-11-14",
+    "death": "1926-12-05",
+    "nationalities": [
+      "French"
+    ],
+    "domains": [
+      "art"
+    ],
+    "occupations": {
+      "zh": "画家",
+      "en": "Painter",
+      "es": "Painter",
+      "fr": "Peintre",
+      "ja": "画家",
+      "ru": "Художник",
+      "ar": "رسام",
+      "pt": "Painter",
+      "de": "Maler",
+      "ko": "화가",
+      "it": "Painter",
+      "hi": "चित्रकार",
+      "id": "Painter"
+    },
+    "summary": {
+      "zh": "法国印象派奠基人，《日出·印象》开创以光与色为核心的画风。",
+      "en": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "es": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "fr": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "ja": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "ru": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "ar": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "pt": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "de": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "ko": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "it": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "hi": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name.",
+      "id": "Founder of French Impressionism whose Impression, Sunrise gave the movement its name."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Claude_Monet",
+        "title": "Claude_Monet",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/克劳德·莫奈",
+        "title": "克劳德·莫奈",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-vangogh",
+        "type": "influence",
+        "label": "印象派同侪"
+      }
+    ],
+    "metrics": {
+      "influence": 88,
+      "citations": 60000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-michelangelo",
+    "slug": "michelangelo",
+    "names": {
+      "zh": "米开朗基罗",
+      "en": "Michelangelo",
+      "es": "Michelangelo",
+      "fr": "Michel-Ange",
+      "ja": "ミケランジェロ",
+      "ru": "Микеланджело",
+      "ar": "مايكل آنجلو",
+      "pt": "Michelangelo",
+      "de": "Michelangelo",
+      "ko": "미켈란젤로",
+      "it": "Michelangelo",
+      "hi": "माइकलैंजेलो",
+      "id": "Michelangelo"
+    },
+    "birth": "1475-03-06",
+    "death": "1564-02-18",
+    "nationalities": [
+      "Italian"
+    ],
+    "domains": [
+      "art"
+    ],
+    "occupations": {
+      "zh": "艺术家",
+      "en": "Artist",
+      "es": "Artist",
+      "fr": "Artiste",
+      "ja": "芸術家",
+      "ru": "Художник",
+      "ar": "فنان",
+      "pt": "Artist",
+      "de": "Künstler",
+      "ko": "예술가",
+      "it": "Artist",
+      "hi": "कलाकार",
+      "id": "Artist"
+    },
+    "summary": {
+      "zh": "意大利文艺复兴巨匠，雕塑《大卫》与西斯廷礼拜堂天顶画作者。",
+      "en": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "es": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "fr": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "ja": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "ru": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "ar": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "pt": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "de": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "ko": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "it": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "hi": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling.",
+      "id": "Italian Renaissance master of the sculpture David and the Sistine Chapel ceiling."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Michelangelo",
+        "title": "Michelangelo",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/米开朗基罗",
+        "title": "米开朗基罗",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-leonardo-da-vinci",
+        "type": "influence",
+        "label": "文艺复兴双星"
+      }
+    ],
+    "metrics": {
+      "influence": 93,
+      "citations": 80000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-austen",
+    "slug": "jane-austen",
+    "names": {
+      "zh": "简·奥斯汀",
+      "en": "Jane Austen",
+      "es": "Jane Austen",
+      "fr": "Jane Austen",
+      "ja": "ジェーン・オースティン",
+      "ru": "Джейн Остин",
+      "ar": "جين أوستن",
+      "pt": "Jane Austen",
+      "de": "Jane Austen",
+      "ko": "제인 오스틴",
+      "it": "Jane Austen",
+      "hi": "जेन ऑस्टेन",
+      "id": "Jane Austen"
+    },
+    "birth": "1775-12-16",
+    "death": "1817-07-18",
+    "nationalities": [
+      "British"
+    ],
+    "domains": [
+      "other"
+    ],
+    "occupations": {
+      "zh": "小说家",
+      "en": "Novelist",
+      "es": "Novelist",
+      "fr": "Romancière",
+      "ja": "小説家",
+      "ru": "Писательница",
+      "ar": "روائية",
+      "pt": "Novelist",
+      "de": "Romanautorin",
+      "ko": "소설가",
+      "it": "Novelist",
+      "hi": "उपन्यासकार",
+      "id": "Novelist"
+    },
+    "summary": {
+      "zh": "英国小说家，《傲慢与偏见》以讽刺笔触刻画摄政时代社会与婚姻。",
+      "en": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "es": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "fr": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "ja": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "ru": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "ar": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "pt": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "de": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "ko": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "it": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "hi": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage.",
+      "id": "British novelist whose Pride and Prejudice satirizes Regency-era society and marriage."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Jane_Austen",
+        "title": "Jane_Austen",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/简·奥斯汀",
+        "title": "简·奥斯汀",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-shakespeare",
+        "type": "influence",
+        "label": "英语文学传承"
+      }
+    ],
+    "metrics": {
+      "influence": 88,
+      "citations": 90000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-luxun",
+    "slug": "lu-xun",
+    "names": {
+      "zh": "鲁迅",
+      "en": "Lu Xun",
+      "es": "Lu Xun",
+      "fr": "Lu Xun",
+      "ja": "魯迅",
+      "ru": "Лу Синь",
+      "ar": "لو شون",
+      "pt": "Lu Xun",
+      "de": "Lu Xun",
+      "ko": "루쉰",
+      "it": "Lu Xun",
+      "hi": "लु शुन",
+      "id": "Lu Xun"
+    },
+    "birth": "1881-09-25",
+    "death": "1936-10-19",
+    "nationalities": [
+      "Chinese"
+    ],
+    "domains": [
+      "other"
+    ],
+    "occupations": {
+      "zh": "作家",
+      "en": "Writer",
+      "es": "Writer",
+      "fr": "Écrivain",
+      "ja": "作家",
+      "ru": "Писатель",
+      "ar": "كاتب",
+      "pt": "Writer",
+      "de": "Schriftsteller",
+      "ko": "작가",
+      "it": "Writer",
+      "hi": "लेखक",
+      "id": "Writer"
+    },
+    "summary": {
+      "zh": "中国现代文学奠基人，以《狂人日记》《阿 Q 正传》批判国民性。",
+      "en": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "es": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "fr": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "ja": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "ru": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "ar": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "pt": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "de": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "ko": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "it": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "hi": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills.",
+      "id": "Founder of modern Chinese literature whose Diary of a Madman and The True Story of Ah Q critiqued social ills."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Lu_Xun",
+        "title": "Lu_Xun",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/鲁迅",
+        "title": "鲁迅",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-leo-tolstoy",
+        "type": "influence",
+        "label": "现实主义文学影响"
+      }
+    ],
+    "metrics": {
+      "influence": 85,
+      "citations": 70000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-ggm",
+    "slug": "gabriel-garcia-marquez",
+    "names": {
+      "zh": "加夫列尔·加西亚·马尔克斯",
+      "en": "Gabriel García Márquez",
+      "es": "Gabriel García Márquez",
+      "fr": "Gabriel García Márquez",
+      "ja": "ガブリエル・ガルシア・マルケス",
+      "ru": "Габриэль Гарсиа Маркес",
+      "ar": "غابرييل غارثيا ماركيث",
+      "pt": "Gabriel García Márquez",
+      "de": "Gabriel García Márquez",
+      "ko": "가브리엘 가르시아 마르케스",
+      "it": "Gabriel García Márquez",
+      "hi": "गैब्रियल गार्सिया मार्केस",
+      "id": "Gabriel García Márquez"
+    },
+    "birth": "1927-03-06",
+    "death": "2014-04-17",
+    "nationalities": [
+      "Colombian"
+    ],
+    "domains": [
+      "other"
+    ],
+    "occupations": {
+      "zh": "小说家",
+      "en": "Novelist",
+      "es": "Novelist",
+      "fr": "Romancier",
+      "ja": "小説家",
+      "ru": "Писатель",
+      "ar": "روائي",
+      "pt": "Novelist",
+      "de": "Romancier",
+      "ko": "소설가",
+      "it": "Novelist",
+      "hi": "उपन्यासकार",
+      "id": "Novelist"
+    },
+    "summary": {
+      "zh": "哥伦比亚作家，魔幻现实主义代表，《百年孤独》获 1982 年诺贝尔文学奖。",
+      "en": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "es": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "fr": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "ja": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "ru": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "ar": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "pt": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "de": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "ko": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "it": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "hi": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature.",
+      "id": "Colombian author and master of magic realism whose One Hundred Years of Solitude won the 1982 Nobel Prize in Literature."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Gabriel_García_Márquez",
+        "title": "Gabriel_García_Márquez",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/加夫列尔·加西亚·马尔克斯",
+        "title": "加夫列尔·加西亚·马尔克斯",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-leo-tolstoy",
+        "type": "influence",
+        "label": "文学巨匠影响"
+      }
+    ],
+    "metrics": {
+      "influence": 87,
+      "citations": 60000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
+  },
+  {
+    "id": "p-tagore",
+    "slug": "rabindranath-tagore",
+    "names": {
+      "zh": "罗宾德拉纳特·泰戈尔",
+      "en": "Rabindranath Tagore",
+      "es": "Rabindranath Tagore",
+      "fr": "Rabindranath Tagore",
+      "ja": "ラビンドラナート・タゴール",
+      "ru": "Рабиндранат Тагор",
+      "ar": "رابيندراناث تاغور",
+      "pt": "Rabindranath Tagore",
+      "de": "Rabindranath Tagore",
+      "ko": "라빈드라나트 타고르",
+      "it": "Rabindranath Tagore",
+      "hi": "रवीन्द्रनाथ ठाकुर",
+      "id": "Rabindranath Tagore"
+    },
+    "birth": "1861-05-07",
+    "death": "1941-08-07",
+    "nationalities": [
+      "Indian"
+    ],
+    "domains": [
+      "other"
+    ],
+    "occupations": {
+      "zh": "诗人",
+      "en": "Poet",
+      "es": "Poet",
+      "fr": "Poète",
+      "ja": "詩人",
+      "ru": "Поэт",
+      "ar": "شاعر",
+      "pt": "Poet",
+      "de": "Dichter",
+      "ko": "시인",
+      "it": "Poet",
+      "hi": "कवि",
+      "id": "Poet"
+    },
+    "summary": {
+      "zh": "印度诗人、哲学家，首位获诺贝尔文学奖的亚洲人，创作印度国歌歌词。",
+      "en": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "es": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "fr": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "ja": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "ru": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "ar": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "pt": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "de": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "ko": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "it": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "hi": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem.",
+      "id": "Indian poet and philosopher, the first Asian Nobel laureate in Literature, who also wrote the lyrics of India's national anthem."
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Rabindranath_Tagore",
+        "title": "Rabindranath_Tagore",
+        "publisher": "Wikipedia"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/罗宾德拉纳特·泰戈尔",
+        "title": "罗宾德拉纳特·泰戈尔",
+        "publisher": "Wikipedia"
+      }
+    ],
+    "relations": [
+      {
+        "targetId": "p-shakespeare",
+        "type": "influence",
+        "label": "世界文学影响"
+      },
+      {
+        "targetId": "p-mahatma-gandhi",
+        "type": "other",
+        "label": "同期印度领袖"
+      }
+    ],
+    "metrics": {
+      "influence": 86,
+      "citations": 50000
+    },
+    "langVersions": [
+      "zh",
+      "en",
+      "es",
+      "fr",
+      "ja",
+      "ru",
+      "ar",
+      "pt",
+      "de",
+      "ko",
+      "it",
+      "hi",
+      "id"
+    ],
+    "trustLevel": "pgc",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04"
   }
 ]
