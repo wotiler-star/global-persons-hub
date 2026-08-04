@@ -37,12 +37,16 @@ const USERS_FILE = join(RT, 'users.json');
 const APIKEYS_FILE = join(RT, 'apikeys.json');
 const COMMENTS_FILE = join(RT, 'comments.json');
 const AUDIT_FILE = join(RT, 'audit.json');
+const REVOKED_FILE = join(RT, 'revoked.json');
 
 function loadComments(): any[] {
   return existsSync(COMMENTS_FILE) ? JSON.parse(readFileSync(COMMENTS_FILE, 'utf-8')) : [];
 }
 function loadAudit(): any[] {
   return existsSync(AUDIT_FILE) ? JSON.parse(readFileSync(AUDIT_FILE, 'utf-8')) : [];
+}
+function loadRevoked(): string[] {
+  return existsSync(REVOKED_FILE) ? JSON.parse(readFileSync(REVOKED_FILE, 'utf-8')) : [];
 }
 
 function loadPersons(): Person[] {
@@ -76,6 +80,7 @@ export class JsonStore implements DataStore {
   private apiKeys: any[] = loadApiKeys();
   private comments: any[] = loadComments();
   private audit: any[] = loadAudit();
+  private revoked: Set<string> = new Set(loadRevoked());
   private embedCache = new Map<string, { vec: number[]; updatedAt: string }>();
 
   async init() {}
@@ -95,6 +100,9 @@ export class JsonStore implements DataStore {
   }
   private saveAudit() {
     writeFileSync(AUDIT_FILE, JSON.stringify(this.audit, null, 2));
+  }
+  private saveRevoked() {
+    writeFileSync(REVOKED_FILE, JSON.stringify([...this.revoked]));
   }
 
   async listPersons(opts: ListPersonsQuery): Promise<ListPersonsResult> {
@@ -571,6 +579,15 @@ export class JsonStore implements DataStore {
     u.plan = plan;
     this.saveUsers();
     return toPublic(u);
+  }
+
+  // ---------------- 登出 / 令牌吊销 ----------------
+  async revokeToken(jti: string): Promise<void> {
+    this.revoked.add(jti);
+    this.saveRevoked();
+  }
+  isTokenRevoked(jti: string): boolean {
+    return this.revoked.has(jti);
   }
 
   // ---------------- 管理后台增强（Stage 4：统计 + 审计） ----------------

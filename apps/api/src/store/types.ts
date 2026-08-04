@@ -168,6 +168,12 @@ export interface DataStore {
   /** 直接设定套餐（支付 Webhook 回调成功后置 pro；或从 pro 降回 free） */
   setPlan(userId: string, plan: UserPlan): Promise<PublicUser | null>;
 
+  // ---------- 登出 / 令牌吊销（会员闭环：使 JWT 可被主动失效） ----------
+  /** 将某 JWT 的 jti 加入吊销黑名单（登出即时失效） */
+  revokeToken(jti: string): Promise<void>;
+  /** 检查 jti 是否已被吊销 */
+  isTokenRevoked(jti: string): boolean;
+
   // ---------- 管理后台增强（Stage 4：统计 + 审计） ----------
   /** 平台运营统计快照（治理看板） */
   getStats(): Promise<AdminStats>;

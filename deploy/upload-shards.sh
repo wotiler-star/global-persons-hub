@@ -40,10 +40,29 @@ winpath() {
   printf '%s:\\%s' "$(echo "$drive" | tr '[:lower:]' '[:upper:]')" "${p//\//\\}"
 }
 
-# 已上传资源清单（用于去重，避免重复上传）
-EXISTING=$(curl -s "${CURL_OPT[@]}" -H "Authorization: Bearer $GITHUB_TOKEN" \
+# 先删除 Release 上已有的 part*.zip，确保本次产物与服务器组装完全一致（避免新旧分片混拼损坏）
+echo "== 删除 Release 旧分片 =="
+curl -s "${CURL_OPT[@]}" -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.github.com/repos/$OWNER_REPO/releases/$RELEASE_ID/assets" \
-  | python3 -c "import sys,json; d=json.load(sys.stdin); print('\n'.join(a['name'] for a in d))" 2>/dev/null || true)
+  | python3 -c "
+import sys, json, os, urllib.request
+tok = os.environ.get('GITHUB_TOKEN','')
+try:
+    d = json.load(sys.stdin)
+except Exception:
+    d = []
+for a in d:
+    nm = a.get('name','')
+    if nm.startswith('part') and nm.endswith('.zip'):
+        req = urllib.request.Request(a['url'], method='DELETE')
+        req.add_header('Authorization', 'Bearer ' + tok)
+        req.add_header('Accept', 'application/vnd.github+json')
+        try:
+            urllib.request.urlopen(req)
+            print('  deleted:', nm)
+        except Exception as e:
+            print('  delete failed:', nm, e)
+"
 
 shopt -s nullglob
 shards=("$SHARD_DIR"/part*.zip)
@@ -54,27 +73,21 @@ fi
 
 for f in "${shards[@]}"; do
   name="$(basename "$f")"
-  if echo "$EXISTING" | grep -qx "$name"; then
-    echo "skip (already uploaded): $name"
-  else
-    echo "uploading: $name"
-    # Windows Git Bash 下 curl 是原生二进制，@ 无法读 Unix 路径，需转 Windows 路径
-    winf="$(winpath "$f")"
-    curl -s "${CURL_OPT[@]}" -X POST \
-      -H "Authorization: Bearer $GITHUB_TOKEN" \
-      -H "Content-Type: application/octet-stream" \
-      --upload-file "$winf" \
-      "https://uploads.github.com/repos/$OWNER_REPO/releases/$RELEASE_ID/assets?name=$name"
-    echo ""
-  fi
+  echo "uploading: $name"
+  # Windows Git Bash 下 curl 是原生二进制，@ 无法读 Unix 路径，需转 Windows 路径
+  winf="$(winpath "$f")"
+  curl -s "${CURL_OPT[@]}" -X POST \
+    -H "Authorization: Bearer $GITHUB_TOKEN" \
+    -H "Content-Type: application/octet-stream" \
+    --upload-file "$winf" \
+    "https://uploads.github.com/repos/$OWNER_REPO/releases/$RELEASE_ID/assets?name=$name"
+  echo ""
 done
 
 # 写 shard_info.json 供 tat-deploy.py 使用
 SHARD_COUNT=${#shards[@]}
-EXPECTED_SIZE=0
-for f in "${shards[@]}"; do
-  EXPECTED_SIZE=$((EXPECTED_SIZE + $(stat -c%s "$f")))
-done
+# Git Bash 下无 stat，用 cat|wc -c 求和（分片均为二进制 zip，统计字节数安全）
+EXPECTED_SIZE=$(cat "${shards[@]}" | wc -c)
 cat > "$DIST_DIR/shard_info.json" <<EOF
 {
   "release_base": "$RELEASE_BASE",

@@ -87,6 +87,22 @@ export async function loginUser(input: { email: string; password: string }) {
   return d;
 }
 
+/** 登出：通知服务端吊销当前令牌（jti 黑名单），并清除本地 token */
+export async function logoutUser(): Promise<void> {
+  const t = getToken();
+  if (t) {
+    try {
+      await fetch(`${PUBLIC_BASE}/auth/logout`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${t}` }
+      });
+    } catch {
+      /* 即便服务端不可达也强制清本地 token，保证客户端登出成功 */
+    }
+  }
+  localStorage.removeItem('gph_token');
+}
+
 export async function createPerson(input: any) {
   const t = getToken();
   if (!t) throw new Error('请先登录');

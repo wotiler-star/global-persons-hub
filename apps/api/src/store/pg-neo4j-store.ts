@@ -35,6 +35,8 @@ export class PgNeo4jStore implements DataStore {
   private pool: pg.Pool;
   private driver: Driver | null = null;
   private neoReady = false;
+  // 令牌吊销黑名单（进程内）：PG 驱动为可选替换实现，登出即时失效仅需本进程范围
+  private revoked = new Set<string>();
 
   constructor() {
     this.pool = new pg.Pool({
@@ -882,6 +884,14 @@ export class PgNeo4jStore implements DataStore {
       "UPDATE users SET plan=$1 WHERE id=$2 RETURNING id, email, name, role, plan", [plan, userId]
     );
     return (rows[0] as PublicUser) ?? null;
+  }
+
+  // ---------------- 登出 / 令牌吊销 ----------------
+  async revokeToken(jti: string): Promise<void> {
+    this.revoked.add(jti);
+  }
+  isTokenRevoked(jti: string): boolean {
+    return this.revoked.has(jti);
   }
 
   // ---------------- 管理后台增强（Stage 4：统计 + 审计） ----------------

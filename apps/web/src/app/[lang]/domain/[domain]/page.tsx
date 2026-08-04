@@ -7,9 +7,9 @@ import { t, domainLabel } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';
 import { buildPersonItemList } from '@/lib/format';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
-import PersonCard from '@/components/PersonCard';
 import RankMedal from '@/components/RankMedal';
 import JsonLd from '@/components/JsonLd';
+import DomainExplorer from '@/components/DomainExplorer';
 
 const VALID: Domain[] = Object.keys(DOMAIN_LABELS) as Domain[];
 
@@ -50,9 +50,11 @@ export async function generateMetadata({
 }
 
 export default async function DomainPage({
-  params
+  params,
+  searchParams
 }: {
   params: Promise<{ lang: string; domain: string }>;
+  searchParams: Promise<{ era?: string; nationality?: string; q?: string; sort?: string }>;
 }) {
   const { lang, domain } = await params;
   if (!VALID.includes(domain as Domain)) notFound();
@@ -70,6 +72,11 @@ export default async function DomainPage({
     (a, b) => (b.metrics?.influence || 0) - (a.metrics?.influence || 0)
   );
 
+  // 深链初值（SSR 可读，与 DomainExplorer 的 useQuerySync 对齐）
+  const sp = await searchParams;
+  const initialSort =
+    sp.sort === 'netWorth' || sp.sort === 'name' ? (sp.sort as 'netWorth' | 'name') : 'influence';
+
   // —— SEO / GEO：ItemList 结构化数据（榜单可被搜索引擎/AI 理解） ——
   const jsonLd = buildPersonItemList(ranked, L, `${label}领域知名人物榜单`, 20);
 
@@ -86,7 +93,7 @@ export default async function DomainPage({
         {t(L, 'domain.count')} {ranked.length} {t(L, 'domain.persons')} · {t(L, 'domain.sortedBy')}
       </p>
 
-      {/* TOP3 醒目展示 */}
+      {/* TOP3 醒目展示（榜单基调，始终基于全量领域榜，不随客户端筛选变化） */}
       {ranked.length > 0 && (
         <ol className="grid sm:grid-cols-3 gap-4 mb-8">
           {ranked.slice(0, 3).map((p, i) => (
@@ -104,12 +111,19 @@ export default async function DomainPage({
         </ol>
       )}
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {ranked.slice(3).map((p) => (
-          <PersonCard key={p.id} person={p} lang={L} />
-        ))}
-      </div>
-      {ranked.length === 0 && <p className="text-slate-500 mt-6">{t(L, 'domain.empty')}</p>}
+      {/* 统一交互层：站内搜索 / 时代 / 国籍筛选 / 排序 / 深链 / 导出 / 已选筛选 */}
+      {ranked.length === 0 ? (
+        <p className="text-slate-500 mt-6">{t(L, 'domain.empty')}</p>
+      ) : (
+        <DomainExplorer
+          items={ranked}
+          lang={L}
+          initialEra={sp.era || 'all'}
+          initialNationality={sp.nationality || 'all'}
+          initialQ={sp.q || ''}
+          initialSort={initialSort}
+        />
+      )}
 
       {/* 领域互链（SEO 内链结构） */}
       <div className="mt-10 border-t pt-6">

@@ -2,7 +2,7 @@
 
 import { useEffect, useState, use } from 'react';
 import { useRouter } from 'next/navigation';
-import { getToken, listApiKeys, createApiKey, revokeApiKey, subscribe } from '@/lib/api';
+import { getToken, getMe, listApiKeys, createApiKey, revokeApiKey, subscribe } from '@/lib/api';
 import { t } from '@/lib/ui';
 
 export default function Account({ params }: { params: Promise<{ lang: string }> }) {
@@ -25,6 +25,10 @@ export default function Account({ params }: { params: Promise<{ lang: string }> 
       return;
     }
     loadKeys();
+    // 从服务端拉取真实套餐（避免 Stripe/微信升级后状态滞后）
+    getMe()
+      .then((m) => setPlan(m.plan === 'pro' ? 'pro' : 'free'))
+      .catch(() => {});
   }, [router]);
 
   async function loadKeys() {
@@ -59,7 +63,7 @@ export default function Account({ params }: { params: Promise<{ lang: string }> 
     try {
       const d = await subscribe(target);
       setPlan((d && d.plan) || target);
-      setMsg(target === 'pro' ? '已升级专业版 🎉' : '已切换回免费版');
+      setMsg(target === 'pro' ? t(lang, 'account.upgraded') : t(lang, 'account.switchedFree'));
     } catch (e: any) {
       setMsg(e.message || t(lang, 'common.error'));
     }

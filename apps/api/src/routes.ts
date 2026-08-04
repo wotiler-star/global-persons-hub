@@ -11,7 +11,7 @@ import { sha256Hex } from './store/crypto.js';
 
 declare module '@fastify/jwt' {
   interface FastifyJWT {
-    user: { id: string; email: string; name: string; role: string; plan?: string };
+    user: { id: string; email: string; name: string; role: string; plan?: string; jti?: string };
   }
 }
 
@@ -23,20 +23,12 @@ declare module 'fastify' {
 }
 
 async function authPreHandler(request: FastifyRequest, reply: FastifyReply) {
-  try {
-    await request.jwtVerify();
-  } catch {
-    reply.code(401).send({ error: 'unauthorized', message: '请先登录' });
-  }
+  if (!(await requireAuth(request, reply))) return;
 }
 
 /** 审核权限：仅 admin / expert 可进入审核后台 */
 async function moderatorPreHandler(request: FastifyRequest, reply: FastifyReply) {
-  try {
-    await request.jwtVerify();
-  } catch {
-    return reply.code(401).send({ error: 'unauthorized', message: '请先登录' });
-  }
+  if (!(await requireAuth(request, reply))) return;
   const role = (request.user as any)?.role;
   if (role !== 'admin' && role !== 'expert') {
     return reply.code(403).send({ error: 'forbidden', message: '需要管理员或专家权限' });
@@ -45,17 +37,34 @@ async function moderatorPreHandler(request: FastifyRequest, reply: FastifyReply)
 
 /** 仅 admin 可管理用户角色 */
 async function adminPreHandler(request: FastifyRequest, reply: FastifyReply) {
-  try {
-    await request.jwtVerify();
-  } catch {
-    return reply.code(401).send({ error: 'unauthorized', message: '请先登录' });
-  }
+  if (!(await requireAuth(request, reply))) return;
   if ((request.user as any)?.role !== 'admin') {
     return reply.code(403).send({ error: 'forbidden', message: '需要管理员权限' });
   }
 }
 
+/**
+ * 统一鉴权：校验 JWT 有效性，并拦截已被登出吊销的令牌（jti 黑名单）。
+ * 吊销检查依赖 registerRoutes 注入的 activeStore；未注入时跳过（不阻断既有流程）。
+ */
+let activeStore: import('./store/types.js').DataStore | null = null;
+async function requireAuth(request: FastifyRequest, reply: FastifyReply): Promise<boolean> {
+  try {
+    await request.jwtVerify();
+  } catch {
+    reply.code(401).send({ error: 'unauthorized', message: '请先登录' });
+    return false;
+  }
+  const jti = (request.user as any)?.jti as string | undefined;
+  if (jti && activeStore?.isTokenRevoked(jti)) {
+    reply.code(401).send({ error: 'token_revoked', message: '登录已失效，请重新登录' });
+    return false;
+  }
+  return true;
+}
+
 export async function registerRoutes(app: FastifyInstance, store: DataStore, uploader: Uploader) {
+  activeStore = store;
   // 保留原始请求体用于支付 Webhook 验签（Stripe / 微信 JSON、支付宝 form）。
   // parseAs:'string' 让我们拿到原始字符串，同时仍解析为对象供其他路由使用。
   app.addContentTypeParser('application/json', { parseAs: 'string' }, (req, bodyStr, done) => {
@@ -213,15 +222,25 @@ export async function registerRoutes(app: FastifyInstance, store: DataStore, upl
     }
   });
 
-  // 登录（签发 JWT）
+  // 登录（签发 JWT，带 jti 与过期时间，支撑登出吊销）
   app.post('/auth/login', async (request, reply) => {
     try {
       const { user } = await store.loginUser(request.body as LoginInput);
-      const token = app.jwt.sign({ id: user.id, email: user.email, name: user.name, role: user.role, plan: user.plan });
+      const token = app.jwt.sign(
+        { id: user.id, email: user.email, name: user.name, role: user.role, plan: user.plan, jti: randomUUID() },
+        { expiresIn: process.env.JWT_TTL || '30d' }
+      );
       return { token, user };
     } catch (e: any) {
       return reply.code(e.statusCode || 401).send({ error: 'login_failed', message: e.message });
     }
+  });
+
+  // 登出：将当前令牌 jti 加入黑名单，使其立即失效（会员闭环）
+  app.post('/auth/logout', { preHandler: authPreHandler }, async (request, reply) => {
+    const jti = (request.user as any)?.jti as string | undefined;
+    if (jti) await store.revokeToken(jti);
+    return { ok: true };
   });
 
   // 当前用户（含订阅套餐 plan）

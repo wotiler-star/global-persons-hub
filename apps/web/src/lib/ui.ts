@@ -19,6 +19,7 @@ const RAW: Record<string, string[]> = {
   'nav.account': ['账户', 'Account', 'Cuenta', 'Compte', 'アカウント', 'Аккаунт', 'الحساب', 'Conta', 'Konto', '계정', 'Account', 'खाता', 'Akun'],
   'nav.login': ['登录', 'Login', 'Iniciar sesión', 'Connexion', 'ログイン', 'Войти', 'تسجيل الدخول', 'Entrar', 'Anmelden', '로그인', 'Accedi', 'लॉग इन', 'Masuk'],
   'nav.register': ['注册', 'Register', 'Registrarse', "S'inscrire", '登録', 'Регистрация', 'تسجيل', 'Registrar', 'Registrieren', '회원가입', 'Registrati', 'रजिस्टर', 'Daftar'],
+  'nav.logout': ['登出', 'Logout', 'Cerrar sesión', 'Déconnexion', 'ログアウト', 'Выйти', 'تسجيل الخروج', 'Sair', 'Abmelden', '로그아웃', 'Esci', 'लॉग आउट', 'Keluar'],
   'nav.persons': ['人物库', 'Persons', 'Personas', 'Personnages', '人物ライブラリ', 'Люди', 'مكتبة المشاهير', 'Pessoas', 'Personen', '인물 도서관', 'Persone', 'व्यक्तित्व', 'Tokoh'],
   'nav.timeline': ['时间轴', 'Timeline', 'Línea de tiempo', 'Chronologie', 'タイムライン', 'Хронология', 'الجدول الزمني', 'Linha do tempo', 'Zeitachse', '타임라인', 'Cronologia', 'समयरेखा', 'Garis waktu'],
   'nav.explore': ['探索', 'Explore', 'Explorar', 'Explorer', '探索', 'Исследовать', 'استكشف', 'Explorar', 'Erkunden', '탐색', 'Esplora', 'खोजें', 'Jelajahi'],
