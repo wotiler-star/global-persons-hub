@@ -646,7 +646,8 @@ export class PgNeo4jStore implements DataStore {
       domains: p.domains,
       occupations: p.occupations,
       summary: p.summary,
-      trustLevel: p.trustLevel
+      trustLevel: p.trustLevel,
+      sources: p.sources
     };
   }
 

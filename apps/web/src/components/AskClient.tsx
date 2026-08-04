@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { askRag } from '@/lib/api';
 import type { Lang } from '@/lib/i18n';
@@ -11,6 +11,7 @@ interface Source {
   name: string;
   excerpt: string;
   score: number;
+  sameAs?: { url: string; title?: string; publisher?: string }[];
 }
 interface RagResult {
   query: string;
@@ -19,12 +20,53 @@ interface RagResult {
   generated: boolean;
   model?: string;
 }
+interface HistItem {
+  id: number;
+  query: string;
+  answer: string;
+  sources: Source[];
+  generated: boolean;
+  model?: string;
+}
+
+function hostOf(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
 
 export default function AskClient({ lang, initial = '' }: { lang: Lang; initial?: string }) {
   const [query, setQuery] = useState(initial);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [result, setResult] = useState<RagResult | null>(null);
+
+  // 问答历史（本地持久化，可回看/重问）
+  const [history, setHistory] = useState<HistItem[]>([]);
+  const [showHist, setShowHist] = useState(false);
+  const histKey = `gph_ask_history_${lang}`;
+  const loadedRef = useRef(false);
+
+  useEffect(() => {
+    if (loadedRef.current) return;
+    loadedRef.current = true;
+    try {
+      const raw = localStorage.getItem(histKey);
+      if (raw) setHistory(JSON.parse(raw));
+    } catch {
+      /* 忽略损坏的本地数据 */
+    }
+  }, [histKey]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(histKey, JSON.stringify(history.slice(0, 8)));
+    } catch {
+      /* 配额或隐私模式下静默忽略 */
+    }
+  }, [history, histKey]);
 
   async function submit(q: string) {
     const text = q.trim();
@@ -34,11 +76,22 @@ export default function AskClient({ lang, initial = '' }: { lang: Lang; initial?
     try {
       const r = (await askRag(text, lang, 5)) as RagResult;
       setResult(r);
+      // 写入历史（按 query 去重，最新置顶，最多 8 条）
+      setHistory((prev) => {
+        const filtered = prev.filter((h) => h.query !== text);
+        return [{ id: Date.now(), query: text, answer: r.answer, sources: r.sources, generated: r.generated, model: r.model }, ...filtered].slice(0, 8);
+      });
     } catch (e: any) {
       setError(e?.message || t(lang, 'ask.error'));
     } finally {
       setLoading(false);
     }
+  }
+
+  function replay(item: HistItem) {
+    setQuery(item.query);
+    // 直接复用历史答案，避免重复请求
+    setResult({ query: item.query, answer: item.answer, sources: item.sources, generated: item.generated, model: item.model });
   }
 
   return (
@@ -53,7 +106,7 @@ export default function AskClient({ lang, initial = '' }: { lang: Lang; initial?
           e.preventDefault();
           submit(query);
         }}
-        className="flex gap-2 mb-6"
+        className="flex gap-2 mb-3"
       >
         <input
           value={query}
@@ -69,6 +122,48 @@ export default function AskClient({ lang, initial = '' }: { lang: Lang; initial?
           {loading ? t(lang, 'ask.thinking') : t(lang, 'ask.ask')}
         </button>
       </form>
+
+      {/* 历史记录入口 */}
+      <div className="flex items-center gap-2 mb-4">
+        <button
+          onClick={() => setShowHist((v) => !v)}
+          className="text-xs px-3 py-1.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-50"
+        >
+          {t(lang, 'ask.history')}
+          {history.length > 0 && <span className="ml-1 text-slate-400">({history.length})</span>}
+        </button>
+        {history.length > 0 && (
+          <button
+            onClick={() => setHistory([])}
+            className="text-xs px-3 py-1.5 rounded-lg border border-slate-300 text-slate-500 hover:bg-slate-50"
+          >
+            {t(lang, 'ask.historyClear')}
+          </button>
+        )}
+      </div>
+
+      {showHist && (
+        <div className="mb-5 rounded-xl border bg-white p-3">
+          {history.length === 0 ? (
+            <p className="text-xs text-slate-400">{t(lang, 'ask.historyEmpty')}</p>
+          ) : (
+            <ul className="space-y-1">
+              {history.map((h) => (
+                <li key={h.id}>
+                  <button
+                    onClick={() => replay(h)}
+                    className="w-full text-left text-sm px-2 py-1.5 rounded-lg hover:bg-indigo-50 text-slate-700 truncate"
+                    title={h.query}
+                  >
+                    {h.generated ? '✦ ' : '• '}
+                    {h.query}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
 
       {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
 
@@ -100,6 +195,23 @@ export default function AskClient({ lang, initial = '' }: { lang: Lang; initial?
                       </span>
                     </div>
                     <p className="text-sm text-slate-600 mt-1 line-clamp-3">{s.excerpt}</p>
+                    {s.sameAs && s.sameAs.length > 0 && (
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        <span className="text-[11px] text-slate-400 mr-0.5">{t(lang, 'ask.cite')}:</span>
+                        {s.sameAs.map((u, j) => (
+                          <a
+                            key={j}
+                            href={u.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 hover:bg-indigo-50 hover:text-indigo-700"
+                            title={u.title || u.url}
+                          >
+                            🔗 {u.publisher || hostOf(u.url)}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>

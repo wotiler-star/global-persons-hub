@@ -12,6 +12,8 @@ export interface RagSource {
   excerpt: string;
   score: number;
   lang?: string;
+  /** 外部溯源引用（schema.org sameAs：Wikipedia / Wikidata / 官网等），供前端展示「来源引用」徽章 */
+  sameAs?: { url: string; title?: string; publisher?: string }[];
 }
 
 export interface RagResult {
@@ -93,9 +95,21 @@ export async function askRag(
     const name = (h.hit.names?.[lang] || h.hit.names?.en || '') as string;
     const existing = bySlug.get(slug);
     if (!existing || h.score > existing.score) {
-      bySlug.set(slug, { slug, name, excerpt, score: h.score, lang });
+      // 提取外部溯源引用（sameAs）：仅保留 http(s) 外链
+      const sameAs = (h.hit.sources || [])
+        .map((s: any) => ({ url: s.url, title: s.title, publisher: s.publisher }))
+        .filter((s: any) => /^https?:\/\//i.test(s.url || ''));
+      const entry: RagSource = {
+        slug,
+        name,
+        excerpt,
+        score: h.score,
+        lang,
+        sameAs: sameAs.length ? sameAs : undefined
+      };
+      bySlug.set(slug, entry);
       // 携带 domains 供文案展示
-      (bySlug.get(slug) as any).domains = h.hit.domains;
+      (entry as any).domains = h.hit.domains;
     }
   }
   const sources = [...bySlug.values()].sort((a, b) => b.score - a.score).slice(0, limit);

@@ -423,7 +423,8 @@ export class JsonStore implements DataStore {
         domains: person.domains,
         occupations: person.occupations,
         summary: person.summary,
-        trustLevel: person.trustLevel
+        trustLevel: person.trustLevel,
+        sources: person.sources
       },
       score
     }));

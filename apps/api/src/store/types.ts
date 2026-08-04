@@ -2,7 +2,7 @@
 import type {
   Person, User, PublicUser, ListPersonsQuery, ListPersonsResult,
   PersonInput, Relation, RegisterInput, LoginInput, Lang, TrustLevel,
-  ApiKeyView, ApiKeyCreated, Comment, UserPlan
+  ApiKeyView, ApiKeyCreated, Comment, UserPlan, Source
 } from '@gph/types';
 
 /** 带密码哈希的用户记录（仅后端存储层使用，不向前端暴露） */
@@ -27,6 +27,8 @@ export interface SearchHit {
   occupations?: Partial<Record<Lang, string>>;
   summary?: Partial<Record<Lang, string>>;
   trustLevel: TrustLevel;
+  /** 外部溯源引用（schema.org sameAs：Wikipedia / Wikidata / 官网），RAG 来源引用展示用 */
+  sources?: Source[];
 }
 
 /** 向量检索命中：基础卡片 + 余弦相似度（0~1，越大越相关） */

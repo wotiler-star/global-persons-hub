@@ -137,6 +137,7 @@ export default function CompareExplorer({
     initialIds.map((id) => bySlug.get(id)).filter((p): p is Person => Boolean(p))
   );
   const [q, setQ] = useState('');
+  const [copied, setCopied] = useState(false);
 
   // 选中变更 → 同步 URL（可分享、可回退）
   useEffect(() => {
@@ -165,6 +166,19 @@ export default function CompareExplorer({
     });
   const remove = (slug: string) => setSelected((prev) => prev.filter((x) => x.slug !== slug));
   const clear = () => setSelected([]);
+
+  // 复制当前对比快照（?ids=）的分享链接
+  const copyShare = async () => {
+    const ids = selected.map((p) => p.slug).join(',');
+    const url = `${window.location.origin}/${lang}/compare${ids ? `?ids=${ids}` : ''}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+    }
+  };
 
   // 热门对比预设：各领域按影响力取 Top2 组成对（每人只出现一次），最多 4 组
   const presets = useMemo(() => {
@@ -454,7 +468,7 @@ export default function CompareExplorer({
               </div>
             )}
 
-            <div className="mt-5">
+            <div className="mt-5 flex flex-wrap items-center gap-2">
               <Link
                 href={`/${lang}/ask?q=${encodeURIComponent(
                   selected.map((p) => pickText(p.names, lang)).join(' vs ')
@@ -463,6 +477,12 @@ export default function CompareExplorer({
               >
                 {t(lang, 'compare.askAi')}
               </Link>
+              <button
+                onClick={copyShare}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-indigo-300 text-indigo-700 text-sm font-medium hover:bg-indigo-50"
+              >
+                {copied ? `✓ ${t(lang, 'share.copied')}` : `🔗 ${t(lang, 'share.copyLink')}`}
+              </button>
             </div>
           </div>
         </div>

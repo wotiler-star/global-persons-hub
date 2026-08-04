@@ -26,7 +26,7 @@ export default async function GraphPage({
   searchParams
 }: {
   params: Promise<{ lang: string }>;
-  searchParams: Promise<{ center?: string; depth?: string }>;
+  searchParams: Promise<{ center?: string; depth?: string; to?: string }>;
 }) {
   const { lang } = await params;
   const sp = await searchParams;
@@ -53,6 +53,7 @@ export default async function GraphPage({
         persons={persons}
         initialCenter={sp.center}
         initialDepth={initialDepth}
+        initialTo={sp.to}
       />
     </div>
   );

@@ -55,12 +55,14 @@ export default function GraphExplorer({
   lang,
   persons,
   initialCenter,
-  initialDepth = 2
+  initialDepth = 2,
+  initialTo
 }: {
   lang: string;
   persons: PickPerson[];
   initialCenter?: string;
   initialDepth?: number;
+  initialTo?: string;
 }) {
   const router = useRouter();
   const fallback = persons[0]?.slug;
@@ -85,6 +87,10 @@ export default function GraphExplorer({
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const boxRef = useRef<HTMLDivElement | null>(null);
+
+  // 分享复制状态
+  const [copied, setCopied] = useState(false);
+  const initedRef = useRef(false);
 
   const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -131,13 +137,31 @@ export default function GraphExplorer({
     };
   }, [center, depth, lang]);
 
-  // 深链接：把当前选择同步到 URL（可分享，无整页刷新）
+  // 深链接：把当前选择（中心 / 深度 / 路径目标）同步到 URL（可分享，无整页刷新）
   useEffect(() => {
     const url = new URL(window.location.href);
     url.searchParams.set('center', center);
     url.searchParams.set('depth', String(depth));
+    if (toSlug && toSlug !== center) url.searchParams.set('to', toSlug);
+    else url.searchParams.delete('to');
     window.history.replaceState({}, '', url.toString());
-  }, [center, depth]);
+  }, [center, depth, toSlug]);
+
+  // 从 URL 深链恢复路径目标人物，并在就绪后自动计算一次关系路径
+  useEffect(() => {
+    if (initedRef.current) return;
+    initedRef.current = true;
+    if (initialTo && persons.some((p) => p.slug === initialTo) && initialTo !== center) {
+      setToSlug(initialTo);
+    }
+  }, [initialTo, persons, center]);
+
+  useEffect(() => {
+    if (initedRef.current && toSlug && toSlug !== center && !path && !pathLoading && !pathErr) {
+      findPath();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [toSlug, center]);
 
   // 切换中心/目标时清除旧路径结果
   useEffect(() => {
@@ -168,6 +192,17 @@ export default function GraphExplorer({
     setToSlug(c);
     setToOpen(false);
     setToQuery('');
+  };
+
+  // 复制当前图谱视图（中心/深度/路径目标）的分享链接
+  const copyShare = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+    }
   };
 
   return (
@@ -230,6 +265,15 @@ export default function GraphExplorer({
             className="w-full accent-indigo-600"
           />
           <p className="text-xs text-slate-400 mt-0.5">{t(lang, 'graph.depthHint')}</p>
+        </div>
+        <div className="sm:w-auto">
+          <label className="block text-sm font-medium text-slate-600 mb-1">&nbsp;</label>
+          <button
+            onClick={copyShare}
+            className="w-full whitespace-nowrap text-sm px-4 py-2 rounded-lg border border-indigo-300 text-indigo-700 hover:bg-indigo-50 font-medium"
+          >
+            {copied ? `✓ ${t(lang, 'share.copied')}` : `🔗 ${t(lang, 'share.copyLink')}`}
+          </button>
         </div>
       </div>
 
