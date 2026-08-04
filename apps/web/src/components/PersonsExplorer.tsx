@@ -14,6 +14,7 @@ import ActiveFilters from '@/components/ActiveFilters';
 import ShareLinkButton from '@/components/ShareLinkButton';
 import { useQuerySync } from '@/lib/useQuerySync';
 import { downloadText, toCsv } from '@/lib/download';
+import { computeFacets } from '@/lib/facets';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 
 export type SortMode = 'influence' | 'netWorth' | 'name';
@@ -91,6 +92,12 @@ export default function PersonsExplorer({
       .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
       .map(([n]) => ({ value: n, label: n }));
   }, [items]);
+
+  // 分面计数（忽略自身维度，应用其它筛选）
+  const facets = useMemo(
+    () => computeFacets(items, { domain, nationality }),
+    [items, domain, nationality]
+  );
 
   // 过滤 + 站内搜索 + 排序
   const filtered = useMemo(() => {
@@ -208,7 +215,7 @@ export default function PersonsExplorer({
       {/* 领域筛选 */}
       <FilterChips
         label={t(lang, 'explore.domain')}
-        options={domains}
+        options={domains.map((d) => ({ ...d, count: facets.domain.get(d.value as Domain) || 0 }))}
         value={domain}
         onChange={(v) => setDomain((v || 'all') as DomainFilter)}
         allValue="all"
@@ -219,7 +226,10 @@ export default function PersonsExplorer({
       {nationalities.length > 0 && (
         <FilterChips
           label={t(lang, 'explore.nationality')}
-          options={nationalities}
+          options={nationalities.map((n) => ({
+            ...n,
+            count: facets.nationality.has(n.value) ? facets.nationality.get(n.value) : undefined
+          }))}
           value={nationality}
           onChange={(v) => setNationality(v || 'all')}
           allValue="all"

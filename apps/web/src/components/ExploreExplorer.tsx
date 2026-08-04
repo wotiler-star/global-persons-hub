@@ -5,6 +5,7 @@ import { pickText, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
+import { computeFacets, eraKeyOf } from '@/lib/facets';
 import PersonCard from '@/components/PersonCard';
 import FilterChips, { type ChipOption } from '@/components/FilterChips';
 import SortToggle from '@/components/SortToggle';
@@ -22,13 +23,6 @@ interface Props {
   initialEra?: string;
   initialNationality?: string;
   initialSort?: SortMode;
-}
-
-/** 按出生年归类时代（与 searchIndex ERAS 一致） */
-function eraOf(y: number | null): string {
-  if (y === null) return '';
-  for (const e of ERAS) if (y >= e.from && y <= e.to) return e.key;
-  return '';
 }
 
 export default function ExploreExplorer({
@@ -82,10 +76,16 @@ export default function ExploreExplorer({
     return [...cnt.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([n]) => ({ value: n, label: n }));
   }, [items]);
 
+  // 分面计数（忽略自身维度，应用其它筛选）
+  const facets = useMemo(
+    () => computeFacets(items, { domain, era, nationality }),
+    [items, domain, era, nationality]
+  );
+
   const filtered = useMemo(() => {
     const arr = items.filter((p) => {
       if (domain !== 'all' && !p.domains.includes(domain)) return false;
-      if (era !== 'all' && eraOf(birthYear(p)) !== era) return false;
+      if (era !== 'all' && eraKeyOf(p) !== era) return false;
       if (nationality !== 'all' && !(p.nationalities || []).includes(nationality)) return false;
       return true;
     });
@@ -112,7 +112,7 @@ export default function ExploreExplorer({
       {/* 领域筛选 */}
       <FilterChips
         label={t(lang, 'explore.domain')}
-        options={domains}
+        options={domains.map((d) => ({ ...d, count: facets.domain.get(d.value as Domain) || 0 }))}
         value={domain}
         onChange={(v) => setDomain((v || 'all') as DomainFilter)}
         allValue="all"
@@ -122,7 +122,7 @@ export default function ExploreExplorer({
       {/* 时代筛选 */}
       <FilterChips
         label={t(lang, 'explore.era')}
-        options={ERAS.map((e) => ({ value: e.key, label: t(lang, e.uiKey) }))}
+        options={ERAS.map((e) => ({ value: e.key, label: t(lang, e.uiKey), count: facets.era.get(e.key) || 0 }))}
         value={era}
         onChange={(v) => setEra(v || 'all')}
         allValue="all"
@@ -142,6 +142,7 @@ export default function ExploreExplorer({
             {nationalities.map((n) => (
               <option key={n.value} value={n.value}>
                 {n.label}
+                {facets.nationality.has(n.value) ? ` (${facets.nationality.get(n.value)})` : ''}
               </option>
             ))}
           </select>
@@ -193,11 +194,4 @@ export default function ExploreExplorer({
       )}
     </div>
   );
-}
-
-// 局部工具（解析出生年）
-function birthYear(p: Person): number | null {
-  if (!p.birth) return null;
-  const m = String(p.birth).match(/^(-?\d+)/);
-  return m ? parseInt(m[1], 10) : null;
 }

@@ -10,7 +10,8 @@ import SortToggle from '@/components/SortToggle';
 import EmptyState from '@/components/EmptyState';
 import ActiveFilters from '@/components/ActiveFilters';
 import { useQuerySync } from '@/lib/useQuerySync';
-import { filterPersons, matchScore, birthYear, ERAS } from '@/lib/searchIndex';
+import { filterPersons, matchScore, ERAS } from '@/lib/searchIndex';
+import { computeFacets } from '@/lib/facets';
 
 type SortMode = 'relevance' | 'influence' | 'name' | 'newest';
 
@@ -68,44 +69,11 @@ export default function SearchExplorer({
     [allPersons, q]
   );
 
-  const eraOf = (p: Person): string => {
-    const y = birthYear(p);
-    if (y == null) return '';
-    const e = ERAS.find((x) => y >= x.from && y <= x.to);
-    return e ? e.key : '';
-  };
-
-  // 分面计数（各自忽略自身维度，应用其它筛选）
-  const domainCounts = useMemo(() => {
-    const m = new Map<Domain, number>();
-    for (const p of qMatched) {
-      if (era && eraOf(p) !== era) continue;
-      if (nationality && !(p.nationalities || []).includes(nationality)) continue;
-      for (const d of p.domains) m.set(d, (m.get(d) || 0) + 1);
-    }
-    return m;
-  }, [qMatched, era, nationality]);
-
-  const eraCounts = useMemo(() => {
-    const m = new Map<string, number>();
-    for (const p of qMatched) {
-      if (domain && !p.domains.includes(domain as Domain)) continue;
-      if (nationality && !(p.nationalities || []).includes(nationality)) continue;
-      const k = eraOf(p) || 'unknown';
-      m.set(k, (m.get(k) || 0) + 1);
-    }
-    return m;
-  }, [qMatched, domain, nationality]);
-
-  const nationalityCounts = useMemo(() => {
-    const m = new Map<string, number>();
-    for (const p of qMatched) {
-      if (domain && !p.domains.includes(domain as Domain)) continue;
-      if (era && eraOf(p) !== era) continue;
-      for (const n of p.nationalities || []) m.set(n, (m.get(n) || 0) + 1);
-    }
-    return m;
-  }, [qMatched, domain, era]);
+  // 分面计数（统一走共享 computeFacets：各自忽略自身维度，应用其它筛选）
+  const facets = useMemo(
+    () => computeFacets(qMatched, { era, nationality }),
+    [qMatched, era, nationality]
+  );
 
   const presentDomains = (Object.keys(DOMAIN_LABELS) as Domain[]).filter((d) =>
     allPersons.some((p) => p.domains.includes(d))
@@ -170,7 +138,7 @@ export default function SearchExplorer({
       {/* 分面：领域 */}
       <FilterChips
         label={t(lang, 'search.facetDomain')}
-        options={presentDomains.map((d) => ({ value: d, label: domainLabel(lang, d), count: domainCounts.get(d) || 0 }))}
+        options={presentDomains.map((d) => ({ value: d, label: domainLabel(lang, d), count: facets.domain.get(d) || 0 }))}
         value={domain}
         onChange={onDomain}
         allValue=""
@@ -180,7 +148,7 @@ export default function SearchExplorer({
       {/* 分面：时代 */}
       <FilterChips
         label={t(lang, 'search.facetEra')}
-        options={presentEras.map((e) => ({ value: e.key, label: t(lang, e.uiKey), count: eraCounts.get(e.key) || 0 }))}
+        options={presentEras.map((e) => ({ value: e.key, label: t(lang, e.uiKey), count: facets.era.get(e.key) || 0 }))}
         value={era}
         onChange={onEra}
         allValue=""
@@ -191,7 +159,7 @@ export default function SearchExplorer({
       {presentNationalities.length > 0 && (
         <FilterChips
           label={t(lang, 'search.facetNationality')}
-          options={presentNationalities.map((n) => ({ value: n, label: n, count: nationalityCounts.get(n) || 0 }))}
+          options={presentNationalities.map((n) => ({ value: n, label: n, count: facets.nationality.get(n) || 0 }))}
           value={nationality}
           onChange={onNationality}
           allValue=""

@@ -6,6 +6,7 @@ import { pickText, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
+import { computeFacets, eraKeyOf } from '@/lib/facets';
 import PersonPortrait from '@/components/PersonPortrait';
 import FavoriteButton from '@/components/FavoriteButton';
 import FilterChips from '@/components/FilterChips';
@@ -23,13 +24,6 @@ interface Props {
   initialDomain?: string;
   initialEra?: string;
   initialSort?: string;
-}
-
-/** 按出生年归类时代（与 searchIndex ERAS 一致） */
-function eraOf(y: number | null): string {
-  if (y === null) return '';
-  for (const e of ERAS) if (y >= e.from && y <= e.to) return e.key;
-  return '';
 }
 
 export default function GalleryExplorer({
@@ -90,10 +84,16 @@ export default function GalleryExplorer({
     [items]
   );
 
+  // 分面计数（忽略自身维度，应用其它筛选）
+  const facets = useMemo(
+    () => computeFacets(items, { domain, era }),
+    [items, domain, era]
+  );
+
   const filtered = useMemo(() => {
     const arr = items.filter((p) => {
       if (domain !== 'all' && !p.domains.includes(domain)) return false;
-      if (era !== 'all' && eraOf(birthYear(p)) !== era) return false;
+      if (era !== 'all' && eraKeyOf(p) !== era) return false;
       return true;
     });
     const out = [...arr];
@@ -116,7 +116,7 @@ export default function GalleryExplorer({
       {/* 领域筛选 */}
       <FilterChips
         label={t(lang, 'explore.domain')}
-        options={domains.map((d) => ({ value: d, label: domainLabel(lang, d) }))}
+        options={domains.map((d) => ({ value: d, label: domainLabel(lang, d), count: facets.domain.get(d) || 0 }))}
         value={domain}
         onChange={(v) => setDomain((v || 'all') as DomainFilter)}
         allValue="all"
@@ -126,7 +126,7 @@ export default function GalleryExplorer({
       {/* 时代筛选 */}
       <FilterChips
         label={t(lang, 'explore.era')}
-        options={ERAS.map((e) => ({ value: e.key, label: t(lang, e.uiKey) }))}
+        options={ERAS.map((e) => ({ value: e.key, label: t(lang, e.uiKey), count: facets.era.get(e.key) || 0 }))}
         value={era}
         onChange={(v) => setEra(v || 'all')}
         allValue="all"
@@ -287,11 +287,4 @@ export default function GalleryExplorer({
       )}
     </div>
   );
-}
-
-// 局部工具（解析出生年）
-function birthYear(p: Person): number | null {
-  if (!p.birth) return null;
-  const m = String(p.birth).match(/^(-?\d+)/);
-  return m ? parseInt(m[1], 10) : null;
 }
