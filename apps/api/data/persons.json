@@ -12362,7 +12362,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "格雷戈尔·孟德尔是奥地利修道士与博物学家，被誉为遗传学之父。他通过豌豆杂交实验揭示了遗传的分离定律与自由组合定律，奠定了现代遗传学的基础。",
-      "en": "Gregor Mendel was an Austrian monk and naturalist, revered as the father of genetics. Through his pea-plant hybridization experiments he discovered the laws of segregation and independent assortment, founding modern genetics."
+      "en": "Gregor Mendel was an Austrian monk and naturalist, revered as the father of genetics. Through his pea-plant hybridization experiments he discovered the laws of segregation and independent assortment, founding modern genetics.",
+      "es": "Gregor Mendel fue un monje y naturalista austríaco, venerado como el padre de la genética. Mediante sus experimentos de hibridación con guisantes descubrió las leyes de la segregación y de la distribución independiente, fundando la genética moderna.",
+      "fr": "Gregor Mendel était un moine et naturaliste autrichien, considéré comme le père de la génétique. Grâce à ses expériences d'hybridation sur les pois, il découvrit les lois de la ségrégation et de l'assortiment indépendant, fondant la génétique moderne.",
+      "ja": "グレゴール・メンデルはオーストリアの修道士・博物学者で、遺伝学の父と称される。エンドウの交配実験を通じて分離の法則と独立の法則を発見し、近代遺伝学を創始した。",
+      "ru": "Грегор Мендель — австрийский монах и естествоиспытатель, которого почитают как отца генетики. В опытах по гибридизации гороха он открыл законы расщепления и независимого наследования, заложив основы современной генетики.",
+      "ar": "غريغور مندل راهب وعالم طبيعة نمساوي، يُبجَّل بوصفه أبا علم الوراثة. اكتشف من خلال تجاربه على تهجين نبات البازلاء قانوني الانعزال والتوزيع المستقل، فأسّس علم الوراثة الحديث.",
+      "pt": "Gregor Mendel foi um monge e naturalista austríaco, reverenciado como o pai da genética. Por meio de seus experimentos de hibridação com ervilhas, descobriu as leis da segregação e da distribuição independente, fundando a genética moderna.",
+      "de": "Gregor Mendel war ein österreichischer Mönch und Naturforscher, der als Vater der Genetik gilt. Mit seinen Kreuzungsversuchen an Erbsen entdeckte er die Spaltungs- und die Unabhängigkeitsregel und begründete damit die moderne Genetik.",
+      "ko": "그레고어 멘델은 오스트리아의 수도사이자 박물학자로 유전학의 아버지로 추앙받는다. 완두 교배 실험을 통해 분리의 법칙과 독립의 법칙을 발견하여 근대 유전학을 창시했다.",
+      "it": "Gregor Mendel fu un monaco e naturalista austriaco, venerato come il padre della genetica. Con i suoi esperimenti di ibridazione sui piselli scoprì le leggi della segregazione e dell'assortimento indipendente, fondando la genetica moderna.",
+      "hi": "ग्रेगोर मेंडल ऑस्ट्रियाई भिक्षु और प्रकृतिविद् थे, जिन्हें आनुवंशिकी का जनक माना जाता है। मटर के संकरण प्रयोगों से उन्होंने पृथक्करण और स्वतंत्र अपव्यूहन के नियम खोजे और आधुनिक आनुवंशिकी की नींव रखी।",
+      "id": "Gregor Mendel adalah biarawan dan naturalis Austria yang dihormati sebagai bapak genetika. Melalui percobaan persilangan kacang polong, ia menemukan hukum segregasi dan hukum pemilihan bebas, sehingga meletakkan dasar genetika modern."
     },
     "achievements": [
       {
@@ -12494,7 +12505,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "路易·巴斯德是法国微生物学家与化学家，证实了微生物致病理论（胚种说），发明了巴氏杀菌法与多种疫苗。他的工作奠定了现代医学与微生物学的基础。",
-      "en": "Louis Pasteur was a French microbiologist and chemist who proved the germ theory of disease and invented pasteurization and several vaccines. His work laid the foundations of modern medicine and microbiology."
+      "en": "Louis Pasteur was a French microbiologist and chemist who proved the germ theory of disease and invented pasteurization and several vaccines. His work laid the foundations of modern medicine and microbiology.",
+      "es": "Louis Pasteur fue un microbiólogo y químico francés que demostró la teoría germinal de las enfermedades e inventó la pasteurización y varias vacunas. Su obra sentó las bases de la medicina y la microbiología modernas.",
+      "fr": "Louis Pasteur était un microbiologiste et chimiste français qui démontra la théorie microbienne des maladies et inventa la pasteurisation ainsi que plusieurs vaccins. Ses travaux ont fondé la médecine et la microbiologie modernes.",
+      "ja": "ルイ・パスツールはフランスの微生物学者・化学者で、病原菌説を証明し、低温殺菌法と複数のワクチンを発明した。その業績は近代医学と微生物学の基礎を築いた。",
+      "ru": "Луи Пастер — французский микробиолог и химик, доказавший микробную теорию болезней и создавший пастеризацию и ряд вакцин. Его труды заложили основы современной медицины и микробиологии.",
+      "ar": "لوي باستور عالم أحياء دقيقة وكيميائي فرنسي أثبت النظرية الجرثومية للأمراض، وابتكر البسترة وعدداً من اللقاحات. أرست أعماله أسس الطب والأحياء الدقيقة الحديثين.",
+      "pt": "Louis Pasteur foi um microbiologista e químico francês que comprovou a teoria microbiana das doenças e inventou a pasteurização e diversas vacinas. Seu trabalho estabeleceu as bases da medicina e da microbiologia modernas.",
+      "de": "Louis Pasteur war ein französischer Mikrobiologe und Chemiker, der die Keimtheorie der Krankheiten bewies und die Pasteurisierung sowie mehrere Impfstoffe entwickelte. Seine Arbeiten begründeten die moderne Medizin und Mikrobiologie.",
+      "ko": "루이 파스퇴르는 프랑스의 미생물학자이자 화학자로 질병의 세균설을 입증하고 저온살균법과 여러 백신을 발명했다. 그의 업적은 근대 의학과 미생물학의 토대가 되었다.",
+      "it": "Louis Pasteur fu un microbiologo e chimico francese che dimostrò la teoria dei germi delle malattie e inventò la pastorizzazione e diversi vaccini. Il suo lavoro pose le basi della medicina e della microbiologia moderne.",
+      "hi": "लुई पाश्चर फ्रांसीसी सूक्ष्मजीवविज्ञानी और रसायनज्ञ थे, जिन्होंने रोगों के जीवाणु सिद्धांत को सिद्ध किया तथा पाश्चुरीकरण और कई टीके विकसित किए। उनके कार्य ने आधुनिक चिकित्सा और सूक्ष्मजीवविज्ञान की नींव रखी।",
+      "id": "Louis Pasteur adalah mikrobiolog dan kimiawan Prancis yang membuktikan teori kuman penyakit serta menemukan pasteurisasi dan beberapa vaksin. Karyanya meletakkan dasar kedokteran dan mikrobiologi modern."
     },
     "achievements": [
       {
@@ -12626,7 +12648,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "珍·古道尔是英国灵长类动物学家，以在坦桑尼亚贡贝溪国家公园对黑猩猩的长期野外研究闻名。她发现了黑猩猩会制造并使用工具，彻底改变了人类对动物行为与智能的认知。",
-      "en": "Jane Goodall is a British primatologist renowned for her long-term field study of chimpanzees at Gombe Stream National Park in Tanzania. Her discovery that chimps make and use tools transformed our understanding of animal behavior and intelligence."
+      "en": "Jane Goodall is a British primatologist renowned for her long-term field study of chimpanzees at Gombe Stream National Park in Tanzania. Her discovery that chimps make and use tools transformed our understanding of animal behavior and intelligence.",
+      "es": "Jane Goodall es una primatóloga británica célebre por su estudio de campo a largo plazo sobre los chimpancés en el Parque Nacional Gombe Stream, en Tanzania. Su hallazgo de que los chimpancés fabrican y usan herramientas transformó la comprensión del comportamiento y la inteligencia animal.",
+      "fr": "Jane Goodall est une primatologue britannique célèbre pour son étude de terrain au long cours sur les chimpanzés du parc national de Gombe Stream, en Tanzanie. Sa découverte que les chimpanzés fabriquent et utilisent des outils a bouleversé notre compréhension du comportement et de l'intelligence animale.",
+      "ja": "ジェーン・グドールは英国の霊長類学者で、タンザニアのゴンベ・ストリーム国立公園でチンパンジーの長期野外研究を行ったことで知られる。チンパンジーが道具を作り使うという発見は、動物の行動と知性の理解を一変させた。",
+      "ru": "Джейн Гудолл — британский приматолог, известная многолетними полевыми исследованиями шимпанзе в национальном парке Гомбе-Стрим в Танзании. Её открытие, что шимпанзе изготавливают и применяют орудия, изменило представления о поведении и интеллекте животных.",
+      "ar": "جين غودال عالمة رئيسيات بريطانية اشتهرت بدراستها الميدانية الطويلة للشمبانزي في متنزه غومبي ستريم الوطني بتنزانيا. غيّر اكتشافها أن الشمبانزي يصنع الأدوات ويستخدمها فهمنا لسلوك الحيوان وذكائه.",
+      "pt": "Jane Goodall é uma primatóloga britânica conhecida por seu longo estudo de campo sobre chimpanzés no Parque Nacional Gombe Stream, na Tanzânia. Sua descoberta de que os chimpanzés fabricam e usam ferramentas transformou a compreensão do comportamento e da inteligência animal.",
+      "de": "Jane Goodall ist eine britische Primatologin, bekannt für ihre langjährige Feldforschung an Schimpansen im Gombe-Stream-Nationalpark in Tansania. Ihre Entdeckung, dass Schimpansen Werkzeuge herstellen und benutzen, veränderte das Verständnis von tierischem Verhalten und Intelligenz.",
+      "ko": "제인 구달은 탄자니아 곰베스트림 국립공원에서 침팬지를 장기간 현장 연구한 것으로 유명한 영국의 영장류학자다. 침팬지가 도구를 만들고 사용한다는 발견은 동물의 행동과 지능에 대한 이해를 바꾸어 놓았다.",
+      "it": "Jane Goodall è una primatologa britannica celebre per il suo lungo studio sul campo degli scimpanzé nel Parco nazionale del Gombe Stream, in Tanzania. La scoperta che gli scimpanzé costruiscono e usano utensili ha trasformato la comprensione del comportamento e dell'intelligenza animale.",
+      "hi": "जेन गुडाल ब्रिटिश प्राइमैटोलॉजिस्ट हैं, जो तंज़ानिया के गोम्बे स्ट्रीम राष्ट्रीय उद्यान में चिम्पैंज़ी पर दीर्घकालिक क्षेत्रीय अध्ययन के लिए प्रसिद्ध हैं। चिम्पैंज़ी औज़ार बनाते और इस्तेमाल करते हैं—इस खोज ने पशु व्यवहार और बुद्धि की समझ बदल दी।",
+      "id": "Jane Goodall adalah primatolog Britania yang terkenal karena penelitian lapangan jangka panjangnya terhadap simpanse di Taman Nasional Gombe Stream, Tanzania. Temuannya bahwa simpanse membuat dan memakai alat mengubah pemahaman tentang perilaku dan kecerdasan hewan."
     },
     "achievements": [
       {
@@ -12765,7 +12798,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "罗莎琳德·富兰克林是英国物理化学家与晶体学家，以其 DNA 的 X 射线衍射图像（51 号照片）为揭示 DNA 双螺旋结构起到关键作用。她的贡献长期被低估。",
-      "en": "Rosalind Franklin was a British physical chemist and crystallographer whose X-ray diffraction images of DNA (notably Photo 51) were crucial to deciphering the double-helix structure. Her contribution was long underappreciated."
+      "en": "Rosalind Franklin was a British physical chemist and crystallographer whose X-ray diffraction images of DNA (notably Photo 51) were crucial to deciphering the double-helix structure. Her contribution was long underappreciated.",
+      "es": "Rosalind Franklin fue una química física y cristalógrafa británica cuyas imágenes de difracción de rayos X del ADN (en especial la Foto 51) resultaron decisivas para descifrar la estructura de doble hélice. Su aportación fue largamente infravalorada.",
+      "fr": "Rosalind Franklin était une physico-chimiste et cristallographe britannique dont les clichés de diffraction des rayons X de l'ADN (notamment la Photo 51) furent déterminants pour élucider la structure en double hélice. Sa contribution fut longtemps sous-estimée.",
+      "ja": "ロザリンド・フランクリンは英国の物理化学者・結晶学者で、DNAのX線回折像（特に「写真51番」）は二重らせん構造の解明に決定的な役割を果たした。その貢献は長らく正当に評価されなかった。",
+      "ru": "Розалинд Франклин — британский физикохимик и кристаллограф, чьи рентгенограммы ДНК (прежде всего «Фото 51») сыграли решающую роль в расшифровке двойной спирали. Её вклад долгое время недооценивался.",
+      "ar": "روزاليند فرانكلين كيميائية فيزيائية وعالمة بلورات بريطانية، كانت صورها لحيود الأشعة السينية للحمض النووي (وخاصة «الصورة 51») حاسمة في فك بنية اللولب المزدوج. وقد ظلّ إسهامها مبخوس الحق زمناً طويلاً.",
+      "pt": "Rosalind Franklin foi uma físico-química e cristalógrafa britânica cujas imagens de difração de raios X do DNA (sobretudo a Foto 51) foram decisivas para decifrar a estrutura em dupla hélice. Sua contribuição foi por muito tempo subestimada.",
+      "de": "Rosalind Franklin war eine britische physikalische Chemikerin und Kristallographin, deren Röntgenbeugungsaufnahmen der DNA (insbesondere Foto 51) für die Entschlüsselung der Doppelhelix entscheidend waren. Ihr Beitrag wurde lange nicht angemessen gewürdigt.",
+      "ko": "로절린드 프랭클린은 영국의 물리화학자이자 결정학자로, 그녀의 DNA X선 회절 사진(특히 '사진 51번')은 이중나선 구조를 밝히는 데 결정적이었다. 그 공헌은 오랫동안 제대로 평가받지 못했다.",
+      "it": "Rosalind Franklin fu una chimica fisica e cristallografa britannica le cui immagini di diffrazione a raggi X del DNA (in particolare la Foto 51) furono decisive per decifrare la struttura a doppia elica. Il suo contributo restò a lungo sottovalutato.",
+      "hi": "रोज़ालिंड फ़्रैंकलिन ब्रिटिश भौतिक रसायनज्ञ और क्रिस्टलोग्राफर थीं, जिनके डीएनए के एक्स-रे विवर्तन चित्र (विशेषकर 'फोटो 51') द्विकुंडली संरचना को समझने में निर्णायक रहे। उनके योगदान को लंबे समय तक कम आंका गया।",
+      "id": "Rosalind Franklin adalah kimiawan fisik dan kristalografer Britania yang citra difraksi sinar-X DNA-nya (terutama Foto 51) sangat menentukan dalam mengungkap struktur heliks ganda. Kontribusinya lama tidak mendapat pengakuan yang layak."
     },
     "achievements": [
       {
@@ -12897,7 +12941,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "屠呦呦是中国药学家，因发现抗疟药物青蒿素及其衍生物双氢青蒿素而获得 2015 年诺贝尔生理学或医学奖。她是首位获诺贝尔科学奖项的中国本土科学家。",
-      "en": "Tu Youyou is a Chinese pharmaceutical chemist who discovered artemisinin and its derivative dihydroartemisinin for malaria treatment, earning the 2015 Nobel Prize in Physiology or Medicine. She is the first Chinese scientist to receive a Nobel Prize in the sciences."
+      "en": "Tu Youyou is a Chinese pharmaceutical chemist who discovered artemisinin and its derivative dihydroartemisinin for malaria treatment, earning the 2015 Nobel Prize in Physiology or Medicine. She is the first Chinese scientist to receive a Nobel Prize in the sciences.",
+      "es": "Tu Youyou es una química farmacéutica china que descubrió la artemisinina y su derivado la dihidroartemisinina para tratar la malaria, lo que le valió el Premio Nobel de Fisiología o Medicina de 2015. Es la primera científica china galardonada con un Nobel en ciencias.",
+      "fr": "Tu Youyou est une chimiste pharmaceutique chinoise qui a découvert l'artémisinine et son dérivé la dihydroartémisinine pour traiter le paludisme, ce qui lui a valu le prix Nobel de physiologie ou médecine 2015. Elle est la première scientifique chinoise à recevoir un Nobel scientifique.",
+      "ja": "屠呦呦は中国の薬学者で、マラリア治療薬アルテミシニンとその誘導体ジヒドロアルテミシニンを発見し、2015年ノーベル生理学・医学賞を受賞した。中国人科学者として初めて自然科学分野のノーベル賞を受けた人物である。",
+      "ru": "Ту Юю — китайский фармацевтический химик, открывшая артемизинин и его производное дигидроартемизинин для лечения малярии, за что получила Нобелевскую премию по физиологии и медицине 2015 года. Она первый китайский учёный — нобелевский лауреат в естественных науках.",
+      "ar": "تو يويو كيميائية صيدلانية صينية اكتشفت الأرتيميسينين ومشتقه ثنائي هيدرو الأرتيميسينين لعلاج الملاريا، ونالت بذلك جائزة نوبل في الطب أو وظائف الأعضاء عام 2015. وهي أول عالمة صينية تفوز بجائزة نوبل في العلوم.",
+      "pt": "Tu Youyou é uma química farmacêutica chinesa que descobriu a artemisinina e seu derivado di-hidroartemisinina para o tratamento da malária, o que lhe rendeu o Nobel de Fisiologia ou Medicina de 2015. É a primeira cientista chinesa a receber um Nobel em ciências.",
+      "de": "Tu Youyou ist eine chinesische pharmazeutische Chemikerin, die Artemisinin und dessen Derivat Dihydroartemisinin zur Malariabehandlung entdeckte und dafür 2015 den Nobelpreis für Physiologie oder Medizin erhielt. Sie ist die erste chinesische Wissenschaftlerin mit einem naturwissenschaftlichen Nobelpreis.",
+      "ko": "투유유는 말라리아 치료제 아르테미시닌과 그 유도체 디하이드로아르테미시닌을 발견해 2015년 노벨 생리의학상을 받은 중국의 약학자다. 자연과학 분야에서 노벨상을 받은 최초의 중국인 과학자다.",
+      "it": "Tu Youyou è una chimica farmaceutica cinese che ha scoperto l'artemisinina e il suo derivato diidroartemisinina per la cura della malaria, ottenendo il Premio Nobel per la medicina 2015. È la prima scienziata cinese a ricevere un Nobel scientifico.",
+      "hi": "तू योयो चीनी औषधि रसायनज्ञ हैं, जिन्होंने मलेरिया के उपचार हेतु आर्टेमिसिनिन और उसके व्युत्पन्न डाइहाइड्रोआर्टेमिसिनिन की खोज की और 2015 का चिकित्सा का नोबेल पुरस्कार प्राप्त किया। वे विज्ञान में नोबेल पाने वाली पहली चीनी वैज्ञानिक हैं।",
+      "id": "Tu Youyou adalah kimiawan farmasi Tiongkok yang menemukan artemisinin dan turunannya dihidroartemisinin untuk pengobatan malaria, sehingga meraih Nobel Fisiologi atau Kedokteran 2015. Ia ilmuwan Tiongkok pertama yang menerima Nobel di bidang sains."
     },
     "achievements": [
       {
@@ -13022,7 +13077,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "卡尔·萨根是美国天文学家、天体物理学家与科学传播者，在行星科学、地外生命探索（SETI）领域贡献卓著。他主持的电视系列片《宇宙》深刻影响了公众科学素养。",
-      "en": "Carl Sagan was an American astronomer, astrophysicist, and science communicator who made major contributions to planetary science and the search for extraterrestrial life (SETI). His television series Cosmos profoundly shaped public scientific literacy."
+      "en": "Carl Sagan was an American astronomer, astrophysicist, and science communicator who made major contributions to planetary science and the search for extraterrestrial life (SETI). His television series Cosmos profoundly shaped public scientific literacy.",
+      "es": "Carl Sagan fue un astrónomo, astrofísico y divulgador científico estadounidense que hizo aportes decisivos a la ciencia planetaria y a la búsqueda de vida extraterrestre (SETI). Su serie de televisión Cosmos moldeó profundamente la cultura científica del público.",
+      "fr": "Carl Sagan était un astronome, astrophysicien et vulgarisateur américain qui apporta des contributions majeures à la science planétaire et à la recherche de vie extraterrestre (SETI). Sa série télévisée Cosmos a profondément façonné la culture scientifique du grand public.",
+      "ja": "カール・セーガンは米国の天文学者・天体物理学者・科学解説者で、惑星科学と地球外生命探査（SETI）に大きく貢献した。テレビシリーズ『コスモス』は一般の科学リテラシーを大きく高めた。",
+      "ru": "Карл Саган — американский астроном, астрофизик и популяризатор науки, внёсший крупный вклад в планетологию и поиск внеземной жизни (SETI). Его телесериал «Космос» существенно повысил научную грамотность общества.",
+      "ar": "كارل ساغان عالم فلك وفيزياء فلكية ومُبسِّط للعلوم أمريكي، قدّم إسهامات كبرى في علوم الكواكب والبحث عن الحياة خارج الأرض (SETI). وقد شكّل مسلسله التلفزيوني «كوزموس» الوعي العلمي لدى الجمهور تشكيلاً عميقاً.",
+      "pt": "Carl Sagan foi um astrônomo, astrofísico e divulgador científico norte-americano que deu contribuições decisivas à ciência planetária e à busca por vida extraterrestre (SETI). Sua série de TV Cosmos moldou profundamente a cultura científica do público.",
+      "de": "Carl Sagan war ein amerikanischer Astronom, Astrophysiker und Wissenschaftskommunikator, der die Planetenforschung und die Suche nach außerirdischem Leben (SETI) maßgeblich prägte. Seine Fernsehreihe Cosmos formte das naturwissenschaftliche Verständnis eines Massenpublikums.",
+      "ko": "칼 세이건은 미국의 천문학자이자 천체물리학자, 과학 대중화 활동가로 행성과학과 외계 생명 탐사(SETI)에 크게 기여했다. 그의 TV 시리즈 『코스모스』는 대중의 과학 소양을 크게 끌어올렸다.",
+      "it": "Carl Sagan fu un astronomo, astrofisico e divulgatore scientifico statunitense che diede contributi fondamentali alla scienza planetaria e alla ricerca di vita extraterrestre (SETI). La sua serie televisiva Cosmos plasmò profondamente la cultura scientifica del pubblico.",
+      "hi": "कार्ल सैगन अमेरिकी खगोलशास्त्री, खगोलभौतिकीविद् और विज्ञान संचारक थे, जिन्होंने ग्रह विज्ञान और पृथ्वीतर जीवन की खोज (SETI) में बड़ा योगदान दिया। उनकी टीवी शृंखला 'कॉसमॉस' ने जनसाधारण की वैज्ञानिक समझ को गहराई से आकार दिया।",
+      "id": "Carl Sagan adalah astronom, astrofisikawan, dan komunikator sains Amerika yang memberi sumbangan besar bagi ilmu keplanetan dan pencarian kehidupan di luar bumi (SETI). Serial televisinya, Cosmos, sangat membentuk literasi sains publik."
     },
     "achievements": [
       {
@@ -13161,7 +13227,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "拉里·佩奇是谷歌联合创始人，与谢尔盖·布林共同开发了 PageRank 排序算法，并联合创办了谷歌（现 Alphabet）。他曾任 Alphabet 首席执行官。",
-      "en": "Larry Page is the co-founder of Google, who with Sergey Brin developed the PageRank ranking algorithm and co-founded Google (now Alphabet). He served as CEO of Alphabet."
+      "en": "Larry Page is the co-founder of Google, who with Sergey Brin developed the PageRank ranking algorithm and co-founded Google (now Alphabet). He served as CEO of Alphabet.",
+      "es": "Larry Page es cofundador de Google; junto con Sergey Brin desarrolló el algoritmo de clasificación PageRank y fundó Google (hoy Alphabet). Ejerció como director ejecutivo de Alphabet.",
+      "fr": "Larry Page est cofondateur de Google : avec Sergey Brin, il a mis au point l'algorithme de classement PageRank et cofondé Google (aujourd'hui Alphabet). Il a occupé le poste de PDG d'Alphabet.",
+      "ja": "ラリー・ペイジはGoogleの共同創業者で、セルゲイ・ブリンとともに検索順位アルゴリズム「PageRank」を開発し、Google（現Alphabet）を創業した。Alphabetの最高経営責任者を務めた。",
+      "ru": "Ларри Пейдж — сооснователь Google: вместе с Сергеем Брином он разработал алгоритм ранжирования PageRank и создал компанию Google (ныне Alphabet). Занимал пост генерального директора Alphabet.",
+      "ar": "لاري بيدج هو أحد مؤسِّسَي غوغل؛ طوّر مع سيرغي برين خوارزمية الترتيب «بيدج رانك» وشارك في تأسيس غوغل (ألفابت حالياً). وقد شغل منصب الرئيس التنفيذي لألفابت.",
+      "pt": "Larry Page é cofundador do Google; com Sergey Brin, desenvolveu o algoritmo de classificação PageRank e fundou o Google (hoje Alphabet). Foi CEO da Alphabet.",
+      "de": "Larry Page ist Mitgründer von Google: Gemeinsam mit Sergey Brin entwickelte er den Ranking-Algorithmus PageRank und gründete Google (heute Alphabet). Er war Vorstandsvorsitzender von Alphabet.",
+      "ko": "래리 페이지는 구글의 공동 창업자로, 세르게이 브린과 함께 검색 순위 알고리즘 페이지랭크를 개발하고 구글(현 알파벳)을 세웠다. 알파벳의 최고경영자를 지냈다.",
+      "it": "Larry Page è cofondatore di Google: con Sergey Brin ha sviluppato l'algoritmo di ranking PageRank e fondato Google (oggi Alphabet). È stato amministratore delegato di Alphabet.",
+      "hi": "लैरी पेज गूगल के सह-संस्थापक हैं; सर्गेई ब्रिन के साथ मिलकर उन्होंने पेजरैंक रैंकिंग एल्गोरिद्म विकसित किया और गूगल (अब अल्फाबेट) की स्थापना की। वे अल्फाबेट के सीईओ रह चुके हैं।",
+      "id": "Larry Page adalah salah satu pendiri Google; bersama Sergey Brin ia mengembangkan algoritma pemeringkatan PageRank dan mendirikan Google (kini Alphabet). Ia pernah menjabat CEO Alphabet."
     },
     "achievements": [
       {
@@ -13307,7 +13384,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "谢尔盖·布林是谷歌联合创始人，与拉里·佩奇共同开发了 PageRank 并联合创办谷歌。他长期主导公司的前沿技术与研发项目。",
-      "en": "Sergey Brin is the co-founder of Google, who with Larry Page developed PageRank and co-founded the company. He long led Google's frontier technology and R&D efforts."
+      "en": "Sergey Brin is the co-founder of Google, who with Larry Page developed PageRank and co-founded the company. He long led Google's frontier technology and R&D efforts.",
+      "es": "Sergey Brin es cofundador de Google; junto con Larry Page desarrolló PageRank y creó la compañía. Durante años dirigió las áreas de tecnología de frontera e investigación y desarrollo de Google.",
+      "fr": "Sergey Brin est cofondateur de Google : avec Larry Page, il a conçu PageRank et créé l'entreprise. Il a longtemps dirigé les technologies de rupture et la R&D du groupe.",
+      "ja": "セルゲイ・ブリンはGoogleの共同創業者で、ラリー・ペイジとともにPageRankを開発し会社を設立した。長年にわたりGoogleの先端技術と研究開発を統括した。",
+      "ru": "Сергей Брин — сооснователь Google: вместе с Ларри Пейджем он создал PageRank и основал компанию. Долгое время возглавлял направление передовых технологий и НИОКР.",
+      "ar": "سيرغي برين هو أحد مؤسِّسَي غوغل؛ طوّر مع لاري بيدج خوارزمية «بيدج رانك» وشارك في تأسيس الشركة. وقد قاد لسنوات طويلة مجالات التقنيات الحدودية والبحث والتطوير في غوغل.",
+      "pt": "Sergey Brin é cofundador do Google; com Larry Page, desenvolveu o PageRank e criou a empresa. Por muitos anos liderou as áreas de tecnologia de fronteira e P&D da companhia.",
+      "de": "Sergey Brin ist Mitgründer von Google: Gemeinsam mit Larry Page entwickelte er PageRank und gründete das Unternehmen. Lange Zeit verantwortete er Googles Zukunftstechnologien und Forschung.",
+      "ko": "세르게이 브린은 구글의 공동 창업자로, 래리 페이지와 함께 페이지랭크를 개발하고 회사를 설립했다. 오랫동안 구글의 첨단 기술과 연구개발을 이끌었다.",
+      "it": "Sergey Brin è cofondatore di Google: con Larry Page ha sviluppato PageRank e fondato l'azienda. Per anni ha guidato le tecnologie di frontiera e la ricerca e sviluppo del gruppo.",
+      "hi": "सर्गेई ब्रिन गूगल के सह-संस्थापक हैं; लैरी पेज के साथ मिलकर उन्होंने पेजरैंक विकसित किया और कंपनी की स्थापना की। वे लंबे समय तक गूगल की अग्रणी तकनीक और अनुसंधान-विकास का नेतृत्व करते रहे।",
+      "id": "Sergey Brin adalah salah satu pendiri Google; bersama Larry Page ia mengembangkan PageRank dan mendirikan perusahaan tersebut. Ia lama memimpin bidang teknologi terdepan serta riset dan pengembangan Google."
     },
     "achievements": [
       {
@@ -13444,7 +13532,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "蒂姆·库克是苹果公司现任首席执行官，2011 年接替史蒂夫·乔布斯。他强化了苹果的供应链管理与服务业务，并推动公司在环保与隐私方面的承诺。",
-      "en": "Tim Cook is the current CEO of Apple, succeeding Steve Jobs in 2011. He strengthened Apple's supply-chain management and services business, and advanced the company's commitments to environmental sustainability and privacy."
+      "en": "Tim Cook is the current CEO of Apple, succeeding Steve Jobs in 2011. He strengthened Apple's supply-chain management and services business, and advanced the company's commitments to environmental sustainability and privacy.",
+      "es": "Tim Cook es el actual director ejecutivo de Apple, sucediendo a Steve Jobs en 2011. Reforzó la gestión de la cadena de suministro y el negocio de servicios de Apple, e impulsó los compromisos de la compañía con la sostenibilidad ambiental y la privacidad.",
+      "fr": "Tim Cook est l'actuel PDG d'Apple, ayant succédé à Steve Jobs en 2011. Il a renforcé la gestion de la chaîne d'approvisionnement et l'activité de services d'Apple, et fait progresser les engagements de l'entreprise en matière d'environnement et de confidentialité.",
+      "ja": "ティム・クックは2011年にスティーブ・ジョブズの後を継いだAppleの現最高経営責任者である。サプライチェーン管理とサービス事業を強化し、環境持続可能性とプライバシー保護への取り組みを推進した。",
+      "ru": "Тим Кук — действующий генеральный директор Apple, сменивший Стива Джобса в 2011 году. Он усилил управление цепочкой поставок и сервисный бизнес компании, а также продвинул её обязательства в области экологии и приватности.",
+      "ar": "تيم كوك هو الرئيس التنفيذي الحالي لشركة أبل، وقد خلف ستيف جوبز عام 2011. عزّز إدارة سلسلة التوريد وأعمال الخدمات في أبل، ودفع بالتزامات الشركة تجاه الاستدامة البيئية وحماية الخصوصية.",
+      "pt": "Tim Cook é o atual CEO da Apple, tendo sucedido Steve Jobs em 2011. Fortaleceu a gestão da cadeia de suprimentos e o negócio de serviços da Apple e avançou os compromissos da empresa com sustentabilidade ambiental e privacidade.",
+      "de": "Tim Cook ist der amtierende CEO von Apple und trat 2011 die Nachfolge von Steve Jobs an. Er stärkte das Lieferkettenmanagement und das Dienstleistungsgeschäft und trieb Apples Engagement für Umwelt und Datenschutz voran.",
+      "ko": "팀 쿡은 2011년 스티브 잡스의 뒤를 이은 애플의 현 최고경영자다. 공급망 관리와 서비스 사업을 강화했고, 환경 지속가능성과 프라이버시 보호에 대한 회사의 약속을 진전시켰다.",
+      "it": "Tim Cook è l'attuale amministratore delegato di Apple, subentrato a Steve Jobs nel 2011. Ha rafforzato la gestione della catena di fornitura e il business dei servizi, promuovendo gli impegni dell'azienda su sostenibilità ambientale e privacy.",
+      "hi": "टिम कुक एप्पल के वर्तमान सीईओ हैं, जिन्होंने 2011 में स्टीव जॉब्स का स्थान लिया। उन्होंने एप्पल की आपूर्ति शृंखला प्रबंधन और सेवा कारोबार को मजबूत किया तथा पर्यावरणीय स्थिरता और निजता संबंधी प्रतिबद्धताओं को आगे बढ़ाया।",
+      "id": "Tim Cook adalah CEO Apple saat ini, menggantikan Steve Jobs pada 2011. Ia memperkuat manajemen rantai pasok dan bisnis layanan Apple, serta memajukan komitmen perusahaan pada keberlanjutan lingkungan dan privasi."
     },
     "achievements": [
       {
@@ -13585,7 +13684,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "萨提亚·纳德拉是微软董事长兼首席执行官，自 2014 年起执掌微软。他推动公司全面转向云计算与人工智能，重塑了微软的增长曲线。",
-      "en": "Satya Nadella is the chairman and CEO of Microsoft, leading the company since 2014. He steered Microsoft decisively toward cloud computing and artificial intelligence, reshaping its growth trajectory."
+      "en": "Satya Nadella is the chairman and CEO of Microsoft, leading the company since 2014. He steered Microsoft decisively toward cloud computing and artificial intelligence, reshaping its growth trajectory.",
+      "es": "Satya Nadella es presidente del consejo y director ejecutivo de Microsoft, al frente de la compañía desde 2014. Reorientó decididamente a Microsoft hacia la computación en la nube y la inteligencia artificial, transformando su trayectoria de crecimiento.",
+      "fr": "Satya Nadella est président du conseil et PDG de Microsoft, qu'il dirige depuis 2014. Il a résolument réorienté l'entreprise vers l'informatique en nuage et l'intelligence artificielle, transformant sa trajectoire de croissance.",
+      "ja": "サティア・ナデラは2014年からマイクロソフトを率いる会長兼最高経営責任者である。同社をクラウドコンピューティングと人工知能へ大胆に転換させ、成長軌道を塗り替えた。",
+      "ru": "Сатья Наделла — председатель совета директоров и генеральный директор Microsoft, возглавляющий компанию с 2014 года. Он решительно развернул Microsoft в сторону облачных вычислений и искусственного интеллекта, изменив траекторию её роста.",
+      "ar": "ساتيا ناديلا رئيس مجلس إدارة مايكروسوفت ورئيسها التنفيذي، ويقود الشركة منذ عام 2014. وجّه مايكروسوفت بحزم نحو الحوسبة السحابية والذكاء الاصطناعي، فأعاد تشكيل مسار نموّها.",
+      "pt": "Satya Nadella é presidente do conselho e CEO da Microsoft, à frente da empresa desde 2014. Reorientou decisivamente a Microsoft para a computação em nuvem e a inteligência artificial, remodelando sua trajetória de crescimento.",
+      "de": "Satya Nadella ist Verwaltungsratspräsident und CEO von Microsoft und führt das Unternehmen seit 2014. Er richtete Microsoft entschlossen auf Cloud-Computing und künstliche Intelligenz aus und veränderte damit den Wachstumskurs des Konzerns.",
+      "ko": "사티아 나델라는 2014년부터 마이크로소프트를 이끄는 회장 겸 최고경영자다. 회사를 클라우드 컴퓨팅과 인공지능으로 과감히 전환시켜 성장 궤도를 새로 그렸다.",
+      "it": "Satya Nadella è presidente e amministratore delegato di Microsoft, alla guida dell'azienda dal 2014. Ha orientato con decisione Microsoft verso il cloud computing e l'intelligenza artificiale, ridisegnandone la traiettoria di crescita.",
+      "hi": "सत्या नडेला माइक्रोसॉफ्ट के अध्यक्ष एवं सीईओ हैं और 2014 से कंपनी का नेतृत्व कर रहे हैं। उन्होंने माइक्रोसॉफ्ट को निर्णायक रूप से क्लाउड कंप्यूटिंग और कृत्रिम बुद्धिमत्ता की ओर मोड़ा और उसकी विकास दिशा बदल दी।",
+      "id": "Satya Nadella adalah ketua dewan sekaligus CEO Microsoft yang memimpin perusahaan sejak 2014. Ia mengarahkan Microsoft secara tegas ke komputasi awan dan kecerdasan buatan, sehingga mengubah lintasan pertumbuhannya."
     },
     "achievements": [
       {
@@ -13728,7 +13838,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "黄仁勋是英伟达（NVIDIA）联合创始人、总裁兼首席执行官。他将公司从显卡芯片厂商发展为全球人工智能计算平台的核心，引领了深度学习与生成式 AI 的算力革命。",
-      "en": "Jensen Huang is the co-founder, president, and CEO of NVIDIA. He transformed the company from a graphics-chip maker into the core of the global AI computing platform, spearheading the compute revolution behind deep learning and generative AI."
+      "en": "Jensen Huang is the co-founder, president, and CEO of NVIDIA. He transformed the company from a graphics-chip maker into the core of the global AI computing platform, spearheading the compute revolution behind deep learning and generative AI.",
+      "es": "Jensen Huang es cofundador, presidente y director ejecutivo de NVIDIA. Transformó la empresa de fabricante de chips gráficos en el núcleo de la plataforma mundial de computación para IA, encabezando la revolución de cómputo detrás del aprendizaje profundo y la IA generativa.",
+      "fr": "Jensen Huang est cofondateur, président et PDG de NVIDIA. Il a transformé le fabricant de puces graphiques en cœur de la plateforme mondiale de calcul pour l'IA, menant la révolution du calcul qui sous-tend l'apprentissage profond et l'IA générative.",
+      "ja": "ジェンスン・フアンはNVIDIAの共同創業者・社長兼最高経営責任者である。同社をグラフィックスチップ企業から世界のAI計算基盤の中核へと変貌させ、深層学習と生成AIを支える計算革命を牽引した。",
+      "ru": "Дженсен Хуанг — сооснователь, президент и генеральный директор NVIDIA. Он превратил производителя графических чипов в ядро мировой вычислительной платформы для ИИ, возглавив вычислительную революцию, лежащую в основе глубокого обучения и генеративного ИИ.",
+      "ar": "جينسن هوانغ هو المؤسس المشارك لشركة إنفيديا ورئيسها ورئيسها التنفيذي. حوّل الشركة من صانعة لرقائق الرسوميات إلى نواة منصة الحوسبة العالمية للذكاء الاصطناعي، وقاد ثورة الحوسبة التي يقوم عليها التعلّم العميق والذكاء الاصطناعي التوليدي.",
+      "pt": "Jensen Huang é cofundador, presidente e CEO da NVIDIA. Transformou a empresa de fabricante de chips gráficos no núcleo da plataforma global de computação para IA, liderando a revolução computacional por trás do aprendizado profundo e da IA generativa.",
+      "de": "Jensen Huang ist Mitgründer, Präsident und CEO von NVIDIA. Er wandelte das Unternehmen vom Grafikchip-Hersteller zum Kern der globalen KI-Rechenplattform und trieb die Rechenrevolution hinter Deep Learning und generativer KI voran.",
+      "ko": "젠슨 황은 엔비디아의 공동 창업자이자 사장 겸 최고경영자다. 그래픽 칩 기업이던 회사를 전 세계 AI 컴퓨팅 플랫폼의 핵심으로 탈바꿈시켰고, 딥러닝과 생성형 AI를 떠받치는 연산 혁명을 이끌었다.",
+      "it": "Jensen Huang è cofondatore, presidente e amministratore delegato di NVIDIA. Ha trasformato l'azienda da produttrice di chip grafici nel cuore della piattaforma mondiale di calcolo per l'IA, guidando la rivoluzione computazionale alla base del deep learning e dell'IA generativa.",
+      "hi": "जेन्सन हुआंग एनवीडिया के सह-संस्थापक, अध्यक्ष और सीईओ हैं। उन्होंने कंपनी को ग्राफ़िक्स चिप निर्माता से वैश्विक एआई कंप्यूटिंग प्लेटफ़ॉर्म के केंद्र में बदल दिया और डीप लर्निंग व जनरेटिव एआई के पीछे की कंप्यूट क्रांति का नेतृत्व किया।",
+      "id": "Jensen Huang adalah salah satu pendiri sekaligus presiden dan CEO NVIDIA. Ia mengubah perusahaan dari produsen cip grafis menjadi inti platform komputasi AI dunia, memelopori revolusi komputasi di balik pembelajaran mendalam dan AI generatif."
     },
     "achievements": [
       {
@@ -13863,7 +13984,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "萨姆·奥尔特曼是 OpenAI 联合创始人兼首席执行官，主导了 ChatGPT 与生成式人工智能的爆发。他曾担任创业加速器 Y Combinator 的总裁。",
-      "en": "Sam Altman is the co-founder and CEO of OpenAI, driving the explosion of ChatGPT and generative AI. He previously served as president of the startup accelerator Y Combinator."
+      "en": "Sam Altman is the co-founder and CEO of OpenAI, driving the explosion of ChatGPT and generative AI. He previously served as president of the startup accelerator Y Combinator.",
+      "es": "Sam Altman es cofundador y director ejecutivo de OpenAI, impulsor del auge de ChatGPT y de la IA generativa. Anteriormente fue presidente de la aceleradora de startups Y Combinator.",
+      "fr": "Sam Altman est cofondateur et PDG d'OpenAI, moteur de l'essor de ChatGPT et de l'IA générative. Il a auparavant présidé l'accélérateur de startups Y Combinator.",
+      "ja": "サム・アルトマンはOpenAIの共同創業者兼最高経営責任者で、ChatGPTと生成AIの急拡大を牽引した。以前はスタートアップ・アクセラレーターY Combinatorの代表を務めた。",
+      "ru": "Сэм Альтман — сооснователь и генеральный директор OpenAI, движущая сила взрывного роста ChatGPT и генеративного ИИ. Ранее возглавлял акселератор стартапов Y Combinator.",
+      "ar": "سام ألتمان هو المؤسس المشارك لشركة أوبن إيه آي ورئيسها التنفيذي، ومحرّك الانتشار الهائل لـ«تشات جي بي تي» والذكاء الاصطناعي التوليدي. وقد ترأّس سابقاً مسرّعة الشركات الناشئة «واي كومبيناتور».",
+      "pt": "Sam Altman é cofundador e CEO da OpenAI, impulsionando a explosão do ChatGPT e da IA generativa. Anteriormente, presidiu a aceleradora de startups Y Combinator.",
+      "de": "Sam Altman ist Mitgründer und CEO von OpenAI und treibende Kraft hinter dem Durchbruch von ChatGPT und generativer KI. Zuvor war er Präsident des Startup-Accelerators Y Combinator.",
+      "ko": "샘 올트먼은 오픈AI의 공동 창업자 겸 최고경영자로, 챗GPT와 생성형 AI의 폭발적 확산을 이끌었다. 이전에는 스타트업 액셀러레이터 와이컴비네이터의 대표를 맡았다.",
+      "it": "Sam Altman è cofondatore e amministratore delegato di OpenAI, motore dell'esplosione di ChatGPT e dell'IA generativa. In precedenza è stato presidente dell'acceleratore di startup Y Combinator.",
+      "hi": "सैम ऑल्टमैन ओपनएआई के सह-संस्थापक और सीईओ हैं, जिन्होंने चैटजीपीटी और जनरेटिव एआई के विस्फोटक विस्तार को गति दी। इससे पहले वे स्टार्टअप एक्सेलेरेटर वाई कॉम्बिनेटर के अध्यक्ष रहे।",
+      "id": "Sam Altman adalah salah satu pendiri sekaligus CEO OpenAI yang mendorong ledakan ChatGPT dan AI generatif. Sebelumnya ia menjabat presiden akselerator rintisan Y Combinator."
     },
     "achievements": [
       {
@@ -14000,7 +14132,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "约翰·塞巴斯蒂安·巴赫是巴洛克时期德国作曲家与管风琴家，被公认为西方音乐史上最伟大的作曲家之一。他精通对位法，作品涵盖协奏曲、受难曲与键盘音乐。",
-      "en": "Johann Sebastian Bach was a German Baroque composer and organist, widely regarded as one of the greatest composers in Western music history. A master of counterpoint, his output spans concertos, passions, and keyboard music."
+      "en": "Johann Sebastian Bach was a German Baroque composer and organist, widely regarded as one of the greatest composers in Western music history. A master of counterpoint, his output spans concertos, passions, and keyboard music.",
+      "es": "Johann Sebastian Bach fue un compositor y organista alemán del Barroco, considerado uno de los mayores compositores de la historia de la música occidental. Maestro del contrapunto, su obra abarca conciertos, pasiones y música para teclado.",
+      "fr": "Jean-Sébastien Bach était un compositeur et organiste allemand de l'époque baroque, tenu pour l'un des plus grands compositeurs de l'histoire de la musique occidentale. Maître du contrepoint, son œuvre embrasse concertos, passions et musique pour clavier.",
+      "ja": "ヨハン・ゼバスティアン・バッハはドイツ・バロックの作曲家・オルガン奏者で、西洋音楽史上最も偉大な作曲家の一人とされる。対位法の巨匠であり、その作品は協奏曲・受難曲・鍵盤音楽に及ぶ。",
+      "ru": "Иоганн Себастьян Бах — немецкий композитор и органист эпохи барокко, которого считают одним из величайших композиторов в истории западной музыки. Мастер контрапункта, он писал концерты, пассионы и клавирную музыку.",
+      "ar": "يوهان سباستيان باخ مؤلف موسيقي وعازف أرغن ألماني من عصر الباروك، ويُعدّ من أعظم المؤلفين في تاريخ الموسيقى الغربية. كان بارعاً في فن الكونترابنط، وتمتد أعماله من الكونشرتات إلى موسيقى الآلام وموسيقى الآلات ذات المفاتيح.",
+      "pt": "Johann Sebastian Bach foi um compositor e organista alemão do Barroco, tido como um dos maiores compositores da história da música ocidental. Mestre do contraponto, sua obra abrange concertos, paixões e música para teclado.",
+      "de": "Johann Sebastian Bach war ein deutscher Komponist und Organist des Barock und gilt als einer der größten Komponisten der abendländischen Musikgeschichte. Als Meister des Kontrapunkts schuf er Konzerte, Passionen und Klaviermusik.",
+      "ko": "요한 제바스티안 바흐는 독일 바로크 시대의 작곡가이자 오르간 연주자로, 서양 음악사에서 가장 위대한 작곡가 중 한 사람으로 꼽힌다. 대위법의 거장이었으며 협주곡, 수난곡, 건반음악에 이르는 방대한 작품을 남겼다.",
+      "it": "Johann Sebastian Bach fu un compositore e organista tedesco del Barocco, considerato uno dei massimi compositori della storia della musica occidentale. Maestro del contrappunto, la sua produzione spazia dai concerti alle passioni alla musica per tastiera.",
+      "hi": "योहान सेबेस्टियन बाख जर्मन बारोक संगीतकार और ऑर्गन वादक थे, जिन्हें पश्चिमी संगीत इतिहास के महानतम संगीतकारों में गिना जाता है। प्रतिबिंदु (काउंटरप्वाइंट) के उस्ताद, उनकी रचनाओं में कंसर्टो, पैशन और कीबोर्ड संगीत शामिल हैं।",
+      "id": "Johann Sebastian Bach adalah komponis dan organis Jerman era Barok yang secara luas dianggap sebagai salah satu komponis terbesar dalam sejarah musik Barat. Sebagai maestro kontrapung, karyanya mencakup konserto, pasi, dan musik papan tuts."
     },
     "achievements": [
       {
@@ -14125,7 +14268,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "弗雷迪·默丘里是英国摇滚乐队皇后乐队（Queen）的主唱与词曲作者，以极具戏剧性的舞台表现力和宽广音域著称。他是 20 世纪最具影响力的摇滚歌手之一。",
-      "en": "Freddie Mercury was the British rock band Queen's lead singer and songwriter, renowned for his theatrical stage presence and soaring vocal range. He remains one of the most influential rock vocalists of the 20th century."
+      "en": "Freddie Mercury was the British rock band Queen's lead singer and songwriter, renowned for his theatrical stage presence and soaring vocal range. He remains one of the most influential rock vocalists of the 20th century.",
+      "es": "Freddie Mercury fue el cantante y compositor británico de la banda de rock Queen, célebre por su teatral presencia escénica y su extraordinario registro vocal. Sigue siendo uno de los vocalistas de rock más influyentes del siglo XX.",
+      "fr": "Freddie Mercury était le chanteur et auteur-compositeur britannique du groupe de rock Queen, célèbre pour sa présence scénique théâtrale et son ambitus vocal exceptionnel. Il demeure l'un des chanteurs de rock les plus influents du XXe siècle.",
+      "ja": "フレディ・マーキュリーは英国のロックバンド、クイーンのリードボーカル兼ソングライターで、劇場的なステージングと広い声域で知られた。20世紀で最も影響力のあるロックボーカリストの一人である。",
+      "ru": "Фредди Меркьюри — британский вокалист и автор песен рок-группы Queen, известный театральной сценической подачей и огромным вокальным диапазоном. Он остаётся одним из самых влиятельных рок-вокалистов XX века.",
+      "ar": "فريدي ميركوري كان المغني الرئيسي وكاتب الأغاني في فرقة الروك البريطانية «كوين»، واشتهر بحضوره المسرحي المؤثر ومداه الصوتي الواسع. ولا يزال من أكثر مغنّي الروك تأثيراً في القرن العشرين.",
+      "pt": "Freddie Mercury foi o vocalista e compositor britânico da banda de rock Queen, célebre por sua presença cênica teatral e sua ampla extensão vocal. Continua sendo um dos vocalistas de rock mais influentes do século XX.",
+      "de": "Freddie Mercury war Sänger und Songwriter der britischen Rockband Queen, berühmt für seine theatralische Bühnenpräsenz und seinen enormen Stimmumfang. Er zählt bis heute zu den einflussreichsten Rocksängern des 20. Jahrhunderts.",
+      "ko": "프레디 머큐리는 영국 록 밴드 퀸의 리드 보컬이자 작곡가로, 극적인 무대 장악력과 폭넓은 음역으로 이름을 떨쳤다. 20세기 가장 영향력 있는 록 보컬리스트 중 한 명으로 남아 있다.",
+      "it": "Freddie Mercury fu il cantante e autore britannico della rock band Queen, celebre per la presenza scenica teatrale e l'estensione vocale straordinaria. Resta uno dei vocalist rock più influenti del Novecento.",
+      "hi": "फ़्रेडी मर्करी ब्रिटिश रॉक बैंड क्वीन के मुख्य गायक और गीतकार थे, जो अपनी नाटकीय मंच उपस्थिति और असाधारण स्वर-परास के लिए प्रसिद्ध रहे। वे बीसवीं सदी के सर्वाधिक प्रभावशाली रॉक गायकों में गिने जाते हैं।",
+      "id": "Freddie Mercury adalah vokalis utama sekaligus penulis lagu band rock Britania, Queen, yang terkenal karena aksi panggung teatrikal dan jangkauan vokalnya yang luas. Ia tetap menjadi salah satu vokalis rok paling berpengaruh pada abad ke-20."
     },
     "achievements": [
       {
@@ -14252,7 +14406,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "迈克尔·杰克逊是美国歌手、词曲作者与舞蹈家，被誉为「流行音乐之王」。其专辑《颤栗》（Thriller）是史上最畅销的录音室专辑，他革新了音乐录影与流行舞步。",
-      "en": "Michael Jackson was an American singer, songwriter, and dancer hailed as the 'King of Pop.' His album Thriller is the best-selling studio album of all time, and he revolutionized the music video and pop dance."
+      "en": "Michael Jackson was an American singer, songwriter, and dancer hailed as the 'King of Pop.' His album Thriller is the best-selling studio album of all time, and he revolutionized the music video and pop dance.",
+      "es": "Michael Jackson fue un cantante, compositor y bailarín estadounidense aclamado como el «Rey del Pop». Su álbum Thriller es el disco de estudio más vendido de la historia, y revolucionó el videoclip y la danza pop.",
+      "fr": "Michael Jackson était un chanteur, auteur-compositeur et danseur américain salué comme le « Roi de la pop ». Son album Thriller est l'album studio le plus vendu de tous les temps, et il a révolutionné le clip vidéo et la danse pop.",
+      "ja": "マイケル・ジャクソンは「キング・オブ・ポップ」と称された米国の歌手・ソングライター・ダンサーである。アルバム『スリラー』は史上最も売れたスタジオ盤であり、ミュージックビデオとポップダンスに革命をもたらした。",
+      "ru": "Майкл Джексон — американский певец, автор песен и танцор, которого называли «королём поп-музыки». Его альбом Thriller — самый продаваемый студийный альбом в истории; он произвёл революцию в музыкальном видео и поп-хореографии.",
+      "ar": "مايكل جاكسون كان مغنياً وكاتب أغانٍ وراقصاً أمريكياً لُقّب بـ«ملك البوب». ألبومه «ثريلر» هو الأكثر مبيعاً في تاريخ ألبومات الاستوديو، وقد أحدث ثورة في الفيديو الموسيقي ورقص البوب.",
+      "pt": "Michael Jackson foi um cantor, compositor e dançarino norte-americano aclamado como o «Rei do Pop». Seu álbum Thriller é o disco de estúdio mais vendido de todos os tempos, e ele revolucionou o videoclipe e a dança pop.",
+      "de": "Michael Jackson war ein amerikanischer Sänger, Songwriter und Tänzer, gefeiert als „King of Pop“. Sein Album Thriller ist das meistverkaufte Studioalbum aller Zeiten; er revolutionierte das Musikvideo und den Pop-Tanz.",
+      "ko": "마이클 잭슨은 '팝의 제왕'으로 불린 미국의 가수이자 작곡가, 댄서다. 앨범 『스릴러』는 역대 가장 많이 팔린 스튜디오 앨범이며, 그는 뮤직비디오와 팝 댄스에 혁명을 일으켰다.",
+      "it": "Michael Jackson fu un cantante, autore e ballerino statunitense acclamato come il «Re del Pop». Il suo album Thriller è il disco in studio più venduto di sempre, e rivoluzionò il videoclip e la danza pop.",
+      "hi": "माइकल जैक्सन अमेरिकी गायक, गीतकार और नर्तक थे, जिन्हें 'किंग ऑफ़ पॉप' कहा गया। उनका एल्बम 'थ्रिलर' अब तक का सर्वाधिक बिकने वाला स्टूडियो एल्बम है, और उन्होंने संगीत वीडियो तथा पॉप नृत्य में क्रांति ला दी।",
+      "id": "Michael Jackson adalah penyanyi, penulis lagu, dan penari Amerika yang dijuluki «Raja Pop». Albumnya, Thriller, merupakan album studio terlaris sepanjang masa, dan ia merevolusi video musik serta tari pop."
     },
     "achievements": [
       {
@@ -14385,7 +14550,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "泰勒·斯威夫特是美国创作歌手，以叙事性歌曲与乡村、流行、独立风格的跨界著称。她是当代全球最具商业与艺术影响力的音乐人之一。",
-      "en": "Taylor Swift is an American singer-songwriter known for narrative songwriting and her crossover between country, pop, and indie styles. She is among the most commercially and artistically influential musicians of her generation."
+      "en": "Taylor Swift is an American singer-songwriter known for narrative songwriting and her crossover between country, pop, and indie styles. She is among the most commercially and artistically influential musicians of her generation.",
+      "es": "Taylor Swift es una cantautora estadounidense conocida por sus letras narrativas y por transitar entre el country, el pop y el indie. Es una de las músicas más influyentes de su generación, tanto comercial como artísticamente.",
+      "fr": "Taylor Swift est une auteure-compositrice-interprète américaine connue pour son écriture narrative et son passage du country à la pop et à l'indie. Elle compte parmi les musiciennes les plus influentes de sa génération, commercialement et artistiquement.",
+      "ja": "テイラー・スウィフトは物語性の強い作詞で知られる米国のシンガーソングライターで、カントリー、ポップ、インディーを横断する作風を持つ。商業的にも芸術的にも同世代で最も影響力のある音楽家の一人である。",
+      "ru": "Тейлор Свифт — американская певица и автор песен, известная повествовательной манерой письма и переходами между кантри, попом и инди. Она входит в число самых влиятельных музыкантов своего поколения — и коммерчески, и художественно.",
+      "ar": "تايلور سويفت مغنية ومؤلفة أغانٍ أمريكية اشتهرت بكتابتها السردية وبانتقالها بين موسيقى الكانتري والبوب والإندي. وهي من أكثر الموسيقيين تأثيراً في جيلها تجارياً وفنياً.",
+      "pt": "Taylor Swift é uma cantora e compositora norte-americana conhecida pelas letras narrativas e pelo trânsito entre country, pop e indie. É uma das musicistas mais influentes de sua geração, comercial e artisticamente.",
+      "de": "Taylor Swift ist eine amerikanische Singer-Songwriterin, bekannt für erzählendes Songwriting und den Wechsel zwischen Country, Pop und Indie. Sie zählt kommerziell wie künstlerisch zu den einflussreichsten Musikerinnen ihrer Generation.",
+      "ko": "테일러 스위프트는 서사적인 작사로 유명한 미국의 싱어송라이터로, 컨트리와 팝, 인디를 넘나든다. 상업적으로도 예술적으로도 동세대에서 가장 영향력 있는 음악가로 꼽힌다.",
+      "it": "Taylor Swift è una cantautrice statunitense nota per la scrittura narrativa e per il passaggio tra country, pop e indie. È tra le musiciste più influenti della sua generazione, sia sul piano commerciale sia artistico.",
+      "hi": "टेलर स्विफ़्ट अमेरिकी गायिका-गीतकार हैं, जो कथात्मक गीतलेखन और कंट्री, पॉप व इंडी शैलियों के बीच आवाजाही के लिए जानी जाती हैं। वे अपनी पीढ़ी की व्यावसायिक और कलात्मक दोनों दृष्टियों से सर्वाधिक प्रभावशाली संगीतकारों में हैं।",
+      "id": "Taylor Swift adalah penyanyi-penulis lagu Amerika yang dikenal lewat lirik naratif dan perlintasannya antara country, pop, dan indie. Ia termasuk musisi paling berpengaruh di generasinya, baik secara komersial maupun artistik."
     },
     "achievements": [
       {
@@ -14510,7 +14686,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "拉维·香卡是印度西塔琴演奏家与作曲家，将印度古典音乐推向西方世界。他与披头士乐队等的合作深刻影响了 1960 年代的世界音乐。",
-      "en": "Ravi Shankar was an Indian sitar virtuoso and composer who brought Indian classical music to the Western world. His collaborations, including with The Beatles, profoundly influenced 1960s world music."
+      "en": "Ravi Shankar was an Indian sitar virtuoso and composer who brought Indian classical music to the Western world. His collaborations, including with The Beatles, profoundly influenced 1960s world music.",
+      "es": "Ravi Shankar fue un virtuoso indio del sitar y compositor que llevó la música clásica india al mundo occidental. Sus colaboraciones, entre ellas con The Beatles, influyeron profundamente en la música del mundo de los años sesenta.",
+      "fr": "Ravi Shankar était un virtuose indien du sitar et compositeur qui fit connaître la musique classique indienne en Occident. Ses collaborations, notamment avec les Beatles, ont profondément marqué les musiques du monde des années 1960.",
+      "ja": "ラヴィ・シャンカルはインドのシタール奏者・作曲家で、インド古典音楽を西洋世界に広めた。ビートルズをはじめとする共演は1960年代のワールドミュージックに大きな影響を与えた。",
+      "ru": "Рави Шанкар — индийский виртуоз ситара и композитор, познакомивший Запад с индийской классической музыкой. Его сотрудничество, в том числе с The Beatles, глубоко повлияло на world music 1960-х годов.",
+      "ar": "رافي شانكار كان عازف سيتار هندياً بارعاً ومؤلفاً موسيقياً، عرّف العالم الغربي بالموسيقى الهندية الكلاسيكية. وقد أثّرت تعاوناته، ومنها مع فرقة «البيتلز»، تأثيراً عميقاً في موسيقى العالم خلال الستينيات.",
+      "pt": "Ravi Shankar foi um virtuose indiano da cítara sitar e compositor que levou a música clássica indiana ao Ocidente. Suas colaborações, inclusive com os Beatles, influenciaram profundamente a world music dos anos 1960.",
+      "de": "Ravi Shankar war ein indischer Sitar-Virtuose und Komponist, der die klassische indische Musik im Westen bekannt machte. Seine Kooperationen, unter anderem mit den Beatles, prägten die Weltmusik der 1960er Jahre nachhaltig.",
+      "ko": "라비 샹카르는 인도 고전음악을 서구에 알린 인도의 시타르 명인이자 작곡가다. 비틀스를 비롯한 협업은 1960년대 월드뮤직에 깊은 영향을 남겼다.",
+      "it": "Ravi Shankar fu un virtuoso indiano del sitar e compositore che portò la musica classica indiana in Occidente. Le sue collaborazioni, tra cui quella con i Beatles, influenzarono profondamente la world music degli anni Sessanta.",
+      "hi": "रविशंकर भारतीय सितारवादक और संगीतकार थे, जिन्होंने भारतीय शास्त्रीय संगीत को पश्चिमी दुनिया तक पहुँचाया। बीटल्स सहित उनके सहयोगों ने 1960 के दशक के विश्व संगीत को गहराई से प्रभावित किया।",
+      "id": "Ravi Shankar adalah maestro sitar dan komponis India yang membawa musik klasik India ke dunia Barat. Kolaborasinya, termasuk dengan The Beatles, sangat memengaruhi musik dunia pada era 1960-an."
     },
     "achievements": [
       {
@@ -14637,7 +14824,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "史蒂文·斯皮尔伯格是美国电影导演、编剧与制片人，现代好莱坞最具影响力的电影人之一。他执导的《大白鲨》《E.T.》《侏罗纪公园》《辛德勒的名单》定义了当代商业与作者电影。",
-      "en": "Steven Spielberg is an American film director, screenwriter, and producer, among the most influential filmmakers in modern Hollywood. Films like Jaws, E.T., Jurassic Park, and Schindler's List defined contemporary blockbuster and auteur cinema."
+      "en": "Steven Spielberg is an American film director, screenwriter, and producer, among the most influential filmmakers in modern Hollywood. Films like Jaws, E.T., Jurassic Park, and Schindler's List defined contemporary blockbuster and auteur cinema.",
+      "es": "Steven Spielberg es un director, guionista y productor estadounidense, uno de los cineastas más influyentes del Hollywood moderno. Películas como Tiburón, E.T., Parque Jurásico y La lista de Schindler definieron el cine contemporáneo de gran público y de autor.",
+      "fr": "Steven Spielberg est un réalisateur, scénariste et producteur américain, l'un des cinéastes les plus influents du Hollywood moderne. Des films comme Les Dents de la mer, E.T., Jurassic Park et La Liste de Schindler ont défini le blockbuster et le cinéma d'auteur contemporains.",
+      "ja": "スティーヴン・スピルバーグは米国の映画監督・脚本家・製作者で、現代ハリウッドで最も影響力のある映画作家の一人である。『ジョーズ』『E.T.』『ジュラシック・パーク』『シンドラーのリスト』などが現代の大作映画と作家性の双方を規定した。",
+      "ru": "Стивен Спилберг — американский режиссёр, сценарист и продюсер, один из самых влиятельных кинематографистов современного Голливуда. «Челюсти», «Инопланетянин», «Парк юрского периода» и «Список Шиндлера» определили облик и блокбастера, и авторского кино.",
+      "ar": "ستيفن سبيلبرغ مخرج وكاتب سيناريو ومنتج أمريكي، ومن أكثر صنّاع السينما تأثيراً في هوليوود الحديثة. رسمت أفلام مثل «الفك المفترس» و«إي.تي» و«الحديقة الجوراسية» و«قائمة شندلر» ملامح السينما الجماهيرية والمؤلفة المعاصرة.",
+      "pt": "Steven Spielberg é um diretor, roteirista e produtor norte-americano, um dos cineastas mais influentes da Hollywood moderna. Filmes como Tubarão, E.T., Jurassic Park e A Lista de Schindler definiram o blockbuster e o cinema autoral contemporâneos.",
+      "de": "Steven Spielberg ist ein amerikanischer Regisseur, Drehbuchautor und Produzent und einer der einflussreichsten Filmemacher des modernen Hollywood. Werke wie Der weiße Hai, E.T., Jurassic Park und Schindlers Liste prägten Blockbuster- wie Autorenkino.",
+      "ko": "스티븐 스필버그는 현대 할리우드에서 가장 영향력 있는 영화감독이자 각본가·제작자다. 『죠스』, 『E.T.』, 『쥬라기 공원』, 『쉰들러 리스트』 같은 작품으로 현대 블록버스터와 작가주의 영화를 함께 규정했다.",
+      "it": "Steven Spielberg è un regista, sceneggiatore e produttore statunitense, tra i cineasti più influenti della Hollywood moderna. Film come Lo squalo, E.T., Jurassic Park e Schindler's List hanno definito il blockbuster e il cinema d'autore contemporanei.",
+      "hi": "स्टीवन स्पीलबर्ग अमेरिकी फ़िल्म निर्देशक, पटकथा लेखक और निर्माता हैं, जो आधुनिक हॉलीवुड के सर्वाधिक प्रभावशाली फ़िल्मकारों में हैं। 'जॉज़', 'ई.टी.', 'जुरासिक पार्क' और 'शिंडलर्स लिस्ट' जैसी फ़िल्मों ने समकालीन ब्लॉकबस्टर और लेखकीय सिनेमा दोनों को परिभाषित किया।",
+      "id": "Steven Spielberg adalah sutradara, penulis skenario, dan produser Amerika, salah satu sineas paling berpengaruh di Hollywood modern. Film seperti Jaws, E.T., Jurassic Park, dan Schindler's List mendefinisikan sinema blockbuster sekaligus auteur masa kini."
     },
     "achievements": [
       {
@@ -14765,7 +14963,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "宫崎骏是日本动画导演、编剧与漫画家，吉卜力工作室联合创始人。他以《千与千寻》《龙猫》等作品将手绘动画提升到艺术与人文高度，获奥斯卡终身成就奖与最佳动画长片。",
-      "en": "Hayao Miyazaki is a Japanese animation director, screenwriter, and manga artist, co-founder of Studio Ghibli. With works like Spirited Away and My Neighbor Totoro, he elevated hand-drawn animation to new artistic and humanistic heights, earning an Academy Honorary Award and Best Animated Feature."
+      "en": "Hayao Miyazaki is a Japanese animation director, screenwriter, and manga artist, co-founder of Studio Ghibli. With works like Spirited Away and My Neighbor Totoro, he elevated hand-drawn animation to new artistic and humanistic heights, earning an Academy Honorary Award and Best Animated Feature.",
+      "es": "Hayao Miyazaki es un director de animación, guionista y mangaka japonés, cofundador de Studio Ghibli. Con obras como El viaje de Chihiro y Mi vecino Totoro elevó la animación dibujada a mano a nuevas cotas artísticas y humanistas, y recibió un Óscar honorífico y el de mejor película animada.",
+      "fr": "Hayao Miyazaki est un réalisateur d'animation, scénariste et mangaka japonais, cofondateur du Studio Ghibli. Avec Le Voyage de Chihiro et Mon voisin Totoro, il a porté l'animation dessinée à la main à de nouveaux sommets artistiques et humanistes, recevant un Oscar d'honneur et celui du meilleur film d'animation.",
+      "ja": "宮崎駿は日本のアニメーション映画監督・脚本家・漫画家で、スタジオジブリの共同創設者である。『千と千尋の神隠し』『となりのトトロ』などで手描きアニメーションを芸術的・人間的な高みへ引き上げ、アカデミー名誉賞と長編アニメ映画賞を受けた。",
+      "ru": "Хаяо Миядзаки — японский режиссёр анимации, сценарист и мангака, сооснователь студии Ghibli. Работами вроде «Унесённых призраками» и «Моего соседа Тоторо» он поднял рисованную анимацию на новую художественную и гуманистическую высоту, получив почётный «Оскар» и премию за лучший анимационный фильм.",
+      "ar": "هاياو ميازاكي مخرج رسوم متحركة وكاتب سيناريو ورسام مانغا ياباني، وأحد مؤسِّسي استوديو جيبلي. رفع بأعمال مثل «المخطوفة» و«جاري توتورو» الرسوم المتحركة المرسومة يدوياً إلى آفاق فنية وإنسانية جديدة، ونال أوسكار فخرية وأخرى لأفضل فيلم رسوم متحركة.",
+      "pt": "Hayao Miyazaki é um diretor de animação, roteirista e mangaká japonês, cofundador do Studio Ghibli. Com obras como A Viagem de Chihiro e Meu Amigo Totoro, elevou a animação desenhada à mão a novos patamares artísticos e humanistas, recebendo um Oscar honorário e o de melhor animação.",
+      "de": "Hayao Miyazaki ist ein japanischer Animationsregisseur, Drehbuchautor und Mangaka sowie Mitbegründer des Studio Ghibli. Mit Chihiros Reise und Mein Nachbar Totoro hob er den handgezeichneten Zeichentrick auf neue künstlerische und humanistische Höhen und erhielt einen Ehrenoscar sowie den Oscar für den besten Animationsfilm.",
+      "ko": "미야자키 하야오는 스튜디오 지브리를 공동 설립한 일본의 애니메이션 감독이자 각본가, 만화가다. 『센과 치히로의 행방불명』, 『이웃집 토토로』 등으로 수작업 애니메이션을 예술적·인간적 경지로 끌어올렸고, 아카데미 명예상과 장편애니메이션상을 받았다.",
+      "it": "Hayao Miyazaki è un regista d'animazione, sceneggiatore e mangaka giapponese, cofondatore dello Studio Ghibli. Con opere come La città incantata e Il mio vicino Totoro ha portato l'animazione disegnata a mano a nuove vette artistiche e umanistiche, ricevendo un Oscar onorario e quello per il miglior film d'animazione.",
+      "hi": "हायाओ मियाज़ाकी जापानी एनिमेशन निर्देशक, पटकथा लेखक और मंगा कलाकार हैं, तथा स्टूडियो घिबली के सह-संस्थापक हैं। 'स्पिरिटेड अवे' और 'माय नेबर टोटोरो' जैसी कृतियों से उन्होंने हस्तनिर्मित एनिमेशन को नई कलात्मक व मानवीय ऊँचाई दी, और उन्हें मानद ऑस्कर तथा सर्वश्रेष्ठ एनिमेटेड फ़िल्म का ऑस्कर मिला।",
+      "id": "Hayao Miyazaki adalah sutradara animasi, penulis skenario, dan mangaka Jepang, salah satu pendiri Studio Ghibli. Lewat karya seperti Spirited Away dan My Neighbor Totoro, ia mengangkat animasi gambar tangan ke tataran artistik dan humanistis baru, serta meraih Oscar kehormatan dan Oscar film animasi terbaik."
     },
     "achievements": [
       {
@@ -14890,7 +15099,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "查理·卓别林是英国喜剧演员、导演与制片人，以默片时代的「流浪汉」形象闻名于世。他是早期电影工业最具创造力与人文关怀的艺术家之一。",
-      "en": "Charlie Chaplin was a British comic actor, director, and producer, world-famous for his silent-era 'Tramp' character. He was among the most inventive and humane artists of early cinema."
+      "en": "Charlie Chaplin was a British comic actor, director, and producer, world-famous for his silent-era 'Tramp' character. He was among the most inventive and humane artists of early cinema.",
+      "es": "Charlie Chaplin fue un actor cómico, director y productor británico, mundialmente famoso por su personaje del «Vagabundo» en el cine mudo. Fue uno de los artistas más inventivos y humanos de los primeros tiempos del cine.",
+      "fr": "Charlie Chaplin était un acteur comique, réalisateur et producteur britannique, mondialement célèbre pour son personnage de « Charlot » du cinéma muet. Il fut l'un des artistes les plus inventifs et les plus humains des débuts du cinéma.",
+      "ja": "チャールズ・チャップリンは英国の喜劇俳優・監督・製作者で、無声映画の「放浪紳士」の役柄で世界的に知られた。初期映画において最も創意に富み、人間味あふれる芸術家の一人であった。",
+      "ru": "Чарли Чаплин — британский комедийный актёр, режиссёр и продюсер, всемирно известный образом «Бродяги» эпохи немого кино. Он был одним из самых изобретательных и человечных художников раннего кинематографа.",
+      "ar": "تشارلي تشابلن كان ممثلاً كوميدياً ومخرجاً ومنتجاً بريطانياً، اشتهر عالمياً بشخصية «المتشرد» في السينما الصامتة. وكان من أكثر فناني السينما المبكرة ابتكاراً وإنسانية.",
+      "pt": "Charlie Chaplin foi um ator cômico, diretor e produtor britânico, mundialmente famoso por seu personagem «O Vagabundo» do cinema mudo. Foi um dos artistas mais inventivos e humanos dos primórdios do cinema.",
+      "de": "Charlie Chaplin war ein britischer Komiker, Regisseur und Produzent, weltberühmt durch seine Stummfilmfigur des „Tramps“. Er zählte zu den erfindungsreichsten und menschlichsten Künstlern des frühen Kinos.",
+      "ko": "찰리 채플린은 무성영화 속 '떠돌이' 캐릭터로 세계적 명성을 얻은 영국의 희극 배우이자 감독, 제작자다. 초기 영화에서 가장 창의적이고 인간적인 예술가 중 한 사람이었다.",
+      "it": "Charlie Chaplin fu un attore comico, regista e produttore britannico, celebre in tutto il mondo per il personaggio del «Vagabondo» del cinema muto. Fu tra gli artisti più inventivi e umani degli albori della settima arte.",
+      "hi": "चार्ली चैपलिन ब्रिटिश हास्य अभिनेता, निर्देशक और निर्माता थे, जो मूक फ़िल्मों के 'ट्रैम्प' चरित्र के लिए विश्वप्रसिद्ध हुए। वे आरंभिक सिनेमा के सर्वाधिक सृजनशील और मानवीय कलाकारों में से थे।",
+      "id": "Charlie Chaplin adalah aktor komedi, sutradara, dan produser Britania yang mendunia lewat tokoh «Si Gelandangan» pada era film bisu. Ia termasuk seniman paling inventif dan manusiawi pada masa awal sinema."
     },
     "achievements": [
       {
@@ -15017,7 +15237,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "奥黛丽·赫本是英籍比利时裔演员与慈善家，以《罗马假日》《蒂凡尼的早餐》等经典影片闻名。晚年她担任联合国儿童基金会亲善大使，投身人道主义工作。",
-      "en": "Audrey Hepburn was a Belgian-born British actress and humanitarian, celebrated for classics such as Roman Holiday and Breakfast at Tiffany's. In her later years she served as a UNICEF Goodwill Ambassador, devoted to humanitarian work."
+      "en": "Audrey Hepburn was a Belgian-born British actress and humanitarian, celebrated for classics such as Roman Holiday and Breakfast at Tiffany's. In her later years she served as a UNICEF Goodwill Ambassador, devoted to humanitarian work.",
+      "es": "Audrey Hepburn fue una actriz británica nacida en Bélgica y activista humanitaria, célebre por clásicos como Vacaciones en Roma y Desayuno con diamantes. En sus últimos años fue embajadora de buena voluntad de UNICEF, dedicada a la labor humanitaria.",
+      "fr": "Audrey Hepburn était une actrice britannique née en Belgique et une humanitaire, célèbre pour des classiques comme Vacances romaines et Diamants sur canapé. Dans ses dernières années, elle fut ambassadrice de bonne volonté de l'UNICEF, dévouée à l'action humanitaire.",
+      "ja": "オードリー・ヘプバーンはベルギー生まれの英国の女優・人道活動家で、『ローマの休日』『ティファニーで朝食を』などの名作で知られる。晩年はユニセフ親善大使として人道支援に身を捧げた。",
+      "ru": "Одри Хепбёрн — британская актриса бельгийского происхождения и общественный деятель, прославившаяся классикой вроде «Римских каникул» и «Завтрака у Тиффани». В последние годы жизни она была послом доброй воли ЮНИСЕФ и посвятила себя гуманитарной работе.",
+      "ar": "أودري هيبورن كانت ممثلة بريطانية مولودة في بلجيكا وناشطة إنسانية، اشتهرت بأفلام كلاسيكية مثل «عطلة رومانية» و«إفطار في تيفاني». وفي سنواتها الأخيرة عملت سفيرة للنوايا الحسنة لدى اليونيسف، متفرغة للعمل الإنساني.",
+      "pt": "Audrey Hepburn foi uma atriz britânica nascida na Bélgica e ativista humanitária, celebrada por clássicos como A Princesa e o Plebeu e Bonequinha de Luxo. Em seus últimos anos foi embaixadora da boa vontade do UNICEF, dedicada ao trabalho humanitário.",
+      "de": "Audrey Hepburn war eine in Belgien geborene britische Schauspielerin und Humanistin, gefeiert für Klassiker wie Ein Herz und eine Krone und Frühstück bei Tiffany. In ihren späten Jahren wirkte sie als UNICEF-Sonderbotschafterin und widmete sich humanitärer Arbeit.",
+      "ko": "오드리 헵번은 벨기에에서 태어난 영국 배우이자 인도주의 활동가로, 『로마의 휴일』과 『티파니에서 아침을』 같은 고전으로 사랑받았다. 말년에는 유니세프 친선대사로서 인도주의 활동에 헌신했다.",
+      "it": "Audrey Hepburn fu un'attrice britannica nata in Belgio e attivista umanitaria, celebre per classici come Vacanze romane e Colazione da Tiffany. Negli ultimi anni fu ambasciatrice di buona volontà dell'UNICEF, dedicandosi all'impegno umanitario.",
+      "hi": "ऑड्रे हेपबर्न बेल्जियम में जन्मी ब्रिटिश अभिनेत्री और मानवतावादी कार्यकर्ता थीं, जो 'रोमन हॉलिडे' और 'ब्रेकफ़ास्ट ऐट टिफ़नीज़' जैसी क्लासिक फ़िल्मों के लिए प्रसिद्ध रहीं। जीवन के अंतिम वर्षों में वे यूनिसेफ़ की सद्भावना राजदूत रहीं और मानवीय कार्यों को समर्पित रहीं।",
+      "id": "Audrey Hepburn adalah aktris Britania kelahiran Belgia sekaligus pegiat kemanusiaan, terkenal lewat film klasik seperti Roman Holiday dan Breakfast at Tiffany's. Pada tahun-tahun terakhirnya ia menjadi Duta Niat Baik UNICEF dan mengabdikan diri pada kerja kemanusiaan."
     },
     "achievements": [
       {
@@ -15144,7 +15375,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "贝利是巴西足球运动员，公认史上最伟大的球员之一。他三夺世界杯冠军，并以惊人的进球数与创造力定义了现代足球的攻击艺术。",
-      "en": "Pelé was a Brazilian footballer, widely regarded as one of the greatest players of all time. He won three FIFA World Cup titles and, with his prodigious goal-scoring and creativity, defined the attacking art of modern football."
+      "en": "Pelé was a Brazilian footballer, widely regarded as one of the greatest players of all time. He won three FIFA World Cup titles and, with his prodigious goal-scoring and creativity, defined the attacking art of modern football.",
+      "es": "Pelé fue un futbolista brasileño considerado uno de los mejores jugadores de todos los tiempos. Ganó tres Copas del Mundo y, con su prodigiosa capacidad goleadora y su creatividad, definió el arte ofensivo del fútbol moderno.",
+      "fr": "Pelé était un footballeur brésilien largement tenu pour l'un des plus grands joueurs de tous les temps. Vainqueur de trois Coupes du monde, il a défini l'art offensif du football moderne par son sens du but prodigieux et sa créativité.",
+      "ja": "ペレは史上最高の選手の一人とされるブラジルのサッカー選手である。ワールドカップで三度優勝し、驚異的な得点力と創造性で近代サッカーの攻撃の美学を確立した。",
+      "ru": "Пеле — бразильский футболист, которого считают одним из величайших игроков всех времён. Он трижды выигрывал чемпионат мира и своей феноменальной результативностью и креативностью определил атакующее искусство современного футбола.",
+      "ar": "بيليه كان لاعب كرة قدم برازيلياً يُعدّ من أعظم اللاعبين في التاريخ. فاز بثلاث بطولات لكأس العالم، وحدّد بقدرته التهديفية الهائلة وإبداعه فنَّ الهجوم في كرة القدم الحديثة.",
+      "pt": "Pelé foi um futebolista brasileiro amplamente considerado um dos maiores jogadores de todos os tempos. Conquistou três Copas do Mundo e, com seu faro de gol prodigioso e sua criatividade, definiu a arte ofensiva do futebol moderno.",
+      "de": "Pelé war ein brasilianischer Fußballspieler, der weithin als einer der größten Spieler aller Zeiten gilt. Er gewann drei Weltmeisterschaften und prägte mit seiner außergewöhnlichen Torgefahr und Kreativität die Offensivkunst des modernen Fußballs.",
+      "ko": "펠레는 역대 최고의 선수 중 한 명으로 꼽히는 브라질 축구 선수다. 월드컵에서 세 차례 우승했으며, 경이적인 득점력과 창의성으로 현대 축구 공격의 미학을 정립했다.",
+      "it": "Pelé fu un calciatore brasiliano considerato uno dei più grandi giocatori di sempre. Vinse tre Mondiali e, con il suo prodigioso fiuto del gol e la sua creatività, definì l'arte offensiva del calcio moderno.",
+      "hi": "पेले ब्राज़ीली फ़ुटबॉलर थे, जिन्हें सर्वकालिक महानतम खिलाड़ियों में गिना जाता है। उन्होंने तीन विश्व कप जीते और अपनी अद्भुत गोल-क्षमता व रचनात्मकता से आधुनिक फ़ुटबॉल की आक्रामक कला को परिभाषित किया।",
+      "id": "Pelé adalah pesepak bola Brasil yang secara luas dianggap sebagai salah satu pemain terhebat sepanjang masa. Ia meraih tiga gelar Piala Dunia dan, dengan naluri gol serta kreativitasnya yang luar biasa, mendefinisikan seni menyerang sepak bola modern."
     },
     "achievements": [
       {
@@ -15280,7 +15522,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "迭戈·马拉多纳是阿根廷足球运动员，被视为足球史上最具天赋的球员之一。他在 1986 年世界杯上的表现（包括「上帝之手」与「世纪进球」）成为传奇。",
-      "en": "Diego Maradona was an Argentine footballer considered one of the most gifted players in the history of the game. His 1986 World Cup — featuring the 'Hand of God' and the 'Goal of the Century' — became legend."
+      "en": "Diego Maradona was an Argentine footballer considered one of the most gifted players in the history of the game. His 1986 World Cup — featuring the 'Hand of God' and the 'Goal of the Century' — became legend.",
+      "es": "Diego Maradona fue un futbolista argentino considerado uno de los jugadores más dotados de la historia del deporte. Su Mundial de 1986 —con la «Mano de Dios» y el «Gol del Siglo»— se convirtió en leyenda.",
+      "fr": "Diego Maradona était un footballeur argentin considéré comme l'un des joueurs les plus doués de l'histoire. Sa Coupe du monde 1986 — avec la « Main de Dieu » et le « But du siècle » — est entrée dans la légende.",
+      "ja": "ディエゴ・マラドーナは史上屈指の天才と評されたアルゼンチンのサッカー選手である。「神の手」と「世紀のゴール」を生んだ1986年ワールドカップは伝説となった。",
+      "ru": "Диего Марадона — аргентинский футболист, которого считают одним из самых одарённых игроков в истории. Его чемпионат мира 1986 года — с «рукой Бога» и «голом века» — стал легендой.",
+      "ar": "دييغو مارادونا كان لاعب كرة قدم أرجنتينياً يُعدّ من أكثر الموهوبين في تاريخ اللعبة. وقد غدت مشاركته في مونديال 1986 — بـ«يد الله» و«هدف القرن» — أسطورة.",
+      "pt": "Diego Maradona foi um futebolista argentino considerado um dos jogadores mais talentosos da história do esporte. Sua Copa do Mundo de 1986 — com a «Mão de Deus» e o «Gol do Século» — tornou-se lenda.",
+      "de": "Diego Maradona war ein argentinischer Fußballspieler, der als einer der begnadetsten Spieler der Sportgeschichte gilt. Seine WM 1986 — mit der „Hand Gottes“ und dem „Tor des Jahrhunderts“ — wurde zur Legende.",
+      "ko": "디에고 마라도나는 축구 역사상 가장 재능 있는 선수 중 한 명으로 평가받는 아르헨티나 선수다. '신의 손'과 '세기의 골'을 남긴 1986년 월드컵은 전설이 되었다.",
+      "it": "Diego Maradona fu un calciatore argentino considerato tra i più dotati della storia del gioco. Il suo Mondiale del 1986 — con la «Mano de Dios» e il «Gol del secolo» — è diventato leggenda.",
+      "hi": "डिएगो माराडोना अर्जेंटीनी फ़ुटबॉलर थे, जिन्हें खेल के इतिहास के सबसे प्रतिभाशाली खिलाड़ियों में गिना जाता है। 'हैंड ऑफ़ गॉड' और 'गोल ऑफ़ द सेंचुरी' वाला 1986 का विश्व कप किंवदंती बन गया।",
+      "id": "Diego Maradona adalah pesepak bola Argentina yang dianggap sebagai salah satu pemain paling berbakat dalam sejarah. Piala Dunia 1986-nya — dengan «Tangan Tuhan» dan «Gol Abad Ini» — menjadi legenda."
     },
     "achievements": [
       {
@@ -15416,7 +15669,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "尤塞恩·博尔特是牙买加短跑运动员，被公认为史上最快的人。他在奥运会与世锦赛上统治 100 米、200 米与 4×100 米接力，并保有相关世界纪录。",
-      "en": "Usain Bolt is a Jamaican sprinter widely regarded as the fastest person ever. He dominated the 100 m, 200 m, and 4×100 m relay at the Olympics and World Championships, holding the world records in those events."
+      "en": "Usain Bolt is a Jamaican sprinter widely regarded as the fastest person ever. He dominated the 100 m, 200 m, and 4×100 m relay at the Olympics and World Championships, holding the world records in those events.",
+      "es": "Usain Bolt es un velocista jamaicano considerado el ser humano más rápido de la historia. Dominó los 100 m, los 200 m y el relevo 4×100 m en Juegos Olímpicos y Mundiales, y posee los récords mundiales de esas pruebas.",
+      "fr": "Usain Bolt est un sprinteur jamaïcain largement considéré comme l'homme le plus rapide de tous les temps. Il a dominé le 100 m, le 200 m et le relais 4×100 m aux Jeux olympiques et aux Mondiaux, et détient les records du monde de ces épreuves.",
+      "ja": "ウサイン・ボルトは史上最速の人間と称されるジャマイカの短距離走者である。オリンピックと世界選手権で100m・200m・4×100mリレーを制し、これらの種目の世界記録を保持している。",
+      "ru": "Усэйн Болт — ямайский спринтер, которого называют самым быстрым человеком в истории. Он доминировал на 100 м, 200 м и в эстафете 4×100 м на Олимпийских играх и чемпионатах мира и владеет мировыми рекордами в этих дисциплинах.",
+      "ar": "يوسين بولت عدّاء جامايكي يُعدّ أسرع إنسان في التاريخ. هيمن على سباقات 100 م و200 م وتتابع 4×100 م في الألعاب الأولمبية وبطولات العالم، ويحمل الأرقام القياسية العالمية في هذه السباقات.",
+      "pt": "Usain Bolt é um velocista jamaicano amplamente considerado o ser humano mais rápido de todos os tempos. Dominou os 100 m, os 200 m e o revezamento 4×100 m em Olimpíadas e Mundiais, detendo os recordes mundiais dessas provas.",
+      "de": "Usain Bolt ist ein jamaikanischer Sprinter, der weithin als schnellster Mensch aller Zeiten gilt. Er dominierte 100 m, 200 m und die 4×100-m-Staffel bei Olympischen Spielen und Weltmeisterschaften und hält die Weltrekorde in diesen Disziplinen.",
+      "ko": "우사인 볼트는 역사상 가장 빠른 인간으로 평가받는 자메이카의 단거리 선수다. 올림픽과 세계선수권에서 100m·200m·4×100m 계주를 석권했고 해당 종목의 세계기록을 보유하고 있다.",
+      "it": "Usain Bolt è un velocista giamaicano considerato l'uomo più veloce di sempre. Ha dominato i 100 m, i 200 m e la staffetta 4×100 m alle Olimpiadi e ai Mondiali, detenendo i record del mondo di queste specialità.",
+      "hi": "उसेन बोल्ट जमैका के फर्राटा धावक हैं, जिन्हें अब तक का सबसे तेज़ इंसान माना जाता है। उन्होंने ओलंपिक और विश्व चैंपियनशिप में 100 मी., 200 मी. और 4×100 मी. रिले पर दबदबा बनाया और इन स्पर्धाओं के विश्व रिकॉर्ड उनके नाम हैं।",
+      "id": "Usain Bolt adalah pelari cepat Jamaika yang secara luas dianggap sebagai manusia tercepat sepanjang sejarah. Ia mendominasi nomor 100 m, 200 m, dan estafet 4×100 m di Olimpiade serta Kejuaraan Dunia, dan memegang rekor dunia nomor-nomor tersebut."
     },
     "achievements": [
       {
@@ -15538,7 +15802,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "姚明是中国篮球运动员，曾效力于 NBA 休斯顿火箭队，是首位以状元身份入选 NBA 的国际球员。他极大推动了篮球在中国与世界的普及，并入选篮球名人堂。",
-      "en": "Yao Ming is a Chinese basketball player who starred for the NBA's Houston Rockets and was the first international player selected first overall in the NBA draft. He greatly advanced the popularity of basketball in China and worldwide, and was inducted into the Basketball Hall of Fame."
+      "en": "Yao Ming is a Chinese basketball player who starred for the NBA's Houston Rockets and was the first international player selected first overall in the NBA draft. He greatly advanced the popularity of basketball in China and worldwide, and was inducted into the Basketball Hall of Fame.",
+      "es": "Yao Ming es un baloncestista chino que brilló en los Houston Rockets de la NBA y fue el primer jugador internacional elegido con la primera selección global del draft. Impulsó enormemente la popularidad del baloncesto en China y en el mundo, y fue incluido en el Salón de la Fama.",
+      "fr": "Yao Ming est un basketteur chinois qui s'est illustré avec les Houston Rockets en NBA et fut le premier joueur international choisi en tête de la draft. Il a considérablement popularisé le basket en Chine et dans le monde, et a été intronisé au Hall of Fame.",
+      "ja": "姚明はNBAヒューストン・ロケッツで活躍した中国のバスケットボール選手で、国際選手として初めてドラフト全体1位で指名された。中国と世界におけるバスケットボールの普及に大きく貢献し、バスケットボール殿堂入りを果たした。",
+      "ru": "Яо Мин — китайский баскетболист, блиставший в «Хьюстон Рокетс» в НБА и ставший первым иностранным игроком, выбранным под первым общим номером драфта. Он значительно повысил популярность баскетбола в Китае и мире и введён в Зал славы.",
+      "ar": "ياو مينغ لاعب كرة سلة صيني تألّق مع فريق هيوستن روكتس في الدوري الأمريكي، وكان أول لاعب دولي يُختار في المرتبة الأولى بمسوّدة الاختيار. أسهم إسهاماً كبيراً في انتشار كرة السلة في الصين والعالم، وأُدخل قاعة مشاهير اللعبة.",
+      "pt": "Yao Ming é um jogador de basquete chinês que brilhou no Houston Rockets, da NBA, e foi o primeiro atleta internacional escolhido como primeira seleção geral do draft. Impulsionou enormemente a popularidade do basquete na China e no mundo, e foi eleito para o Hall da Fama.",
+      "de": "Yao Ming ist ein chinesischer Basketballspieler, der bei den Houston Rockets in der NBA glänzte und als erster internationaler Spieler an erster Stelle gedraftet wurde. Er förderte die Popularität des Basketballs in China und weltweit enorm und wurde in die Hall of Fame aufgenommen.",
+      "ko": "야오밍은 NBA 휴스턴 로키츠에서 활약한 중국의 농구 선수로, 국제 선수로는 처음으로 드래프트 전체 1순위에 지명되었다. 중국과 세계에서 농구의 대중화를 크게 앞당겼으며 농구 명예의 전당에 헌액되었다.",
+      "it": "Yao Ming è un cestista cinese che ha brillato con gli Houston Rockets in NBA ed è stato il primo giocatore internazionale scelto come prima assoluta al draft. Ha accresciuto enormemente la popolarità del basket in Cina e nel mondo, ed è stato inserito nella Hall of Fame.",
+      "hi": "याओ मिंग चीनी बास्केटबॉल खिलाड़ी हैं, जो एनबीए की ह्यूस्टन रॉकेट्स के लिए चमके और ड्राफ़्ट में पहली समग्र पसंद बनने वाले पहले अंतरराष्ट्रीय खिलाड़ी रहे। उन्होंने चीन और दुनिया में बास्केटबॉल की लोकप्रियता बहुत बढ़ाई और हॉल ऑफ़ फ़ेम में शामिल हुए।",
+      "id": "Yao Ming adalah pebasket Tiongkok yang bersinar bersama Houston Rockets di NBA dan menjadi pemain internasional pertama yang dipilih pada urutan pertama draf. Ia sangat memajukan popularitas bola basket di Tiongkok dan dunia, serta masuk Hall of Fame."
     },
     "achievements": [
       {
@@ -15671,7 +15946,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "盖乌斯·尤利乌斯·凯撒是罗马共和国末期的军事统帅与政治家，征服高卢并跨过卢比孔河，成为终身独裁官，深刻塑造了罗马从共和国向帝国的转折。",
-      "en": "Gaius Julius Caesar was a Roman general and statesman at the end of the Republic who conquered Gaul, crossed the Rubicon, and became dictator for life, profoundly shaping Rome's transition from republic to empire."
+      "en": "Gaius Julius Caesar was a Roman general and statesman at the end of the Republic who conquered Gaul, crossed the Rubicon, and became dictator for life, profoundly shaping Rome's transition from republic to empire.",
+      "es": "Cayo Julio César fue un general y estadista romano del final de la República que conquistó la Galia, cruzó el Rubicón y llegó a dictador perpetuo, marcando profundamente el paso de Roma de república a imperio.",
+      "fr": "Caius Julius Caesar était un général et homme d'État romain de la fin de la République : il conquit la Gaule, franchit le Rubicon et devint dictateur à vie, façonnant profondément le passage de Rome de la république à l'empire.",
+      "ja": "ガイウス・ユリウス・カエサルは共和政末期ローマの将軍・政治家で、ガリアを征服し、ルビコン川を渡って終身独裁官となり、ローマの共和政から帝政への移行を決定的に方向づけた。",
+      "ru": "Гай Юлий Цезарь — римский полководец и государственный деятель конца Республики: он покорил Галлию, перешёл Рубикон и стал пожизненным диктатором, во многом определив переход Рима от республики к империи.",
+      "ar": "غايوس يوليوس قيصر كان قائداً عسكرياً ورجل دولة رومانياً في أواخر عهد الجمهورية؛ فتح بلاد الغال، وعبر نهر الروبيكون، وصار ديكتاتوراً مدى الحياة، فطبع بعمق انتقال روما من الجمهورية إلى الإمبراطورية.",
+      "pt": "Caio Júlio César foi um general e estadista romano do fim da República que conquistou a Gália, cruzou o Rubicão e tornou-se ditador perpétuo, marcando profundamente a transição de Roma de república a império.",
+      "de": "Gaius Julius Caesar war ein römischer Feldherr und Staatsmann der späten Republik: Er eroberte Gallien, überschritt den Rubikon und wurde Diktator auf Lebenszeit, wodurch er Roms Übergang von der Republik zum Kaiserreich entscheidend prägte.",
+      "ko": "가이우스 율리우스 카이사르는 공화정 말기 로마의 장군이자 정치가로, 갈리아를 정복하고 루비콘강을 건너 종신 독재관이 되어 로마가 공화정에서 제정으로 이행하는 과정을 결정적으로 규정했다.",
+      "it": "Gaio Giulio Cesare fu un generale e statista romano della tarda Repubblica: conquistò la Gallia, varcò il Rubicone e divenne dittatore a vita, segnando profondamente il passaggio di Roma dalla repubblica all'impero.",
+      "hi": "गयुस जूलियस सीज़र रोमन गणराज्य के अंतिम दौर के सेनापति और राजनेता थे, जिन्होंने गॉल को जीता, रूबिकॉन नदी पार की और आजीवन तानाशाह बने; उन्होंने रोम के गणराज्य से साम्राज्य बनने की प्रक्रिया को गहराई से आकार दिया।",
+      "id": "Gaius Julius Caesar adalah jenderal sekaligus negarawan Romawi pada akhir masa Republik yang menaklukkan Galia, menyeberangi Sungai Rubicon, dan menjadi diktator seumur hidup, sehingga sangat memengaruhi peralihan Roma dari republik menjadi kekaisaran."
     },
     "achievements": [
       {
@@ -15796,7 +16082,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "克利奥帕特拉七世是托勒密王朝的末代法老，以政治智慧与外交手腕维系埃及的独立，并与尤利乌斯·凯撒、马克·安东尼结盟。她是古埃及最后一位真正统治的君主。",
-      "en": "Cleopatra VII was the last active pharaoh of Ptolemaic Egypt, who used political acumen and diplomacy to preserve Egypt's independence, allying with Julius Caesar and Mark Antony. She was the last sovereign ruler of ancient Egypt."
+      "en": "Cleopatra VII was the last active pharaoh of Ptolemaic Egypt, who used political acumen and diplomacy to preserve Egypt's independence, allying with Julius Caesar and Mark Antony. She was the last sovereign ruler of ancient Egypt.",
+      "es": "Cleopatra VII fue la última faraona reinante del Egipto ptolemaico, que con perspicacia política y diplomacia preservó la independencia del país aliándose con Julio César y Marco Antonio. Fue la última soberana del antiguo Egipto.",
+      "fr": "Cléopâtre VII fut la dernière pharaonne régnante de l'Égypte ptolémaïque : par son sens politique et sa diplomatie, elle préserva l'indépendance du pays en s'alliant à Jules César puis à Marc Antoine. Elle fut la dernière souveraine de l'Égypte antique.",
+      "ja": "クレオパトラ7世はプトレマイオス朝エジプト最後の実質的な統治者（ファラオ）で、政治的手腕と外交によりユリウス・カエサルやマルクス・アントニウスと結び、エジプトの独立を守ろうとした。古代エジプト最後の君主である。",
+      "ru": "Клеопатра VII — последняя правящая царица (фараон) птолемеевского Египта, которая политическим чутьём и дипломатией, в союзе с Юлием Цезарем и Марком Антонием, стремилась сохранить независимость страны. Она стала последней самостоятельной правительницей Древнего Египта.",
+      "ar": "كليوباترا السابعة كانت آخر فرعونة حاكمة في مصر البطلمية، استخدمت الدهاء السياسي والدبلوماسية للحفاظ على استقلال مصر عبر التحالف مع يوليوس قيصر ومارك أنطونيو. وكانت آخر حاكمة مستقلة لمصر القديمة.",
+      "pt": "Cleópatra VII foi a última faraó reinante do Egito ptolomaico, que com perspicácia política e diplomacia preservou a independência do país aliando-se a Júlio César e a Marco Antônio. Foi a última soberana do Egito antigo.",
+      "de": "Kleopatra VII. war die letzte regierende Pharaonin des ptolemäischen Ägypten; mit politischem Geschick und Diplomatie versuchte sie im Bündnis mit Julius Caesar und Marcus Antonius die Unabhängigkeit des Landes zu bewahren. Sie war die letzte eigenständige Herrscherin des alten Ägypten.",
+      "ko": "클레오파트라 7세는 프톨레마이오스 왕조 이집트의 마지막 실질적 파라오로, 정치적 감각과 외교로 율리우스 카이사르, 마르쿠스 안토니우스와 동맹하며 이집트의 독립을 지키려 했다. 고대 이집트의 마지막 군주였다.",
+      "it": "Cleopatra VII fu l'ultima faraona regnante dell'Egitto tolemaico: con acume politico e diplomazia cercò di preservare l'indipendenza del paese alleandosi con Giulio Cesare e Marco Antonio. Fu l'ultima sovrana dell'antico Egitto.",
+      "hi": "क्लियोपेट्रा सप्तम टॉलेमी वंश के मिस्र की अंतिम शासक फ़राओ थीं, जिन्होंने राजनीतिक सूझबूझ और कूटनीति से जूलियस सीज़र तथा मार्क एंटनी के साथ गठबंधन कर मिस्र की स्वतंत्रता बचाने का प्रयास किया। वे प्राचीन मिस्र की अंतिम संप्रभु शासक थीं।",
+      "id": "Cleopatra VII adalah firaun berkuasa terakhir Mesir Ptolemaik yang dengan kecerdikan politik dan diplomasi berupaya mempertahankan kemerdekaan Mesir melalui aliansi dengan Julius Caesar dan Markus Antonius. Ia penguasa berdaulat terakhir Mesir Kuno."
     },
     "achievements": [
       {
@@ -15917,7 +16214,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "拿破仑·波拿巴是法国军事领袖与皇帝，在法国大革命后的动荡中崛起，建立了法兰西第一帝国，并以其军事天才与《拿破仑法典》深刻影响欧洲。",
-      "en": "Napoleon Bonaparte was a French military leader and emperor who rose during the upheaval after the French Revolution, founded the First French Empire, and left a lasting mark on Europe through his military genius and the Napoleonic Code."
+      "en": "Napoleon Bonaparte was a French military leader and emperor who rose during the upheaval after the French Revolution, founded the First French Empire, and left a lasting mark on Europe through his military genius and the Napoleonic Code.",
+      "es": "Napoleón Bonaparte fue un militar y emperador francés que ascendió en la convulsión posterior a la Revolución Francesa, fundó el Primer Imperio Francés y dejó una huella duradera en Europa por su genio militar y el Código Napoleónico.",
+      "fr": "Napoléon Bonaparte était un chef militaire et empereur français, monté au pouvoir dans les bouleversements de l'après-Révolution ; il fonda le Premier Empire et marqua durablement l'Europe par son génie militaire et le Code civil.",
+      "ja": "ナポレオン・ボナパルトはフランス革命後の動乱のなかで台頭した軍人・皇帝で、フランス第一帝政を樹立した。卓越した軍事的才能とナポレオン法典によってヨーロッパに長く消えない影響を残した。",
+      "ru": "Наполеон Бонапарт — французский полководец и император, возвысившийся в смуте после Французской революции; он основал Первую империю и оставил глубокий след в Европе благодаря военному гению и Гражданскому кодексу.",
+      "ar": "نابليون بونابرت كان قائداً عسكرياً وإمبراطوراً فرنسياً صعد في اضطرابات ما بعد الثورة الفرنسية، وأسّس الإمبراطورية الفرنسية الأولى، وترك أثراً باقياً في أوروبا بعبقريته العسكرية وبالقانون المدني النابليوني.",
+      "pt": "Napoleão Bonaparte foi um líder militar e imperador francês que ascendeu na convulsão pós-Revolução Francesa, fundou o Primeiro Império Francês e deixou marca duradoura na Europa por seu gênio militar e pelo Código Napoleônico.",
+      "de": "Napoleon Bonaparte war ein französischer Feldherr und Kaiser, der in den Wirren nach der Französischen Revolution aufstieg, das Erste Kaiserreich begründete und Europa durch sein militärisches Genie und den Code civil nachhaltig prägte.",
+      "ko": "나폴레옹 보나파르트는 프랑스 혁명 이후의 혼란 속에서 부상한 군인이자 황제로, 프랑스 제1제국을 세웠다. 뛰어난 군사적 재능과 나폴레옹 법전으로 유럽에 지속적인 영향을 남겼다.",
+      "it": "Napoleone Bonaparte fu un condottiero e imperatore francese, asceso nei tumulti seguiti alla Rivoluzione francese; fondò il Primo Impero e lasciò un'impronta duratura in Europa con il suo genio militare e il Codice napoleonico.",
+      "hi": "नेपोलियन बोनापार्ट फ़्रांसीसी सैन्य नेता और सम्राट थे, जो फ़्रांसीसी क्रांति के बाद की उथल-पुथल में उभरे, प्रथम फ़्रांसीसी साम्राज्य की स्थापना की और अपनी सैन्य प्रतिभा तथा नेपोलियन संहिता से यूरोप पर स्थायी छाप छोड़ी।",
+      "id": "Napoleon Bonaparte adalah pemimpin militer sekaligus kaisar Prancis yang bangkit dalam gejolak pascarevolusi, mendirikan Kekaisaran Prancis Pertama, dan meninggalkan jejak abadi di Eropa lewat kejeniusan militernya serta Kitab Undang-Undang Napoleon."
     },
     "achievements": [
       {
@@ -16043,7 +16351,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "马丁·路德·金是美国牧师与民权运动领袖，以非暴力抗争推动种族平等，其「我有一个梦想」演说成为历史地标。他获 1964 年诺贝尔和平奖。",
-      "en": "Martin Luther King Jr. was an American minister and civil rights leader who advanced racial equality through nonviolent resistance; his 'I Have a Dream' speech became a historic landmark. He received the 1964 Nobel Peace Prize."
+      "en": "Martin Luther King Jr. was an American minister and civil rights leader who advanced racial equality through nonviolent resistance; his 'I Have a Dream' speech became a historic landmark. He received the 1964 Nobel Peace Prize.",
+      "es": "Martin Luther King Jr. fue un pastor y líder estadounidense de los derechos civiles que impulsó la igualdad racial mediante la resistencia no violenta; su discurso «Tengo un sueño» se convirtió en un hito histórico. Recibió el Premio Nobel de la Paz en 1964.",
+      "fr": "Martin Luther King Jr. était un pasteur et dirigeant américain des droits civiques qui fit progresser l'égalité raciale par la résistance non violente ; son discours « I Have a Dream » est devenu un jalon historique. Il reçut le prix Nobel de la paix en 1964.",
+      "ja": "マーティン・ルーサー・キング・ジュニアは米国の牧師・公民権運動指導者で、非暴力抵抗によって人種平等を前進させた。「私には夢がある」の演説は歴史的な金字塔となり、1964年にノーベル平和賞を受賞した。",
+      "ru": "Мартин Лютер Кинг-младший — американский пастор и лидер движения за гражданские права, который добивался расового равенства методами ненасильственного сопротивления; его речь «У меня есть мечта» стала историческим рубежом. В 1964 году он получил Нобелевскую премию мира.",
+      "ar": "مارتن لوثر كينغ الابن كان قسّاً وزعيماً أمريكياً لحركة الحقوق المدنية، دفع بالمساواة العرقية عبر المقاومة اللاعنفية؛ وصار خطابه «لديّ حلم» علامة تاريخية فارقة. نال جائزة نوبل للسلام عام 1964.",
+      "pt": "Martin Luther King Jr. foi um pastor e líder norte-americano dos direitos civis que promoveu a igualdade racial pela resistência não violenta; seu discurso «Eu tenho um sonho» tornou-se um marco histórico. Recebeu o Nobel da Paz de 1964.",
+      "de": "Martin Luther King Jr. war ein amerikanischer Pastor und Bürgerrechtsführer, der die Rassengleichheit durch gewaltfreien Widerstand voranbrachte; seine Rede „I Have a Dream“ wurde zu einem historischen Meilenstein. 1964 erhielt er den Friedensnobelpreis.",
+      "ko": "마틴 루서 킹 주니어는 비폭력 저항으로 인종 평등을 진전시킨 미국의 목사이자 민권운동 지도자다. 「나에게는 꿈이 있습니다」 연설은 역사적 이정표가 되었고, 1964년 노벨 평화상을 받았다.",
+      "it": "Martin Luther King Jr. fu un pastore e leader statunitense dei diritti civili che promosse l'uguaglianza razziale attraverso la resistenza nonviolenta; il suo discorso «I Have a Dream» è divenuto una pietra miliare storica. Ricevette il Nobel per la pace nel 1964.",
+      "hi": "मार्टिन लूथर किंग जूनियर अमेरिकी पादरी और नागरिक अधिकार आंदोलन के नेता थे, जिन्होंने अहिंसक प्रतिरोध से नस्लीय समानता को आगे बढ़ाया; उनका 'आई हैव अ ड्रीम' भाषण ऐतिहासिक मील का पत्थर बना। उन्हें 1964 का नोबेल शांति पुरस्कार मिला।",
+      "id": "Martin Luther King Jr. adalah pendeta sekaligus pemimpin hak-hak sipil Amerika yang memajukan kesetaraan ras melalui perlawanan tanpa kekerasan; pidatonya «I Have a Dream» menjadi tonggak sejarah. Ia menerima Nobel Perdamaian 1964."
     },
     "achievements": [
       {
@@ -16168,7 +16487,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "科菲·安南是加纳外交官，第 7 任联合国秘书长，致力于维和、发展与全球治理改革，并获 2001 年诺贝尔和平奖。",
-      "en": "Kofi Annan was a Ghanaian diplomat, the 7th Secretary-General of the United Nations, who championed peacekeeping, development, and reform of global governance, and received the 2001 Nobel Peace Prize."
+      "en": "Kofi Annan was a Ghanaian diplomat, the 7th Secretary-General of the United Nations, who championed peacekeeping, development, and reform of global governance, and received the 2001 Nobel Peace Prize.",
+      "es": "Kofi Annan fue un diplomático ghanés, séptimo secretario general de las Naciones Unidas, que impulsó el mantenimiento de la paz, el desarrollo y la reforma de la gobernanza mundial, y recibió el Premio Nobel de la Paz en 2001.",
+      "fr": "Kofi Annan était un diplomate ghanéen, septième secrétaire général des Nations unies, qui promut le maintien de la paix, le développement et la réforme de la gouvernance mondiale, et reçut le prix Nobel de la paix en 2001.",
+      "ja": "コフィ・アナンはガーナ出身の外交官で、第7代国際連合事務総長として平和維持・開発・グローバルガバナンス改革を推進し、2001年にノーベル平和賞を受賞した。",
+      "ru": "Кофи Аннан — ганский дипломат, седьмой Генеральный секретарь ООН, продвигавший миротворчество, развитие и реформу глобального управления; в 2001 году удостоен Нобелевской премии мира.",
+      "ar": "كوفي عنان كان دبلوماسياً غانياً وسابع أمين عام للأمم المتحدة، ناصر حفظ السلام والتنمية وإصلاح الحوكمة العالمية، ونال جائزة نوبل للسلام عام 2001.",
+      "pt": "Kofi Annan foi um diplomata ganense, sétimo secretário-geral das Nações Unidas, que defendeu a manutenção da paz, o desenvolvimento e a reforma da governança global, e recebeu o Nobel da Paz de 2001.",
+      "de": "Kofi Annan war ein ghanaischer Diplomat und siebter Generalsekretär der Vereinten Nationen, der Friedenssicherung, Entwicklung und die Reform globaler Governance vorantrieb und 2001 den Friedensnobelpreis erhielt.",
+      "ko": "코피 아난은 가나 출신 외교관으로 제7대 유엔 사무총장을 지내며 평화유지와 개발, 글로벌 거버넌스 개혁을 이끌었고 2001년 노벨 평화상을 받았다.",
+      "it": "Kofi Annan fu un diplomatico ghanese, settimo segretario generale delle Nazioni Unite, che promosse il mantenimento della pace, lo sviluppo e la riforma della governance globale, ricevendo il Nobel per la pace nel 2001.",
+      "hi": "कोफ़ी अन्नान घाना के राजनयिक और संयुक्त राष्ट्र के सातवें महासचिव थे, जिन्होंने शांति स्थापना, विकास तथा वैश्विक शासन सुधार की पैरवी की और 2001 का नोबेल शांति पुरस्कार प्राप्त किया।",
+      "id": "Kofi Annan adalah diplomat Ghana, Sekretaris Jenderal PBB ketujuh, yang memperjuangkan pemeliharaan perdamaian, pembangunan, dan reformasi tata kelola global, serta menerima Nobel Perdamaian 2001."
     },
     "achievements": [
       {
@@ -16287,7 +16617,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "李光耀是新加坡建国总理，执政逾三十年，将一座小渔港建设为繁荣、廉洁的全球金融与航运中心，是「亚洲四小龙」奇迹的关键缔造者。",
-      "en": "Lee Kuan Yew was the founding Prime Minister of Singapore, governing for over three decades and transforming a small fishing port into a prosperous, incorruptible global financial and shipping hub — a key architect of the Asian Tiger miracle."
+      "en": "Lee Kuan Yew was the founding Prime Minister of Singapore, governing for over three decades and transforming a small fishing port into a prosperous, incorruptible global financial and shipping hub — a key architect of the Asian Tiger miracle.",
+      "es": "Lee Kuan Yew fue el primer ministro fundador de Singapur, gobernó durante más de tres décadas y convirtió un pequeño puerto pesquero en un próspero centro financiero y marítimo mundial libre de corrupción: un arquitecto clave del milagro de los Tigres Asiáticos.",
+      "fr": "Lee Kuan Yew fut le Premier ministre fondateur de Singapour ; il gouverna plus de trois décennies et transforma un petit port de pêche en une place financière et maritime mondiale prospère et incorruptible — un artisan majeur du miracle des dragons asiatiques.",
+      "ja": "リー・クアンユーはシンガポール建国の首相で、30年以上にわたり国を率い、小さな漁港を清廉で繁栄する世界的な金融・海運ハブへと変えた。アジア四小龍の奇跡を築いた立役者である。",
+      "ru": "Ли Куан Ю — первый премьер-министр Сингапура, руководивший страной более трёх десятилетий и превративший маленький рыбацкий порт в процветающий и некоррумпированный мировой финансовый и судоходный центр; ключевой архитектор чуда «азиатских тигров».",
+      "ar": "لي كوان يو كان رئيس وزراء سنغافورة المؤسِّس، حكم أكثر من ثلاثة عقود وحوّل ميناء صيد صغيراً إلى مركز مالي وملاحي عالمي مزدهر ونظيف من الفساد، وكان مهندساً رئيسياً لمعجزة «النمور الآسيوية».",
+      "pt": "Lee Kuan Yew foi o primeiro-ministro fundador de Cingapura; governou por mais de três décadas e transformou um pequeno porto pesqueiro em um próspero centro financeiro e marítimo global, livre de corrupção — arquiteto essencial do milagre dos Tigres Asiáticos.",
+      "de": "Lee Kuan Yew war der Gründungspremier Singapurs; er regierte über drei Jahrzehnte und verwandelte einen kleinen Fischereihafen in ein wohlhabendes, korruptionsfreies globales Finanz- und Schifffahrtszentrum — ein zentraler Architekt des Wunders der Tigerstaaten.",
+      "ko": "리콴유는 싱가포르의 건국 총리로 30여 년간 나라를 이끌며 작은 어항을 부패 없는 번영의 세계 금융·해운 허브로 탈바꿈시켰다. 아시아 네 마리 용 신화의 핵심 설계자였다.",
+      "it": "Lee Kuan Yew fu il primo ministro fondatore di Singapore; governò per oltre tre decenni e trasformò un piccolo porto di pescatori in un prospero centro finanziario e marittimo globale, libero dalla corruzione — architetto chiave del miracolo delle Tigri asiatiche.",
+      "hi": "ली कुआन यू सिंगापुर के संस्थापक प्रधानमंत्री थे, जिन्होंने तीन दशक से अधिक शासन किया और एक छोटे मछली बंदरगाह को समृद्ध, भ्रष्टाचारमुक्त वैश्विक वित्तीय एवं नौवहन केंद्र में बदल दिया — वे 'एशियाई बाघों' के चमत्कार के प्रमुख शिल्पकार थे।",
+      "id": "Lee Kuan Yew adalah perdana menteri pendiri Singapura yang memerintah lebih dari tiga dasawarsa dan mengubah pelabuhan nelayan kecil menjadi pusat keuangan dan pelayaran dunia yang makmur serta bersih dari korupsi — arsitek utama keajaiban Macan Asia."
     },
     "achievements": [
       {
@@ -16425,7 +16766,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "文森特·梵高是荷兰后印象派画家，生前几乎未被认可，死后其激烈的情感表达与鲜明色彩深刻影响了现代艺术。代表作有《星月夜》《向日葵》。",
-      "en": "Vincent van Gogh was a Dutch Post-Impressionist painter, unrecognized in his lifetime, whose intense emotional expression and vivid color profoundly influenced modern art. Masterpieces include The Starry Night and Sunflowers."
+      "en": "Vincent van Gogh was a Dutch Post-Impressionist painter, unrecognized in his lifetime, whose intense emotional expression and vivid color profoundly influenced modern art. Masterpieces include The Starry Night and Sunflowers.",
+      "es": "Vincent van Gogh fue un pintor postimpresionista neerlandés, ignorado en vida, cuya intensa expresión emocional y color vibrante influyeron profundamente en el arte moderno. Entre sus obras maestras están La noche estrellada y Los girasoles.",
+      "fr": "Vincent van Gogh était un peintre postimpressionniste néerlandais, méconnu de son vivant, dont l'intensité émotionnelle et la couleur éclatante ont profondément influencé l'art moderne. Parmi ses chefs-d'œuvre figurent La Nuit étoilée et Les Tournesols.",
+      "ja": "フィンセント・ファン・ゴッホはオランダのポスト印象派の画家で、生前は評価されなかったが、激しい感情表現と鮮烈な色彩は近代美術に深い影響を与えた。代表作に『星月夜』『ひまわり』がある。",
+      "ru": "Винсент Ван Гог — нидерландский художник-постимпрессионист, при жизни не признанный, чья предельная эмоциональная выразительность и яркий цвет глубоко повлияли на современное искусство. Среди шедевров — «Звёздная ночь» и «Подсолнухи».",
+      "ar": "فنسنت فان غوخ كان رساماً هولندياً من مدرسة ما بعد الانطباعية، لم يُعترف به في حياته، لكن تعبيره الوجداني الحاد وألوانه الوهّاجة أثّرا تأثيراً عميقاً في الفن الحديث. ومن روائعه «ليلة النجوم» و«عبّاد الشمس».",
+      "pt": "Vincent van Gogh foi um pintor pós-impressionista neerlandês, ignorado em vida, cuja intensa expressão emocional e cor vibrante influenciaram profundamente a arte moderna. Entre suas obras-primas estão A Noite Estrelada e Os Girassóis.",
+      "de": "Vincent van Gogh war ein niederländischer Maler des Postimpressionismus, zu Lebzeiten verkannt, dessen intensive emotionale Ausdruckskraft und leuchtende Farbigkeit die moderne Kunst tief prägten. Zu seinen Meisterwerken zählen Sternennacht und Sonnenblumen.",
+      "ko": "빈센트 반 고흐는 생전에 인정받지 못한 네덜란드 후기인상주의 화가로, 강렬한 감정 표현과 선명한 색채로 현대 미술에 깊은 영향을 남겼다. 대표작으로 『별이 빛나는 밤』과 『해바라기』가 있다.",
+      "it": "Vincent van Gogh fu un pittore postimpressionista olandese, misconosciuto in vita, la cui intensa espressione emotiva e il colore vibrante influenzarono profondamente l'arte moderna. Tra i suoi capolavori Notte stellata e I girasoli.",
+      "hi": "विन्सेंट वान गॉग डच उत्तर-प्रभाववादी चित्रकार थे, जिन्हें जीवनकाल में पहचान नहीं मिली, किंतु उनकी प्रबल भावाभिव्यक्ति और चटख रंगों ने आधुनिक कला को गहराई से प्रभावित किया। 'स्टारी नाइट' और 'सनफ़्लावर्स' उनकी उत्कृष्ट कृतियाँ हैं।",
+      "id": "Vincent van Gogh adalah pelukis Pascaimpresionis Belanda yang tak diakui semasa hidupnya, namun ekspresi emosional yang kuat dan warnanya yang cemerlang sangat memengaruhi seni modern. Mahakaryanya antara lain The Starry Night dan Sunflowers."
     },
     "achievements": [
       {
@@ -16546,7 +16898,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "克劳德·莫奈是法国画家，印象派运动的命名者与代表人物。他通过对光线与色彩的敏锐捕捉（如《日出·印象》《睡莲》）开创了现代绘画。",
-      "en": "Claude Monet was a French painter, the namesake and leading figure of the Impressionist movement. Through his sensitive capture of light and color (Impression, Sunrise; Water Lilies) he opened the path to modern painting."
+      "en": "Claude Monet was a French painter, the namesake and leading figure of the Impressionist movement. Through his sensitive capture of light and color (Impression, Sunrise; Water Lilies) he opened the path to modern painting.",
+      "es": "Claude Monet fue un pintor francés, figura principal y epónimo del movimiento impresionista. Con su sensible captación de la luz y el color (Impresión, sol naciente; Nenúfares) abrió el camino hacia la pintura moderna.",
+      "fr": "Claude Monet était un peintre français, figure de proue et éponyme du mouvement impressionniste. Par sa saisie sensible de la lumière et de la couleur (Impression, soleil levant ; Les Nymphéas), il ouvrit la voie à la peinture moderne.",
+      "ja": "クロード・モネはフランスの画家で、印象派の名の由来となった中心的存在である。光と色彩の繊細な捕捉（『印象・日の出』『睡蓮』）によって近代絵画への道を切り開いた。",
+      "ru": "Клод Моне — французский живописец, давший имя импрессионизму и ставший его ведущей фигурой. Тонким улавливанием света и цвета («Впечатление. Восходящее солнце», «Кувшинки») он проложил путь к современной живописи.",
+      "ar": "كلود مونيه كان رساماً فرنسياً، وهو الشخصية الأبرز في الحركة الانطباعية والاسم الذي اشتُقّت منه. فتح بالتقاطه المرهف للضوء واللون («انطباع، شروق الشمس» و«زنابق الماء») الطريق أمام التصوير الحديث.",
+      "pt": "Claude Monet foi um pintor francês, figura central e epônimo do movimento impressionista. Com sua sensível captação da luz e da cor (Impressão, nascer do sol; Nenúfares), abriu caminho para a pintura moderna.",
+      "de": "Claude Monet war ein französischer Maler, Namensgeber und führende Gestalt des Impressionismus. Mit seinem feinen Gespür für Licht und Farbe (Impression, Sonnenaufgang; Seerosen) ebnete er den Weg zur modernen Malerei.",
+      "ko": "클로드 모네는 인상주의라는 이름의 유래이자 그 운동을 이끈 프랑스 화가다. 빛과 색을 섬세하게 포착한 『인상, 해돋이』와 『수련』으로 현대 회화의 길을 열었다.",
+      "it": "Claude Monet fu un pittore francese, figura guida e origine del nome del movimento impressionista. Con la sua sensibile cattura della luce e del colore (Impressione, levar del sole; Ninfee) aprì la strada alla pittura moderna.",
+      "hi": "क्लोद मोने फ़्रांसीसी चित्रकार थे, जो प्रभाववादी आंदोलन के प्रमुख व्यक्ति थे और जिनकी कृति से इस आंदोलन का नाम पड़ा। प्रकाश और रंग की सूक्ष्म पकड़ ('इंप्रेशन, सनराइज़'; 'वॉटर लिलीज़') से उन्होंने आधुनिक चित्रकला का मार्ग खोला।",
+      "id": "Claude Monet adalah pelukis Prancis, tokoh utama sekaligus sumber nama gerakan Impresionisme. Lewat penangkapan cahaya dan warna yang peka (Impression, Sunrise; Water Lilies), ia membuka jalan bagi seni lukis modern."
     },
     "achievements": [
       {
@@ -16667,7 +17030,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "米开朗基罗是意大利文艺复兴时期的雕塑家、画家、建筑师与诗人，与达·芬奇、拉斐尔并称文艺复兴三杰。其《大卫》、西斯廷礼拜堂天顶画与《圣母怜子》是艺术史上的巅峰。",
-      "en": "Michelangelo was an Italian Renaissance sculptor, painter, architect, and poet, alongside Leonardo da Vinci and Raphael among the trio of great High Renaissance masters. His David, the Sistine Chapel ceiling, and the Pietà stand as pinnacles of art history."
+      "en": "Michelangelo was an Italian Renaissance sculptor, painter, architect, and poet, alongside Leonardo da Vinci and Raphael among the trio of great High Renaissance masters. His David, the Sistine Chapel ceiling, and the Pietà stand as pinnacles of art history.",
+      "es": "Miguel Ángel fue un escultor, pintor, arquitecto y poeta italiano del Renacimiento, uno de los tres grandes maestros del Alto Renacimiento junto a Leonardo da Vinci y Rafael. Su David, la bóveda de la Capilla Sixtina y la Piedad son cumbres de la historia del arte.",
+      "fr": "Michel-Ange était un sculpteur, peintre, architecte et poète italien de la Renaissance, l'un des trois grands maîtres de la Haute Renaissance avec Léonard de Vinci et Raphaël. Son David, la voûte de la chapelle Sixtine et la Pietà comptent parmi les sommets de l'histoire de l'art.",
+      "ja": "ミケランジェロはイタリア・ルネサンスの彫刻家・画家・建築家・詩人で、レオナルド・ダ・ヴィンチ、ラファエロと並ぶ盛期ルネサンスの三大巨匠の一人である。『ダヴィデ像』、システィーナ礼拝堂天井画、『ピエタ』は美術史の頂点をなす。",
+      "ru": "Микеланджело — итальянский скульптор, живописец, архитектор и поэт эпохи Возрождения, один из трёх великих мастеров Высокого Ренессанса наряду с Леонардо да Винчи и Рафаэлем. Его «Давид», роспись свода Сикстинской капеллы и «Пьета» — вершины истории искусства.",
+      "ar": "مايكل أنجلو كان نحّاتاً ورساماً ومعمارياً وشاعراً إيطالياً من عصر النهضة، وأحد ثلاثة عمالقة لعصر النهضة العالي إلى جانب ليوناردو دا فينشي ورافائيل. وتُعدّ منحوتة «داوود» وسقف كنيسة سيستينا و«البييتا» من قمم تاريخ الفن.",
+      "pt": "Michelangelo foi um escultor, pintor, arquiteto e poeta italiano do Renascimento, um dos três grandes mestres do Alto Renascimento ao lado de Leonardo da Vinci e Rafael. Seu Davi, o teto da Capela Sistina e a Pietà são pontos altos da história da arte.",
+      "de": "Michelangelo war ein italienischer Bildhauer, Maler, Architekt und Dichter der Renaissance und neben Leonardo da Vinci und Raffael einer der drei großen Meister der Hochrenaissance. Sein David, das Deckenfresko der Sixtinischen Kapelle und die Pietà zählen zu den Gipfeln der Kunstgeschichte.",
+      "ko": "미켈란젤로는 르네상스 시대 이탈리아의 조각가이자 화가, 건축가, 시인으로 레오나르도 다 빈치, 라파엘로와 함께 전성기 르네상스 3대 거장으로 꼽힌다. 『다비드』, 시스티나 성당 천장화, 『피에타』는 미술사의 정점으로 평가된다.",
+      "it": "Michelangelo fu scultore, pittore, architetto e poeta italiano del Rinascimento, uno dei tre grandi maestri del Rinascimento maturo insieme a Leonardo da Vinci e Raffaello. Il suo David, la volta della Cappella Sistina e la Pietà sono vertici della storia dell'arte.",
+      "hi": "माइकलएंजेलो इतालवी पुनर्जागरण के मूर्तिकार, चित्रकार, वास्तुकार और कवि थे, जो लियोनार्दो दा विंची तथा राफ़ेल के साथ उच्च पुनर्जागरण के तीन महान उस्तादों में गिने जाते हैं। उनकी 'डेविड', सिस्टीन चैपल की छत और 'पिएता' कला इतिहास के शिखर हैं।",
+      "id": "Michelangelo adalah pematung, pelukis, arsitek, dan penyair Italia era Renaisans, satu dari tiga maestro besar Renaisans Tinggi bersama Leonardo da Vinci dan Rafael. Karya David, langit-langit Kapel Sistina, dan Pietà merupakan puncak sejarah seni rupa."
     },
     "achievements": [
       {
@@ -16788,7 +17162,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "简·奥斯汀是英国小说家，以《傲慢与偏见》《理智与情感》等作品以讽刺与细腻的笔触刻画 19 世纪英国乡绅社会，奠定了现代小说的基础。",
-      "en": "Jane Austen was an English novelist whose works — Pride and Prejudice, Sense and Sensibility — depict early-19th-century English gentry society with irony and keen insight, helping lay the foundations of the modern novel."
+      "en": "Jane Austen was an English novelist whose works — Pride and Prejudice, Sense and Sensibility — depict early-19th-century English gentry society with irony and keen insight, helping lay the foundations of the modern novel.",
+      "es": "Jane Austen fue una novelista inglesa cuyas obras —Orgullo y prejuicio, Sentido y sensibilidad— retratan con ironía y aguda penetración la sociedad de la pequeña nobleza inglesa de principios del siglo XIX, contribuyendo a sentar las bases de la novela moderna.",
+      "fr": "Jane Austen était une romancière anglaise dont les œuvres — Orgueil et Préjugés, Raison et Sentiments — dépeignent avec ironie et finesse la société de la gentry anglaise du début du XIXe siècle, contribuant à fonder le roman moderne.",
+      "ja": "ジェーン・オースティンは英国の小説家で、『高慢と偏見』『分別と多感』などにおいて19世紀初頭の英国ジェントリ社会を皮肉と鋭い洞察をもって描き、近代小説の礎を築くのに寄与した。",
+      "ru": "Джейн Остин — английская романистка, чьи книги «Гордость и предубеждение» и «Чувство и чувствительность» с иронией и тонкой наблюдательностью рисуют общество английского дворянства начала XIX века, помогая заложить основы современного романа.",
+      "ar": "جين أوستن كانت روائية إنجليزية، صوّرت أعمالها — «كبرياء وتحامل» و«العقل والعاطفة» — مجتمع طبقة النبلاء الإنجليزية في مطلع القرن التاسع عشر بسخرية وبصيرة نافذة، وأسهمت في إرساء أسس الرواية الحديثة.",
+      "pt": "Jane Austen foi uma romancista inglesa cujas obras — Orgulho e Preconceito, Razão e Sensibilidade — retratam com ironia e argúcia a sociedade da pequena nobreza inglesa do início do século XIX, ajudando a lançar as bases do romance moderno.",
+      "de": "Jane Austen war eine englische Romanautorin, deren Werke — Stolz und Vorurteil, Verstand und Gefühl — die Gesellschaft der englischen Gentry des frühen 19. Jahrhunderts mit Ironie und feinem Gespür schildern und den modernen Roman mitbegründeten.",
+      "ko": "제인 오스틴은 『오만과 편견』, 『이성과 감성』 등에서 19세기 초 영국 젠트리 사회를 아이러니와 예리한 통찰로 그려낸 영국 소설가로, 근대 소설의 토대를 놓는 데 기여했다.",
+      "it": "Jane Austen fu una romanziera inglese le cui opere — Orgoglio e pregiudizio, Ragione e sentimento — ritraggono con ironia e acume la società della gentry inglese di inizio Ottocento, contribuendo a fondare il romanzo moderno.",
+      "hi": "जेन ऑस्टिन अंग्रेज़ उपन्यासकार थीं, जिनकी कृतियाँ — 'प्राइड एंड प्रेजुडिस', 'सेंस एंड सेंसिबिलिटी' — उन्नीसवीं सदी के आरंभिक अंग्रेज़ कुलीन समाज को व्यंग्य और गहरी अंतर्दृष्टि से चित्रित करती हैं और आधुनिक उपन्यास की नींव रखने में सहायक रहीं।",
+      "id": "Jane Austen adalah novelis Inggris yang karyanya — Pride and Prejudice, Sense and Sensibility — melukiskan masyarakat bangsawan kecil Inggris awal abad ke-19 dengan ironi dan ketajaman pengamatan, serta turut meletakkan dasar novel modern."
     },
     "achievements": [
       {
@@ -16909,7 +17294,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "鲁迅是中国现代文学的奠基人，以《狂人日记》《阿 Q 正传》等作品猛烈批判封建礼教与国民性，是中国现代思想与文学的旗手。",
-      "en": "Lu Xun was the founder of modern Chinese literature. Through works such as Diary of a Madman and The True Story of Ah Q he fiercely critiqued feudal ethics and the national character, becoming a standard-bearer of modern Chinese thought and letters."
+      "en": "Lu Xun was the founder of modern Chinese literature. Through works such as Diary of a Madman and The True Story of Ah Q he fiercely critiqued feudal ethics and the national character, becoming a standard-bearer of modern Chinese thought and letters.",
+      "es": "Lu Xun fue el fundador de la literatura china moderna. Con obras como Diario de un loco y La verdadera historia de Ah Q criticó con severidad la ética feudal y el carácter nacional, y se convirtió en abanderado del pensamiento y las letras de la China moderna.",
+      "fr": "Lu Xun fut le fondateur de la littérature chinoise moderne. Par des œuvres comme Le Journal d'un fou et La Véritable Histoire d'Ah Q, il critiqua âprement la morale féodale et le caractère national, devenant le porte-étendard de la pensée et des lettres chinoises modernes.",
+      "ja": "魯迅は中国近代文学の創始者である。『狂人日記』『阿Q正伝』などの作品で封建道徳と国民性を鋭く批判し、近代中国の思想と文学の旗手となった。",
+      "ru": "Лу Синь — основоположник современной китайской литературы. В «Записках сумасшедшего» и «Подлинной истории А-кью» он резко критиковал феодальную мораль и национальный характер, став знаменосцем новой китайской мысли и словесности.",
+      "ar": "لو شيون هو مؤسّس الأدب الصيني الحديث. انتقد بشدة في أعمال مثل «مذكرات مجنون» و«القصة الحقيقية لآه كيو» الأخلاق الإقطاعية والطبع القومي، فصار رائد الفكر والأدب في الصين الحديثة.",
+      "pt": "Lu Xun foi o fundador da literatura chinesa moderna. Em obras como Diário de um Louco e A Verdadeira História de Ah Q, criticou duramente a ética feudal e o caráter nacional, tornando-se porta-estandarte do pensamento e das letras da China moderna.",
+      "de": "Lu Xun gilt als Begründer der modernen chinesischen Literatur. In Werken wie Tagebuch eines Verrückten und Die wahre Geschichte des Ah Q kritisierte er scharf die feudale Moral und den Nationalcharakter und wurde zum Bannerträger des modernen chinesischen Denkens und Schrifttums.",
+      "ko": "루쉰은 중국 근대문학의 창시자다. 『광인일기』, 『아Q정전』 등에서 봉건 윤리와 국민성을 신랄하게 비판하며 근대 중국 사상과 문학의 기수가 되었다.",
+      "it": "Lu Xun fu il fondatore della letteratura cinese moderna. Con opere come Diario di un pazzo e La vera storia di Ah Q criticò aspramente l'etica feudale e il carattere nazionale, diventando alfiere del pensiero e delle lettere della Cina moderna.",
+      "hi": "लू शुन आधुनिक चीनी साहित्य के जनक थे। 'एक पागल की डायरी' और 'आह क्यू की सच्ची कहानी' जैसी कृतियों में उन्होंने सामंती नैतिकता और राष्ट्रीय चरित्र की तीखी आलोचना की तथा आधुनिक चीनी विचार व साहित्य के ध्वजवाहक बने।",
+      "id": "Lu Xun adalah pendiri sastra Tiongkok modern. Melalui karya seperti Catatan Harian Orang Gila dan Kisah Sejati Ah Q, ia mengecam tajam etika feodal dan watak bangsa, sehingga menjadi pelopor pemikiran serta kesusastraan Tiongkok modern."
     },
     "achievements": [
       {
@@ -17030,7 +17426,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "加西亚·马尔克斯是哥伦比亚作家，魔幻现实主义文学的代表人物，其《百年孤独》被誉为 20 世纪最伟大的小说之一，并获 1982 年诺贝尔文学奖。",
-      "en": "Gabriel García Márquez was a Colombian writer, the foremost figure of magical realism. His One Hundred Years of Solitude is hailed as one of the greatest novels of the 20th century, and he won the 1982 Nobel Prize in Literature."
+      "en": "Gabriel García Márquez was a Colombian writer, the foremost figure of magical realism. His One Hundred Years of Solitude is hailed as one of the greatest novels of the 20th century, and he won the 1982 Nobel Prize in Literature.",
+      "es": "Gabriel García Márquez fue un escritor colombiano, máxima figura del realismo mágico. Su novela Cien años de soledad está considerada una de las mayores del siglo XX, y en 1982 recibió el Premio Nobel de Literatura.",
+      "fr": "Gabriel García Márquez était un écrivain colombien, figure majeure du réalisme magique. Son roman Cent Ans de solitude est tenu pour l'un des plus grands du XXe siècle, et il reçut le prix Nobel de littérature en 1982.",
+      "ja": "ガブリエル・ガルシア＝マルケスはコロンビアの作家で、マジックリアリズムの代表的存在である。『百年の孤独』は20世紀屈指の小説と称され、1982年にノーベル文学賞を受賞した。",
+      "ru": "Габриэль Гарсиа Маркес — колумбийский писатель, крупнейшая фигура магического реализма. Его роман «Сто лет одиночества» считается одним из величайших романов XX века; в 1982 году он получил Нобелевскую премию по литературе.",
+      "ar": "غابرييل غارثيا ماركيث كان كاتباً كولومبياً وأبرز أعلام الواقعية السحرية. تُعدّ روايته «مئة عام من العزلة» من أعظم روايات القرن العشرين، وقد نال جائزة نوبل للآداب عام 1982.",
+      "pt": "Gabriel García Márquez foi um escritor colombiano, principal figura do realismo mágico. Seu romance Cem Anos de Solidão é considerado um dos maiores do século XX, e em 1982 recebeu o Nobel de Literatura.",
+      "de": "Gabriel García Márquez war ein kolumbianischer Schriftsteller und die zentrale Gestalt des magischen Realismus. Sein Roman Hundert Jahre Einsamkeit gilt als einer der größten des 20. Jahrhunderts; 1982 erhielt er den Literaturnobelpreis.",
+      "ko": "가브리엘 가르시아 마르케스는 마술적 사실주의를 대표하는 콜롬비아 작가다. 『백년의 고독』은 20세기 최고의 소설 중 하나로 꼽히며, 그는 1982년 노벨 문학상을 받았다.",
+      "it": "Gabriel García Márquez fu uno scrittore colombiano, massimo esponente del realismo magico. Il suo romanzo Cent'anni di solitudine è considerato tra i più grandi del Novecento, e nel 1982 ricevette il Nobel per la letteratura.",
+      "hi": "गाब्रिएल गार्सिया मार्केस कोलंबियाई लेखक और जादुई यथार्थवाद के अग्रणी हस्ताक्षर थे। उनका उपन्यास 'एकांत के सौ वर्ष' बीसवीं सदी के महानतम उपन्यासों में गिना जाता है, और 1982 में उन्हें साहित्य का नोबेल पुरस्कार मिला।",
+      "id": "Gabriel García Márquez adalah sastrawan Kolombia, tokoh utama realisme magis. Novelnya, Seratus Tahun Kesunyian, dipuji sebagai salah satu novel terbesar abad ke-20, dan pada 1982 ia meraih Nobel Sastra."
     },
     "achievements": [
       {
@@ -17160,7 +17567,18 @@
     "updatedAt": "2026-08-04",
     "bio": {
       "zh": "拉宾德拉纳特·泰戈尔是印度诗人、哲学家与艺术家，以孟加拉语与英语写作，1913 年凭《吉檀迦利》成为首位获得诺贝尔文学奖的非欧洲人。",
-      "en": "Rabindranath Tagore was an Indian poet, philosopher, and artist who wrote in Bengali and English. In 1913 he became the first non-European to win the Nobel Prize in Literature, for Gitanjali."
+      "en": "Rabindranath Tagore was an Indian poet, philosopher, and artist who wrote in Bengali and English. In 1913 he became the first non-European to win the Nobel Prize in Literature, for Gitanjali.",
+      "es": "Rabindranath Tagore fue un poeta, filósofo y artista indio que escribió en bengalí e inglés. En 1913 se convirtió en el primer no europeo en recibir el Premio Nobel de Literatura, por Gitanjali.",
+      "fr": "Rabindranath Tagore était un poète, philosophe et artiste indien écrivant en bengali et en anglais. En 1913, il devint le premier non-Européen à recevoir le prix Nobel de littérature, pour Gitanjali.",
+      "ja": "ラビンドラナート・タゴールはベンガル語と英語で創作したインドの詩人・哲学者・芸術家である。1913年、『ギタンジャリ』により非ヨーロッパ人として初めてノーベル文学賞を受賞した。",
+      "ru": "Рабиндранат Тагор — индийский поэт, философ и художник, писавший на бенгальском и английском языках. В 1913 году он стал первым неевропейцем, получившим Нобелевскую премию по литературе, — за сборник «Гитанджали».",
+      "ar": "رابندرانات طاغور كان شاعراً وفيلسوفاً وفناناً هندياً كتب بالبنغالية والإنجليزية. وفي عام 1913 صار أول غير أوروبي ينال جائزة نوبل للآداب عن ديوانه «جيتانجالي».",
+      "pt": "Rabindranath Tagore foi um poeta, filósofo e artista indiano que escreveu em bengali e inglês. Em 1913 tornou-se o primeiro não europeu a receber o Nobel de Literatura, por Gitanjali.",
+      "de": "Rabindranath Tagore war ein indischer Dichter, Philosoph und Künstler, der auf Bengalisch und Englisch schrieb. 1913 erhielt er als erster Nichteuropäer den Literaturnobelpreis — für Gitanjali.",
+      "ko": "라빈드라나트 타고르는 벵골어와 영어로 창작한 인도의 시인이자 철학자, 예술가다. 1913년 『기탄잘리』로 비유럽인 최초의 노벨 문학상 수상자가 되었다.",
+      "it": "Rabindranath Tagore fu un poeta, filosofo e artista indiano che scrisse in bengali e in inglese. Nel 1913 divenne il primo non europeo a ricevere il Nobel per la letteratura, per Gitanjali.",
+      "hi": "रवींद्रनाथ टैगोर भारतीय कवि, दार्शनिक और कलाकार थे, जिन्होंने बांग्ला और अंग्रेज़ी में लिखा। 1913 में 'गीतांजलि' के लिए वे साहित्य का नोबेल पुरस्कार पाने वाले पहले गैर-यूरोपीय बने।",
+      "id": "Rabindranath Tagore adalah penyair, filsuf, dan seniman India yang menulis dalam bahasa Bengali dan Inggris. Pada 1913 ia menjadi orang non-Eropa pertama yang meraih Nobel Sastra, lewat Gitanjali."
     },
     "achievements": [
       {
