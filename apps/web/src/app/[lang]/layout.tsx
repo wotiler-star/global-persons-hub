@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { isLang, LANGS } from '@/lib/i18n';
+import JsonLd from '@/components/JsonLd';
+import { buildSiteLd } from '@/lib/siteLd';
 
 /**
  * 语种段布局。三个作用：
@@ -27,5 +29,15 @@ export default async function LangLayout({
   const { lang } = await params;
   if (!isLang(lang)) notFound();
 
-  return <div dir={RTL_LANGS.has(lang) ? 'rtl' : 'ltr'}>{children}</div>;
+  // —— SEO/GEO：站点级结构化数据（Organization + WebSite/站内搜索），全站每语种页面注入 ——
+  const siteLd = buildSiteLd(lang);
+
+  return (
+    <div dir={RTL_LANGS.has(lang) ? 'rtl' : 'ltr'}>
+      {siteLd.map((node, i) => (
+        <JsonLd key={i} data={node} />
+      ))}
+      {children}
+    </div>
+  );
 }
