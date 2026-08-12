@@ -18,6 +18,7 @@ export async function generateMetadata({
   const { lang } = await params;
   const languages: Record<string, string> = {};
   for (const l of LANGS) languages[l] = `/${l}/persons`;
+  languages['x-default'] = `/en/persons`;
   return {
     title: t(lang as Lang, 'persons.title'),
     description: t(lang as Lang, 'persons.desc'),

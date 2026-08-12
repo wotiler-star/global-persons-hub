@@ -16,6 +16,7 @@ export async function generateMetadata({
   const { lang } = await params;
   const languages: Record<string, string> = {};
   for (const l of LANGS) languages[l] = `/${l}/search`;
+  languages['x-default'] = `/en/search`;
   return {
     title: t(lang as Lang, 'search.title'),
     alternates: { canonical: `/${lang}/search`, languages }

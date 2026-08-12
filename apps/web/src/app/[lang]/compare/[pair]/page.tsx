@@ -47,6 +47,7 @@ export async function generateMetadata({
   const url = `/${lang}/compare/${pair}`;
   const languages: Record<string, string> = {};
   for (const l of LANGS) languages[l] = `/${l}/compare/${pair}`;
+  languages['x-default'] = `/en/compare/${pair}`;
   return {
     title,
     description,

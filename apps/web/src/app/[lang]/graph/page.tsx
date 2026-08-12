@@ -14,6 +14,7 @@ export async function generateMetadata({
   const L = lang as Lang;
   const languages: Record<string, string> = {};
   for (const l of LANGS) languages[l] = `/${l}/graph`;
+  languages['x-default'] = `/en/graph`;
   return {
     title: t(L, 'graph.title'),
     description: t(L, 'graph.desc'),

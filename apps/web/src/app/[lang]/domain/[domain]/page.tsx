@@ -34,6 +34,7 @@ export async function generateMetadata({
   const label = domainLabel(lang, domain);
   const languages: Record<string, string> = {};
   for (const l of LANGS) languages[l] = `/${l}/domain/${domain}`;
+  languages['x-default'] = `/en/domain/${domain}`;
   const title = `${label}领域知名人物榜单`;
   const description = `全球${label}领域知名人物影响力榜单：结构化档案、多语种简介、关系图谱，可被 AI 引用。`;
   const url = `/${lang}/domain/${domain}`;
