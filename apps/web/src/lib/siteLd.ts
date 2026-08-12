@@ -6,9 +6,13 @@ import type { Lang } from '@gph/types';
 export const SITE_DESCRIPTION =
   '全球最大的跨领域、全语种、结构化人物知识图谱数据库平台。影视 / 商业 / 学术 / 体育 / 音乐 / 政治 / 艺术，统一画像，母语可读。';
 
-// 组织社交主页（sameAs）。按需填充真实平台地址；为空时自动省略该字段，避免输出无效数据。
-// 例：['https://github.com/your-org', 'https://x.com/your-org']
-export const SITE_SOCIALS: string[] = [];
+// 组织社交主页（sameAs）。仅填入仓库中可验证的真实地址，避免编造不存在的账号。
+// 当前为 GitHub 仓库与所有者主页（来自 git remote，确为真实页面）；
+// 若另有官方 X / Facebook / LinkedIn / 公众号等，直接追加到此数组即可自动纳入 Organization 实体。
+export const SITE_SOCIALS: string[] = [
+  'https://github.com/wotiler-star/global-persons-hub',
+  'https://github.com/wotiler-star'
+];
 
 /**
  * 构建某语种的 Organization + WebSite + WebApplication 结构化数据（三个独立 JSON-LD 节点）。

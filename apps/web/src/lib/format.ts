@@ -39,22 +39,24 @@ export function buildPersonItemList(items: Person[], lang: Lang, name: string, l
 }
 
 /**
- * 构建 schema.org CollectionPage 结构化数据（人物库列表页）。
+ * 构建 schema.org CollectionPage 结构化数据（人物集合列表页）。
  * 复用 buildPersonItemList 作为 mainEntity（ItemList of Person），
  * isPartOf 反向引用 [lang]/layout 注入的 WebSite @id，形成站点实体图谱闭环。
+ * @param pageUrl 该集合页的规范 URL（默认 /{lang}/persons；领域榜可用 /{lang}/domain/{domain}）
  */
 export function buildPersonCollectionPage(
   items: Person[],
   lang: Lang,
   name: string,
-  limit = 30
+  limit = 30,
+  pageUrl?: string
 ): Record<string, any> {
   const langHome = `${SITE_URL.replace(/\/$/, '')}/${lang}`;
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name,
-    url: `${langHome}/persons`,
+    url: pageUrl || `${langHome}/persons`,
     inLanguage: lang,
     isPartOf: { '@id': `${langHome}#website` },
     mainEntity: buildPersonItemList(items, lang, name, limit)

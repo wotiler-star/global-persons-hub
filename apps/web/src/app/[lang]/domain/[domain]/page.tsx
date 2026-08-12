@@ -5,7 +5,7 @@ import { getPersons } from '@/lib/api';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';
-import { buildPersonItemList } from '@/lib/format';
+import { buildPersonCollectionPage } from '@/lib/format';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import RankMedal from '@/components/RankMedal';
 import JsonLd from '@/components/JsonLd';
@@ -82,8 +82,14 @@ export default async function DomainPage({
   const initialSort =
     sp.sort === 'netWorth' || sp.sort === 'name' ? (sp.sort as 'netWorth' | 'name') : 'influence';
 
-  // —— SEO / GEO：ItemList 结构化数据（榜单可被搜索引擎/AI 理解） ——
-  const jsonLd = buildPersonItemList(ranked, L, `${label}领域知名人物榜单`, 20);
+  // —— SEO / GEO：CollectionPage 结构化数据（领域榜单被理解为"该领域人物集合"）——
+  const jsonLd = buildPersonCollectionPage(
+    ranked,
+    L,
+    `${label}领域知名人物榜单`,
+    20,
+    `/${L}/domain/${domain}`
+  );
 
   return (
     <div>
