@@ -5,6 +5,7 @@ import { LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { type Person } from '@gph/types';
 import ExploreExplorer from '@/components/ExploreExplorer';
+import { projectPersons } from '@/lib/personProjection';
 
 // —— SEO：探索页多语种 hreflang + canonical ——
 export async function generateMetadata({
@@ -56,7 +57,7 @@ export default async function ExplorePage({
       <p className="text-slate-500 mt-1 mb-6 text-sm">{t(L, 'persons.desc')}</p>
 
       <ExploreExplorer
-        items={items}
+        items={projectPersons(items, L)}
         lang={L}
         initialDomain={sp.domain || 'all'}
         initialEra={sp.era || 'all'}

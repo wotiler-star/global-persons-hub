@@ -4,7 +4,8 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
-import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
+import { type PersonLite } from '@/lib/personProjection';
+import { DOMAIN_LABELS, type Domain } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
 import { computeFacets } from '@/lib/facets';
 import FilterChips, { type ChipOption } from '@/components/FilterChips';
@@ -13,7 +14,7 @@ import ActiveFilters from '@/components/ActiveFilters';
 export type DomainFilter = Domain | 'all';
 
 interface Props {
-  items: Person[];
+  items: PersonLite[];
   lang: Lang;
 }
 
@@ -40,11 +41,11 @@ function parseYear(iso: string | undefined | null): number | null {
   return Number.isFinite(y) ? y : null;
 }
 
-function birthYear(p: Person): number | null {
+function birthYear(p: PersonLite): number | null {
   return parseYear(p.birth);
 }
 
-function deathYear(p: Person): number | null {
+function deathYear(p: PersonLite): number | null {
   return parseYear(p.death);
 }
 

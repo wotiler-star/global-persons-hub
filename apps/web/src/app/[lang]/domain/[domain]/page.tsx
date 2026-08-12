@@ -10,6 +10,7 @@ import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import RankMedal from '@/components/RankMedal';
 import JsonLd from '@/components/JsonLd';
 import DomainExplorer from '@/components/DomainExplorer';
+import { projectPersons } from '@/lib/personProjection';
 
 const VALID: Domain[] = Object.keys(DOMAIN_LABELS) as Domain[];
 
@@ -119,7 +120,7 @@ export default async function DomainPage({
         <p className="text-slate-500 mt-6">{t(L, 'domain.empty')}</p>
       ) : (
         <DomainExplorer
-          items={ranked}
+          items={projectPersons(ranked, L)}
           lang={L}
           initialEra={sp.era || 'all'}
           initialNationality={sp.nationality || 'all'}

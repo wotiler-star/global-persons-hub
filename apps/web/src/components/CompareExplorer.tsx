@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { pickText, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
-import type { Person, Relation, Domain } from '@gph/types';
+import { type PersonLite } from '@/lib/personProjection';
+import type { Domain } from '@gph/types';
 
 const MAX = 3;
 
@@ -33,9 +34,9 @@ function hash(str: string): number {
   return h;
 }
 
-function Avatar({ person, lang, size = 'w-14 h-14 text-xl' }: { person: Person; lang: Lang; size?: string }) {
+function Avatar({ person, lang, size = 'w-14 h-14 text-xl' }: { person: PersonLite; lang: Lang; size?: string }) {
   const name = pickText(person.names, lang);
-  const real = person.imageUrl || person.images?.[0];
+  const real = person.imageUrl;
   const [c1, c2] = PALETTES[hash(person.slug || name) % PALETTES.length];
   if (real) {
     // eslint-disable-next-line @next/next/no-img-element
@@ -102,16 +103,6 @@ function Bar({ pct, text, best }: { pct: number; text: string; best: boolean }) 
   );
 }
 
-function relName(r: Relation, lang: Lang): string {
-  const nm = (r as any).targetName as Partial<Record<Lang, string>> | undefined;
-  if (nm) {
-    const s = pickText(nm, lang);
-    if (s) return s;
-  }
-  const slug = (r as any).targetSlug as string | undefined;
-  return slug || r.targetId;
-}
-
 /**
  * 人物对比工具（Stage 31 升级版）：
  * - 表头人物卡带确定性渐变头像 + 可点姓名跳详情；
@@ -127,14 +118,15 @@ export default function CompareExplorer({
   initialIds
 }: {
   lang: Lang;
-  allPersons: Person[];
+  allPersons: PersonLite[];
   initialIds: string[];
 }) {
   const router = useRouter();
   const bySlug = useMemo(() => new Map(allPersons.map((p) => [p.slug, p])), [allPersons]);
+  const byId = useMemo(() => new Map(allPersons.map((p) => [p.id, p])), [allPersons]);
 
-  const [selected, setSelected] = useState<Person[]>(() =>
-    initialIds.map((id) => bySlug.get(id)).filter((p): p is Person => Boolean(p))
+  const [selected, setSelected] = useState<PersonLite[]>(() =>
+    initialIds.map((id) => bySlug.get(id)).filter((p): p is PersonLite => Boolean(p))
   );
   const [q, setQ] = useState('');
   const [copied, setCopied] = useState(false);
@@ -159,7 +151,7 @@ export default function CompareExplorer({
       .slice(0, 8);
   }, [q, selected, allPersons, lang]);
 
-  const add = (p: Person) =>
+  const add = (p: PersonLite) =>
     setSelected((prev) => {
       if (prev.length >= MAX || prev.some((x) => x.slug === p.slug)) return prev;
       return [...prev, p];
@@ -184,7 +176,7 @@ export default function CompareExplorer({
   const presets = useMemo(() => {
     const doms: Domain[] = ['academic', 'tech', 'business', 'art', 'politics', 'music', 'sports', 'film'];
     const used = new Set<string>();
-    const out: [Person, Person][] = [];
+    const out: [PersonLite, PersonLite][] = [];
     for (const d of doms) {
       const top = allPersons
         .filter((p) => p.domains.includes(d) && !used.has(p.slug))
@@ -210,27 +202,24 @@ export default function CompareExplorer({
     return [...inter];
   }, [selected]);
 
-  // 共同关联人物（关系 targetId 的交集）
+  // 共同关联人物（关系 targetId 的交集 → 通过 id→人物 表解析展示名）
   const sharedRelationNames = useMemo(() => {
     if (selected.length < 2) return [] as string[];
-    const first = new Set(selected[0].relations.map((r) => r.targetId));
+    const first = new Set(selected[0].relIds || []);
     const rest = selected.slice(1);
     const inter = new Set<string>(
-      [...first].filter((id) =>
-        rest.every((p) => (p.relations || []).some((r) => r.targetId === id))
-      )
+      [...first].filter((id) => rest.every((p) => (p.relIds || []).includes(id)))
     );
     const ids = [...inter];
     if (!ids.length) return [];
     const names: string[] = [];
-    for (const r of selected[0].relations || []) {
-      if (ids.includes(r.targetId)) {
-        const n = relName(r, lang);
-        if (n && !names.includes(n)) names.push(n);
-      }
+    for (const id of ids) {
+      const t = byId.get(id);
+      const n = t ? pickText(t.names, lang) : id;
+      if (n && !names.includes(n)) names.push(n);
     }
     return names;
-  }, [selected, lang]);
+  }, [selected, byId, lang]);
 
   // —— 数值行数据（影响力 / 净资产 最大值，用于条形归一化） ——
   const maxInfluence = Math.max(...selected.map((p) => p.metrics?.influence ?? 0), 0);
@@ -431,8 +420,7 @@ export default function CompareExplorer({
             <Row
               label={t(lang, 'compare.achievements')}
               values={selected.map((p) => {
-                const map = (p as any).achievements as Partial<Record<Lang, string[]>> | undefined;
-                const list = (map?.[lang] || map?.en || map?.zh || []).slice(0, 3);
+                const list = (p.achievements || []).slice(0, 3);
                 if (!list.length) return '-';
                 return (
                   <ul key={p.slug} className="space-y-1">

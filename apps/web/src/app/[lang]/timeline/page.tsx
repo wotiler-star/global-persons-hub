@@ -5,6 +5,7 @@ import { LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { type Person } from '@gph/types';
 import TimelineExplorer from '@/components/TimelineExplorer';
+import { projectPersons } from '@/lib/personProjection';
 
 // —— Stage 34 SSG/ISR：13 语时间轴构建期预渲染，5 分钟增量再生 ——
 export const revalidate = 300;
@@ -54,7 +55,7 @@ export default async function TimelinePage({
       <h1 className="text-2xl font-bold">{t(L, 'timeline.title')}</h1>
       <p className="text-slate-500 mt-1 mb-6 text-sm">{t(L, 'timeline.desc')}</p>
 
-      <TimelineExplorer items={items} lang={L} />
+      <TimelineExplorer items={projectPersons(items, L)} lang={L} />
     </div>
   );
 }

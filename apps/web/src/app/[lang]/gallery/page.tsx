@@ -5,6 +5,7 @@ import { LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { type Person } from '@gph/types';
 import GalleryExplorer from '@/components/GalleryExplorer';
+import { projectPersons } from '@/lib/personProjection';
 
 // —— SEO：画廊页多语种 hreflang + canonical ——
 export async function generateMetadata({
@@ -56,7 +57,7 @@ export default async function GalleryPage({
       <p className="text-slate-500 mt-1 mb-6 text-sm">{t(L, 'gallery.subtitle')}</p>
 
       <GalleryExplorer
-        items={items}
+        items={projectPersons(items, L)}
         lang={L}
         initialDomain={sp.domain || 'all'}
         initialEra={sp.era || 'all'}

@@ -3,6 +3,7 @@ import { getPersons } from '@/lib/api';
 import { LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { type Person } from '@gph/types';
+import { projectPersons } from '@/lib/personProjection';
 import CompareExplorer from '@/components/CompareExplorer';
 
 // —— SEO：对比页多语种 hreflang + canonical ——
@@ -45,5 +46,6 @@ export default async function ComparePage({
     /* API 不可达时静默降级 */
   }
 
-  return <CompareExplorer lang={L} allPersons={items} initialIds={ids} />;
+  const projected = projectPersons(items, L, { withAchievements: 3, withRelationIds: true });
+  return <CompareExplorer lang={L} allPersons={projected} initialIds={ids} />;
 }

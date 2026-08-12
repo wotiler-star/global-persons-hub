@@ -3,16 +3,8 @@
 import { t } from '@/lib/ui';
 import { useHistory } from '@/lib/libraryStore';
 import type { Lang } from '@gph/types';
+import { type PersonLite } from '@/lib/personProjection';
 import PersonCard from './PersonCard';
-
-type Person = {
-  id: string;
-  slug: string;
-  domains?: string[];
-  nationalities?: string[];
-  relations?: { targetId: string }[];
-  metrics?: { influence?: number };
-};
 
 type Cat = 'domain' | 'relation' | 'nat';
 
@@ -21,7 +13,7 @@ type Cat = 'domain' | 'relation' | 'nat';
  * 以最近看过的人物为种子，按 同领域/关系相连/同国籍/影响力相近 计算相似度，
  * 推荐你可能感兴趣的人物。纯前端、无额外请求、隐私安全。
  */
-function scoreAgainstSeeds(cand: Person, seeds: Person[]): { score: number; cat: Cat | null } {
+function scoreAgainstSeeds(cand: PersonLite, seeds: PersonLite[]): { score: number; cat: Cat | null } {
   let score = 0;
   let dom = 0;
   let rel = 0;
@@ -32,8 +24,8 @@ function scoreAgainstSeeds(cand: Person, seeds: Person[]): { score: number; cat:
   for (const s of seeds) {
     for (const d of s.domains || []) if (cDom.has(d)) dom += 3;
     for (const n of s.nationalities || []) if (cNat.has(n)) nat += 2;
-    const sRel = new Set((s.relations || []).map((r) => r.targetId));
-    for (const r of cand.relations || []) if (sRel.has(r.targetId)) rel += 4;
+    const sRel = new Set(s.relIds || []);
+    for (const r of cand.relIds || []) if (sRel.has(r)) rel += 4;
     const ci = cand.metrics?.influence || 0;
     const si = s.metrics?.influence || 0;
     if (ci > 0 && si > 0) score += Math.max(0, 3 - Math.abs(ci - si) / 25);
@@ -43,7 +35,7 @@ function scoreAgainstSeeds(cand: Person, seeds: Person[]): { score: number; cat:
   return { score, cat };
 }
 
-export default function ForYou({ items, lang }: { items: Person[]; lang: Lang }) {
+export default function ForYou({ items, lang }: { items: PersonLite[]; lang: Lang }) {
   const hist = useHistory();
   if (hist.length === 0) return null;
 
@@ -66,7 +58,7 @@ export default function ForYou({ items, lang }: { items: Person[]; lang: Lang })
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         {ranked.map(({ p, cat }) => (
           <div key={p.slug} className="relative">
-            <PersonCard person={p as any} lang={lang} />
+            <PersonCard person={p} lang={lang} />
             {cat && (
               <span className="pointer-events-none absolute top-2 right-2 text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">
                 {cat === 'nat'

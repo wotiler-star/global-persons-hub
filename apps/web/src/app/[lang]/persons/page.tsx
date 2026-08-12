@@ -6,6 +6,7 @@ import { t } from '@/lib/ui';
 import { buildPersonItemList } from '@/lib/format';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import PersonsExplorer, { type DomainFilter, type SortMode } from '@/components/PersonsExplorer';
+import { projectPersons } from '@/lib/personProjection';
 import JsonLd from '@/components/JsonLd';
 
 // —— SEO：人物库多语种 hreflang + canonical ——
@@ -70,7 +71,7 @@ export default async function PersonsPage({
       <p className="text-slate-500 mt-1 mb-6 text-sm">{t(L, 'persons.desc')}</p>
 
       <PersonsExplorer
-        items={items}
+        items={projectPersons(items, L)}
         lang={L}
         initialDomain={initialDomain}
         initialSort={initialSort}

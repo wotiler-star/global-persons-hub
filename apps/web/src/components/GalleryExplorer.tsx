@@ -4,7 +4,8 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
-import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
+import { type PersonLite } from '@/lib/personProjection';
+import { DOMAIN_LABELS, type Domain } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
 import { computeFacets, eraKeyOf } from '@/lib/facets';
 import PersonPortrait from '@/components/PersonPortrait';
@@ -19,7 +20,7 @@ type DomainFilter = Domain | 'all';
 type SortMode = 'influence' | 'name';
 
 interface Props {
-  items: Person[];
+  items: PersonLite[];
   lang: Lang;
   initialDomain?: string;
   initialEra?: string;
@@ -37,7 +38,7 @@ export default function GalleryExplorer({
   const [era, setEra] = useState<string>(initialEra);
   const [sort, setSort] = useState<SortMode>(initialSort === 'name' ? 'name' : 'influence');
   const [density, setDensity] = useState<'cozy' | 'compact'>('cozy');
-  const [active, setActive] = useState<Person | null>(null);
+  const [active, setActive] = useState<PersonLite | null>(null);
 
   // —— 深链接（统一 useQuerySync）——
   useQuerySync(

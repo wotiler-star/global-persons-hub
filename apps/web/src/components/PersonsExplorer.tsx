@@ -15,13 +15,14 @@ import ShareLinkButton from '@/components/ShareLinkButton';
 import { useQuerySync } from '@/lib/useQuerySync';
 import { downloadText, toCsv } from '@/lib/download';
 import { computeFacets } from '@/lib/facets';
-import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
+import { type PersonLite } from '@/lib/personProjection';
+import { DOMAIN_LABELS, type Domain } from '@gph/types';
 
 export type SortMode = 'influence' | 'netWorth' | 'name';
 export type DomainFilter = Domain | 'all';
 
 interface Props {
-  items: Person[];
+  items: PersonLite[];
   lang: Lang;
   initialDomain?: DomainFilter;
   initialSort?: SortMode;

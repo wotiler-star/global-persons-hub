@@ -3,7 +3,8 @@
 import { useMemo, useState } from 'react';
 import { pickText, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
-import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
+import { type PersonLite } from '@/lib/personProjection';
+import { DOMAIN_LABELS, type Domain } from '@gph/types';
 import { ERAS } from '@/lib/searchIndex';
 import { computeFacets, eraKeyOf } from '@/lib/facets';
 import PersonCard from '@/components/PersonCard';
@@ -17,7 +18,7 @@ type DomainFilter = Domain | 'all';
 type SortMode = 'influence' | 'netWorth' | 'name';
 
 interface Props {
-  items: Person[];
+  items: PersonLite[];
   lang: Lang;
   initialDomain?: string;
   initialEra?: string;

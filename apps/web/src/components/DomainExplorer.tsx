@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { pickText, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
-import { type Person } from '@gph/types';
+import { type PersonLite } from '@/lib/personProjection';
 import { ERAS } from '@/lib/searchIndex';
 import { computeFacets, eraKeyOf } from '@/lib/facets';
 import PersonCard from '@/components/PersonCard';
@@ -19,7 +19,7 @@ type SortMode = 'influence' | 'netWorth' | 'name';
 
 interface Props {
   /** 已按当前领域筛选好的人物（来自服务端 getPersons({ domain })） */
-  items: Person[];
+  items: PersonLite[];
   lang: Lang;
   initialEra?: string;
   initialNationality?: string;

@@ -1,16 +1,20 @@
 import Link from 'next/link';
 import { pickText, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
-import type { Person } from '@gph/types';
 import { highlightSegments } from '@/lib/searchIndex';
 import FavoriteButton from '@/components/FavoriteButton';
+import type { CardPerson } from '@/lib/personProjection';
 
+/**
+ * props 采用最小展示类型 `CardPerson`（完整 Person 与轻量 PersonLite 都满足），
+ * 既让列表页只把轻量投影带进客户端 payload，又兼容详情/库/搜索页传入完整 Person。
+ */
 export default function PersonCard({
   person,
   lang,
   highlight
 }: {
-  person: Person;
+  person: CardPerson;
   lang: Lang;
   highlight?: string;
 }) {

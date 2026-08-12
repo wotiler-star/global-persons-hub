@@ -1,15 +1,25 @@
-import { type Domain, type Person } from '@gph/types';
+import { type Domain } from '@gph/types';
 import { ERAS } from './searchIndex';
 
+/**
+ * 分面统计所需的最小结构。
+ * 同时兼容完整 `Person` 与列表页的 `PersonLite` 投影（见 lib/personProjection.ts）。
+ */
+export interface FacetSource {
+  birth?: string;
+  domains: Domain[];
+  nationalities?: string[];
+}
+
 /** 解析出生年（与 searchIndex.birthYear 一致） */
-export function birthYearOf(p: Person): number | null {
+export function birthYearOf(p: FacetSource): number | null {
   if (!p.birth) return null;
   const m = String(p.birth).match(/^(-?\d+)/);
   return m ? parseInt(m[1], 10) : null;
 }
 
 /** 按出生年归类时代 key（未匹配返回 ''） */
-export function eraKeyOf(p: Person): string {
+export function eraKeyOf(p: FacetSource): string {
   const y = birthYearOf(p);
   if (y == null) return '';
   const e = ERAS.find((x) => y >= x.from && y <= x.to);
@@ -30,7 +40,7 @@ const isActive = (v?: string) => !!v && v !== 'all';
  * - 返回的 Map 用于 FilterChips 的 count，使各子板块的分面体验与搜索页一致。
  */
 export function computeFacets(
-  base: Person[],
+  base: FacetSource[],
   f: { domain?: string; era?: string; nationality?: string }
 ): FacetCounts {
   const domain = new Map<Domain, number>();

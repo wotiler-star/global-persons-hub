@@ -2,7 +2,15 @@
 
 import { useState, useId } from 'react';
 import { pickText, type Lang } from '@/lib/i18n';
-import { type Person } from '@gph/types';
+import type { LocalizedText } from '@gph/types';
+
+/** 画像组件只需这几个字段：完整 Person 与轻量 PersonLite 都满足（结构化可赋值） */
+interface PortraitPerson {
+  slug: string;
+  names: LocalizedText;
+  imageUrl?: string;
+  images?: string[];
+}
 
 // 12 组现代渐变（indigo / sky / rose / emerald / amber / pink ...），按 slug 哈希确定
 const PALETTES: [string, string][] = [
@@ -42,7 +50,7 @@ export default function PersonPortrait({
   lang,
   className = ''
 }: {
-  person: Person;
+  person: PortraitPerson;
   lang: Lang;
   className?: string;
 }) {
