@@ -6,8 +6,18 @@
 import { useEffect, useMemo, useRef, useState, useId } from 'react';
 import { useRouter } from 'next/navigation';
 import { t } from '@/lib/ui';
+import { pickText } from '@/lib/i18n';
+import type { Lang } from '@gph/types';
 
-type Node = { id: string; slug: string; name: string; trustLevel: string; kind?: 'person' | 'org' | 'kin'; orgType?: string };
+type Node = {
+  id: string; slug: string; name: string; trustLevel: string;
+  kind?: 'person' | 'org' | 'kin'; orgType?: string;
+  /** Stage 10+：亲属虚拟节点携带的详细资料，选中卡展示「详细情况介绍」 */
+  kinName?: Partial<Record<Lang, string>>;
+  kinRelation?: string; kinGeneration?: number;
+  kinBirth?: string; kinDeath?: string;
+  kinBio?: Partial<Record<Lang, string>>; kinWiki?: string;
+};
 type Edge = {
   source: string; target: string; type: string;
   label?: string; directed: boolean;
@@ -631,36 +641,65 @@ export default function NetworkGraph({
 
       {/* 选中节点操作卡 */}
       {selNode && (
-        <div className="absolute top-2 left-2 rounded-xl border bg-white/95 shadow-lg px-3 py-2.5 max-w-[240px]">
-          <div className="text-sm font-semibold text-slate-800 truncate">{selNode.name}</div>
+        <div className="absolute top-2 left-2 rounded-xl border bg-white/95 shadow-lg px-3 py-2.5 max-w-[280px]">
+          <div className="text-sm font-semibold text-slate-800 truncate">
+            {pickText(selNode.kinName, lang as Lang) || selNode.name}
+          </div>
           <div className="text-[11px] text-slate-400 mb-2">
             {selNode.kind === 'org' || selNode.trustLevel === 'org'
               ? t(lang, 'graph.nodeOrg')
               : selNode.kind === 'kin' || selNode.trustLevel === 'kin'
-              ? t(lang, 'graph.kinNode')
+              ? (selNode.kinRelation ? t(lang, `kin.${selNode.kinRelation}`) : t(lang, 'graph.kinNode'))
               : t(lang, `trust.${selNode.trustLevel}`)}
           </div>
-          <div className="flex gap-2">
-            {selNode.slug && selNode.id !== centerId && onRecenter && (
-              <button
-                onClick={() => {
-                  onRecenter(selNode.slug);
-                  setSelected(null);
-                }}
-                className="text-xs px-2.5 py-1 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700"
-              >
-                {t(lang, 'graph.recenter')}
-              </button>
-            )}
-            {selNode.slug && (
-              <button
-                onClick={() => router.push(`/${lang}/person/${selNode.slug}`)}
-                className="text-xs px-2.5 py-1 rounded-lg border text-slate-600 hover:bg-slate-50"
-              >
-                {t(lang, 'graph.viewDetail')}
-              </button>
-            )}
-          </div>
+          {selNode.kind === 'kin' || selNode.trustLevel === 'kin' ? (
+            <div className="space-y-1.5">
+              {(() => {
+                const life = [selNode.kinBirth, selNode.kinDeath].filter((x) => x && x !== '?').join(' ~ ');
+                const bio = pickText(selNode.kinBio, lang as Lang);
+                return (
+                  <>
+                    {life && <div className="text-[11px] text-slate-400">{life}</div>}
+                    {bio && (
+                      <p className="text-xs leading-relaxed text-slate-600 line-clamp-5">{bio}</p>
+                    )}
+                    {selNode.kinWiki && (
+                      <a
+                        href={selNode.kinWiki}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-block text-[11px] text-indigo-600 hover:underline"
+                      >
+                        Wikipedia ↗
+                      </a>
+                    )}
+                  </>
+                );
+              })()}
+            </div>
+          ) : (
+            <div className="flex gap-2">
+              {selNode.slug && selNode.id !== centerId && onRecenter && (
+                <button
+                  onClick={() => {
+                    onRecenter(selNode.slug);
+                    setSelected(null);
+                  }}
+                  className="text-xs px-2.5 py-1 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700"
+                >
+                  {t(lang, 'graph.recenter')}
+                </button>
+              )}
+              {selNode.slug && (
+                <button
+                  onClick={() => router.push(`/${lang}/person/${selNode.slug}`)}
+                  className="text-xs px-2.5 py-1 rounded-lg border text-slate-600 hover:bg-slate-50"
+                >
+                  {t(lang, 'graph.viewDetail')}
+                </button>
+              )}
+            </div>
+          )}
         </div>
       )}
 

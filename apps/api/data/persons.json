@@ -9086,7 +9086,105 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "文森佐·伽利雷",
+          "en": "Vincenzo Galilei"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1520",
+        "death": "1591",
+        "bio": {
+          "zh": "意大利鲁特琴演奏家、作曲家和音乐理论家，佛罗伦萨卡梅拉塔成员，对早期歌剧发展有重要影响。他是伽利略·伽利雷的父亲。",
+          "en": "Italian lutenist, composer and music theorist, a member of the Florentine Camerata who influenced the early development of opera. He was the father of Galileo Galilei."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Vincenzo_Galilei"
+      },
+      {
+        "name": {
+          "zh": "朱莉亚·阿曼纳蒂",
+          "en": "Giulia Ammannati"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "伽利略·伽利雷的母亲，出身于卢卡的商人家庭，1562年与文森佐·伽利雷结婚。",
+          "en": "The mother of Galileo Galilei, from a merchant family of Lucca, who married Vincenzo Galilei in 1562."
+        }
+      },
+      {
+        "name": {
+          "zh": "玛丽娜·甘巴",
+          "en": "Marina Gamba"
+        },
+        "relation": "partner",
+        "generation": 0,
+        "bio": {
+          "zh": "威尼斯的女子，与伽利略·伽利雷未婚同居，为其生下三名非婚生子女：维吉尼亚、利维亚和文森佐。",
+          "en": "A Venetian woman who was Galileo Galilei's unmarried partner and bore him three illegitimate children: Virginia, Livia and Vincenzo."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Marina_Gamba"
+      },
+      {
+        "name": {
+          "zh": "玛丽亚·塞莱斯特（维吉尼亚·伽利雷）",
+          "en": "Maria Celeste (Virginia Galilei)"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1600-08-16",
+        "death": "1634-04-02",
+        "bio": {
+          "zh": "伽利略的长女，出生后取名维吉尼亚，后进入修道院取名玛丽亚·塞莱斯特，成为天主教修女。她与父亲保持大量通信，是其精神支柱。",
+          "en": "Galileo's eldest daughter, born Virginia, who took the name Maria Celeste on entering a convent as a Roman Catholic nun. She maintained an extensive correspondence with her father and was a source of support to him."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Maria_Celeste"
+      },
+      {
+        "name": {
+          "zh": "利维亚·伽利雷（阿尔坎杰拉修女）",
+          "en": "Livia Galilei (Sister Arcangela)"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1601",
+        "bio": {
+          "zh": "伽利略的次女，与姐姐一同进入圣马泰奥修道院，取修女名阿尔坎杰拉，成年后多病。",
+          "en": "Galileo's second daughter, who like her sister entered the convent of San Matteo under the religious name Arcangela and was frequently ill in adulthood."
+        }
+      },
+      {
+        "name": {
+          "zh": "文森佐·甘巴",
+          "en": "Vincenzo Gamba"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1606",
+        "bio": {
+          "zh": "伽利略与玛丽娜·甘巴所生的儿子，后来被合法化成为父亲的法定继承人，并与塞斯蒂莉亚·博基内里结婚。",
+          "en": "The son of Galileo and Marina Gamba, later legitimised as Galileo's legal heir, who married Sestilia Bocchineri."
+        }
+      },
+      {
+        "name": {
+          "zh": "米开朗基罗·伽利雷",
+          "en": "Michelangelo Galilei"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1575",
+        "death": "1631",
+        "bio": {
+          "zh": "伽利略的弟弟，鲁特琴演奏家与作曲家，一生经济拮据，常需兄长接济。",
+          "en": "Galileo's younger brother, a lutenist and composer who struggled financially throughout his life and often relied on his brother's support."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Michelangelo_Galilei"
+      }
+    ]
   },
   {
     "id": "p-nikola-tesla",
@@ -9268,7 +9366,90 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "米卢廷·特斯拉",
+          "en": "Milutin Tesla"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1819",
+        "death": "1879",
+        "bio": {
+          "zh": "塞尔维亚东正教神父、作家，尼古拉·特斯拉的父亲，曾在斯米连村担任教区牧师。",
+          "en": "A Serbian Orthodox priest and writer, the father of Nikola Tesla, who served as parish priest in the village of Smiljan."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Milutin_Tesla"
+      },
+      {
+        "name": {
+          "zh": "乔治娜·“杜卡”·曼迪奇",
+          "en": "Georgina \"Đuka\" Mandić"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1822",
+        "death": "1892",
+        "bio": {
+          "zh": "尼古拉·特斯拉的母亲，出身于利卡地区的东正教神父家庭，虽未受过正规教育，却擅长手工制作并记忆力惊人。特斯拉称自己的创造力来自母亲。",
+          "en": "The mother of Nikola Tesla, from a Lika family of Orthodox priests; though unschooled, she was skilled at toolmaking and had a remarkable memory. Tesla credited his inventiveness to her."
+        }
+      },
+      {
+        "name": {
+          "zh": "丹恩·特斯拉",
+          "en": "Dane Tesla"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1848",
+        "death": "1861",
+        "bio": {
+          "zh": "尼古拉·特斯拉的哥哥，被视为极具天赋，却在约15岁时因骑马事故身亡，当时尼古拉年仅5岁。",
+          "en": "Nikola Tesla's elder brother, regarded as highly gifted, who died at about age 15 in a horse-riding accident when Nikola was five."
+        }
+      },
+      {
+        "name": {
+          "zh": "米尔卡·特斯拉",
+          "en": "Milka Tesla"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "bio": {
+          "zh": "尼古拉·特斯拉的姐姐，后嫁予武卡辛·格鲁米契奇。",
+          "en": "Nikola Tesla's elder sister, who married Vukasin Glumicic."
+        }
+      },
+      {
+        "name": {
+          "zh": "安吉丽娜·特斯拉",
+          "en": "Angelina Tesla"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "bio": {
+          "zh": "尼古拉·特斯拉的姐姐，后嫁予约沃·特博耶维奇，育有五名子女。",
+          "en": "Nikola Tesla's sister, who married Jovo Trbojevic and had five children."
+        }
+      },
+      {
+        "name": {
+          "zh": "马里卡·特斯拉",
+          "en": "Marica Tesla"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "1858",
+        "death": "1938",
+        "bio": {
+          "zh": "尼古拉·特斯拉的妹妹，常被认为是他最喜爱的亲属之一，嫁予尼古拉·科萨诺维奇。",
+          "en": "Nikola Tesla's younger sister, often remembered as one of his favourite relatives, who married Nikola Kosanovic."
+        }
+      }
+    ]
   },
   {
     "id": "p-ada-lovelace",
@@ -9460,7 +9641,99 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-27T16:19:29.319Z"
+    "updatedAt": "2026-07-27T16:19:29.319Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "乔治·戈登·拜伦（第六代拜伦男爵）",
+          "en": "George Gordon Byron, 6th Baron Byron"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1788-01-22",
+        "death": "1824-04-19",
+        "bio": {
+          "zh": "英国浪漫主义诗人，阿达·洛芙莱斯的生父，在阿达仅8岁时去世。",
+          "en": "English Romantic poet and the biological father of Ada Lovelace, who died when Ada was eight years old."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lord_Byron"
+      },
+      {
+        "name": {
+          "zh": "安妮·伊莎贝拉·米尔班克（拜伦夫人）",
+          "en": "Anne Isabella Milbanke (Lady Byron)"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1792-05-17",
+        "death": "1860-05-16",
+        "bio": {
+          "zh": "英国数学家与教育改革者，阿达的母亲，婚后不久即与拜伦分居，并独自抚养阿达。",
+          "en": "English mathematician and educational reformer, Ada's mother, who separated from Byron shortly after the marriage and raised Ada herself."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lady_Byron"
+      },
+      {
+        "name": {
+          "zh": "威廉·金-诺埃尔（第一代洛夫莱斯伯爵）",
+          "en": "William King-Noel, 1st Earl of Lovelace"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1805-02-21",
+        "death": "1893-12-29",
+        "bio": {
+          "zh": "英国贵族与科学家，1835年与阿达·拜伦结婚，1838年受封洛夫莱斯伯爵。他是阿达三个孩子的父亲。",
+          "en": "English nobleman and scientist who married Ada Byron in 1835 and was created Earl of Lovelace in 1838. He was the father of Ada's three children."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/William_King-Noel,_1st_Earl_of_Lovelace"
+      },
+      {
+        "name": {
+          "zh": "拜伦·金-诺埃尔（奥克姆子爵）",
+          "en": "Byron King-Noel, Viscount Ockham"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1836-05-12",
+        "death": "1862-09-01",
+        "bio": {
+          "zh": "阿达与洛夫莱斯伯爵的长子，1860年继承外祖母成为第十二代温特沃斯男爵，1862年未婚无子而终。",
+          "en": "Ada and Lord Lovelace's eldest son, who succeeded his grandmother as 12th Baron Wentworth in 1860 and died unmarried and childless in 1862."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Byron_King-Noel,_Viscount_Ockham"
+      },
+      {
+        "name": {
+          "zh": "安妮·伊莎贝拉·布朗特（第十五代温特沃斯女男爵）",
+          "en": "Anne Isabella Blunt, 15th Baroness Wentworth"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1837",
+        "death": "1917",
+        "bio": {
+          "zh": "阿达与洛夫莱斯伯爵的长女，诗人兼阿拉伯马育种家，嫁予诗人威尔弗rid·斯科恩·布朗特。",
+          "en": "Ada and Lord Lovelace's elder daughter, a poet and Arabian horse breeder who married the poet Wilfrid Scawen Blunt."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Anne_Blunt,_15th_Baroness_Wentworth"
+      },
+      {
+        "name": {
+          "zh": "拉尔夫·金-米尔班克（第二代洛夫莱斯伯爵）",
+          "en": "Ralph King-Milbanke, 2nd Earl of Lovelace"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1839-07-02",
+        "death": "1906-08-28",
+        "bio": {
+          "zh": "阿达与洛夫莱斯伯爵的幼子，1862年继承兄长的温特沃斯男爵头衔，1893年继承父亲的洛夫莱斯伯爵爵位。",
+          "en": "Ada and Lord Lovelace's youngest son, who inherited the Barony of Wentworth from his brother in 1862 and the Earldom of Lovelace from his father in 1893."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Ralph_King-Milbanke,_2nd_Earl_of_Lovelace"
+      }
+    ]
   },
   {
     "id": "p-alexander-fleming",
@@ -9647,7 +9920,74 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "休·弗莱明",
+          "en": "Hugh Fleming"
+        },
+        "relation": "father",
+        "generation": -1,
+        "death": "1888",
+        "bio": {
+          "zh": "苏格兰农场主，亚历山大·弗莱明的父亲，在弗莱明7岁时去世；他与前妻所生的四名子女年长许多。",
+          "en": "A Scottish farmer and the father of Alexander Fleming, who died when Alexander was seven; he had four older surviving children from a previous marriage."
+        }
+      },
+      {
+        "name": {
+          "zh": "格蕾丝·斯特林·莫顿",
+          "en": "Grace Stirling Morton"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "邻近农场主之女，亚历山大·弗莱明的母亲，育有四名子女。",
+          "en": "Daughter of a neighbouring farmer and the mother of Alexander Fleming, with whom she had four children."
+        }
+      },
+      {
+        "name": {
+          "zh": "萨拉·马里恩·麦克罗伊",
+          "en": "Sarah Marion McElroy"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "death": "1949",
+        "bio": {
+          "zh": "爱尔兰裔护士，1915年与亚历山大·弗莱明结婚，是其第一任妻子，1949年逝世。",
+          "en": "An Irish-trained nurse who married Alexander Fleming in 1915; she was his first wife and died in 1949."
+        }
+      },
+      {
+        "name": {
+          "zh": "阿玛莉亚·库楚里-武雷卡斯",
+          "en": "Amalia Koutsouri-Vourekas"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "death": "1986",
+        "bio": {
+          "zh": "希腊同事，圣玛丽医院的微生物学家，1953年与丧偶的弗莱明结婚，是其第二任妻子。",
+          "en": "A Greek colleague and microbiologist at St Mary's Hospital who married the widowed Fleming in 1953, becoming his second wife."
+        }
+      },
+      {
+        "name": {
+          "zh": "罗伯特·弗莱明",
+          "en": "Robert Fleming"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1924",
+        "death": "2015",
+        "bio": {
+          "zh": "亚历山大·弗莱明与首任妻子萨拉的唯一子女，后来成为全科医生。",
+          "en": "The only child of Alexander Fleming and his first wife Sarah, who became a general medical practitioner."
+        }
+      }
+    ]
   },
   {
     "id": "p-katherine-johnson",
@@ -9828,7 +10168,59 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "约书亚·麦金莱·科尔曼",
+          "en": "Joshua McKinley Coleman"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "凯瑟琳·约翰逊的父亲，曾从事伐木、农耕与杂工，并在绿蔷薇酒店工作。",
+          "en": "The father of Katherine Johnson, who worked as a lumberman, farmer and handyman and at the Greenbrier Hotel."
+        }
+      },
+      {
+        "name": {
+          "zh": "乔耶莱特·罗伯塔·科尔曼（娘家姓洛）",
+          "en": "Joylette Roberta (Lowe) Coleman"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "凯瑟琳·约翰逊的母亲，一名教师，凯瑟琳是家中四个孩子中最小的一个。",
+          "en": "The mother of Katherine Johnson, a schoolteacher, and Katherine was the youngest of four children."
+        }
+      },
+      {
+        "name": {
+          "zh": "詹姆斯·弗朗西斯·戈布尔",
+          "en": "James Francis Goble"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "death": "1956",
+        "bio": {
+          "zh": "凯瑟琳·约翰逊的第一任丈夫，1939年与她结婚，1956年因脑瘤逝世；二人育有三名女儿。",
+          "en": "Katherine Johnson's first husband, whom she married in 1939 and who died of a brain tumour in 1956; they had three daughters."
+        }
+      },
+      {
+        "name": {
+          "zh": "詹姆斯·“吉姆”·约翰逊",
+          "en": "James A. \"Jim\" Johnson"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "death": "2019",
+        "bio": {
+          "zh": "凯瑟琳·约翰逊的第二任丈夫，曾任美国陆军军官、韩战老兵，1959年与凯瑟琳结婚，相伴约60年直至2019年逝世。",
+          "en": "Katherine Johnson's second husband, a former US Army officer and Korean War veteran, whom she married in 1959; they remained together for about 60 years until his death in 2019."
+        }
+      }
+    ]
   },
   {
     "id": "p-sundar-pichai",
@@ -10011,7 +10403,70 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-27T16:19:29.319Z"
+    "updatedAt": "2026-07-27T16:19:29.319Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "雷古纳塔·皮柴",
+          "en": "Regunatha Pichai"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "桑达尔·皮查伊的父亲，电气工程师，曾在英国通用电气公司（GEC）工作，并经营一家电气元件制造公司。",
+          "en": "The father of Sundar Pichai, an electrical engineer who worked for the British GEC and ran a company manufacturing electrical components."
+        }
+      },
+      {
+        "name": {
+          "zh": "拉克希米·皮柴",
+          "en": "Lakshmi Pichai"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "桑达尔·皮查伊的母亲，曾担任速记员。",
+          "en": "The mother of Sundar Pichai, who worked as a stenographer."
+        }
+      },
+      {
+        "name": {
+          "zh": "安贾莉·皮柴",
+          "en": "Anjali Pichai"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1971-01-11",
+        "bio": {
+          "zh": "桑达尔·皮查伊的妻子，化学工程师，二人于印度理工学院 Kharagpur 求学期间相识，育有一子一女。",
+          "en": "The wife of Sundar Pichai, a chemical engineer whom he met while both were students at IIT Kharagpur; they have a son and a daughter."
+        }
+      },
+      {
+        "name": {
+          "zh": "卡维亚·皮柴",
+          "en": "Kavya Pichai"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "bio": {
+          "zh": "桑达尔·皮查伊与安贾莉的女儿。",
+          "en": "The daughter of Sundar and Anjali Pichai."
+        }
+      },
+      {
+        "name": {
+          "zh": "基兰·皮柴",
+          "en": "Kiran Pichai"
+        },
+        "relation": "son",
+        "generation": 1,
+        "bio": {
+          "zh": "桑达尔·皮查伊与安贾莉的儿子。",
+          "en": "The son of Sundar and Anjali Pichai."
+        }
+      }
+    ]
   },
   {
     "id": "p-mahatma-gandhi",
@@ -10212,7 +10667,113 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-27T16:19:29.319Z"
+    "updatedAt": "2026-07-27T16:19:29.319Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "卡拉姆昌德·乌塔姆昌德·甘地",
+          "en": "Karamchand Uttamchand Gandhi"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1822",
+        "death": "1885",
+        "bio": {
+          "zh": "波尔班达尔土邦的迪万（首席部长），莫罕达斯·甘地的父亲。",
+          "en": "The diwan (chief minister) of the Porbandar state and the father of Mohandas Gandhi."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Karamchand_Gandhi"
+      },
+      {
+        "name": {
+          "zh": "普蒂尔巴伊",
+          "en": "Putlibai"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1844",
+        "death": "1891",
+        "bio": {
+          "zh": "卡拉姆昌德的第四任妻子，莫罕达斯·甘地的母亲，来自印度教 Pranami Vaishnava 家庭。",
+          "en": "The fourth wife of Karamchand and the mother of Mohandas Gandhi, from a Pranami Vaishnava Hindu family."
+        }
+      },
+      {
+        "name": {
+          "zh": "卡斯特尔巴·甘地",
+          "en": "Kasturba Gandhi"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1869",
+        "death": "1944-02-22",
+        "bio": {
+          "zh": "莫罕达斯·甘地的妻子，1883年与13岁的甘地成婚，育有四子，1944年在丈夫身旁离世。",
+          "en": "The wife of Mohandas Gandhi, married to him in 1883 when he was 13; they had four sons, and she died in 1944."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Kasturba_Gandhi"
+      },
+      {
+        "name": {
+          "zh": "哈里拉尔·甘地",
+          "en": "Harilal Gandhi"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1888",
+        "death": "1948",
+        "bio": {
+          "zh": "莫罕达斯与卡斯特尔巴的长子。",
+          "en": "The eldest son of Mohandas and Kasturba Gandhi."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Harilal_Gandhi"
+      },
+      {
+        "name": {
+          "zh": "马尼拉尔·甘地",
+          "en": "Manilal Gandhi"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1892",
+        "death": "1956",
+        "bio": {
+          "zh": "莫罕达斯与卡斯特尔巴的次子，长期在南非从事非暴力运动。",
+          "en": "The second son of Mohandas and Kasturba Gandhi, active in the non-violent movement in South Africa."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Manilal_Gandhi"
+      },
+      {
+        "name": {
+          "zh": "拉姆达斯·甘地",
+          "en": "Ramdas Gandhi"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1897",
+        "death": "1969",
+        "bio": {
+          "zh": "莫罕达斯与卡斯特尔巴的第三子。",
+          "en": "The third son of Mohandas and Kasturba Gandhi."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Ramdas_Gandhi"
+      },
+      {
+        "name": {
+          "zh": "德夫达斯·甘地",
+          "en": "Devdas Gandhi"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1900",
+        "death": "1957",
+        "bio": {
+          "zh": "莫罕达斯与卡斯特尔巴的幼子，后成为记者。",
+          "en": "The youngest son of Mohandas and Kasturba Gandhi, who became a journalist."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Devdas_Gandhi"
+      }
+    ]
   },
   {
     "id": "p-abraham-lincoln",
@@ -10399,7 +10960,144 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "托马斯·林肯",
+          "en": "Thomas Lincoln"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1778",
+        "death": "1851",
+        "bio": {
+          "zh": "肯塔基的农民与木匠，亚伯拉罕·林肯的父亲。",
+          "en": "A Kentucky farmer and carpenter, the father of Abraham Lincoln."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Thomas_Lincoln"
+      },
+      {
+        "name": {
+          "zh": "南希·汉克斯·林肯",
+          "en": "Nancy Hanks Lincoln"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1784",
+        "death": "1818-10-05",
+        "bio": {
+          "zh": "亚伯拉罕·林肯的生母，1818年因“牛奶病”去世，当时林肯年仅9岁。",
+          "en": "The biological mother of Abraham Lincoln, who died of milk sickness in 1818 when Abraham was nine."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Nancy_Hanks_Lincoln"
+      },
+      {
+        "name": {
+          "zh": "萨拉·布什·林肯",
+          "en": "Sarah Bush Lincoln"
+        },
+        "relation": "stepmother",
+        "generation": -1,
+        "birth": "1788",
+        "death": "1869",
+        "bio": {
+          "zh": "托马斯·林肯在1819年迎娶的寡妇，成为亚伯拉罕的继母，二人关系亲密。",
+          "en": "The widow Thomas Lincoln married in 1819, becoming Abraham's stepmother, to whom he was closely attached."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Sarah_Bush_Lincoln"
+      },
+      {
+        "name": {
+          "zh": "萨拉·林肯·格里斯比",
+          "en": "Sarah Lincoln Grigsby"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "1807",
+        "death": "1828-01-20",
+        "bio": {
+          "zh": "亚伯拉罕·林肯的姐姐，1828年于分娩时去世。",
+          "en": "Abraham Lincoln's elder sister, who died in 1828 from complications following childbirth."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Sarah_Lincoln_Grigsby"
+      },
+      {
+        "name": {
+          "zh": "玛丽·托德·林肯",
+          "en": "Mary Todd Lincoln"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1818-12-13",
+        "death": "1882-07-16",
+        "bio": {
+          "zh": "亚伯拉罕·林肯的妻子，1842年与他结婚，二人育有四子。",
+          "en": "The wife of Abraham Lincoln, married in 1842; they had four sons."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Mary_Todd_Lincoln"
+      },
+      {
+        "name": {
+          "zh": "罗伯特·托德·林肯",
+          "en": "Robert Todd Lincoln"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1843-08-01",
+        "death": "1926-07-26",
+        "bio": {
+          "zh": "林肯夫妇的长子，也是唯一活到成年的孩子，后任美国战争部长与驻英公使。",
+          "en": "The Lincoln's eldest son and the only one to reach adulthood, later US Secretary of War and Minister to the United Kingdom."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Robert_Todd_Lincoln"
+      },
+      {
+        "name": {
+          "zh": "爱德华·贝克·林肯",
+          "en": "Edward Baker Lincoln"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1846-03-10",
+        "death": "1850-02-01",
+        "bio": {
+          "zh": "林肯夫妇的次子，四岁时夭折。",
+          "en": "The Lincoln's second son, who died at the age of four."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Edward_Baker_Lincoln"
+      },
+      {
+        "name": {
+          "zh": "威廉·华莱士·林肯",
+          "en": "William Wallace Lincoln"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1850-12-21",
+        "death": "1862-02-20",
+        "bio": {
+          "zh": "林肯夫妇的第三子，11岁时在白宫因伤寒去世。",
+          "en": "The Lincoln's third son, who died at age 11 in the White House, probably of typhoid fever."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/William_Wallace_Lincoln"
+      },
+      {
+        "name": {
+          "zh": "托马斯·“塔德”·林肯",
+          "en": "Thomas \"Tad\" Lincoln"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1853-04-04",
+        "death": "1871-07-15",
+        "bio": {
+          "zh": "林肯夫妇的幼子，18岁时因水肿去世。",
+          "en": "The Lincoln's youngest son, who died at age 18."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Tad_Lincoln"
+      }
+    ]
   },
   {
     "id": "p-rosa-parks",
@@ -10580,7 +11278,63 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "詹姆斯·麦考利",
+          "en": "James McCauley"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "罗莎·帕克斯的父亲，来自阿拉巴马州阿比维尔的木匠与石匠。",
+          "en": "The father of Rosa Parks, a carpenter and stonemason from Abbeville, Alabama."
+        }
+      },
+      {
+        "name": {
+          "zh": "莱奥娜·爱德华兹·麦考利",
+          "en": "Leona Edwards McCauley"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1888",
+        "death": "1979",
+        "bio": {
+          "zh": "罗莎·帕克斯的母亲，来自阿拉巴马州派恩莱韦尔的教师，独自将罗莎抚养长大。",
+          "en": "The mother of Rosa Parks, a teacher from Pine Level, Alabama, who raised Rosa largely on her own."
+        }
+      },
+      {
+        "name": {
+          "zh": "雷蒙德·帕克斯",
+          "en": "Raymond Parks"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1903",
+        "death": "1977",
+        "bio": {
+          "zh": "罗莎·帕克斯的丈夫，理发师与民权活动家，1932年与罗莎结婚，曾支持斯科茨伯勒男孩案。",
+          "en": "The husband of Rosa Parks, a barber and civil-rights activist who married Rosa in 1932 and supported the Scottsboro Boys defence."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Raymond_Parks"
+      },
+      {
+        "name": {
+          "zh": "西尔维斯特·麦考利",
+          "en": "Sylvester McCauley"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "death": "1977",
+        "bio": {
+          "zh": "罗莎·帕克斯的弟弟，定居底特律，1977年因胃癌去世。",
+          "en": "Rosa Parks's younger brother, who lived in Detroit and died of stomach cancer in 1977."
+        }
+      }
+    ]
   },
   {
     "id": "p-leonardo-da-vinci",
@@ -10772,7 +11526,38 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "皮耶罗·达·芬奇",
+          "en": "Piero da Vinci"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1426",
+        "death": "1504",
+        "bio": {
+          "zh": "佛罗伦萨公证人，列奥纳多·达·芬奇的父亲，曾四次结婚，育有包括列奥纳多在内的多名子女。",
+          "en": "A Florentine legal notary and the father of Leonardo da Vinci, who married four times and fathered several children including Leonardo."
+        }
+      },
+      {
+        "name": {
+          "zh": "卡特丽娜·迪·梅奥·里皮",
+          "en": "Caterina di Meo Lippi"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1434",
+        "death": "1494",
+        "bio": {
+          "zh": "出身下层，列奥纳多·达·芬奇的生母；列奥纳多出生次年她另嫁工匠，并育有其他子女。",
+          "en": "Of lower-class origin and the biological mother of Leonardo da Vinci; she married an artisan the year after Leonardo's birth and had other children."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Caterina_di_Meo_Lippi"
+      }
+    ]
   },
   {
     "id": "p-pablo-picasso",
@@ -10959,7 +11744,157 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "何塞·鲁伊斯·布拉斯科",
+          "en": "Jose Ruiz y Blasco"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1838",
+        "death": "1913",
+        "bio": {
+          "zh": "西班牙现实主义画家、艺术教授，毕加索的父亲与启蒙老师。",
+          "en": "Spanish realist painter and art professor; Pablo Picasso's father and first art teacher."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Jos%C3%A9_Ruiz_y_Blasco"
+      },
+      {
+        "name": {
+          "zh": "玛丽亚·毕加索·洛佩斯",
+          "en": "Maria Picasso y Lopez"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1855",
+        "death": "1938",
+        "bio": {
+          "zh": "毕加索的母亲，娘家姓 Picasso y Lopez。",
+          "en": "Pablo Picasso's mother, nee Picasso y Lopez."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Picasso_y_L%C3%B3pez"
+      },
+      {
+        "name": {
+          "zh": "奥尔加·柯克洛娃",
+          "en": "Olga Khokhlova"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1891",
+        "death": "1955",
+        "bio": {
+          "zh": "俄罗斯芭蕾舞者（俄罗斯芭蕾舞团），毕加索的第一任妻子，两人于1941年分居但未正式离婚。",
+          "en": "Russian ballet dancer with the Ballets Russes and Picasso's first wife; they separated in 1941 but never divorced."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Olga_Khokhlova"
+      },
+      {
+        "name": {
+          "zh": "弗朗索瓦丝·吉洛",
+          "en": "Francoise Gilot"
+        },
+        "relation": "partner",
+        "generation": 0,
+        "birth": "1921",
+        "death": "2023",
+        "bio": {
+          "zh": "法国画家，毕加索的长期伴侣，克劳德与帕洛玛的母亲。",
+          "en": "French painter and Picasso's longtime partner; mother of Claude and Paloma Picasso."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Fran%C3%A7oise_Gilot"
+      },
+      {
+        "name": {
+          "zh": "雅克利娜·罗克",
+          "en": "Jacqueline Roque"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1927",
+        "death": "1986",
+        "bio": {
+          "zh": "毕加索的第二任（也是最后一任）妻子，1961年与毕加索结婚。",
+          "en": "Picasso's second and last wife, married in 1961."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Jacqueline_Roque"
+      },
+      {
+        "name": {
+          "zh": "保罗·毕加索",
+          "en": "Paulo Picasso"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1921",
+        "death": "1975",
+        "bio": {
+          "zh": "毕加索与奥尔加之子，长子，后成为摩托车赛车手与商人。",
+          "en": "Picasso's eldest child, son with Olga Khokhlova; later a motorcycle racer and businessman."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Paulo_Picasso"
+      },
+      {
+        "name": {
+          "zh": "玛雅·毕加索",
+          "en": "Maya Widmaier-Picasso"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1935",
+        "death": "2022",
+        "bio": {
+          "zh": "毕加索与玛丽-泰蕾兹·沃尔特之女，艺术史学者。",
+          "en": "Picasso's daughter with Marie-Therese Walter; an art historian."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Maya_Widmaier-Picasso"
+      },
+      {
+        "name": {
+          "zh": "克劳德·毕加索",
+          "en": "Claude Picasso"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1947",
+        "death": "2023",
+        "bio": {
+          "zh": "毕加索与弗朗索瓦丝·吉洛之子，画家与摄影师。",
+          "en": "Picasso's son with Francoise Gilot; a painter and photographer."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Claude_Picasso"
+      },
+      {
+        "name": {
+          "zh": "帕洛玛·毕加索",
+          "en": "Paloma Picasso"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1949",
+        "bio": {
+          "zh": "毕加索与弗朗索瓦丝·吉洛之女，知名珠宝与时尚设计师。",
+          "en": "Picasso's daughter with Francoise Gilot; a well-known jewelry and fashion designer."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Paloma_Picasso"
+      },
+      {
+        "name": {
+          "zh": "洛拉·鲁伊斯·毕加索",
+          "en": "Dolores 'Lola' Ruiz Picasso"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "1884",
+        "death": "1958",
+        "bio": {
+          "zh": "毕加索的姐姐，家中长女之一。",
+          "en": "Picasso's elder sister."
+        }
+      }
+    ]
   },
   {
     "id": "p-frida-kahlo",
@@ -11140,7 +12075,80 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "吉列尔莫·卡洛",
+          "en": "Guillermo Kahlo"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1872",
+        "death": "1941",
+        "bio": {
+          "zh": "德裔墨西哥摄影师，弗里达的父亲，鼓励她接触艺术。",
+          "en": "German-born Mexican photographer and Frida's father, who encouraged her interest in art."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Guillermo_Kahlo"
+      },
+      {
+        "name": {
+          "zh": "马蒂尔德·卡尔德隆·冈萨雷斯",
+          "en": "Matilde Calderon y Gonzalez"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1876",
+        "death": "1932",
+        "bio": {
+          "zh": "墨西哥人，具有西班牙与普雷佩查原住民血统，弗里达的母亲。",
+          "en": "Mexican of Spanish and Purépecha indigenous heritage; Frida's mother."
+        }
+      },
+      {
+        "name": {
+          "zh": "迭戈·里维拉",
+          "en": "Diego Rivera"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1886",
+        "death": "1957",
+        "bio": {
+          "zh": "墨西哥著名壁画运动大师，弗里达的丈夫（1929年结婚，1939年离婚，1940年复婚）。",
+          "en": "Prominent Mexican muralist and Frida's husband (married 1929, divorced 1939, remarried 1940)."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Diego_Rivera"
+      },
+      {
+        "name": {
+          "zh": "克里斯蒂娜·卡洛",
+          "en": "Cristina Kahlo"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "1908",
+        "death": "1964",
+        "bio": {
+          "zh": "弗里达的妹妹，曾与迭戈·里维拉发生婚外情，令弗里达深受伤害。",
+          "en": "Frida's younger sister, who had an affair with Diego Rivera that deeply wounded Frida."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Cristina_Kahlo"
+      },
+      {
+        "name": {
+          "zh": "弗里达的姐姐 马蒂尔德",
+          "en": "Matilde Kahlo Calderon"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "bio": {
+          "zh": "弗里达的姐姐，卡洛家长女。",
+          "en": "Frida's eldest sister."
+        }
+      }
+    ]
   },
   {
     "id": "p-leo-tolstoy",
@@ -11332,7 +12340,114 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "尼古拉·伊里奇·托尔斯泰",
+          "en": "Nikolai Ilyich Tolstoy"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1794",
+        "death": "1837",
+        "bio": {
+          "zh": "俄国贵族、退伍军官，列夫·托尔斯泰的父亲。",
+          "en": "Russian nobleman and retired army officer; Leo Tolstoy's father."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Nikolai_Ilyich_Tolstoy"
+      },
+      {
+        "name": {
+          "zh": "玛丽亚·沃尔孔斯卡娅",
+          "en": "Mariya Volkonskaya"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1790",
+        "death": "1830",
+        "bio": {
+          "zh": "托尔斯泰的母亲，出身沃尔孔斯基贵族世家。",
+          "en": "Tolstoy's mother, born into the Volkonsky noble family."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Mariya_Volkonskaya"
+      },
+      {
+        "name": {
+          "zh": "索菲亚·托尔斯塔娅",
+          "en": "Sophia Tolstaya"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1844",
+        "death": "1919",
+        "bio": {
+          "zh": "托尔斯泰的妻子（1862年结婚），育有13名子女，亦是其手稿的编辑与誊写者。",
+          "en": "Tolstoy's wife (married 1862), mother of his 13 children and editor of his manuscripts."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Sophia_Tolstaya"
+      },
+      {
+        "name": {
+          "zh": "谢尔盖·托尔斯泰",
+          "en": "Sergei Lvovich Tolstoy"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1863",
+        "death": "1944",
+        "bio": {
+          "zh": "托尔斯泰长子，作曲家与音乐学家。",
+          "en": "Tolstoy's eldest son; a composer and musicologist."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Sergei_Lvovich_Tolstoy"
+      },
+      {
+        "name": {
+          "zh": "塔季扬娜·苏霍京娜-托尔斯塔娅",
+          "en": "Tatyana Sukhotina-Tolstaya"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1864",
+        "death": "1950",
+        "bio": {
+          "zh": "托尔斯泰长女，艺术家与作家。",
+          "en": "Tolstoy's eldest daughter; an artist and writer."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Tatyana_Sukhotina-Tolstaya"
+      },
+      {
+        "name": {
+          "zh": "伊利亚·托尔斯泰",
+          "en": "Ilya Tolstoy"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1866",
+        "death": "1933",
+        "bio": {
+          "zh": "托尔斯泰次子，作家，著有回忆录。",
+          "en": "Tolstoy's second son; a writer and memoirist."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Ilya_Tolstoy"
+      },
+      {
+        "name": {
+          "zh": "列夫·托尔斯泰（子）",
+          "en": "Lev Lvovich Tolstoy"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1869",
+        "death": "1945",
+        "bio": {
+          "zh": "托尔斯泰之子，作家与社会活动家。",
+          "en": "Tolstoy's son; a writer and social figure."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lev_Lvovich_Tolstoy"
+      }
+    ]
   },
   {
     "id": "p-bob-marley",
@@ -11519,7 +12634,81 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "诺瓦尔·辛克莱·马利",
+          "en": "Norval Sinclair Marley"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1885",
+        "death": "1955",
+        "bio": {
+          "zh": "具有英格兰血统的牙买加人，种植园监工，鲍勃·马利的父亲。",
+          "en": "A Jamaican of English descent and a plantation overseer; Bob Marley's father."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Norval_Sinclair_Marley"
+      },
+      {
+        "name": {
+          "zh": "塞德拉·布克",
+          "en": "Cedella Booker"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1926",
+        "death": "2008",
+        "bio": {
+          "zh": "牙买加歌手与作家，鲍勃·马利的母亲。",
+          "en": "Jamaican singer and writer; Bob Marley's mother."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Cedella_Booker"
+      },
+      {
+        "name": {
+          "zh": "丽塔·马利",
+          "en": "Rita Marley"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1946",
+        "bio": {
+          "zh": "古巴出生的牙买加歌手，鲍勃·马利的妻子与演唱组合成员。",
+          "en": "Cuban-born Jamaican singer; Bob Marley's wife and a member of his backing group."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Rita_Marley"
+      },
+      {
+        "name": {
+          "zh": "齐吉·马利",
+          "en": "Ziggy Marley"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1968",
+        "bio": {
+          "zh": "鲍勃·马利与丽塔的长子，雷鬼音乐家，多次获得格莱美奖。",
+          "en": "Bob and Rita Marley's eldest son; a reggae musician and multiple Grammy winner."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Ziggy_Marley"
+      },
+      {
+        "name": {
+          "zh": "达米安·马利",
+          "en": "Damian Marley"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1978",
+        "bio": {
+          "zh": "鲍勃·马利与1976年世界小姐辛迪·布莱克斯皮尔之子，雷鬼DJ兼歌手。",
+          "en": "Bob Marley's son with Miss World 1976 Cindy Breakspeare; a reggae DJ and singer."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Damian_Marley"
+      }
+    ]
   },
   {
     "id": "p-elvis-presley",
@@ -11711,7 +12900,82 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "弗农·普雷斯利",
+          "en": "Vernon Presley"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1916",
+        "death": "1979",
+        "bio": {
+          "zh": "埃尔维斯的父亲，卡车司机，曾协助管理其子的事业。",
+          "en": "Elvis's father, a truck driver who helped manage his son's affairs."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Vernon_Presley"
+      },
+      {
+        "name": {
+          "zh": "格拉迪斯·普雷斯利",
+          "en": "Gladys Presley"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1912",
+        "death": "1958",
+        "bio": {
+          "zh": "埃尔维斯的母亲，与儿子关系极为亲密。",
+          "en": "Elvis's mother, to whom he was very close."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Gladys_Presley"
+      },
+      {
+        "name": {
+          "zh": "杰西·加伦·普雷斯利",
+          "en": "Jessie Garon Presley"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1935",
+        "death": "1935",
+        "bio": {
+          "zh": "埃尔维斯的同卵双胞胎兄弟，出生即夭折。",
+          "en": "Elvis's identical twin brother, stillborn at birth."
+        }
+      },
+      {
+        "name": {
+          "zh": "普莉希拉·普雷斯利",
+          "en": "Priscilla Presley"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1945",
+        "bio": {
+          "zh": "美国演员与企业家，埃尔维斯唯一的妻子（1967年结婚，1973年离婚）。",
+          "en": "American actress and businesswoman; Elvis's only wife (married 1967, divorced 1973)."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Priscilla_Presley"
+      },
+      {
+        "name": {
+          "zh": "丽莎·玛丽·普雷斯利",
+          "en": "Lisa Marie Presley"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1968",
+        "death": "2023",
+        "bio": {
+          "zh": "埃尔维斯与普莉希拉之女，歌手兼词曲作者，其父遗产的唯一继承人。",
+          "en": "Elvis and Priscilla's daughter, a singer-songwriter and sole heir to Elvis's estate."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lisa_Marie_Presley"
+      }
+    ]
   },
   {
     "id": "p-akira-kurosawa",
@@ -11898,7 +13162,89 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "黑泽勇",
+          "en": "Isamu Kurosawa"
+        },
+        "relation": "father",
+        "generation": -1,
+        "death": "1948",
+        "bio": {
+          "zh": "日本陆军军官，黑泽明的父亲。",
+          "en": "Japanese army officer; Akira Kurosawa's father."
+        }
+      },
+      {
+        "name": {
+          "zh": "黑泽志麻",
+          "en": "Shima Kurosawa"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "death": "1952",
+        "bio": {
+          "zh": "黑泽明的母亲。",
+          "en": "Akira Kurosawa's mother."
+        }
+      },
+      {
+        "name": {
+          "zh": "矢口阳子",
+          "en": "Yoko Yaguchi"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "death": "1985",
+        "bio": {
+          "zh": "日本女演员，黑泽明之妻，常在其早期电影中担任女主角。",
+          "en": "Japanese actress and Akira Kurosawa's wife, often starring in his early films."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Y%C5%8Dko_Yaguchi"
+      },
+      {
+        "name": {
+          "zh": "黑泽久雄",
+          "en": "Hisao Kurosawa"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1945",
+        "bio": {
+          "zh": "黑泽明与矢口阳子之子，电影制片人。",
+          "en": "Son of Akira Kurosawa and Yoko Yaguchi; a film producer."
+        }
+      },
+      {
+        "name": {
+          "zh": "黑泽和子",
+          "en": "Kazuko Kurosawa"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1954",
+        "bio": {
+          "zh": "黑泽明之女，电影服装设计师。",
+          "en": "Akira Kurosawa's daughter; a film costume designer."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Kazuko_Kurosawa"
+      },
+      {
+        "name": {
+          "zh": "黑泽丙午",
+          "en": "Heigo Kurosawa"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "death": "1933",
+        "bio": {
+          "zh": "黑泽明的兄长，无声电影解说员（辩士），1933年自杀。",
+          "en": "Akira Kurosawa's elder brother, a silent-film narrator (benshi) who died by suicide in 1933."
+        }
+      }
+    ]
   },
   {
     "id": "p-bruce-lee",
@@ -12080,7 +13426,96 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "李海泉",
+          "en": "Lee Hoi-chuen"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1901",
+        "death": "1965",
+        "bio": {
+          "zh": "粤剧与电影明星，李小龙的父亲。",
+          "en": "Cantonese opera and film star; Bruce Lee's father."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lee_Hoi-chuen"
+      },
+      {
+        "name": {
+          "zh": "何爱瑜",
+          "en": "Grace Ho"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1907",
+        "death": "1996",
+        "bio": {
+          "zh": "欧亚混血，李小龙的母亲。",
+          "en": "Of Eurasian descent; Bruce Lee's mother."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Grace_Ho"
+      },
+      {
+        "name": {
+          "zh": "琳达·李·卡德威尔",
+          "en": "Linda Lee Cadwell"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1945",
+        "bio": {
+          "zh": "美国作家与教师，李小龙的妻子（1964年结婚）。",
+          "en": "American writer and teacher; Bruce Lee's wife (married 1964)."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Linda_Lee_Cadwell"
+      },
+      {
+        "name": {
+          "zh": "李国豪",
+          "en": "Brandon Lee"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1965",
+        "death": "1993",
+        "bio": {
+          "zh": "李小龙与琳达之子，演员，1993年在电影《乌鸦》拍摄中意外身亡。",
+          "en": "Bruce and Linda's son, an actor killed in a filming accident on The Crow (1993)."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Brandon_Lee"
+      },
+      {
+        "name": {
+          "zh": "李香凝",
+          "en": "Shannon Lee"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1969",
+        "bio": {
+          "zh": "李小龙与琳达之女，演员与武术家，主理李小龙基金会。",
+          "en": "Bruce and Linda's daughter; an actress and martial artist who runs the Bruce Lee Foundation."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Shannon_Lee"
+      },
+      {
+        "name": {
+          "zh": "李振辉",
+          "en": "Robert Lee"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1948",
+        "bio": {
+          "zh": "李小龙的弟弟，香港音乐家。",
+          "en": "Bruce Lee's younger brother; a Hong Kong musician."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Robert_Lee_(musician)"
+      }
+    ]
   },
   {
     "id": "p-muhammad-ali",
@@ -12261,7 +13696,107 @@
       "id"
     ],
     "createdAt": "2026-07-26T00:00:00Z",
-    "updatedAt": "2026-07-26T00:00:00Z"
+    "updatedAt": "2026-07-26T00:00:00Z",
+    "kin": [
+      {
+        "name": {
+          "zh": "老卡修斯·马塞勒斯·克莱",
+          "en": "Cassius Marcellus Clay Sr."
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1912",
+        "death": "1990",
+        "bio": {
+          "zh": "招牌与广告牌画师，穆罕默德·阿里的父亲。",
+          "en": "A sign and billboard painter; Muhammad Ali's father."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Cassius_Marcellus_Clay_Sr."
+      },
+      {
+        "name": {
+          "zh": "奥德萨·格雷迪·克莱",
+          "en": "Odessa Grady Clay"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1917",
+        "death": "1994",
+        "bio": {
+          "zh": "家庭主妇，穆罕默德·阿里的母亲。",
+          "en": "A homemaker; Muhammad Ali's mother."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Odessa_Grady_Clay"
+      },
+      {
+        "name": {
+          "zh": "拉赫曼·阿里",
+          "en": "Rahman Ali"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1943",
+        "death": "2024",
+        "bio": {
+          "zh": "原名鲁迪·克莱，穆罕默德·阿里的弟弟，重量级拳击手。",
+          "en": "Born Rudolph 'Rudy' Clay; Muhammad Ali's younger brother and a heavyweight boxer."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Rahman_Ali"
+      },
+      {
+        "name": {
+          "zh": "朗尼·阿里",
+          "en": "Lonnie Ali"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "bio": {
+          "zh": "原名约兰达·威廉姆斯，阿里的第四任妻子（1986年结婚）与其遗孀。",
+          "en": "Born Yolanda Williams; Ali's fourth wife (married 1986) and widow."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lonnie_Ali"
+      },
+      {
+        "name": {
+          "zh": "贝琳达·博伊德",
+          "en": "Belinda Boyd"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "bio": {
+          "zh": "后改名哈利拉·阿里，阿里的第二任妻子（1967年结婚，1976年离婚）。",
+          "en": "Later Khalilah Ali; Ali's second wife (married 1967, divorced 1976)."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Belinda_Boyd"
+      },
+      {
+        "name": {
+          "zh": "维罗妮卡·波歇·阿里",
+          "en": "Veronica Porsche Ali"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "bio": {
+          "zh": "阿里的第三任妻子（1977年结婚，1986年离婚），模特。",
+          "en": "Ali's third wife (married 1977, divorced 1986); a model."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Veronica_Porsche"
+      },
+      {
+        "name": {
+          "zh": "莱拉·阿里",
+          "en": "Laila Ali"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1977",
+        "bio": {
+          "zh": "阿里与维罗妮卡之女，职业拳击手，生涯24战全胜。",
+          "en": "Ali's daughter with Veronica Porsche; a professional boxer with a 24-0 record."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Laila_Ali"
+      }
+    ]
   },
   {
     "id": "p-mendel",
@@ -12403,6 +13938,56 @@
           "en": "University of Vienna"
         },
         "type": "school"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "安东·孟德尔",
+          "en": "Anton Mendel"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "西里西亚的德语农民，家族农场主，格雷戈尔·孟德尔的父亲。",
+          "en": "A German-speaking Silesian peasant farmer who owned the family farm; Gregor Mendel's father."
+        }
+      },
+      {
+        "name": {
+          "zh": "罗西娜·孟德尔",
+          "en": "Rosine Mendel"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "娘家姓施维特里希，农民之女，格雷戈尔·孟德尔的母亲。",
+          "en": "Nee Schwirtlich, daughter of a farmer; Gregor Mendel's mother."
+        }
+      },
+      {
+        "name": {
+          "zh": "薇罗妮卡·孟德尔",
+          "en": "Veronika Mendel"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "bio": {
+          "zh": "格雷戈尔·孟德尔的姐姐，曾将自己的嫁妆资助其求学。",
+          "en": "Gregor Mendel's elder sister, who gave up her dowry to help fund his education."
+        }
+      },
+      {
+        "name": {
+          "zh": "特蕾西亚·孟德尔",
+          "en": "Theresia Mendel"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "bio": {
+          "zh": "格雷戈尔·孟德尔的妹妹，亦曾资助他的学业。",
+          "en": "Gregor Mendel's younger sister, who also contributed financially to his studies."
+        }
       }
     ]
   },
@@ -12546,6 +14131,79 @@
           "en": "University of Strasbourg"
         },
         "type": "school"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "让-约瑟夫·巴斯德",
+          "en": "Jean-Joseph Pasteur"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1791",
+        "death": "1865",
+        "bio": {
+          "zh": "制革工人，路易·巴斯德的父亲。",
+          "en": "A tanner; Louis Pasteur's father."
+        }
+      },
+      {
+        "name": {
+          "zh": "让娜-埃蒂安内特·罗基",
+          "en": "Jeanne-Etiennette Roqui"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1793",
+        "death": "1848",
+        "bio": {
+          "zh": "制革工人之女，路易·巴斯德的母亲。",
+          "en": "Daughter of a tanner; Louis Pasteur's mother."
+        }
+      },
+      {
+        "name": {
+          "zh": "玛丽·巴斯德",
+          "en": "Marie Pasteur"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1826",
+        "death": "1910",
+        "bio": {
+          "zh": "娘家姓洛朗，路易·巴斯德的妻子与科研助手，负责誊写与整理其手稿。",
+          "en": "Nee Laurent; Louis Pasteur's wife and scientific collaborator who typed and edited his manuscripts."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Marie_Pasteur"
+      },
+      {
+        "name": {
+          "zh": "让-巴蒂斯特·巴斯德",
+          "en": "Jean-Baptiste Pasteur"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1851",
+        "death": "1908",
+        "bio": {
+          "zh": "路易·巴斯德与玛丽的长子。",
+          "en": "Louis and Marie Pasteur's eldest son."
+        }
+      },
+      {
+        "name": {
+          "zh": "玛丽-路易丝·巴斯德",
+          "en": "Marie-Louise Pasteur"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1858",
+        "death": "1934",
+        "bio": {
+          "zh": "路易·巴斯德与玛丽的女儿，家中少数长大成人的孩子之一。",
+          "en": "Louis and Marie Pasteur's daughter, one of only two children who survived to adulthood."
+        }
       }
     ]
   },
@@ -12697,6 +14355,91 @@
         },
         "type": "org"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "莫蒂默·赫伯特·莫里斯-古道尔",
+          "en": "Mortimer Herbert Morris-Goodall"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1907",
+        "death": "2001",
+        "bio": {
+          "zh": "英国商人，珍·古道尔的父亲，曾从事汽车与商业贸易。",
+          "en": "English businessman and father of Jane Goodall; worked in the motor and business trades."
+        }
+      },
+      {
+        "name": {
+          "zh": "玛格丽特·迈凡薇·约瑟夫（笔名范妮·莫里斯-古道尔）",
+          "en": "Margaret Myfanwe Joseph (Vanne Morris-Goodall)"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1906",
+        "death": "2000",
+        "bio": {
+          "zh": "威尔士裔英国小说家，以笔名范妮·莫里斯-古道尔（Vanne Morris-Goodall）写作，是珍·古道尔的母亲，对其早年热爱动物影响深远。",
+          "en": "Welsh-born English novelist who wrote under the pen name Vanne Morris-Goodall; Jane Goodall's mother and an early influence on her daughter's love of animals."
+        }
+      },
+      {
+        "name": {
+          "zh": "雨果·范·拉维克",
+          "en": "Hugo van Lawick"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1937-04-10",
+        "death": "2002-06-02",
+        "bio": {
+          "zh": "荷兰野生动物摄影师与电影制作人，拥有范·拉维克男爵头衔；1964年与珍·古道尔结婚，1974年离婚。",
+          "en": "Dutch wildlife photographer and filmmaker, Baron van Lawick; married Jane Goodall in 1964 and divorced in 1974."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Hugo_van_Lawick"
+      },
+      {
+        "name": {
+          "zh": "德里克·布赖斯森",
+          "en": "Derek Bryceson"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1922-12-31",
+        "death": "1980-10-01",
+        "bio": {
+          "zh": "英裔坦桑尼亚政治家，曾任坦桑尼亚国家公园负责人；1975年与珍·古道尔结婚，1980年因癌症去世。",
+          "en": "British-Tanzanian politician who served as Tanzania's Director of National Parks; married Jane Goodall in 1975 and died of cancer in 1980."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Derek_Bryceson"
+      },
+      {
+        "name": {
+          "zh": "雨果·埃里克·路易斯·范·拉维克（绰号“格拉布”）",
+          "en": "Hugo Eric Louis van Lawick (nicknamed 'Grub')"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1967",
+        "bio": {
+          "zh": "珍·古道尔与雨果·范·拉维克的独子，昵称“格拉布”；曾从事商业捕鱼，后于非洲从事环保建筑。",
+          "en": "Only child of Jane Goodall and Hugo van Lawick, nicknamed 'Grub'; worked in commercial fishing and later eco-building in Africa."
+        }
+      },
+      {
+        "name": {
+          "zh": "朱迪斯·古道尔",
+          "en": "Judith Goodall"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "bio": {
+          "zh": "珍·古道尔的妹妹。",
+          "en": "Younger sister of Jane Goodall."
+        }
+      }
     ]
   },
   {
@@ -12840,6 +14583,89 @@
         },
         "type": "school"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "埃利斯·阿瑟·富兰克林",
+          "en": "Ellis Arthur Franklin"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1894",
+        "death": "1964",
+        "bio": {
+          "zh": "伦敦商人银行家，并在工人学院任教；出身显赫的英国犹太家庭。",
+          "en": "London merchant banker who also taught at the Working Men's College; from an affluent British Jewish family."
+        }
+      },
+      {
+        "name": {
+          "zh": "穆里尔·弗朗西丝·韦利",
+          "en": "Muriel Frances Waley"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1894",
+        "death": "1976",
+        "bio": {
+          "zh": "罗莎琳德·富兰克林的母亲，出身受过良好教育的英国犹太家庭。",
+          "en": "Mother of Rosalind Franklin, from an educated British Jewish family."
+        }
+      },
+      {
+        "name": {
+          "zh": "戴维·富兰克林",
+          "en": "David Franklin"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1919",
+        "bio": {
+          "zh": "罗莎琳德·富兰克林的兄长，家中长子。",
+          "en": "Eldest sibling of Rosalind Franklin."
+        }
+      },
+      {
+        "name": {
+          "zh": "科林·富兰克林",
+          "en": "Colin Franklin"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1923",
+        "death": "2020",
+        "bio": {
+          "zh": "罗莎琳德·富兰克林的弟弟。",
+          "en": "Younger brother of Rosalind Franklin."
+        }
+      },
+      {
+        "name": {
+          "zh": "罗兰·富兰克林",
+          "en": "Roland Franklin"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1926",
+        "bio": {
+          "zh": "罗莎琳德·富兰克林的弟弟。",
+          "en": "Younger brother of Rosalind Franklin."
+        }
+      },
+      {
+        "name": {
+          "zh": "珍妮弗·格林（本姓富兰克林）",
+          "en": "Jenifer Glynn"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "1929",
+        "bio": {
+          "zh": "罗莎琳德·富兰克林的妹妹，家中幼女。",
+          "en": "Youngest sibling of Rosalind Franklin."
+        }
+      }
     ]
   },
   {
@@ -12975,6 +14801,68 @@
           "en": "China Academy of Chinese Medical Sciences"
         },
         "type": "org"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "屠濂规",
+          "en": "Tu Liangui"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "屠呦呦的父亲，曾从事银行业。",
+          "en": "Father of Tu Youyou, who worked in banking."
+        }
+      },
+      {
+        "name": {
+          "zh": "姚仲倩",
+          "en": "Yao Zhongqian"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "屠呦呦的母亲，家庭主妇，出自浙江慈溪姚氏家族。",
+          "en": "Mother of Tu Youyou, a housewife from the Cixi Yao family of Zhejiang."
+        }
+      },
+      {
+        "name": {
+          "zh": "李廷钊",
+          "en": "Li Tingzhao"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "bio": {
+          "zh": "屠呦呦在宁波效实中学的同学，1963年与屠呦呦结婚，曾任钢铁研究总院教授级高级工程师。",
+          "en": "Tu Youyou's classmate from Ningbo Xiaoshi Middle School; married her in 1963 and was a senior engineer at a Beijing iron-and-steel research institute."
+        }
+      },
+      {
+        "name": {
+          "zh": "李敏",
+          "en": "Li Min"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "bio": {
+          "zh": "屠呦呦与李廷钊的长女，在英国剑桥大学从事行政教务工作。",
+          "en": "Elder daughter of Tu Youyou and Li Tingzhao, working in university administration at the University of Cambridge, UK."
+        }
+      },
+      {
+        "name": {
+          "zh": "李军",
+          "en": "Li Jun"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "bio": {
+          "zh": "屠呦呦与李廷钊的次女，现居北京。",
+          "en": "Younger daughter of Tu Youyou and Li Tingzhao, living in Beijing."
+        }
       }
     ]
   },
@@ -13118,6 +15006,91 @@
           "en": "NASA"
         },
         "type": "org"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "塞缪尔·萨根",
+          "en": "Samuel Sagan"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1905-03-02",
+        "death": "1979-10-07",
+        "bio": {
+          "zh": "来自乌克兰的犹太移民，服装厂经理；卡尔·萨根的父亲。",
+          "en": "Jewish immigrant from Ukraine who worked as a garment-factory manager; father of Carl Sagan."
+        }
+      },
+      {
+        "name": {
+          "zh": "蕾切尔·莫莉·格鲁伯",
+          "en": "Rachel Molly Gruber"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1907-11-23",
+        "death": "1982",
+        "bio": {
+          "zh": "卡尔·萨根的母亲，家庭主妇。",
+          "en": "Mother of Carl Sagan, a homemaker."
+        }
+      },
+      {
+        "name": {
+          "zh": "卡萝尔·“卡里”·萨根·格林",
+          "en": "Carol 'Cari' Sagan Greene"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "bio": {
+          "zh": "卡尔·萨根的妹妹。",
+          "en": "Younger sister of Carl Sagan."
+        }
+      },
+      {
+        "name": {
+          "zh": "林恩·马古利斯",
+          "en": "Lynn Margulis"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1938-03-05",
+        "death": "2011-11-22",
+        "bio": {
+          "zh": "美国生物学家，提出内共生学说；1957年与卡尔·萨根结婚，后离婚，是萨根两个儿子之母。",
+          "en": "American biologist who developed the endosymbiotic theory; married Carl Sagan in 1957 and divorced; mother of two of his sons."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lynn_Margulis"
+      },
+      {
+        "name": {
+          "zh": "安·德鲁扬",
+          "en": "Ann Druyan"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1949",
+        "bio": {
+          "zh": "美国作家与制片人，《宇宙》系列的共同创作者；1981年与卡尔·萨根结婚，相伴至其逝世。",
+          "en": "American writer and producer, co-creator of Cosmos; married Carl Sagan in 1981 until his death."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Ann_Druyan"
+      },
+      {
+        "name": {
+          "zh": "多里昂·萨根",
+          "en": "Dorion Sagan"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1959",
+        "bio": {
+          "zh": "科普作家，卡尔·萨根与林恩·马古利斯之子。",
+          "en": "Science writer and son of Carl Sagan and Lynn Margulis."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Dorion_Sagan"
       }
     ]
   },
@@ -13276,6 +15249,60 @@
         },
         "type": "school"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "卡尔·维克托·佩奇（老）",
+          "en": "Carl Victor Page"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1938-04-26",
+        "death": "1996-06-09",
+        "bio": {
+          "zh": "美国计算机科学教授，密歇根州立大学教授，人工智能领域先驱；拉里·佩奇的父亲。",
+          "en": "American computer-science professor at Michigan State University and an AI pioneer; father of Larry Page."
+        }
+      },
+      {
+        "name": {
+          "zh": "格洛丽亚·佩奇",
+          "en": "Gloria Page"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "计算机编程教师，曾在密歇根州立大学莱曼·布里格斯学院任教；拉里·佩奇的母亲。",
+          "en": "Computer-programming instructor at Michigan State University's Lyman Briggs College; mother of Larry Page."
+        }
+      },
+      {
+        "name": {
+          "zh": "卡尔·维克托·佩奇（小）",
+          "en": "Carl Victor Page Jr."
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1962",
+        "bio": {
+          "zh": "拉里·佩奇的兄长，连续创业者，曾联合创办 eGroups。",
+          "en": "Older brother of Larry Page and a serial entrepreneur who co-founded eGroups."
+        }
+      },
+      {
+        "name": {
+          "zh": "露辛达·索思沃思",
+          "en": "Lucinda Southworth"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1979",
+        "bio": {
+          "zh": "美国研究科学家，获斯坦福大学生物医学信息学博士；2007年与拉里·佩奇结婚。",
+          "en": "American research scientist with a Stanford PhD in biomedical informatics; married Larry Page in 2007."
+        }
+      }
     ]
   },
   {
@@ -13429,6 +15456,76 @@
         },
         "type": "school"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "迈克尔·布林（米哈伊尔·布林）",
+          "en": "Michael Brin"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1948",
+        "bio": {
+          "zh": "俄裔美国数学家，马里兰大学退休教授；1979年从苏联移居美国。",
+          "en": "Russian-American mathematician and professor emeritus at the University of Maryland; emigrated from the USSR in 1979."
+        }
+      },
+      {
+        "name": {
+          "zh": "叶夫根尼娅·布林",
+          "en": "Eugenia Brin"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1949",
+        "death": "2024",
+        "bio": {
+          "zh": "NASA戈达德太空飞行中心研究科学家；2024年病逝。",
+          "en": "Research scientist at NASA's Goddard Space Flight Center; died in 2024."
+        }
+      },
+      {
+        "name": {
+          "zh": "萨姆·布林",
+          "en": "Sam Brin"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1987",
+        "bio": {
+          "zh": "谢尔盖·布林的弟弟，风险投资家。",
+          "en": "Younger brother of Sergey Brin and a venture capitalist."
+        }
+      },
+      {
+        "name": {
+          "zh": "安妮·沃西基",
+          "en": "Anne Wojcicki"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1973-07-28",
+        "bio": {
+          "zh": "消费基因检测公司 23andMe 联合创始人兼CEO；2007年与谢尔盖·布林结婚，2015年离婚。",
+          "en": "Co-founder and CEO of the consumer-genetics company 23andMe; married Sergey Brin in 2007 and divorced in 2015."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Anne_Wojcicki"
+      },
+      {
+        "name": {
+          "zh": "妮可·沙纳汉",
+          "en": "Nicole Shanahan"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1985",
+        "bio": {
+          "zh": "美国法律科技创业者；2018年与谢尔盖·布林结婚，2022年离婚。",
+          "en": "American legal-tech entrepreneur; married Sergey Brin in 2018 and divorced in 2022."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Nicole_Shanahan"
+      }
     ]
   },
   {
@@ -13581,6 +15678,56 @@
         },
         "type": "company"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "唐纳德·库克",
+          "en": "Donald Cook"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "阿拉巴马州造船厂工人，蒂姆·库克的父亲。",
+          "en": "Shipyard worker in Alabama and father of Tim Cook."
+        }
+      },
+      {
+        "name": {
+          "zh": "杰拉尔丁·库克",
+          "en": "Geraldine Cook"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "药剂师，蒂姆·库克的母亲。",
+          "en": "Pharmacist and mother of Tim Cook."
+        }
+      },
+      {
+        "name": {
+          "zh": "杰拉尔德·库克",
+          "en": "Gerald Cook"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "bio": {
+          "zh": "蒂姆·库克的弟弟。",
+          "en": "Younger brother of Tim Cook."
+        }
+      },
+      {
+        "name": {
+          "zh": "迈克·库克",
+          "en": "Mike Cook"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "bio": {
+          "zh": "蒂姆·库克的弟弟。",
+          "en": "Younger brother of Tim Cook."
+        }
+      }
     ]
   },
   {
@@ -13729,6 +15876,70 @@
         },
         "type": "school"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "布卡普拉姆·纳德拉·尤甘达尔",
+          "en": "Bukkapuram Nadella Yugandhar"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "印度行政服务（IAS）官员，1962年批次；萨提亚·纳德拉的父亲。",
+          "en": "Indian Administrative Service (IAS) officer of the 1962 batch; father of Satya Nadella."
+        }
+      },
+      {
+        "name": {
+          "zh": "普拉巴瓦蒂",
+          "en": "Prabhavati"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "梵文讲师，萨提亚·纳德拉的母亲。",
+          "en": "Sanskrit lecturer and mother of Satya Nadella."
+        }
+      },
+      {
+        "name": {
+          "zh": "阿努帕玛·纳德拉",
+          "en": "Anupama Nadella"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "bio": {
+          "zh": "萨提亚·纳德拉的妻子，建筑学背景，1992年结婚。",
+          "en": "Wife of Satya Nadella, trained as an architect; they married in 1992."
+        }
+      },
+      {
+        "name": {
+          "zh": "扎因·纳德拉",
+          "en": "Zain Nadella"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1996-08-13",
+        "death": "2022-02-28",
+        "bio": {
+          "zh": "萨提亚·纳德拉与阿努帕玛的长子，患有脑性麻痹，2022年去世，得年25岁。",
+          "en": "Eldest child of Satya and Anupama Nadella, who had cerebral palsy and died in 2022 at age 25."
+        }
+      },
+      {
+        "name": {
+          "zh": "迪维亚·纳德拉",
+          "en": "Divya Nadella"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "bio": {
+          "zh": "萨提亚·纳德拉与阿努帕玛的女儿之一。",
+          "en": "One of Satya Nadella's two daughters."
+        }
+      }
     ]
   },
   {
@@ -13875,6 +16086,68 @@
           "en": "Stanford University"
         },
         "type": "school"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "黄兴泰",
+          "en": "Huang Hsing-tai"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "化学工程师，毕业于成功大学；黄仁勋的父亲。",
+          "en": "Chemical engineer and father of Jensen Huang."
+        }
+      },
+      {
+        "name": {
+          "zh": "罗采秀",
+          "en": "Lo Tsai-hsiu"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "小学教师，黄仁勋的母亲。",
+          "en": "Elementary-school teacher and mother of Jensen Huang."
+        }
+      },
+      {
+        "name": {
+          "zh": "洛丽·黄（本姓米尔斯）",
+          "en": "Lori Huang"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "bio": {
+          "zh": "黄仁勋的妻子，二人于俄勒冈州立大学相识，1985年结婚，共同创办黄氏慈善基金会。",
+          "en": "Wife of Jensen Huang, whom he met at Oregon State University; they married in 1985 and co-founded a philanthropic foundation."
+        }
+      },
+      {
+        "name": {
+          "zh": "黄胜斌",
+          "en": "Spencer Huang"
+        },
+        "relation": "son",
+        "generation": 1,
+        "bio": {
+          "zh": "黄仁勋与洛丽的儿子，曾在台北经营酒吧，后加入英伟达从事机器人仿真产品。",
+          "en": "Son of Jensen and Lori Huang; previously ran a bar in Taipei and later joined NVIDIA in product/robotics."
+        }
+      },
+      {
+        "name": {
+          "zh": "黄敏珊",
+          "en": "Madison Huang"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "bio": {
+          "zh": "黄仁勋与洛丽的女儿，现任英伟达产品营销总监。",
+          "en": "Daughter of Jensen and Lori Huang; a director of product marketing at NVIDIA."
+        }
       }
     ]
   },
@@ -14026,6 +16299,81 @@
         },
         "type": "org"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "杰里·奥尔特曼",
+          "en": "Jerry Altman"
+        },
+        "relation": "father",
+        "generation": -1,
+        "death": "2018",
+        "bio": {
+          "zh": "房地产经纪人，专注可负担住房开发；2018年因心脏病去世。",
+          "en": "Real-estate broker focused on affordable housing; died of a heart attack in 2018."
+        }
+      },
+      {
+        "name": {
+          "zh": "康妮·吉布斯廷",
+          "en": "Connie Gibstine"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "在圣路易斯执业的皮肤科医生，萨姆·奥尔特曼的母亲。",
+          "en": "Dermatologist practicing in St. Louis and mother of Sam Altman."
+        }
+      },
+      {
+        "name": {
+          "zh": "杰克·奥尔特曼",
+          "en": "Jack Altman"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "bio": {
+          "zh": "萨姆·奥尔特曼的弟弟，人力资源软件公司 Lattice 联合创始人。",
+          "en": "Younger brother of Sam Altman and co-founder of the HR-software company Lattice."
+        }
+      },
+      {
+        "name": {
+          "zh": "马克斯·奥尔特曼",
+          "en": "Max Altman"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "bio": {
+          "zh": "萨姆·奥尔特曼的弟弟，风险投资家，Saga Ventures 联合创始人。",
+          "en": "Younger brother of Sam Altman and a venture capitalist, co-founder of Saga Ventures."
+        }
+      },
+      {
+        "name": {
+          "zh": "安妮·奥尔特曼",
+          "en": "Annie Altman"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "bio": {
+          "zh": "萨姆·奥尔特曼的妹妹，音乐人、作家与播客主理人，与家庭关系公开疏远。",
+          "en": "Younger sister of Sam Altman, a musician, writer and podcaster who is publicly estranged from the family."
+        }
+      },
+      {
+        "name": {
+          "zh": "奥利弗·马尔赫林",
+          "en": "Oliver Mulherin"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "bio": {
+          "zh": "澳大利亚软件工程师，2024年1月与萨姆·奥尔特曼在夏威夷结婚。",
+          "en": "Australian software engineer who married Sam Altman in January 2024 in Hawaii."
+        }
+      }
     ]
   },
   {
@@ -14167,6 +16515,98 @@
         },
         "type": "org"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "约翰·安布罗西乌斯·巴赫",
+          "en": "Johann Ambrosius Bach"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1645",
+        "death": "1695",
+        "bio": {
+          "zh": "艾森纳赫的城镇乐师，约翰·塞巴斯蒂安·巴赫的父亲，可能教授了巴赫最初的小提琴。",
+          "en": "Town musician of Eisenach and father of J.S. Bach, who likely gave the composer his first violin lessons."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Johann_Ambrosius_Bach"
+      },
+      {
+        "name": {
+          "zh": "玛丽亚·伊丽莎白·伦默希尔特",
+          "en": "Maria Elisabeth Lämmerhirt"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1644",
+        "death": "1694",
+        "bio": {
+          "zh": "市议员之女，巴赫的母亲，在巴赫九岁时去世。",
+          "en": "Daughter of a town councillor; mother of J.S. Bach, who died when the composer was nine."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Bach_family"
+      },
+      {
+        "name": {
+          "zh": "约翰·克里斯托夫·巴赫",
+          "en": "Johann Christoph Bach"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1671",
+        "death": "1721",
+        "bio": {
+          "zh": "巴赫的兄长，奥尔夫鲁特教堂管风琴师，父母双亡后收养并教导巴赫。",
+          "en": "J.S. Bach's eldest brother, organist at Ohrdruf, who took the orphaned composer in and gave him his first keyboard instruction."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Johann_Christoph_Bach_(1671%E2%80%931721)"
+      },
+      {
+        "name": {
+          "zh": "玛丽亚·芭芭拉·巴赫",
+          "en": "Maria Barbara Bach"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1684",
+        "death": "1720",
+        "bio": {
+          "zh": "巴赫的堂姐与第一任妻子，1707年结婚，1720年骤逝，育有七名子女。",
+          "en": "J.S. Bach's second cousin and first wife; they married in 1707 and had seven children before her sudden death in 1720."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Maria_Barbara_Bach"
+      },
+      {
+        "name": {
+          "zh": "安娜·玛格达琳娜·巴赫",
+          "en": "Anna Magdalena Bach"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1701",
+        "death": "1760",
+        "bio": {
+          "zh": "宫廷女高音歌手，巴赫的第二任妻子，1721年结婚，育有十三名子女。",
+          "en": "A gifted court soprano and J.S. Bach's second wife; they married in 1721 and had thirteen children."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Anna_Magdalena_Bach"
+      },
+      {
+        "name": {
+          "zh": "卡尔·菲利普·埃曼努埃尔·巴赫",
+          "en": "Carl Philipp Emanuel Bach"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1714",
+        "death": "1788",
+        "bio": {
+          "zh": "巴赫与玛丽亚·芭芭拉之子，古典风格过渡期的重要作曲家，人称“柏林巴赫”。",
+          "en": "Son of J.S. Bach and Maria Barbara, an influential composer of the early Classical period known as the \"Berlin Bach.\""
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach"
+      }
     ]
   },
   {
@@ -14298,6 +16738,77 @@
           "en": "Queen (band)"
         },
         "type": "org"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "博米·布尔萨劳",
+          "en": "Bomi Bulsara"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1908",
+        "death": "2003",
+        "bio": {
+          "zh": "帕西裔印度人，英国殖民办公室出纳，弗雷迪·默丘里之父。",
+          "en": "A Parsi Indian who worked as a cashier for the British Colonial Office; father of Freddie Mercury."
+        }
+      },
+      {
+        "name": {
+          "zh": "杰尔·布尔萨劳",
+          "en": "Jer Bulsara"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1922",
+        "death": "2016",
+        "bio": {
+          "zh": "帕西裔印度人，弗雷迪·默丘里之母。",
+          "en": "A Parsi Indian and the mother of Freddie Mercury."
+        }
+      },
+      {
+        "name": {
+          "zh": "卡什米拉·布尔萨劳",
+          "en": "Kashmira Bulsara"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "1952",
+        "bio": {
+          "zh": "弗雷迪·默丘里的妹妹，出生于桑给巴尔。",
+          "en": "Freddie Mercury's younger sister, born in Zanzibar."
+        }
+      },
+      {
+        "name": {
+          "zh": "玛丽·奥斯汀",
+          "en": "Mary Austin"
+        },
+        "relation": "partner",
+        "generation": 0,
+        "bio": {
+          "zh": "英国艺术品商，默丘里1970至1976年的长期伴侣，被他称为“唯一的真爱”。",
+          "en": "An English art dealer and Mercury's long-term partner from 1970 to 1976, whom he called his \"only true love.\""
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Mary_Austin"
+      },
+      {
+        "name": {
+          "zh": "吉姆·赫顿",
+          "en": "Jim Hutton"
+        },
+        "relation": "partner",
+        "generation": 0,
+        "birth": "1949",
+        "death": "2010",
+        "bio": {
+          "zh": "爱尔兰裔理发师，默丘里生命最后七年的伴侣，在其病榻前照料。",
+          "en": "An Irish-born hairdresser who was Mercury's partner for the last seven years of his life and nursed him through his illness."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Jim_Hutton_(hairdresser)"
       }
     ]
   },
@@ -14448,6 +16959,94 @@
         },
         "type": "company"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "约瑟夫·杰克逊",
+          "en": "Joseph Jackson"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1928",
+        "death": "2018",
+        "bio": {
+          "zh": "杰克逊五人组经纪人，迈克尔·杰克逊之父，以严厉管教著称。",
+          "en": "Talent manager who steered the Jackson 5 and was the strict patriarch father of Michael Jackson."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Joseph_Jackson"
+      },
+      {
+        "name": {
+          "zh": "凯瑟琳·杰克逊",
+          "en": "Katherine Jackson"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1930",
+        "bio": {
+          "zh": "迈克尔·杰克逊之母，虔诚的耶和华见证人，抚养十个孩子。",
+          "en": "Mother of Michael Jackson and the matriarch of the Jackson family."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Katherine_Jackson"
+      },
+      {
+        "name": {
+          "zh": "丽莎·玛丽·普雷斯利",
+          "en": "Lisa Marie Presley"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1968",
+        "death": "2023",
+        "bio": {
+          "zh": "猫王之女，1994至1996年与迈克尔·杰克逊结婚。",
+          "en": "Daughter of Elvis Presley; she was married to Michael Jackson from 1994 to 1996."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lisa_Marie_Presley"
+      },
+      {
+        "name": {
+          "zh": "黛比·罗",
+          "en": "Debbie Rowe"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1958",
+        "bio": {
+          "zh": "皮肤科护士，1996至1999年与杰克逊结婚，育有普林斯与巴黎两名子女。",
+          "en": "A dermatologist's assistant married to Michael Jackson from 1996 to 1999; mother of his children Prince and Paris."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Debbie_Rowe"
+      },
+      {
+        "name": {
+          "zh": "帕丽斯·杰克逊",
+          "en": "Paris Jackson"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1998",
+        "bio": {
+          "zh": "迈克尔·杰克逊之女，模特、演员与音乐人。",
+          "en": "Michael Jackson's daughter, known as a model, actress, and musician."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Paris_Jackson"
+      },
+      {
+        "name": {
+          "zh": "迈克尔·约瑟夫·杰克逊一世（普林斯）",
+          "en": "Prince Michael Jackson I"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1997",
+        "bio": {
+          "zh": "迈克尔·杰克逊长子，又名“王子”，电视节目主持人与制片人。",
+          "en": "Michael Jackson's eldest son, known as \"Prince,\" a television personality and producer."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Prince_Michael_Jackson_I"
+      }
     ]
   },
   {
@@ -14585,6 +17184,62 @@
         },
         "type": "company"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "斯科特·斯威夫特",
+          "en": "Scott Swift"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1952",
+        "bio": {
+          "zh": "前美林证券股票经纪人，泰勒·斯威夫特之父，支持其音乐事业。",
+          "en": "A former stockbroker at Merrill Lynch and the father of Taylor Swift, a steady supporter of her career."
+        }
+      },
+      {
+        "name": {
+          "zh": "安德莉亚·斯威夫特",
+          "en": "Andrea Swift"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1958",
+        "bio": {
+          "zh": "泰勒·斯威夫特之母，曾任广告公司营销经理，两次战胜乳腺癌。",
+          "en": "Mother of Taylor Swift and a former marketing manager, a two-time breast-cancer survivor."
+        }
+      },
+      {
+        "name": {
+          "zh": "奥斯汀·斯威夫特",
+          "en": "Austin Swift"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1992",
+        "bio": {
+          "zh": "泰勒·斯威夫特的弟弟，演员与制片人，毕业于圣母大学。",
+          "en": "Taylor Swift's younger brother, an actor and producer who studied film at the University of Notre Dame."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Austin_Swift"
+      },
+      {
+        "name": {
+          "zh": "特拉维斯·凯尔斯",
+          "en": "Travis Kelce"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1989",
+        "bio": {
+          "zh": "堪萨斯城酋长队近端锋，2026年与泰勒·斯威夫特结婚。",
+          "en": "Tight end for the Kansas City Chiefs who married Taylor Swift in 2026."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Travis_Kelce"
+      }
     ]
   },
   {
@@ -14716,6 +17371,91 @@
           "en": "Indian classical music"
         },
         "type": "org"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "希亚姆·香卡·乔杜里",
+          "en": "Shyam Shankar Chowdhury"
+        },
+        "relation": "father",
+        "generation": -1,
+        "death": "1935",
+        "bio": {
+          "zh": "孟加拉裔律师与学者，拉维·香卡之父，曾任贾尔瓦尔的迪万。",
+          "en": "A Bengali barrister and scholar, father of Ravi Shankar, who served as diwan of Jhalawar."
+        }
+      },
+      {
+        "name": {
+          "zh": "赫曼吉尼·德维",
+          "en": "Hemangini Devi"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "拉维·香卡之母，在丈夫离家后独自抚养四子。",
+          "en": "Mother of Ravi Shankar, who raised her four sons largely on her own after her husband left."
+        }
+      },
+      {
+        "name": {
+          "zh": "乌代·香卡",
+          "en": "Uday Shankar"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1900",
+        "death": "1977",
+        "bio": {
+          "zh": "印度现代舞先驱，拉维·香卡的兄长，将其带入欧洲舞台。",
+          "en": "A pioneer of modern Indian dance and Ravi Shankar's eldest brother, who introduced him to the stage in Europe."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Uday_Shankar"
+      },
+      {
+        "name": {
+          "zh": "安娜普娜·德维",
+          "en": "Annapurna Devi"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1927",
+        "death": "2018",
+        "bio": {
+          "zh": "印度古典音乐家（苏尔巴哈尔演奏家），拉维·香卡之师之女与第一任妻子。",
+          "en": "An Indian surbahar virtuoso, daughter of Ravi Shankar's guru and his first wife."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Annapurna_Devi"
+      },
+      {
+        "name": {
+          "zh": "阿努什卡·香卡",
+          "en": "Anoushka Shankar"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1981",
+        "bio": {
+          "zh": "西塔琴演奏家，拉维·香卡之女，多次格莱美奖提名。",
+          "en": "A sitar player and Ravi Shankar's daughter, a multiple Grammy nominee."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Anoushka_Shankar"
+      },
+      {
+        "name": {
+          "zh": "诺拉·琼斯",
+          "en": "Norah Jones"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1979",
+        "bio": {
+          "zh": "美国创作歌手与钢琴家，拉维·香卡之女，九次格莱美奖得主。",
+          "en": "An American singer-songwriter and pianist, daughter of Ravi Shankar and a nine-time Grammy winner."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Norah_Jones"
       }
     ]
   },
@@ -14862,6 +17602,92 @@
         },
         "type": "company"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "阿诺德·斯皮尔伯格",
+          "en": "Arnold Spielberg"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1917",
+        "death": "2020",
+        "bio": {
+          "zh": "美国电气工程师，计算机技术先驱，史蒂文·斯皮尔伯格之父。",
+          "en": "An American electrical engineer and computer pioneer, father of Steven Spielberg."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Arnold_Spielberg"
+      },
+      {
+        "name": {
+          "zh": "莉亚·阿德勒",
+          "en": "Leah Adler"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1920",
+        "death": "2017",
+        "bio": {
+          "zh": "音乐会钢琴家与餐馆经营者，史蒂文·斯皮尔伯格之母。",
+          "en": "A concert pianist and restaurateur, mother of Steven Spielberg."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Leah_Adler"
+      },
+      {
+        "name": {
+          "zh": "凯特·卡普肖",
+          "en": "Kate Capshaw"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1953",
+        "bio": {
+          "zh": "美国女演员（《魔宫传奇》威利·斯科特），斯皮尔伯格的第二任妻子，1991年结婚。",
+          "en": "An American actress best known as Willie Scott in Indiana Jones and the Temple of Doom, and Steven Spielberg's second wife since 1991."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Kate_Capshaw"
+      },
+      {
+        "name": {
+          "zh": "艾米·欧文",
+          "en": "Amy Irving"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1953",
+        "bio": {
+          "zh": "美国女演员，斯皮尔伯格的第一任妻子（1985–1989），儿子马克斯之母。",
+          "en": "An American actress, Steven Spielberg's first wife (1985–1989) and mother of his son Max."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Amy_Irving"
+      },
+      {
+        "name": {
+          "zh": "马克斯·斯皮尔伯格",
+          "en": "Max Spielberg"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1985",
+        "bio": {
+          "zh": "斯皮尔伯格与艾米·欧文之子，纪录片制片人。",
+          "en": "Son of Steven Spielberg and Amy Irving, a documentary filmmaker."
+        }
+      },
+      {
+        "name": {
+          "zh": "安妮·斯皮尔伯格",
+          "en": "Anne Spielberg"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "1949",
+        "bio": {
+          "zh": "史蒂文·斯皮尔伯格的姐姐，编剧（《长大》）。",
+          "en": "Steven Spielberg's older sister, a screenwriter best known for Big."
+        }
+      }
     ]
   },
   {
@@ -14997,6 +17823,71 @@
           "en": "Studio Ghibli"
         },
         "type": "company"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "宫崎胜次",
+          "en": "Katsuji Miyazaki"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "宫崎航空机制作所所长，宫崎骏之父，二战期间生产飞机部件。",
+          "en": "Director of the Miyazaki Airplane factory, father of Hayao Miyazaki, which produced aircraft parts during WWII."
+        }
+      },
+      {
+        "name": {
+          "zh": "宫崎芳子",
+          "en": "Yoshiko Miyazaki"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "宫崎骏之母，长期患脊柱结核，启发了《龙猫》。",
+          "en": "Mother of Hayao Miyazaki, bedridden for years with spinal tuberculosis, an inspiration for My Neighbor Totoro."
+        }
+      },
+      {
+        "name": {
+          "zh": "大田明美",
+          "en": "Akemi Ōta"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "bio": {
+          "zh": "日本动画师，宫崎骏在东映动画的同事，1965年结婚。",
+          "en": "A Japanese animator whom Hayao Miyazaki met at Toei Animation; they married in 1965."
+        }
+      },
+      {
+        "name": {
+          "zh": "宫崎吾朗",
+          "en": "Gorō Miyazaki"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1967",
+        "bio": {
+          "zh": "宫崎骏长子，吉卜力动画导演（《地海战记》《来自虞美人之坡》）。",
+          "en": "Hayao Miyazaki's elder son, a film director at Studio Ghibli."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Gor%C5%8D_Miyazaki"
+      },
+      {
+        "name": {
+          "zh": "宫崎庆介",
+          "en": "Keisuke Miyazaki"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1969",
+        "bio": {
+          "zh": "宫崎骏次子，木雕与版画艺术家。",
+          "en": "Hayao Miyazaki's younger son, a woodblock artist."
+        }
       }
     ]
   },
@@ -15141,6 +18032,98 @@
         },
         "type": "company"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "老查理·卓别林",
+          "en": "Charles Chaplin Sr."
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1863",
+        "death": "1901",
+        "bio": {
+          "zh": "英国音乐厅歌手，查理·卓别林之父，嗜酒早逝。",
+          "en": "A British music-hall singer and father of Charlie Chaplin, who died an alcoholic at 37."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Charles_Chaplin_Sr."
+      },
+      {
+        "name": {
+          "zh": "汉娜·卓别林",
+          "en": "Hannah Chaplin"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1865",
+        "death": "1928",
+        "bio": {
+          "zh": "音乐厅歌手（艺名莉莉·哈雷），卓别林之母，长期受精神疾病困扰。",
+          "en": "A music-hall singer (stage name Lily Harley) and Charlie Chaplin's mother, institutionalized for mental illness."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Hannah_Chaplin"
+      },
+      {
+        "name": {
+          "zh": "西德尼·卓别林",
+          "en": "Sydney Chaplin"
+        },
+        "relation": "halfBrother",
+        "generation": 0,
+        "birth": "1885",
+        "death": "1965",
+        "bio": {
+          "zh": "卓别林同母异父的兄长，演员兼经纪人，照料幼年的查理。",
+          "en": "Charlie Chaplin's half-brother (same mother), an actor and his manager who helped raise him."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Sydney_Chaplin_(actor,_born_1885)"
+      },
+      {
+        "name": {
+          "zh": "奥娜·奥尼尔",
+          "en": "Oona O'Neill"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1925",
+        "death": "1991",
+        "bio": {
+          "zh": "剧作家尤金·奥尼尔之女，卓别林第四任妻子（1943年结婚），育有八名子女。",
+          "en": "Daughter of playwright Eugene O'Neill and Charlie Chaplin's fourth wife, married in 1943; they had eight children."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Oona_O%27Neill"
+      },
+      {
+        "name": {
+          "zh": "莉塔·格雷",
+          "en": "Lita Grey"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1907",
+        "death": "1995",
+        "bio": {
+          "zh": "美国女演员，卓别林第二任妻子（1924–1927），两个儿子之母。",
+          "en": "An American actress and Charlie Chaplin's second wife (1924–1927), mother of two sons."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lita_Grey"
+      },
+      {
+        "name": {
+          "zh": "小查理·卓别林",
+          "en": "Charles Chaplin Jr."
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1925",
+        "death": "1968",
+        "bio": {
+          "zh": "卓别林与莉塔·格雷之子，演员。",
+          "en": "Son of Charlie Chaplin and Lita Grey, an actor."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Charles_Chaplin_Jr."
+      }
     ]
   },
   {
@@ -15267,6 +18250,93 @@
           "en": "UNICEF"
         },
         "type": "org"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "约瑟夫·维克托·安东尼·赫本-拉斯顿",
+          "en": "Joseph Victor Anthony Hepburn-Ruston"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1889",
+        "death": "1980",
+        "bio": {
+          "zh": "英国商人，奥黛丽·赫本之父，1935年弃家，后加入英国法西斯组织。",
+          "en": "A British businessman and Audrey Hepburn's father, who deserted the family in 1935 and later joined British fascists."
+        }
+      },
+      {
+        "name": {
+          "zh": "埃拉·范·希姆斯特拉男爵夫人",
+          "en": "Baroness Ella van Heemstra"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1900",
+        "death": "1984",
+        "bio": {
+          "zh": "荷兰贵族，奥黛丽·赫本之母。",
+          "en": "A Dutch aristocrat and the mother of Audrey Hepburn."
+        }
+      },
+      {
+        "name": {
+          "zh": "伊恩·夸尔斯·范·乌福德",
+          "en": "Ian Quarles van Ufford"
+        },
+        "relation": "halfBrother",
+        "generation": 0,
+        "birth": "1924",
+        "death": "2010",
+        "bio": {
+          "zh": "赫本同母异父的弟弟。",
+          "en": "Audrey Hepburn's younger half-brother (same mother)."
+        }
+      },
+      {
+        "name": {
+          "zh": "梅尔·费雷尔",
+          "en": "Mel Ferrer"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1917",
+        "death": "2008",
+        "bio": {
+          "zh": "美国演员与导演，赫本第一任丈夫（1954–1968），儿子肖恩之父。",
+          "en": "An American actor and director, Audrey Hepburn's first husband (1954–1968) and father of her son Sean."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Mel_Ferrer"
+      },
+      {
+        "name": {
+          "zh": "安德烈亚·多蒂",
+          "en": "Andrea Dotti"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1938",
+        "death": "2007",
+        "bio": {
+          "zh": "意大利精神病学家，赫本第二任丈夫（1969–1982），儿子卢卡之父。",
+          "en": "An Italian psychiatrist, Audrey Hepburn's second husband (1969–1982) and father of her son Luca."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Andrea_Dotti"
+      },
+      {
+        "name": {
+          "zh": "肖恩·赫本·费雷尔",
+          "en": "Sean Hepburn Ferrer"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1960",
+        "bio": {
+          "zh": "赫本与梅尔·费雷尔之子，作家。",
+          "en": "Son of Audrey Hepburn and Mel Ferrer, an author."
+        }
       }
     ]
   },
@@ -15420,6 +18490,81 @@
         },
         "type": "org"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "东迪尼奥（若昂·拉莫斯·多·纳西门托）",
+          "en": "Dondinho"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "巴西职业足球运动员，贝利之父，启蒙其踢球。",
+          "en": "A Brazilian professional footballer and Pelé's father, who first taught him the game."
+        }
+      },
+      {
+        "name": {
+          "zh": "塞莱斯特·阿兰特斯",
+          "en": "Celeste Arantes"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "贝利之母，家庭主妇。",
+          "en": "Pelé's mother, a homemaker."
+        }
+      },
+      {
+        "name": {
+          "zh": "佐卡（雅伊尔·阿兰特斯·多·纳西门托）",
+          "en": "Zoca (Jair Arantes do Nascimento)"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "bio": {
+          "zh": "贝利的弟弟，亦曾效力桑托斯，后协助打理贝利的商业事务。",
+          "en": "Pelé's younger brother, a former Santos player who later helped manage Pelé's business affairs."
+        }
+      },
+      {
+        "name": {
+          "zh": "罗丝梅里·多斯·雷斯·乔尔比",
+          "en": "Rosemeri dos Reis Cholbi"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "bio": {
+          "zh": "贝利第一任妻子（1966–1982），育有三名子女。",
+          "en": "Pelé's first wife (1966–1982) and mother of three of his children."
+        }
+      },
+      {
+        "name": {
+          "zh": "马西娅·青木",
+          "en": "Marcia Aoki"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "bio": {
+          "zh": "巴西商人，贝利第三任妻子（2016年结婚），陪伴其直至离世。",
+          "en": "A Brazilian businesswoman and Pelé's third wife, married in 2016 until his death."
+        }
+      },
+      {
+        "name": {
+          "zh": "埃迪尼奥（埃德森·乔尔比·多·纳西门托）",
+          "en": "Edinho"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1970",
+        "bio": {
+          "zh": "贝利长子，前桑托斯门将，后任足球教练。",
+          "en": "Pelé's eldest son, a former Santos goalkeeper who became a football coach."
+        }
+      }
     ]
   },
   {
@@ -15567,6 +18712,109 @@
         },
         "type": "org"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "迭戈·马拉多纳·西尼奥尔",
+          "en": "Diego Maradona Sr."
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1927",
+        "death": "2015",
+        "bio": {
+          "zh": "阿根廷劳工，老马拉多纳，足球名将迭戈·马拉多纳的父亲。",
+          "en": "An Argentine labourer, known as Diego Maradona Sr., and the father of footballer Diego Maradona."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Diego_Maradona_Sr."
+      },
+      {
+        "name": {
+          "zh": "达尔玛·萨尔瓦多拉·佛朗哥",
+          "en": "Dalma Salvadora Franco"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1930",
+        "death": "2011",
+        "bio": {
+          "zh": "昵称“多娜·托塔”，马拉多纳的母亲，育有八名子女。",
+          "en": "Known as 'Doña Tota', she was the mother of Diego Maradona and had eight children."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Dalma_Salvadora_Franco"
+      },
+      {
+        "name": {
+          "zh": "克劳迪娅·比利亚法涅",
+          "en": "Claudia Villafañe"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1962",
+        "bio": {
+          "zh": "阿根廷电视制作人与商人，1989年与马拉多纳结婚，2004年离婚，育有两女。",
+          "en": "An Argentine television producer and businesswoman who married Diego Maradona in 1989 and divorced in 2004; they had two daughters."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Claudia_Villafa%C3%B1e"
+      },
+      {
+        "name": {
+          "zh": "达尔玛·马拉多纳",
+          "en": "Dalma Maradona"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1987-04-02",
+        "bio": {
+          "zh": "马拉多纳与克劳迪娅·比利亚法涅的长女，演员与电视主持人。",
+          "en": "The elder daughter of Diego Maradona and Claudia Villafañe, she is an Argentine actress and television host."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Dalma_Maradona"
+      },
+      {
+        "name": {
+          "zh": "贾尼娜·马拉多纳",
+          "en": "Giannina Maradona"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1989-05-16",
+        "bio": {
+          "zh": "马拉多纳与克劳迪娅的次女，曾与足球员塞尔希奥·阿圭罗结婚。",
+          "en": "The younger daughter of Diego Maradona and Claudia Villafañe, formerly married to footballer Sergio Agüero."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Giannina_Maradona"
+      },
+      {
+        "name": {
+          "zh": "迭戈·西纳格拉",
+          "en": "Diego Sinagra"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1986-09-20",
+        "bio": {
+          "zh": "马拉多纳与克里斯蒂亚娜·西纳格拉的私生子，意大利出生的足球运动员。",
+          "en": "The son of Diego Maradona and Cristiana Sinagra, an Italian-born footballer whom Maradona later acknowledged."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Diego_Sinagra"
+      },
+      {
+        "name": {
+          "zh": "乌戈·马拉多纳",
+          "en": "Hugo Maradona"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1969",
+        "death": "2021",
+        "bio": {
+          "zh": "马拉多纳的弟弟，职业足球运动员，曾效力那不勒斯等队。",
+          "en": "A younger brother of Diego Maradona and a professional footballer who played for clubs including Napoli."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Hugo_Maradona"
+      }
     ]
   },
   {
@@ -15699,6 +18947,85 @@
           "en": "Jamaica national athletics team"
         },
         "type": "org"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "韦尔斯利·博尔特",
+          "en": "Wellesley Bolt"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "牙买加人，在谢伍德-content村经营小杂货店，尤塞恩·博尔特的父亲。",
+          "en": "A Jamaican who ran a small grocery store in Sherwood Content; he is the father of Usain Bolt."
+        }
+      },
+      {
+        "name": {
+          "zh": "詹妮弗·博尔特",
+          "en": "Jennifer Bolt"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "牙买加人，家庭主妇，尤塞恩·博尔特的母亲，对其田径生涯影响深远。",
+          "en": "A Jamaican homemaker and the mother of Usain Bolt, a strong early influence on his athletics career."
+        }
+      },
+      {
+        "name": {
+          "zh": "卡西·贝内特",
+          "en": "Kasi Bennett"
+        },
+        "relation": "partner",
+        "generation": 0,
+        "birth": "1990",
+        "bio": {
+          "zh": "牙买加企业家与慈善人士，博尔特的长期伴侣，两人自2014年相恋并育有三名子女。",
+          "en": "A Jamaican entrepreneur and philanthropist, long-term partner of Usain Bolt since 2014, with whom she has three children."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Kasi_Bennett"
+      },
+      {
+        "name": {
+          "zh": "奥林匹亚·闪电·博尔特",
+          "en": "Olympia Lightning Bolt"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "2020-05-17",
+        "bio": {
+          "zh": "博尔特与卡西·贝内特的长女，2020年5月出生。",
+          "en": "The first child of Usain Bolt and Kasi Bennett, born in May 2020."
+        }
+      },
+      {
+        "name": {
+          "zh": "圣莱奥·博尔特",
+          "en": "Saint Leo Bolt"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "2021-06",
+        "bio": {
+          "zh": "博尔特与贝内特的双胞胎儿子之一，2021年6月出生。",
+          "en": "One of the twin sons of Usain Bolt and Kasi Bennett, born in June 2021."
+        }
+      },
+      {
+        "name": {
+          "zh": "雷霆·博尔特",
+          "en": "Thunder Bolt"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "2021-06",
+        "bio": {
+          "zh": "博尔特与贝内特的双胞胎儿子之一，2021年6月出生。",
+          "en": "One of the twin sons of Usain Bolt and Kasi Bennett, born in June 2021."
+        }
       }
     ]
   },
@@ -15839,6 +19166,59 @@
           "en": "Chinese Basketball Association"
         },
         "type": "org"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "姚志源",
+          "en": "Yao Zhiyuan"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "前中国职业篮球运动员，身高约2.08米，姚明的父亲。",
+          "en": "A former Chinese professional basketball player, around 2.08 m tall, and the father of Yao Ming."
+        }
+      },
+      {
+        "name": {
+          "zh": "方凤娣",
+          "en": "Fang Fengdi"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "前中国女子篮球国家队队员，姚明的母亲。",
+          "en": "A former member of the Chinese national women's basketball team and the mother of Yao Ming."
+        }
+      },
+      {
+        "name": {
+          "zh": "叶莉",
+          "en": "Ye Li"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1981-11-20",
+        "bio": {
+          "zh": "中国前女子篮球运动员，2007年与姚明结婚，两人同为职业篮球选手。",
+          "en": "A former Chinese professional basketball player who married Yao Ming in 2007; both were national-team athletes."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Ye_Li_(basketball)"
+      },
+      {
+        "name": {
+          "zh": "姚沁蕾",
+          "en": "Yao Qinlei"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "2010-05-21",
+        "bio": {
+          "zh": "姚明与叶莉的女儿，2010年生于美国休斯敦，英文名Amy。",
+          "en": "The daughter of Yao Ming and Ye Li, born in Houston, Texas, in 2010; her English name is Amy."
+        }
       }
     ]
   },
@@ -15981,6 +19361,125 @@
         },
         "type": "government"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "盖乌斯·尤利乌斯·恺撒（父）",
+          "en": "Gaius Julius Caesar (father)"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "-0130",
+        "death": "-0085",
+        "bio": {
+          "zh": "罗马元老，曾任亚细亚行省总督，尤利乌斯·恺撒的父亲，在儿子约16岁时去世。",
+          "en": "A Roman senator and praetor who governed Asia; he was the father of Julius Caesar and died when his son was about sixteen."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Gaius_Julius_Caesar_(father)"
+      },
+      {
+        "name": {
+          "zh": "奥蕾莉娅·科塔",
+          "en": "Aurelia Cotta"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "-0120",
+        "death": "-0054",
+        "bio": {
+          "zh": "出自显赫的奥蕾莉·科塔家族，尤利乌斯·恺撒的母亲，与儿子关系密切。",
+          "en": "From the influential Aurelii Cottae family, she was the mother of Julius Caesar and remained close to him throughout his life."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Aurelia_Cotta"
+      },
+      {
+        "name": {
+          "zh": "科尔涅莉娅·秦纳",
+          "en": "Cornelia Cinna minor"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "-0097",
+        "death": "-0069",
+        "bio": {
+          "zh": "罗马执政官秦纳之女，恺撒的第一任妻子，婚姻持续至其病逝。",
+          "en": "Daughter of consul Lucius Cornelius Cinna, she was the first wife of Julius Caesar until her death."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Cornelia_Cinna_minor"
+      },
+      {
+        "name": {
+          "zh": "庞培娅",
+          "en": "Pompeia (wife of Julius Caesar)"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "bio": {
+          "zh": "苏拉之孙女，恺撒的第二任妻子，因“善德女神节”丑闻于公元前62年左右被休。",
+          "en": "A granddaughter of Sulla and the second wife of Julius Caesar, divorced around 62 BC over the Bona Dea scandal."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Pompeia_(wife_of_Julius_Caesar)"
+      },
+      {
+        "name": {
+          "zh": "卡尔普妮娅·皮索尼斯",
+          "en": "Calpurnia Pisonis"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "-0076",
+        "bio": {
+          "zh": "罗马执政官皮索之女，恺撒的第三任妻子，婚姻持续至恺撒遇刺。",
+          "en": "Daughter of consul Lucius Calpurnius Piso, she was the third wife of Julius Caesar until his assassination in 44 BC."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Calpurnia_Pisonis"
+      },
+      {
+        "name": {
+          "zh": "尤莉娅·恺撒里斯",
+          "en": "Julia (daughter of Julius Caesar)"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "-0083",
+        "death": "-0054",
+        "bio": {
+          "zh": "恺撒与科尔涅莉娅之女，嫁予庞培以巩固前三头同盟，死于难产。",
+          "en": "Daughter of Julius Caesar and Cornelia, she married Pompey the Great in 59 BC to seal the First Triumvirate and died in childbirth."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Julia_(daughter_of_Julius_Caesar)"
+      },
+      {
+        "name": {
+          "zh": "恺撒里昂",
+          "en": "Caesarion"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "-0047",
+        "death": "-0030",
+        "bio": {
+          "zh": "全名托勒密十五世，恺撒与克利奥帕特拉七世之子，埃及法老，屋大维征服埃及后被杀。",
+          "en": "Ptolemy XV, the son of Julius Caesar and Cleopatra VII, who reigned as pharaoh of Egypt until killed on the orders of Octavian."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Caesarion"
+      },
+      {
+        "name": {
+          "zh": "小尤莉娅·恺撒里斯",
+          "en": "Julia Minor"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "-0101",
+        "death": "-0051",
+        "bio": {
+          "zh": "恺撒的妹妹，奥古斯都（屋大维）的外祖母。",
+          "en": "A younger sister of Julius Caesar and the maternal grandmother of the future emperor Augustus."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Julia_Minor"
+      }
     ]
   },
   {
@@ -16113,6 +19612,143 @@
         },
         "type": "government"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "托勒密十二世",
+          "en": "Ptolemy XII Auletes"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "-0117",
+        "death": "-0051",
+        "bio": {
+          "zh": "绰号“吹笛者”，托勒密埃及法老，克利奥帕特拉七世之父。",
+          "en": "Known as 'Auletes' (the Flute Player), he was pharaoh of Egypt and the father of Cleopatra VII."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Ptolemy_XII_Auletes"
+      },
+      {
+        "name": {
+          "zh": "克利奥帕特拉五世·特里法伊娜",
+          "en": "Cleopatra V Tryphaena"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "-0095",
+        "death": "-0057",
+        "bio": {
+          "zh": "托勒密十二世的妻子，可能为克利奥帕特拉七世的母亲（存在争议）。",
+          "en": "Wife of Ptolemy XII Auletes and possibly the mother of Cleopatra VII, though this is disputed by some sources."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Cleopatra_V_Tryphaena"
+      },
+      {
+        "name": {
+          "zh": "托勒密十三世",
+          "en": "Ptolemy XIII Theos Philopator"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "-0062",
+        "death": "-0047",
+        "bio": {
+          "zh": "克利奥帕特拉的弟弟兼共治丈夫，于亚历山大围城战中溺亡。",
+          "en": "The younger brother and co-ruler/husband of Cleopatra VII, who drowned during the Alexandrian war."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Ptolemy_XIII_Theos_Philopator"
+      },
+      {
+        "name": {
+          "zh": "托勒密十四世",
+          "en": "Ptolemy XIV Philopator"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "-0060",
+        "death": "-0044",
+        "bio": {
+          "zh": "克利奥帕特拉的弟弟，在其姐与前夫死后成为共治丈夫，疑被克利奥帕特拉毒杀。",
+          "en": "A younger brother of Cleopatra VII who became her co-ruler and husband after Ptolemy XIII's death; likely poisoned on her orders."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Ptolemy_XIV_Philopator"
+      },
+      {
+        "name": {
+          "zh": "阿尔西诺伊四世",
+          "en": "Arsinoe IV"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "-0068",
+        "death": "-0041",
+        "bio": {
+          "zh": "克利奥帕特拉的妹妹，王位竞争者，后被屋大维下令处死。",
+          "en": "A younger sister of Cleopatra VII and rival for the throne, executed on the orders of Octavian."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Arsinoe_IV"
+      },
+      {
+        "name": {
+          "zh": "尤利乌斯·恺撒",
+          "en": "Julius Caesar"
+        },
+        "relation": "partner",
+        "generation": 0,
+        "birth": "-0100",
+        "death": "-0044",
+        "bio": {
+          "zh": "罗马将军与独裁官，与克利奥帕特拉结盟并生下其子恺撒里昂。",
+          "en": "The Roman general and dictator who allied with Cleopatra VII and fathered her son Caesarion."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Julius_Caesar"
+      },
+      {
+        "name": {
+          "zh": "马克·安东尼",
+          "en": "Mark Antony"
+        },
+        "relation": "partner",
+        "generation": 0,
+        "birth": "-0083",
+        "death": "-0030",
+        "bio": {
+          "zh": "罗马三巨头之一，克利奥帕特拉的政治与情感盟友，二人育有三名子女，兵败后自杀。",
+          "en": "A Roman triumvir and the political and romantic partner of Cleopatra VII, with whom he had three children before their defeat and suicides."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Mark_Antony"
+      },
+      {
+        "name": {
+          "zh": "恺撒里昂",
+          "en": "Caesarion"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "-0047",
+        "death": "-0030",
+        "bio": {
+          "zh": "克利奥帕特拉与尤利乌斯·恺撒之子，埃及末代法老，屋大维征服后遭处死。",
+          "en": "The son of Cleopatra VII and Julius Caesar, the last pharaoh of Ptolemaic Egypt, killed after Octavian's conquest."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Caesarion"
+      },
+      {
+        "name": {
+          "zh": "克利奥帕特拉·塞勒涅二世",
+          "en": "Cleopatra Selene II"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "-0040",
+        "death": "-0005",
+        "bio": {
+          "zh": "克利奥帕特拉与马克·安东尼所生孪女，后嫁努米底亚国王尤巴二世。",
+          "en": "Twin daughter of Cleopatra VII and Mark Antony, later married Juba II of Mauretania and was the only surviving child of the pair."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Cleopatra_Selene_II"
+      }
     ]
   },
   {
@@ -16244,6 +19880,128 @@
           "en": "First French Empire"
         },
         "type": "government"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "卡洛·博纳帕特",
+          "en": "Carlo Buonaparte"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1746",
+        "death": "1785",
+        "bio": {
+          "zh": "科西嘉律师，拿破仑的父亲，在拿破仑15岁时因胃癌去世。",
+          "en": "A Corsican lawyer and the father of Napoleon Bonaparte, who died of stomach cancer when Napoleon was fifteen."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Carlo_Buonaparte"
+      },
+      {
+        "name": {
+          "zh": "莱蒂齐亚·拉莫利诺",
+          "en": "Letizia Ramolino"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1750",
+        "death": "1836",
+        "bio": {
+          "zh": "人称“太后夫人”，拿破仑的母亲，育有八名子女，比拿破仑多活十五年。",
+          "en": "Known as 'Madame Mère' during the Empire, she was the mother of Napoleon and outlived him by fifteen years."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Letizia_Ramolino"
+      },
+      {
+        "name": {
+          "zh": "约瑟芬·德·博阿尔内",
+          "en": "Joséphine de Beauharnais"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "birth": "1763",
+        "death": "1814",
+        "bio": {
+          "zh": "马丁尼克出生，拿破仑的第一任妻子（1796年结婚，1810年婚姻被废除），二人无存活子嗣。",
+          "en": "Born in Martinique, she was the first wife of Napoleon (married 1796, annulled 1810); the marriage produced no surviving children."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Jos%C3%A9phine_de_Beauharnais"
+      },
+      {
+        "name": {
+          "zh": "玛丽·路易丝（帕尔马公爵夫人）",
+          "en": "Marie Louise, Duchess of Parma"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1791",
+        "death": "1847",
+        "bio": {
+          "zh": "奥地利公主，拿破仑的第二任妻子（1810年结婚），生下唯一合法子嗣拿破仑二世。",
+          "en": "An Austrian archduchess and the second wife of Napoleon (married 1810), mother of his only legitimate son, Napoleon II."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Marie_Louise,_Duchess_of_Parma"
+      },
+      {
+        "name": {
+          "zh": "拿破仑二世",
+          "en": "Napoleon II"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1811",
+        "death": "1832",
+        "bio": {
+          "zh": "即“罗马王”，拿破仑与玛丽·路易丝之子，在奥地利长大，21岁死于结核病。",
+          "en": "The 'King of Rome', only legitimate son of Napoleon and Marie Louise, raised in Austria and died of tuberculosis at age 21."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Napoleon_II"
+      },
+      {
+        "name": {
+          "zh": "约瑟夫·波拿巴",
+          "en": "Joseph Bonaparte"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1768",
+        "death": "1844",
+        "bio": {
+          "zh": "拿破仑的长兄，曾任那不勒斯国王与西班牙国王。",
+          "en": "The eldest brother of Napoleon, who reigned as King of Naples and later King of Spain."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Joseph_Bonaparte"
+      },
+      {
+        "name": {
+          "zh": "吕西安·波拿巴",
+          "en": "Lucien Bonaparte"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1775",
+        "death": "1840",
+        "bio": {
+          "zh": "拿破仑的弟弟，卡尼诺亲王，在政治上与兄长时有分歧。",
+          "en": "A younger brother of Napoleon, Prince of Canino, who at times clashed politically with the emperor."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lucien_Bonaparte"
+      },
+      {
+        "name": {
+          "zh": "路易·波拿巴",
+          "en": "Louis Bonaparte"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1778",
+        "death": "1846",
+        "bio": {
+          "zh": "拿破仑的弟弟，荷兰国王，拿破仑三世的父亲。",
+          "en": "A younger brother of Napoleon and King of Holland, father of the future Napoleon III."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Louis_Bonaparte"
       }
     ]
   },
@@ -16386,6 +20144,111 @@
         },
         "type": "org"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "老马丁·路德·金",
+          "en": "Martin Luther King Sr."
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1899",
+        "death": "1984",
+        "bio": {
+          "zh": "美国浸信会牧师，亚特兰大埃比尼泽浸信会长期牧师，民权运动者，马丁·路德·金的父亲。",
+          "en": "An American Baptist minister who led Atlanta's Ebenezer Baptist Church for decades and was a civil-rights figure; father of Martin Luther King Jr."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Martin_Luther_King_Sr."
+      },
+      {
+        "name": {
+          "zh": "艾伯塔·威廉姆斯·金",
+          "en": "Alberta Williams King"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1903",
+        "death": "1974",
+        "bio": {
+          "zh": "斯佩尔曼学院毕业生，教会管风琴师，1974年在教堂弹琴时遇害。",
+          "en": "A Spelman College graduate and church organist, mother of Martin Luther King Jr., murdered in 1974 while playing the organ."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Alberta_Williams_King"
+      },
+      {
+        "name": {
+          "zh": "科雷塔·斯科特·金",
+          "en": "Coretta Scott King"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1927",
+        "death": "2006",
+        "bio": {
+          "zh": "美国民权领袖、歌手与作家，1953年与马丁·路德·金结婚，后创立金中心。",
+          "en": "An American civil-rights leader, singer and author who married Martin Luther King Jr. in 1953 and founded the King Center after his death."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Coretta_Scott_King"
+      },
+      {
+        "name": {
+          "zh": "约兰达·金",
+          "en": "Yolanda King"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1955",
+        "death": "2007",
+        "bio": {
+          "zh": "金夫妇的长女，演员与民权活动人士。",
+          "en": "The eldest child of Martin and Coretta Scott King, an actress and civil-rights activist."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Yolanda_King"
+      },
+      {
+        "name": {
+          "zh": "马丁·路德·金三世",
+          "en": "Martin Luther King III"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1957",
+        "bio": {
+          "zh": "金夫妇的长子，民权倡导者，曾任南方基督教领袖会议主席。",
+          "en": "The eldest son of Martin and Coretta Scott King, a civil-rights advocate and former president of the SCLC."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Martin_Luther_King_III"
+      },
+      {
+        "name": {
+          "zh": "伯尼斯·金",
+          "en": "Bernice King"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1963",
+        "bio": {
+          "zh": "金夫妇的幼女，牧师，现任金中心首席执行官。",
+          "en": "The youngest child of Martin and Coretta Scott King, a minister and current CEO of the King Center."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Bernice_King"
+      },
+      {
+        "name": {
+          "zh": "克里斯汀·金·法里斯",
+          "en": "Christine King Farris"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "1927",
+        "death": "2023",
+        "bio": {
+          "zh": "马丁·路德·金的姐姐，斯佩尔曼学院教育家，从教六十余年。",
+          "en": "The elder sister of Martin Luther King Jr. and a longtime educator at Spelman College."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Christine_King_Farris"
+      }
     ]
   },
   {
@@ -16522,6 +20385,84 @@
         },
         "type": "government"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "亨利·雷金纳德·安南",
+          "en": "Henry Reginald Annan"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "加纳精英家族成员，联合利华可可公司出口经理，科菲·安南的父亲。",
+          "en": "A member of Ghana's elite and an export manager for Lever Brothers; he was the father of Kofi Annan."
+        }
+      },
+      {
+        "name": {
+          "zh": "维多利亚·安南",
+          "en": "Victoria Annan"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "科菲·安南的母亲，芳蒂族人。",
+          "en": "The mother of Kofi Annan and a member of the Fante people."
+        }
+      },
+      {
+        "name": {
+          "zh": "蒂蒂·阿拉基贾",
+          "en": "Titi Alakija"
+        },
+        "relation": "exSpouse",
+        "generation": 0,
+        "bio": {
+          "zh": "尼日利亚裔贵族女性，1965年与安南结婚，1970年代离婚，育有科乔与 Ama。",
+          "en": "A Nigerian woman from an aristocratic family who married Kofi Annan in 1965 and divorced in the late 1970s; they had two children."
+        }
+      },
+      {
+        "name": {
+          "zh": "娜内·安南",
+          "en": "Nane Annan"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1944",
+        "bio": {
+          "zh": "瑞典律师与艺术家，拉乌尔·瓦伦贝格的表侄女，1984年与安南结婚。",
+          "en": "A Swedish lawyer and artist, maternal half-niece of Raoul Wallenberg, who married Kofi Annan in 1984."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Nane_Annan"
+      },
+      {
+        "name": {
+          "zh": "科乔·安南",
+          "en": "Kojo Annan"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1973",
+        "bio": {
+          "zh": "安南与前妻蒂蒂之子，企业家，曾卷入石油换食品计划调查。",
+          "en": "The son of Kofi Annan and his first wife Titi, a businessman linked to the Oil-for-Food investigation."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Kojo_Annan"
+      },
+      {
+        "name": {
+          "zh": "艾玛·安南",
+          "en": "Ama Annan"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "bio": {
+          "zh": "安南与前妻蒂蒂所生之女。",
+          "en": "The daughter of Kofi Annan and his first wife Titi Alakija."
+        }
+      }
     ]
   },
   {
@@ -16654,6 +20595,96 @@
           "en": "Government of Singapore"
         },
         "type": "government"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "李进坤",
+          "en": "Lee Chin Koon"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1903",
+        "death": "1997",
+        "bio": {
+          "zh": "壳牌石油公司仓栈管理员，李光耀的父亲。",
+          "en": "A storekeeper for the Shell Oil Company and the father of Lee Kuan Yew."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lee_Chin_Koon"
+      },
+      {
+        "name": {
+          "zh": "蔡认娘",
+          "en": "Chua Jim Neo"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1907",
+        "death": "1980",
+        "bio": {
+          "zh": "土生华人家庭出身，李光耀的母亲。",
+          "en": "From a Straits Chinese family, she was the mother of Lee Kuan Yew."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Chua_Jim_Neo"
+      },
+      {
+        "name": {
+          "zh": "柯玉芝",
+          "en": "Kwa Geok Choo"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1920",
+        "death": "2010",
+        "bio": {
+          "zh": "新加坡律师，李光耀的妻子，剑桥同学，育有三名子女。",
+          "en": "A Singaporean lawyer, the wife of Lee Kuan Yew and his Cambridge classmate; they had three children."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Kwa_Geok_Choo"
+      },
+      {
+        "name": {
+          "zh": "李显龙",
+          "en": "Lee Hsien Loong"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1952",
+        "bio": {
+          "zh": "李光耀长子，新加坡第三任总理（2004年就任）。",
+          "en": "The eldest son of Lee Kuan Yew and the third Prime Minister of Singapore, in office from 2004."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lee_Hsien_Loong"
+      },
+      {
+        "name": {
+          "zh": "李玮玲",
+          "en": "Lee Wei Ling"
+        },
+        "relation": "daughter",
+        "generation": 1,
+        "birth": "1955",
+        "death": "2024",
+        "bio": {
+          "zh": "李光耀之女，神经科医生，曾任新加坡国立神经科学研究所主任。",
+          "en": "The daughter of Lee Kuan Yew, a neurologist who directed the National Neuroscience Institute."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lee_Wei_Ling"
+      },
+      {
+        "name": {
+          "zh": "李显扬",
+          "en": "Lee Hsien Yang"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1957",
+        "bio": {
+          "zh": "李光耀幼子，前新加坡电信总裁兼首席执行官。",
+          "en": "The youngest son of Lee Kuan Yew and former president and CEO of Singtel."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Lee_Hsien_Yang"
       }
     ]
   },
@@ -16797,6 +20828,83 @@
         },
         "type": "org"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "西奥多鲁斯·范高",
+          "en": "Theodorus van Gogh"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1822",
+        "death": "1885",
+        "bio": {
+          "zh": "荷兰归正会牧师，文森特·梵高的父亲。",
+          "en": "A Dutch Reformed Church pastor and the father of painter Vincent van Gogh."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Theodorus_van_Gogh"
+      },
+      {
+        "name": {
+          "zh": "安娜·科妮莉亚·卡本特斯·范高",
+          "en": "Anna Cornelia Carbentus van Gogh"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1819",
+        "death": "1907",
+        "bio": {
+          "zh": "出自海牙殷实家庭，梵高的母亲，育有六名存活子女。",
+          "en": "From a prosperous family in The Hague, she was the mother of Vincent van Gogh and had six surviving children."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Anna_Cornelia_Carbentus_van_Gogh"
+      },
+      {
+        "name": {
+          "zh": "提奥·范高（画商）",
+          "en": "Theo van Gogh (art dealer)"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1857",
+        "death": "1891",
+        "bio": {
+          "zh": "梵高终身挚友与艺术经纪人，古皮尔公司画商，长期在精神和经济上支持兄长。",
+          "en": "Vincent's beloved younger brother and art dealer at Goupil & Cie, who supported him financially and emotionally throughout his life."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Theo_van_Gogh_(art_dealer)"
+      },
+      {
+        "name": {
+          "zh": "威廉明娜·“威尔”·范高",
+          "en": "Wil van Gogh"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "1862",
+        "death": "1941",
+        "bio": {
+          "zh": "梵高最亲近的妹妹，成年后大部分时间在精神病院度过。",
+          "en": "The favourite sister of Vincent van Gogh, who spent most of her adult life in a mental institution."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Wil_van_Gogh"
+      },
+      {
+        "name": {
+          "zh": "科尼利斯·“科”·范高",
+          "en": "Cor van Gogh"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1867",
+        "death": "1900",
+        "bio": {
+          "zh": "梵高最小的弟弟，在第二次布尔战争中阵亡。",
+          "en": "The youngest brother of Vincent van Gogh, who died fighting in the Second Boer War."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Cor_van_Gogh"
+      }
     ]
   },
   {
@@ -16928,6 +21036,110 @@
           "en": "Impressionism"
         },
         "type": "org"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "克劳德·阿道夫·莫奈",
+          "en": "Claude Adolphe Monet"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1800",
+        "death": "1871",
+        "bio": {
+          "zh": "法国杂货商与船运商，印象派画家克劳德·莫奈的父亲，曾希望儿子继承家族杂货生意。",
+          "en": "A French grocer and ship chandler, he was the father of the Impressionist painter Claude Monet and initially wanted his son to join the family business."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Claude_Monet"
+      },
+      {
+        "name": {
+          "zh": "路易丝·瑞丝汀·奥布蕾",
+          "en": "Louise Justine Aubrée"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1805",
+        "death": "1857",
+        "bio": {
+          "zh": "受过训练的歌唱家，莫奈的母亲，在艺术家十六岁时去世。",
+          "en": "A trained soprano singer and the mother of Claude Monet, who died when the artist was sixteen."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Claude_Monet"
+      },
+      {
+        "name": {
+          "zh": "莱昂·帕斯卡尔·莫奈",
+          "en": "Léon Pascal Monet"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1836",
+        "death": "1917",
+        "bio": {
+          "zh": "克劳德·莫奈的兄长，曾在勒阿弗尔的家族船行工作。",
+          "en": "The elder brother of Claude Monet, who worked in the family's chandlery business in Le Havre."
+        }
+      },
+      {
+        "name": {
+          "zh": "卡米耶·东齐厄",
+          "en": "Camille Doncieux"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1847",
+        "death": "1879",
+        "bio": {
+          "zh": "莫奈的第一任妻子与早期模特，为其生下两个儿子，1879年因肺结核去世。",
+          "en": "A French model and the first wife of Claude Monet; she bore him two sons and died of tuberculosis in 1879."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Camille_Doncieux"
+      },
+      {
+        "name": {
+          "zh": "爱丽丝·奥什代",
+          "en": "Alice Hoschedé"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1844",
+        "death": "1911",
+        "bio": {
+          "zh": "原为艺术收藏家欧内斯特·奥什代的妻子，后与莫奈结合并于1892年结婚，带来六名子女。",
+          "en": "Initially married to department-store owner and art patron Ernest Hoschedé; after his death she married Claude Monet in 1892 and brought six children into his household."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Alice_Hosched%C3%A9"
+      },
+      {
+        "name": {
+          "zh": "让·莫奈",
+          "en": "Jean Monet"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1867",
+        "death": "1914",
+        "bio": {
+          "zh": "克劳德与卡米耶的长子，药剂师，1914年因癌症去世。",
+          "en": "The elder son of Claude and Camille Monet; he worked as a pharmacist and died of cancer in 1914."
+        }
+      },
+      {
+        "name": {
+          "zh": "米歇尔·莫奈",
+          "en": "Michel Monet"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1878",
+        "death": "1966",
+        "bio": {
+          "zh": "克劳德与卡米耶的次子，继承并在1966年将吉维尼故居捐予法兰西美术学院。",
+          "en": "The younger son of Claude and Camille Monet; he inherited Giverny and in 1966 bequeathed the estate to the Académie des Beaux-Arts."
+        }
       }
     ]
   },
@@ -17061,6 +21273,92 @@
         },
         "type": "org"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "洛多维科·迪·莱昂纳多·布奥纳罗蒂·西蒙尼",
+          "en": "Lodovico di Leonardo Buonarroti Simoni"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1444",
+        "death": "1531",
+        "bio": {
+          "zh": "佛罗伦萨小官吏（曾任卡普雷塞与基乌西的地方长官），米开朗基罗的父亲，起初反对其从事艺术。",
+          "en": "A Florentine government administrator (podestà of Caprese and Chiusi) and the father of Michelangelo, who at first opposed his son's artistic career."
+        }
+      },
+      {
+        "name": {
+          "zh": "弗朗切斯卡·迪·内里·德尔·米尼亚托",
+          "en": "Francesca di Neri di Miniato del Sera"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1456",
+        "death": "1481",
+        "bio": {
+          "zh": "米开朗基罗的母亲，在艺术家六岁时去世。",
+          "en": "The mother of Michelangelo, who died when the artist was six years old."
+        }
+      },
+      {
+        "name": {
+          "zh": "莱奥纳尔多·布奥纳罗蒂",
+          "en": "Lionardo di Lodovico Buonarroti"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1473",
+        "death": "1510",
+        "bio": {
+          "zh": "米开朗基罗的长兄，后成为多明我会修士。",
+          "en": "The eldest brother of Michelangelo, who became a Dominican friar."
+        }
+      },
+      {
+        "name": {
+          "zh": "布奥纳罗托·布奥纳罗蒂",
+          "en": "Buonarroto di Lodovico Buonarroti"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1477",
+        "death": "1528",
+        "bio": {
+          "zh": "米开朗基罗的弟弟，经营家族羊毛生意，由艺术家提供资金。",
+          "en": "A younger brother of Michelangelo who ran the family wool trade with the artist's financial support."
+        }
+      },
+      {
+        "name": {
+          "zh": "乔万西莫内·布奥纳罗蒂",
+          "en": "Giovansimone di Lodovico Buonarroti"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1479",
+        "death": "1548",
+        "bio": {
+          "zh": "米开朗基罗的弟弟，家中长期紧张的源头之一。",
+          "en": "A younger brother of Michelangelo and a recurring source of family tension."
+        }
+      },
+      {
+        "name": {
+          "zh": "西吉斯蒙多·布奥纳罗蒂",
+          "en": "Sigismondo di Lodovico Buonarroti"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1481",
+        "death": "1555",
+        "bio": {
+          "zh": "米开朗基罗最小的弟弟，生平较为低调。",
+          "en": "The youngest brother of Michelangelo, who lived a relatively quiet life."
+        }
+      }
     ]
   },
   {
@@ -17193,6 +21491,82 @@
         },
         "type": "org"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "乔治·奥斯汀",
+          "en": "George Austen"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1731",
+        "death": "1805",
+        "bio": {
+          "zh": "英格兰国教牧师，曾任汉普郡斯蒂文顿教区主任，是简·奥斯汀的父亲，亦在家授课补贴家用。",
+          "en": "An Anglican clergyman who served as rector of Steventon, Hampshire, and was the father of the novelist Jane Austen."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/George_Austen_(cleric)"
+      },
+      {
+        "name": {
+          "zh": "卡桑德拉·利·奥斯汀",
+          "en": "Cassandra Leigh Austen"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1739",
+        "death": "1827",
+        "bio": {
+          "zh": "出身莱伊家族，是简·奥斯汀的母亲。",
+          "en": "She came from the aristocratic Leigh family and was the mother of Jane Austen."
+        }
+      },
+      {
+        "name": {
+          "zh": "卡桑德拉·伊丽莎白·奥斯汀",
+          "en": "Cassandra Elizabeth Austen"
+        },
+        "relation": "sister",
+        "generation": 0,
+        "birth": "1773",
+        "death": "1845",
+        "bio": {
+          "zh": "简的姐姐与终身挚友，业余水彩画家，保存并部分焚毁了简的书信。",
+          "en": "Jane's elder sister and closest friend, an amateur watercolourist whose correspondence with Jane is a key source for the novelist's life."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Cassandra_Austen"
+      },
+      {
+        "name": {
+          "zh": "亨利·托马斯·奥斯汀",
+          "en": "Henry Thomas Austen"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1771",
+        "death": "1850",
+        "bio": {
+          "zh": "简最亲近的兄弟，曾任军人、银行家，后成为牧师，并担任妹妹的文学代理人。",
+          "en": "Jane's favourite brother; a soldier, banker and later clergyman who acted as her literary agent."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Henry_Thomas_Austen"
+      },
+      {
+        "name": {
+          "zh": "爱德华·奥斯汀·奈特",
+          "en": "Edward Austen Knight"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1767",
+        "death": "1852",
+        "bio": {
+          "zh": "被奈特家族收养并继承其庄园，后为母亲与姐妹提供乔顿居所。",
+          "en": "Adopted by the wealthy Knight family, he inherited their estates and provided Chawton Cottage to his mother and sisters."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Edward_Austen_Knight"
+      }
     ]
   },
   {
@@ -17324,6 +21698,94 @@
           "en": "Modern Chinese literature"
         },
         "type": "org"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "周伯宜",
+          "en": "Zhou Boyi"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1861",
+        "death": "1896",
+        "bio": {
+          "zh": "本名周凤仪，鲁迅的父亲，秀才出身，长期患病，对鲁迅的童年影响深远。",
+          "en": "Original name Zhou Fengyi, a scholar (xiucai) and the father of Lu Xun; his prolonged illness deeply marked the writer's childhood."
+        }
+      },
+      {
+        "name": {
+          "zh": "鲁瑞",
+          "en": "Lu Rui"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1858",
+        "death": "1943",
+        "bio": {
+          "zh": "鲁迅的母亲，思想开明刚毅，对鲁迅影响极大，并曾主持其包办婚姻。",
+          "en": "Lu Xun's mother, a broad-minded and strong-willed woman who greatly influenced her son and arranged his marriage to Zhu An."
+        }
+      },
+      {
+        "name": {
+          "zh": "朱安",
+          "en": "Zhu An"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1878",
+        "death": "1947",
+        "bio": {
+          "zh": "鲁迅的合法妻子，1906年由母命包办成婚，婚姻有名无实，长期照料鲁迅母亲。",
+          "en": "Lu Xun's lawfully wedded wife in an arranged marriage dictated by his mother; the union was never consummated and she devoted herself to caring for his mother."
+        }
+      },
+      {
+        "name": {
+          "zh": "许广平",
+          "en": "Xu Guangping"
+        },
+        "relation": "partner",
+        "generation": 0,
+        "birth": "1898",
+        "death": "1968",
+        "bio": {
+          "zh": "鲁迅的学生与伴侣，广东番禺人，陪伴鲁迅度过晚年并为其生下独子周海婴。",
+          "en": "A Chinese writer and activist, a former student of Lu Xun who became his companion and the mother of his only son, Zhou Haiying."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Xu_Guangping"
+      },
+      {
+        "name": {
+          "zh": "周海婴",
+          "en": "Zhou Haiying"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1929",
+        "death": "2011",
+        "bio": {
+          "zh": "鲁迅与许广平之子，无线电专家。",
+          "en": "The only son of Lu Xun and Xu Guangping, and a radio engineer."
+        }
+      },
+      {
+        "name": {
+          "zh": "周作人",
+          "en": "Zhou Zuoren"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1885",
+        "death": "1967",
+        "bio": {
+          "zh": "鲁迅的二弟，现代著名散文家，兄弟二人后因家庭纠纷失和。",
+          "en": "A prominent modern Chinese essayist and Lu Xun's younger brother; the two later estranged over a family dispute."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Zhou_Zuoren"
       }
     ]
   },
@@ -17461,6 +21923,74 @@
         },
         "type": "org"
       }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "加夫列尔·埃利希奥·加西亚",
+          "en": "Gabriel Eligio García"
+        },
+        "relation": "father",
+        "generation": -1,
+        "bio": {
+          "zh": "哥伦比亚的电报员与巡回顺势疗法药剂师，是加西亚·马尔克斯的父亲。",
+          "en": "A Colombian telegraph operator and itinerant homeopathic pharmacist, and the father of Gabriel García Márquez."
+        }
+      },
+      {
+        "name": {
+          "zh": "路易莎·桑蒂亚加·马尔克斯·伊瓜兰",
+          "en": "Luisa Santiaga Márquez Iguarán"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "bio": {
+          "zh": "加西亚·马尔克斯的母亲，作家幼年由外祖父母抚养。",
+          "en": "The mother of Gabriel García Márquez; the writer was raised in his early years by her parents."
+        }
+      },
+      {
+        "name": {
+          "zh": "梅赛德斯·巴尔查",
+          "en": "Mercedes Barcha"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1932",
+        "death": "2020",
+        "bio": {
+          "zh": "加西亚·马尔克斯的妻子与缪斯，1958年结婚，在作家创作《百年孤独》时变卖家当予以支持。",
+          "en": "The wife and muse of Gabriel García Márquez; they married in 1958, and she pawned her belongings to support the writing of One Hundred Years of Solitude."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Mercedes_Barcha"
+      },
+      {
+        "name": {
+          "zh": "罗德里戈·加西亚",
+          "en": "Rodrigo García"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1959",
+        "bio": {
+          "zh": "加西亚·马尔克斯长子，电影与电视导演，曾执导 Netflix 版《百年孤独》。",
+          "en": "A Colombian-Mexican film and television director and the elder son of Gabriel García Márquez."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Rodrigo_Garc%C3%ADa_(director)"
+      },
+      {
+        "name": {
+          "zh": "贡萨洛·加西亚·巴尔查",
+          "en": "Gonzalo García Barcha"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1961",
+        "bio": {
+          "zh": "加西亚·马尔克斯次子，平面设计师。",
+          "en": "A graphic designer and the younger son of Gabriel García Márquez."
+        }
+      }
     ]
   },
   {
@@ -17597,6 +22127,96 @@
           "en": "Bengal Renaissance"
         },
         "type": "org"
+      }
+    ],
+    "kin": [
+      {
+        "name": {
+          "zh": "德本德罗纳特·泰戈尔",
+          "en": "Debendranath Tagore"
+        },
+        "relation": "father",
+        "generation": -1,
+        "birth": "1817",
+        "death": "1905",
+        "bio": {
+          "zh": "印度哲学家与梵社领袖（尊称'马哈士'），是罗宾德拉纳特·泰戈尔的父亲。",
+          "en": "An Indian philosopher and leader of the Brahmo Samaj (known as Maharshi), and the father of Rabindranath Tagore."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Debendranath_Tagore"
+      },
+      {
+        "name": {
+          "zh": "萨茹达·黛维",
+          "en": "Sarada Devi"
+        },
+        "relation": "mother",
+        "generation": -1,
+        "birth": "1826",
+        "death": "1875",
+        "bio": {
+          "zh": "泰戈尔的母亲，育有十四名子女，在泰戈尔十四岁时去世。",
+          "en": "The mother of Rabindranath Tagore and wife of Debendranath; she died when Rabindranath was fourteen."
+        }
+      },
+      {
+        "name": {
+          "zh": "姆丽纳莉妮·黛维",
+          "en": "Mrinalini Devi"
+        },
+        "relation": "spouse",
+        "generation": 0,
+        "birth": "1873",
+        "death": "1902",
+        "bio": {
+          "zh": "泰戈尔的妻子，1883年成婚，1902年病故，育有五名子女。",
+          "en": "The wife of Rabindranath Tagore; they married in 1883 and had five children before her death."
+        }
+      },
+      {
+        "name": {
+          "zh": "罗庭德拉纳特·泰戈尔",
+          "en": "Rathindranath Tagore"
+        },
+        "relation": "son",
+        "generation": 1,
+        "birth": "1888",
+        "death": "1961",
+        "bio": {
+          "zh": "泰戈尔之子，教育家与农学家，首位维斯瓦·巴拉蒂大学校长。",
+          "en": "An educationist and agronomist, the son of Rabindranath Tagore and the first Vice-Chancellor of Visva-Bharati University."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Rathindranath_Tagore"
+      },
+      {
+        "name": {
+          "zh": "德维金德罗纳特·泰戈尔",
+          "en": "Dwijendranath Tagore"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1840",
+        "death": "1926",
+        "bio": {
+          "zh": "泰戈尔的长兄，诗人、哲学家与数学家。",
+          "en": "The eldest brother of Rabindranath Tagore, a poet, philosopher and mathematician."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Dwijendranath_Tagore"
+      },
+      {
+        "name": {
+          "zh": "萨提亚金德罗纳特·泰戈尔",
+          "en": "Satyendranath Tagore"
+        },
+        "relation": "brother",
+        "generation": 0,
+        "birth": "1842",
+        "death": "1923",
+        "bio": {
+          "zh": "泰戈尔的兄长，印度首位加入 Indian Civil Service 的官员，亦是诗人与社会改革者。",
+          "en": "An elder brother of Rabindranath Tagore and the first Indian to join the Indian Civil Service, as well as a poet and social reformer."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/Satyendranath_Tagore"
       }
     ]
   }

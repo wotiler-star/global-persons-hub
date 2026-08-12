@@ -47,6 +47,14 @@ export interface NetworkNode {
   kind?: 'person' | 'org' | 'kin';
   /** 当 kind='org' 时：机构类型（company/school/org/government），前端着色用 */
   orgType?: string;
+  /** Stage 10+：当 kind='kin' 时携带亲属详细资料，供前端节点卡展示「详细情况介绍」 */
+  kinName?: Partial<Record<Lang, string>>;   // 多语姓名（name 为 en||zh 回退，展示优先用 kinName）
+  kinRelation?: string;                       // KinRelation 键（father/spouse/son…）
+  kinGeneration?: number;                     // 与中心人物的代际：-2 祖辈 / -1 父母 / 0 同辈 / +1 子女 / +2 孙辈
+  kinBirth?: string;
+  kinDeath?: string;
+  kinBio?: Partial<Record<Lang, string>>;     // 多语详细资料介绍
+  kinWiki?: string;                           // 维基百科溯源链接
 }
 export interface NetworkEdge {
   source: string;

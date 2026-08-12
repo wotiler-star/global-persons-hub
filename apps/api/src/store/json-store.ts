@@ -338,10 +338,24 @@ export class JsonStore implements DataStore {
       frontier = next;
     }
     // 中心人物的未收录亲属 → 虚拟节点（kind='kin'，前端不可点击、灰色虚线）
+    // 携带亲属详细资料（姓名/关系/代际/生卒/bio/Wiki），供前端节点卡展示「详细情况介绍」
     (start.kin || []).forEach((k, i) => {
       if (k.slug && bySlug.has(k.slug)) return; // 已作为真实节点并入
       const vid = `kin:${start.id}:${i}`;
-      nodes.push({ id: vid, slug: '', name: k.name.en || k.name.zh || vid, trustLevel: 'kin', kind: 'kin' });
+      nodes.push({
+        id: vid,
+        slug: '',
+        name: k.name.en || k.name.zh || vid,
+        trustLevel: 'kin',
+        kind: 'kin',
+        kinName: k.name,
+        kinRelation: k.relation,
+        kinGeneration: k.generation,
+        kinBirth: k.birth,
+        kinDeath: k.death,
+        kinBio: k.bio,
+        kinWiki: k.wiki
+      });
       edges.push({ source: start.id, target: vid, type: 'family', directed: false, kinRel: k.relation });
     });
     return { nodes, edges };
