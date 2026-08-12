@@ -109,8 +109,7 @@ export function projectPerson(p: Person, lang: Lang, opts: ProjectOptions = {}):
     if (ids.length) lite.relIds = ids;
   }
   if (opts.withAchievements) {
-    const list = (p.achievements || [])
-      .map((a) => a?.[lang] || a?.en || '')
+    const list = (p.achievements?.[lang] || p.achievements?.en || [])
       .filter(Boolean)
       .slice(0, opts.withAchievements);
     if (list.length) lite.achievements = list;

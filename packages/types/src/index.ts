@@ -104,7 +104,7 @@ export interface Person {
   domains: Domain[];                  // 跨赛道身份聚合
   occupations?: LocalizedText;
   summary: Partial<Record<Lang, string>>;      // 各语种简介（机器可读 + 可引用，可部分翻译）
-  achievements?: LocalizedText[];
+  achievements?: Record<Lang, string[]>;
   affiliations?: Affiliation[];
   imageUrl?: string;
   images?: string[];                 // 图集（用户上传的图片，落盘于 /uploads）
