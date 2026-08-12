@@ -11,15 +11,17 @@ export const SITE_DESCRIPTION =
 export const SITE_SOCIALS: string[] = [];
 
 /**
- * 构建某语种的 Organization + WebSite 结构化数据（两个独立 JSON-LD 节点）。
+ * 构建某语种的 Organization + WebSite + WebApplication 结构化数据（三个独立 JSON-LD 节点）。
  * - Organization：语言中立的单一实体（@id 固定在站点根），全站各页重复出现同一 @id → 被搜索引擎合并为同一组织。
  * - WebSite：每语种独立节点（@id 含语种），声明站内搜索动作（SearchAction），触发 Google Sitelinks 搜索框。
+ * - WebApplication：每语种独立节点，描述平台本身（交互式 Web 应用），publisher 反向引用 Organization。
  */
 export function buildSiteLd(lang: Lang): Record<string, any>[] {
   const root = SITE_URL.replace(/\/$/, '');
   const langHome = `${root}/${lang}`;
   const orgId = `${root}#organization`; // 语言中立，全站同一实体
   const webId = `${langHome}#website`; // 每语种独立 WebSite 节点
+  const appId = `${langHome}#webapp`; // 每语种独立 WebApplication 节点
 
   const organization: Record<string, any> = {
     '@context': 'https://schema.org',
@@ -51,5 +53,24 @@ export function buildSiteLd(lang: Lang): Record<string, any>[] {
     }
   };
 
-  return [organization, webSite];
+  const webApp: Record<string, any> = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    '@id': appId,
+    name: SITE_NAME,
+    url: langHome,
+    description: SITE_DESCRIPTION,
+    inLanguage: lang,
+    operatingSystem: 'Web',
+    applicationCategory: 'ReferenceApplication',
+    publisher: { '@id': orgId },
+    offers: {
+      '@type': 'Offer',
+      name: 'Free',
+      price: '0',
+      priceCurrency: 'USD'
+    }
+  };
+
+  return [organization, webSite, webApp];
 }

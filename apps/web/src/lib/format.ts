@@ -1,5 +1,6 @@
 import { pickText, type Lang } from './i18n';
 import type { Person } from '@gph/types';
+import { SITE_URL } from '@/lib/og';
 
 /**
  * 财富格式化：自动选择 B/M/K 单位。返回 null 表示无财富数据。
@@ -34,5 +35,28 @@ export function buildPersonItemList(items: Person[], lang: Lang, name: string, l
           url: `/${lang}/person/${p.slug}`
         }
       }))
+  };
+}
+
+/**
+ * 构建 schema.org CollectionPage 结构化数据（人物库列表页）。
+ * 复用 buildPersonItemList 作为 mainEntity（ItemList of Person），
+ * isPartOf 反向引用 [lang]/layout 注入的 WebSite @id，形成站点实体图谱闭环。
+ */
+export function buildPersonCollectionPage(
+  items: Person[],
+  lang: Lang,
+  name: string,
+  limit = 30
+): Record<string, any> {
+  const langHome = `${SITE_URL.replace(/\/$/, '')}/${lang}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    url: `${langHome}/persons`,
+    inLanguage: lang,
+    isPartOf: { '@id': `${langHome}#website` },
+    mainEntity: buildPersonItemList(items, lang, name, limit)
   };
 }

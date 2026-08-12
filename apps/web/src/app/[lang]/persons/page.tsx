@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { getPersons } from '@/lib/api';
 import { LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
-import { buildPersonItemList } from '@/lib/format';
+import { buildPersonCollectionPage } from '@/lib/format';
 import { DOMAIN_LABELS, type Domain, type Person } from '@gph/types';
 import PersonsExplorer, { type DomainFilter, type SortMode } from '@/components/PersonsExplorer';
 import { projectPersons } from '@/lib/personProjection';
@@ -57,8 +57,8 @@ export default async function PersonsPage({
     /* API 不可达时静默降级 */
   }
 
-  // —— SEO / GEO：ItemList 结构化数据（人物库可被搜索引擎/AI 理解） ——
-  const jsonLd = buildPersonItemList(items, L, t(L, 'persons.title'), 30);
+  // —— SEO / GEO：CollectionPage 结构化数据（人物库可被搜索引擎/AI 理解为"人物集合"）——
+  const jsonLd = buildPersonCollectionPage(items, L, t(L, 'persons.title'), 30);
 
   return (
     <div>
