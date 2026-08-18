@@ -117,11 +117,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const pr of [...pairs].slice(0, 30)) {
       const [a, b] = pr.split('-vs-');
       for (const l of LANGS) {
-        // 对比页为带查询参数的动态页，不加 hreflang（避免规范化冲突），仅收录英文版
+        // 对比页带查询参数，但每个语言版本仍是独立的多语种页面，需互设 hreflang 交替链接（x-default 指向英文）
         urls.push({
           url: `${base}/${l}/compare?ids=${a},${b}`,
           changeFrequency: 'weekly',
-          priority: 0.5
+          priority: 0.5,
+          alternates: altFor(`/compare?ids=${a},${b}`)
         });
       }
     }
