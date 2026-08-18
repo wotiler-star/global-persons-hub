@@ -1,81 +1,40 @@
-// 前端 API 客户端：仅通过 REST 与独立后端通信（前后端分离）
-// 默认走 127.0.0.1 以避开 Node fetch 对 localhost 的 IPv6(::1) 解析问题
-const PUBLIC_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://127.0.0.1:8787';
-// 服务端取数优先读运行时变量 GPH_API_BASE（不被构建期内联），其次用公开基址
-const SERVER_BASE =
-  process.env.GPH_API_BASE || process.env.NEXT_PUBLIC_API_BASE || 'http://127.0.0.1:8787';
+// 前端 API 客户端（浏览器端）。
+// 自「折叠 API 进 Next」改造后：所有请求走同源 /api（Next Route Handlers 已实现原 Fastify API）。
+// 服务端取数（SSR/ISR/SSG）不再经过本文件，而是直接调用 @/lib/server/data（见各 Server Component）。
+// 因此本模块只会被客户端组件导入，绝不包含 node:fs，可安全进入浏览器包。
+const PUBLIC_BASE = process.env.NEXT_PUBLIC_API_BASE || '/api';
 
-// —— 服务端数据获取（Server Components，SSR/ISR 利于 SEO/GEO）——
-// Stage 34：默认走 ISR 增量缓存（5 分钟窗口），替代原先的 cache:'no-store' 全动态。
-// 人物数据低频变更，5 分钟陈旧度可接受；评论/账户等实时数据均走浏览器端 PUBLIC_BASE，不受影响。
-// 可用环境变量 GPH_REVALIDATE 调整窗口；传 { revalidate: false } 可退回逐请求取数。
-const DEFAULT_REVALIDATE = Number(process.env.GPH_REVALIDATE ?? 300);
-
-export async function apiGet<T = any>(
-  path: string,
-  opts: { revalidate?: number | false } = {}
-): Promise<T> {
-  const revalidate = opts.revalidate ?? DEFAULT_REVALIDATE;
-  const res = await fetch(
-    `${SERVER_BASE}${path}`,
-    revalidate === false || !(revalidate > 0)
-      ? { cache: 'no-store' }
-      : { next: { revalidate } }
-  );
-  if (!res.ok) throw new Error(`API ${res.status} ${path}`);
-  return res.json();
+// —— 浏览器侧通用：读取本地 token ——
+export function getToken(): string | null {
+  return typeof window !== 'undefined' ? localStorage.getItem('gph_token') : null;
 }
 
-export const getPersons = (opts: { q?: string; domain?: string; lang?: string; pageSize?: number } = {}) => {
+// —— 客户端数据读取（走 /api，供客户端组件按需取数）——
+export async function getPersons(opts: { q?: string; domain?: string; lang?: string; pageSize?: number; page?: number } = {}) {
   const p = new URLSearchParams();
   if (opts.q) p.set('q', opts.q);
   if (opts.domain) p.set('domain', opts.domain);
   if (opts.lang) p.set('lang', opts.lang);
+  if (opts.page) p.set('page', String(opts.page));
   p.set('pageSize', String(opts.pageSize ?? 60));
-  return apiGet<{ items: any[]; total: number }>(`/persons?${p.toString()}`);
-};
-
-/**
- * 全量取数（分页聚合）。
- * 后端已将单页上限收敛到 500（防 `?pageSize=999999` 打爆内存），因此
- * sitemap / RSS / llms-full / generateStaticParams 这类"必须拿全库"的场景
- * 不能再靠 `pageSize=2000` 一把梭，改为按页循环直到取满 total。
- */
-export async function getAllPersons(
-  opts: { lang?: string; domain?: string; pageSize?: number; maxPages?: number } = {}
-): Promise<{ items: any[]; total: number }> {
-  const pageSize = Math.min(opts.pageSize ?? 500, 500);
-  const maxPages = opts.maxPages ?? 20; // 兜底：最多 10k 条，防后端 total 异常导致死循环
-  const items: any[] = [];
-  let total = 0;
-
-  for (let page = 1; page <= maxPages; page++) {
-    const p = new URLSearchParams();
-    if (opts.lang) p.set('lang', opts.lang);
-    if (opts.domain) p.set('domain', opts.domain);
-    p.set('page', String(page));
-    p.set('pageSize', String(pageSize));
-    const d = await apiGet<{ items: any[]; total: number }>(`/persons?${p.toString()}`);
-    items.push(...(d.items || []));
-    total = d.total ?? items.length;
-    if (items.length >= total || !d.items?.length) break;
-  }
-  return { items, total: total || items.length };
+  const r = await fetch(`${PUBLIC_BASE}/persons?${p.toString()}`);
+  if (!r.ok) throw new Error('加载人物失败');
+  return r.json();
 }
 
-export const getPerson = (slug: string) => apiGet<any>(`/persons/${slug}`);
-export const getRelations = (id: string) => apiGet<any>(`/relations/${id}`);
-export const searchPersons = (q: string) => apiGet<{ results: any[] }>(`/search?q=${encodeURIComponent(q)}`);
-export const semanticSearch = (q: string, lang = 'zh', limit = 12) =>
-  apiGet<{ results: { hit: any; score: number }[] }>(
-    `/search/semantic?q=${encodeURIComponent(q)}&lang=${lang}&limit=${limit}`
-  );
-export const getNetwork = (id: string, depth = 2) =>
-  apiGet<{ nodes: any[]; edges: any[] }>(`/graph/network/${id}?depth=${depth}`);
+export async function searchPersons(q: string) {
+  const r = await fetch(`${PUBLIC_BASE}/search?q=${encodeURIComponent(q)}`);
+  if (!r.ok) throw new Error('搜索失败');
+  return r.json();
+}
 
-/** Stage 37+：两人之间最短关系路径（BFS 子图） */
-export const getPath = (from: string, to: string) =>
-  apiGet<{ nodes: any[]; edges: any[] }>(`/graph/path/${from}/${to}`);
+export async function semanticSearch(q: string, lang = 'zh', limit = 12) {
+  const r = await fetch(
+    `${PUBLIC_BASE}/search/semantic?q=${encodeURIComponent(q)}&lang=${lang}&limit=${limit}`
+  );
+  if (!r.ok) throw new Error('语义搜索失败');
+  return r.json();
+}
 
 // RAG 事实问答（语义检索 + 可选 LLM 生成）
 export async function askRag(query: string, lang = 'zh', limit = 5) {
@@ -88,11 +47,7 @@ export async function askRag(query: string, lang = 'zh', limit = 5) {
   return r.json();
 }
 
-// —— 客户端（浏览器）调用（注册/登录/上传编辑）——
-export function getToken(): string | null {
-  return typeof window !== 'undefined' ? localStorage.getItem('gph_token') : null;
-}
-
+// —— 账户 / 写入类（需登录；托管只读版部分端点返回 503，前端友好提示）——
 export async function registerUser(input: { email: string; password: string; name: string }) {
   const r = await fetch(`${PUBLIC_BASE}/auth/register`, {
     method: 'POST',
@@ -131,6 +86,14 @@ export async function logoutUser(): Promise<void> {
   localStorage.removeItem('gph_token');
 }
 
+export async function getMe(): Promise<{ id: string; email: string; name: string; role: string; plan: 'free' | 'pro' }> {
+  const t = getToken();
+  if (!t) throw new Error('请先登录');
+  const r = await fetch(`${PUBLIC_BASE}/me`, { headers: { Authorization: `Bearer ${t}` } });
+  if (!r.ok) throw new Error('加载用户信息失败');
+  return r.json();
+}
+
 export async function createPerson(input: any) {
   const t = getToken();
   if (!t) throw new Error('请先登录');
@@ -155,13 +118,10 @@ export async function updatePerson(slug: string, patch: any): Promise<any> {
   return r.json();
 }
 
-// —— 开放 API 密钥（Stage 3）——
 export async function listApiKeys(): Promise<any> {
   const t = getToken();
   if (!t) throw new Error('请先登录');
-  const r = await fetch(`${PUBLIC_BASE}/me/apikeys`, {
-    headers: { Authorization: `Bearer ${t}` }
-  });
+  const r = await fetch(`${PUBLIC_BASE}/me/apikeys`, { headers: { Authorization: `Bearer ${t}` } });
   if (!r.ok) throw new Error((await r.json()).message || '获取失败');
   return r.json();
 }
@@ -188,18 +148,6 @@ export async function revokeApiKey(id: string): Promise<void> {
   if (!r.ok) throw new Error((await r.json()).message || '吊销失败');
 }
 
-// —— 当前用户（含套餐 / 支付渠道轮询）——
-export async function getMe(): Promise<{ id: string; email: string; name: string; role: string; plan: 'free' | 'pro' }> {
-  const t = getToken();
-  if (!t) throw new Error('请先登录');
-  const r = await fetch(`${PUBLIC_BASE}/me`, {
-    headers: { Authorization: `Bearer ${t}` }
-  });
-  if (!r.ok) throw new Error('加载用户信息失败');
-  return r.json();
-}
-
-// —— 专业订阅（Stage 3）——
 export async function subscribe(plan: 'free' | 'pro', provider?: string, lang = 'zh'): Promise<any> {
   const t = getToken();
   if (!t) throw new Error('请先登录');
@@ -212,7 +160,6 @@ export async function subscribe(plan: 'free' | 'pro', provider?: string, lang = 
   return r.json();
 }
 
-// —— 图片上传（Stage 3）——
 export async function uploadImage(dataUrl: string): Promise<{ url: string }> {
   const t = getToken();
   if (!t) throw new Error('请先登录');
@@ -225,7 +172,7 @@ export async function uploadImage(dataUrl: string): Promise<{ url: string }> {
   return r.json();
 }
 
-// —— 社区评论（Stage 3）——
+// —— 社区评论（只读部署：评论不持久化，GET 返回空列表）——
 export async function getComments(slug: string): Promise<{ items: any[] }> {
   const r = await fetch(`${PUBLIC_BASE}/persons/${slug}/comments`);
   if (!r.ok) throw new Error('加载评论失败');

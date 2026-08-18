@@ -4,18 +4,21 @@ const nextConfig = {
   transpilePackages: ['@gph/types'],
   images: { remotePatterns: [{ protocol: 'https', hostname: '**' }] },
 
-  // —— 独立部署（Lighthouse Windows + pm2，2GB 内存禁止服务端构建）——
-  // 本机 `next build` 产出 .next/standalone（自带运行时，无需服务器装 Node 构建）。
-  output: 'standalone',
+  // —— 部署形态（由环境变量切换，避免与 `next start` 冲突）——
+  // 默认（undefined）：普通输出，供 `next start` 启动 —— 这是 Hostinger「Node.js Web App」
+  // 单进程（npm start -> next start）与本地预览的形态，读取 process.env.PORT 作为端口。
+  // Lighthouse(pm2/standalone) 部署：构建时设 NEXT_OUTPUT=standalone 产出 .next/standalone，
+  // 再用 `node .next/standalone/server.js` 启动（自带最小化运行时，无需服务器装 Node 构建）。
+  // 注意：`next start` 不支持 standalone 输出（会直接退出），故两者二选一、靠 env 切换。
+  output: process.env.NEXT_OUTPUT === 'standalone' ? 'standalone' : undefined,
 
-  // 浏览器端 NEXT_PUBLIC_API_BASE=/api（同源相对路径）→ 经此后端代理访问 Fastify，
-  // 因此只需对外开放一个 Web 端口，API(:8787) 不对外暴露、同源免 CORS。
   // 关闭 X-Powered-By: Next.js（减少指纹暴露面）
   poweredByHeader: false,
 
-  async rewrites() {
-    return [{ source: '/api/:path*', destination: 'http://127.0.0.1:8787/:path*' }];
-  },
+  // 注：自「折叠 API 进 Next」改造后，原 Fastify API（:8787）已并入 Next Route Handlers
+  // （src/app/api/**），同源 /api 由 Next 自身处理，无需再代理到独立后端。
+  // Hostinger 共享云主机的「Node.js Web App」以单进程运行 `next start`，
+  // 读取 process.env.PORT 作为监听端口（Next 原生支持），只需开放一个端口。
 
   /**
    * 安全响应头（审计 P2-3）。

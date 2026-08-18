@@ -12,6 +12,7 @@
     "dev:api": "npm -w @gph/api run dev",
     "dev:web": "npm -w @gph/web run dev",
     "build": "npm -w @gph/web run build",
+    "start": "npm -w @gph/web run start",
     "start:api": "npm -w @gph/api run start",
     "start:web": "npm -w @gph/web run start",
     "typecheck": "npm -w @gph/types run typecheck && npm -w @gph/api run typecheck && npm -w @gph/web run typecheck",

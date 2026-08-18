@@ -1,5 +1,5 @@
 import { SITE_URL, SITE_NAME } from '@/lib/og';
-import { getAllPersons } from '@/lib/api';
+import { getAllPersons } from '@/lib/server/data';
 import { LANGS, pickText } from '@/lib/i18n';
 
 // —— GEO 全量索引：llms-full.txt ——

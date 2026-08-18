@@ -1,5 +1,5 @@
 import { SITE_URL, SITE_NAME } from '@/lib/og';
-import { getAllPersons } from '@/lib/api';
+import { getAllPersons } from '@/lib/server/data';
 import { pickText } from '@/lib/i18n';
 
 // —— GEO / SEO 新鲜度信号：RSS 2.0 订阅源（新收录人物）——

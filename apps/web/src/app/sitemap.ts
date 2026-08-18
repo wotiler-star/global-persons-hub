@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { getAllPersons } from '@/lib/api';
+import { getAllPersons } from '@/lib/server/data';
 import { LANGS } from '@/lib/i18n';
 import { DOMAIN_LABELS } from '@gph/types';
 

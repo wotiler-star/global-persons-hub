@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getPerson, getRelations, getNetwork, getPersons, getAllPersons } from '@/lib/api';
+import { getPerson, getRelations, getNetwork, getPersons, getAllPersons } from '@/lib/server/data';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
 import { t, domainLabel } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';

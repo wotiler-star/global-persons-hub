@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { getPersons, semanticSearch } from '@/lib/api';
+import { getPersons, semanticSearch } from '@/lib/server/data';
 import { LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import SearchBar from '@/components/SearchBar';

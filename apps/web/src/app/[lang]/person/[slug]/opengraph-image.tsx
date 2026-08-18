@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og';
-import { getPerson } from '@/lib/api';
+import { getPerson } from '@/lib/server/data';
 import { OG_SIZE, OG_CONTENT_TYPE, SITE_BRAND, DOMAIN_EN, DOMAIN_ACCENT } from '@/lib/og';
 import { ogFonts, ogNativeText, OG_FONT_FAMILY } from '@/lib/og-font';
 import type { Domain } from '@gph/types';

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getPersons } from '@/lib/api';
+import { getPersons } from '@/lib/server/data';
 import { pickText, LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import GraphExplorer from '@/components/GraphExplorer';

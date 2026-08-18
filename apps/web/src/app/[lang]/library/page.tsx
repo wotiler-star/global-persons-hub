@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getPersons } from '@/lib/api';
+import { getPersons } from '@/lib/server/data';
 import { LANGS, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { OG_LOCALE, SITE_NAME } from '@/lib/og';
