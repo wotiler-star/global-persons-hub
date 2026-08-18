@@ -1,12 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
 import { SITE_URL, SITE_NAME } from '@/lib/og';
 
 const SITE_DESC =
   '全球最大的跨领域、全语种、结构化人物知识图谱数据库平台。影视 / 商业 / 学术 / 体育 / 音乐 / 政治 / 艺术，统一画像，母语可读。';
 
+// 根布局仅做透传：<html>/<body> 由 app/[lang]/layout.tsx 按当前语种渲染（含正确的 lang/dir），
+// 以满足多语言 SEO。顶级重定向页（/login 等）与元数据路由（sitemap/robots/feed）不依赖此处 html。
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -38,13 +38,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="zh-CN">
-      <body className="min-h-screen bg-slate-50 text-slate-900">
-        <NavBar />
-        <main className="max-w-6xl mx-auto px-4 py-8">{children}</main>
-        <Footer />
-      </body>
-    </html>
-  );
+  return children;
 }
+

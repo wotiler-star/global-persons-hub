@@ -1,19 +1,14 @@
+import type { ReactNode } from 'react';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isLang, LANGS } from '@/lib/i18n';
-import JsonLd from '@/components/JsonLd';
-import { buildSiteLd } from '@/lib/siteLd';
+import NavBar from '@/components/NavBar';
+import Footer from '@/components/Footer';
+import { isLang, htmlLang, LANGS, type Lang } from '@/lib/i18n';
 
-/**
- * 语种段布局。三个作用：
- * 1) 边界锚点：Next 的 not-found.tsx / error.tsx 需要所在段存在 layout 才会作为嵌套边界生效，
- *    否则 /[lang]/** 内部抛出的 notFound() 会一路冒泡到根 404（丢失语种上下文，只能显示英文）。
- * 2) 非法语种拦截：/xx/... 直接 404，而不是渲染出一个回退英文的"半可用"页面。
- * 3) RTL：阿拉伯语等从右向左书写的语种在此统一翻转文字方向。
- *
- * 注：边界组件（not-found/error）的语种不再经 Context 下传（Context 不会到达边界子树），
- * 改由 src/middleware.ts 注入 x-lang 请求头、服务端 boundaries 直接读取。
- */
-const RTL_LANGS = new Set(['ar']);
+// —— SEO：每个语言版本独立渲染正确的 <html lang>（BCP-47）+ 书写方向 ——
+// 根布局（app/layout.tsx）仅作透传，<html>/<body> 由此处按语种输出，
+// 使 Google/Bing 能正确判定各 /[lang]/* 页面的语言，配合 hreflang 交替避免重复内容。
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));
@@ -23,21 +18,19 @@ export default async function LangLayout({
   children,
   params
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
   if (!isLang(lang)) notFound();
-
-  // —— SEO/GEO：站点级结构化数据（Organization + WebSite/站内搜索），全站每语种页面注入 ——
-  const siteLd = buildSiteLd(lang);
-
+  const { lang: hl, dir } = htmlLang(lang as Lang);
   return (
-    <div dir={RTL_LANGS.has(lang) ? 'rtl' : 'ltr'}>
-      {siteLd.map((node, i) => (
-        <JsonLd key={i} data={node} />
-      ))}
-      {children}
-    </div>
+    <html lang={hl} dir={dir}>
+      <body className="min-h-screen bg-slate-50 text-slate-900">
+        <NavBar />
+        <main className="max-w-6xl mx-auto px-4 py-8">{children}</main>
+        <Footer />
+      </body>
+    </html>
   );
 }

@@ -3,17 +3,11 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { LANGS, type Lang } from '@/lib/i18n';
+import { LANGS, htmlLang, type Lang } from '@/lib/i18n';
 import { t } from '@/lib/ui';
 import { useAuth } from '@/lib/useAuth';
 import LangSwitch from './LangSwitch';
 import CommandPalette from './CommandPalette';
-
-// <html lang> 期望的 BCP-47 代码（zh 用 zh-CN）
-const HTML_LANG: Record<Lang, string> = {
-  zh: 'zh-CN', en: 'en', es: 'es', fr: 'fr', ja: 'ja', ru: 'ru',
-  ar: 'ar', pt: 'pt', de: 'de', ko: 'ko', it: 'it', hi: 'hi', id: 'id'
-};
 
 export default function NavBar() {
   const pathname = usePathname() || '/';
@@ -23,7 +17,9 @@ export default function NavBar() {
   const { isAuthed, logout } = useAuth();
 
   useEffect(() => {
-    document.documentElement.lang = HTML_LANG[lang] || lang;
+    const { lang: l, dir } = htmlLang(lang);
+    document.documentElement.lang = l;
+    document.documentElement.dir = dir;
   }, [lang]);
 
   async function onLogout() {

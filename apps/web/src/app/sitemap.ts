@@ -65,6 +65,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
       alternates: altFor('/pricing')
     });
+    urls.push({
+      url: `${base}/${l}/ask`,
+      changeFrequency: 'weekly',
+      priority: 0.6,
+      alternates: altFor('/ask')
+    });
+    urls.push({
+      url: `${base}/${l}/search`,
+      changeFrequency: 'weekly',
+      priority: 0.5,
+      alternates: altFor('/search')
+    });
   }
   // 领域榜单页（SEO 聚合着陆页）——从 DOMAIN_LABELS 动态取全部领域，避免新增领域（如 art/other）漏收录
   const domains = Object.keys(DOMAIN_LABELS);

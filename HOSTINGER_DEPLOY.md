@@ -160,3 +160,49 @@ curl -sI "http://127.0.0.1:3300/api/persons" | grep -i cache-control
 ```
 
 预期：各接口 200 且返回真实数据；`/api/persons` 响应头含 `Cache-Control: public, ...`。
+
+---
+
+## 9. 多语言 SEO（独立 URL + hreflang + 内链 + 站点地图）
+
+本应用已内置完整的多语言 SEO 体系，部署后默认生效。**关键前提**：必须在环境变量中设置
+`NEXT_PUBLIC_SITE_URL` 为你的真实域名（含 `https://`），否则 hreflang 与站点地图会指向
+`localhost`，搜索引擎无法正确收录。
+
+### 9.1 可抓取的独立 URL（子目录形态）
+- 每个语言版本拥有独立、可抓取的 URL：`/zh/...`、`/en/...`、`/es/...`、`/fr/...`、`/ja/...`、
+  `/ru/...`、`/ar/...`、`/pt/...`、`/de/...`、`/ko/...`、`/it/...`、`/hi/...`、`/id/...`
+  （共 13 种，均在 `packages/types` 的 `LANGS` 中定义）。
+- 子目录形态对 Hostinger 单进程零额外配置（无需子域名 DNS / 证书），推荐此形态。
+
+### 9.2 `<html lang>` 按语言输出（服务端）
+- `apps/web/src/app/[lang]/layout.tsx` 按当前语种渲染正确的 `<html lang="...">`（BCP-47，
+  如 `zh`→`zh-CN`、`pt`→`pt-BR`），阿拉伯语额外输出 `dir="rtl"`。
+- 根布局（`app/layout.tsx`）改为透传，避免所有语言版被写死成 `zh-CN`。
+- 这让 Google/Bing 正确判定每个页面的语言，配合 hreflang 避免重复内容惩罚。
+
+### 9.3 hreflang 交替链接（页面 `<head>` + 站点地图）
+- 每个页面 `generateMetadata` 输出 `alternates.languages`：`<head>` 中生成
+  `<link rel="alternate" hrefLang="xx" href="https://域名/xx/...">`，覆盖全部 13 语 + `x-default`
+  （指向英文版）。经 `metadataBase` 解析为绝对地址。
+- `sitemap.xml` 每条 URL 附带 `xhtml:link rel="alternate" hreflang=...`（13 语 + x-default），
+  并在 `<urlset>` 声明 `xmlns:xhtml` 命名空间。
+
+### 9.4 跨语言内链（可抓取）
+- `LangSwitch` 组件（导航栏，所有语言版页面均有）渲染真实 `<a href="/xx/...">` 锚点
+  （含 `hreflang`/`lang` 属性），而非旧版的 `<select>`+`router.push`（后者不产锚点、爬虫不可见）。
+- 每个语言版都互相链接到**同一页面**的其他语言版本，形成完整跨语言内部链接网。
+
+### 9.5 站点地图与 robots
+- `sitemap.xml`：1625+ 条 URL（语言首页、人物库/时间轴/探索/收藏/画廊/图谱/定价/问答/搜索、
+  领域榜单页、全部人物详情页、影响力 TOP 对比页），全部含 hreflang 交替。
+- `robots.txt`：放行全站、屏蔽 `/admin`/`/me`/`/account`/`/login`/`/register`，
+  显式允许主流 AI 爬虫，并声明 `Sitemap:` 与 `Host:`。
+
+### 9.6 部署检查清单
+1. 设置 `NEXT_PUBLIC_SITE_URL=https://你的域名`（hPanel 环境变量）。
+2. `npm run build` → `npm start`。
+3. 验证：`curl -s https://你的域名/en/person/albert-einstein | grep -o 'hrefLang="[a-z-]*"'`
+   应看到 13 种语言码 + `x-default`；`curl -s https://你的域名/sitemap.xml | grep -c '<loc>'`
+   应远大于 1000；`curl -s https://你的域名/robots.txt` 含 `Sitemap:`。
+4. 在 Google Search Console 提交 `sitemap.xml` 并做国际定位（国际目标）配置。
